@@ -1,0 +1,50 @@
+body {
+  background-image: url(../img/rsz_fondo-login.jpg);
+  background-size: cover;
+}
+body #contenedor-login {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+.show-password {
+  cursor: pointer;
+}
+body #boton-inicio {
+  background-color: rgba(75, 174, 0, 0.7) !important;
+  padding: 7px;
+  border-radius: 7px;
+}
+body #boton-inicio:hover {
+  background-color: rgba(75, 174, 0) !important;
+}
+body #password-forget {
+  font-size: 0.9rem;
+  color: #262626 !important;
+}
+body #password-forget:hover {
+  color: rgb(255, 243, 74) !important;
+}
+
+#boton-inicio {
+  display: block;
+  margin: 0 auto;
+  text-decoration: none;
+}
+
+/* Establece el ancho del elemento en 50% para pantallas menores a 768px */
+@media (max-width: 768px) {
+  #box-imput {
+    width: 85%;
+  }
+  #boton-inicio {
+    width: 55% !important;
+  }
+}
+/* Establece el ancho del elemento en 100% para pantallas mayores a 768px */
+@media (min-width: 769px) {
+  #box-imput {
+    width: 85%;
+  }
+  #boton-inicio {
+    width: 55% !important;
+  }
+}
