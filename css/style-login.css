@@ -18,10 +18,10 @@ body #boton-inicio:hover {
 }
 body #password-forget {
   font-size: 0.9rem;
-  color: #262626 !important;
+  color: rgb(255, 243, 74) !important;
 }
 body #password-forget:hover {
-  color: rgb(255, 243, 74) !important;
+  color: rgb(93, 180, 231) !important;
 }
 
 #boton-inicio {

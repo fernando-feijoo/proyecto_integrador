@@ -15,7 +15,7 @@
     <!-- /Otras importaciones -->
 </head>
 
-<body class="vh-100">
+<body>
     <header>
         <div id="header" class="container-fluid pt-1 pb-1">
             <div class="row d-flex align-items-center mx-2">
@@ -58,7 +58,8 @@
     <main>
         <div id="escritorio-contenedor" class="container-fluid pt-2">
             <div class="row">
-                <div class="col-5 col-sm-4 col-md-3 col-lg-3 col-xl-3 text-center bg-warning">
+                <!-- Contenedor de menu lateral -->
+                <div class="col-5 col-sm-4 col-md-3 col-lg-3 col-xl-3 text-center">
                     <section>
                         <div id="menu-navegacion" class="container-fluid mt-1 mb-1 rounded-4 text-center">
                             <div class="row mx-auto">
@@ -134,10 +135,11 @@
                         </div>
                     </section>
                 </div>
-                <div class="col bg-success text-center">
+                <!-- /Contenedor de menu lateral -->
+                <div class="col text-center">
                     <!-- Contenedor de escritorio *interno -->
                     <section>
-                        <div id="contenedor-escritorio" class="container-fluid mt-1 mb-1 rounded-4 bg-secondary">
+                        <div id="contenedor-escritorio-contenido" class="container-fluid mt-1 mb-1 rounded-4 bg-secondary">
                             <div class="row">
                                 <div class="col">
                                     1 de 1

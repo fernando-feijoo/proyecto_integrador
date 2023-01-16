@@ -1,20 +1,23 @@
-main #escritorio-contenedor {
+/* main #escritorio-contenedor {
   height: 90vh;
-}
+} */
 
 body {
   background-color: rgb(247, 246, 246);
 }
 
 main {
-  height: 88vh;
+  min-height: 564px;
+  max-height: 800px;
 }
 section #menu-navegacion {
-  height: 88vh;
+  min-height: 560px;
+  max-height: 790px;
   background-color: rgb(204, 204, 204);
 }
-section #contenedor-escritorio {
-  height: 88vh !important;
+section #contenedor-escritorio-contenido {
+  min-height: 560px;
+  max-height: 790px;
 }
 
 #texto-usuario {
@@ -22,13 +25,12 @@ section #contenedor-escritorio {
   font-size: 1.3rem;
 }
 
-#contenedor-img{
-    margin: 0 auto !important;
+#contenedor-img {
+  margin: 0 auto !important;
 }
 
 #img-section {
-    width: 60px;
-    /* background-color: brown; */
+  width: 60px;
 }
 
 #clock,
@@ -45,7 +47,6 @@ section #contenedor-escritorio {
 }
 
 #titulo-menu {
-  /* margin-left: -15px; */
   font-weight: 650;
   font-size: 1.4rem;
 }
@@ -69,55 +70,56 @@ section #contenedor-escritorio {
   background-color: rgb(223, 238, 255);
 }
 
-  /* Establece el ancho del elemento para pantallas menores a: */
+/* Establece el ancho del elemento para pantallas menores a: */
 @media (max-width: 1250px) {
-    #clock, #date{
-        font-size: 90%;
-        margin-left: -15px;
-    }
-    #img-section{
-        width: 25px !important;
-        height: 25px !important;
-    }
-    #titulo-menu{
-        font-size: 98%;
-    }
-    #img-submenu{
-        width: 28px !important;
-        height: 28px !important;
-    }
-    .botones-menu button{
-        font-size: 85%;
-    }
+  #clock,
+  #date {
+    font-size: 90%;
+    margin-left: -15px;
   }
-  /* Establece el ancho del elemento para pantallas mayores a: */
-  @media (min-width: 1251px) {
-    #img-section{
-        width: 32px !important;
-        height: 32px !important;
-    }
+  #img-section {
+    width: 25px !important;
+    height: 25px !important;
   }
+  #titulo-menu {
+    font-size: 98%;
+  }
+  #img-submenu {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  .botones-menu button {
+    font-size: 85%;
+  }
+}
+/* Establece el ancho del elemento para pantallas mayores a: */
+@media (min-width: 1251px) {
+  #img-section {
+    width: 32px !important;
+    height: 32px !important;
+  }
+}
 
-  /* Establece el ancho del elemento para pantallas menores a: */
+/* Establece el ancho del elemento para pantallas menores a: */
 @media (max-width: 768px) {
-    #clock, #date{
-        font-size: 60%;
-        margin-left: -15px;
-        margin-top: 5px;
-    }
-    #img-section{
-        width: 20px !important;
-        height: 20px !important;
-    }
-    #titulo-menu{
-        font-size: 80%;
-    }
-    #img-submenu{
-        width: 22px !important;
-        height: 22px !important;
-    }
-    .botones-menu button{
-        font-size: 70%;
-    }
+  #clock,
+  #date {
+    font-size: 60%;
+    margin-left: -15px;
+    margin-top: 5px;
   }
- 
+  #img-section {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  #titulo-menu {
+    font-size: 80%;
+  }
+  #img-submenu {
+    width: 22px !important;
+    height: 22px !important;
+  }
+  .botones-menu button {
+    font-size: 70%;
+  }
+}
