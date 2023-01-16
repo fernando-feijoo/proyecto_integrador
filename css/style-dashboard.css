@@ -1,0 +1,57 @@
+main #escritorio-contenedor {
+  height: 90vh;
+}
+
+body {
+  background-color: rgb(247, 246, 246);
+}
+
+main {
+  height: 88vh;
+}
+section #menu-navegacion {
+  height: 88vh;
+  background-color: rgb(204, 204, 204);
+}
+#texto-usuario {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+#clock,
+#date {
+  font-weight: 500;
+  font-size: 1.3em;
+}
+
+#caja-separacion {
+  background-color: rgb(112, 39, 1);
+  width: 100%;
+  height: 5px;
+  border-radius: 8px;
+}
+
+#titulo-menu {
+  margin-left: -15px;
+  font-weight: 650;
+  font-size: 1.4rem;
+}
+
+.botones-menu button {
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 650;
+  width: 230px;
+  height: 40px;
+  border-radius: 20px;
+  border-left: 15px solid !important;
+  border-color: transparent !important;
+
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.botones-menu button:hover {
+  background-color: rgb(223, 238, 255);
+}

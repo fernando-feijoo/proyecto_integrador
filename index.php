@@ -8,10 +8,10 @@
     <link class="icon-inicio" rel="shortcut icon" href="./img/icon_credencial.svg">
     <title>Login Aso. Tierra Fertil</title>
     <!-- Importacion de librerias de Bootstrap 5.2 -->
-    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
     <!-- /Importacion de librerias de Bootstrap 5.2 -->
     <!-- Otras importaciones -->
-    <link href="./css/style-login.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/style-login.css" />
     <!-- /Otras importaciones -->
 
 </head>
@@ -43,7 +43,7 @@
             </div>
         </div>
 
-        <div class="alert alert-danger d-none mt-4 mb-4" id="alert-error" role="alert" style="width: 85%; margin: auto !important; margin-top: 1rem !important;">
+        <div class="alert alert-danger d-none mt-4 mb-4 text-center" id="alert-error" role="alert" style="width: 85%; margin: auto !important; margin-top: 1rem !important;">
             ¡Usuario o contraseña incorrectos, vifique!
         </div>
 
