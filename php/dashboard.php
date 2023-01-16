@@ -41,7 +41,7 @@
                                                         <label class="form-check-label" for="flexSwitchCheckDefault">Modo Ocuro</label>
                                                     </div>
                                                 </a></li>
-                                            <li><a class="dropdown-item text-center" href="../index.php"><img src="../img/log_out_24px-dashboard.png" alt="icono-logout" style="margin-right: 12px;"/>Cerrar Sesion</a></li>
+                                            <li><a class="dropdown-item text-center" href="../index.php"><img src="../img/log_out_24px-dashboard.png" alt="icono-logout" style="margin-right: 12px;" />Cerrar Sesion</a></li>
                                         </ul>
                                     </li>
 
@@ -58,50 +58,52 @@
     <main>
         <div id="escritorio-contenedor" class="container-fluid pt-2">
             <div class="row">
-                <div class="col-5 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-3 text-center">
+                <div class="col-5 col-sm-4 col-md-3 col-lg-3 col-xl-3 text-center bg-warning">
                     <section>
-                        <div id="menu-navegacion" class="container-fluid mt-1 mb-1 rounded-4">
+                        <div id="menu-navegacion" class="container-fluid mt-1 mb-1 rounded-4 text-center">
                             <div class="row mx-auto">
                                 <div class="col">
                                     <!-- Seccion de hora y fecha menu lateral -->
-                                    <div class="row pt-5 mx-auto">
-                                        <div class="col-5 text-end">
-                                            <img src="../img/clock_32px-dashboard.png" alt="icono-reloj" />
+                                    
+                                    <div id="contenedor-img" class="row pt-5 mx-auto">
+                                        <div class="col text-end">
+                                            <img id="img-section" src="../img/clock_32px-dashboard.png" alt="icono-reloj" />
                                         </div>
-                                        <div class="col text-start">
+                                        <div class="col-7 text-start">
                                             <div id="clock"></div>
                                         </div>
                                     </div>
 
-                                    <div class="row pt-3 mx-auto pb-4">
-                                        <div class="col-5 text-end">
-                                            <img src="../img/calendar_32px-dashboard.png" alt="icono-calendario" />
+                                    <div id="contenedor-img" class="row pt-3 mx-auto pb-4">
+                                        <div id="img-section" class="col text-end">
+                                            <img id="img-section" src="../img/calendar_32px-dashboard.png" alt="icono-calendario" />
                                         </div>
-                                        <div class="col text-start">
+                                        <div class="col-7 text-start">
                                             <div id="date"></div>
                                         </div>
                                     </div>
+
                                     <div id="caja-separacion"></div>
                                     <!-- /Seccion de hora y fecha menu lateral -->
 
                                     <!-- Seccion de primer menu de Acopio y sub menus -->
-                                    <div class="row pt-5 mx-auto">
-                                        <div class="col-3 text-end">
-                                            <img src="../img/ico_acopio_32px-dashboard.png" alt="icono-contenedor" />
+                                    <div class="row pt-5">
+                                        <div class="col-1 text-end">
+                                            <img id="img-submenu" src="../img/ico_acopio_32px-dashboard.png" alt="icono-contenedor" />
                                         </div>
-                                        <div id="titulo-menu" class="col text-start">
+                                        <div id="titulo-menu" class="col text-start ms-1">
                                             Acopio
                                         </div>
                                     </div>
                                     <section class="botones-menu">
-                                        <div class="row pt-3 mx-auto">
-                                            <div class="col-md-10 offset-md-3 text-start">
+                                        <div class="row pt-3">
+                                            <div class="col-md-10 offset-md-2 text-start">
                                                 <button type="button" name="opcion-registro">Registro contenedores</button>
                                             </div>
                                         </div>
 
-                                        <div class="row pt-3 mx-auto">
-                                            <div class="col-md-10 offset-md-3 text-start">
+                                        <div class="row pt-3">
+                                            <div class="col-md-10 offset-md-2 text-start">
                                                 <button type="button" name="opcion-listado">Listado contenedores</button>
                                             </div>
                                         </div>
@@ -109,18 +111,18 @@
                                     <!-- /Seccion de primer menu de Acopio y sub menus -->
 
                                     <!-- Seccion de segundo menu de Acopio y sub menus -->
-                                    <div class="row pt-5 mx-auto">
-                                        <div class="col-3 text-end">
-                                            <img src="../img/playlist_32px-dashboard.png" alt="icono-contenedor" />
+                                    <div class="row pt-5">
+                                        <div class="col-1 text-end">
+                                            <img id="img-submenu" src="../img/playlist_32px-dashboard.png" alt="icono-contenedor" />
                                         </div>
-                                        <div id="titulo-menu" class="col text-start">
+                                        <div id="titulo-menu" class="col text-start ms-2">
                                             Reportes
                                         </div>
                                     </div>
 
                                     <section class="botones-menu">
-                                        <div class="row pt-3 mx-auto">
-                                            <div class="col-md-10 offset-md-3 text-start">
+                                        <div class="row pt-3">
+                                            <div class="col-xs-12 col-md-10 offset-md-2 text-start">
                                                 <button type="button" name="opcion-reporte">Obtener reportes</button>
                                             </div>
                                         </div>
@@ -132,8 +134,19 @@
                         </div>
                     </section>
                 </div>
-                <div class="col bg-success pt-2 text-center rounded-4 me-2">
-                    2 of 2
+                <div class="col bg-success text-center">
+                    <!-- Contenedor de escritorio *interno -->
+                    <section>
+                        <div id="contenedor-escritorio" class="container-fluid mt-1 mb-1 rounded-4 bg-secondary">
+                            <div class="row">
+                                <div class="col">
+                                    1 de 1
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- /Contenedor de escritorio *interno -->
+
                 </div>
             </div>
         </div>

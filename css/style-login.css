@@ -30,7 +30,7 @@ body #password-forget:hover {
   text-decoration: none;
 }
 
-/* Establece el ancho del elemento en 50% para pantallas menores a 768px */
+/* Establece el ancho del elemento para pantallas menores a 768px */
 @media (max-width: 768px) {
   #box-imput {
     width: 85%;
@@ -39,7 +39,7 @@ body #password-forget:hover {
     width: 55% !important;
   }
 }
-/* Establece el ancho del elemento en 100% para pantallas mayores a 768px */
+/* Establece el ancho del elemento para pantallas mayores a 768px */
 @media (min-width: 769px) {
   #box-imput {
     width: 85%;
