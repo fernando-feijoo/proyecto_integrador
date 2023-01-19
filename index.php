@@ -8,10 +8,10 @@
     <link class="icon-inicio" rel="shortcut icon" href="./img/icon_credencial.svg">
     <title>Login Aso. Tierra Fertil</title>
     <!-- Importacion de librerias de Bootstrap 5.2 -->
-    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="./librery_code/css/bootstrap.min.css" />
     <!-- /Importacion de librerias de Bootstrap 5.2 -->
     <!-- Otras importaciones -->
-    <link rel="stylesheet" type="text/css" href="./css/style-login.css" />
+    <link rel="stylesheet" type="text/css" href="./owner_code/css/style-login.css" />
     <!-- /Otras importaciones -->
 
 </head>
@@ -63,11 +63,11 @@
     </div>
 
     <!-- Script Bootstrap 5.2 -->
-    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./librery_code/js/bootstrap.bundle.min.js"></script>
     <!-- /Script Bootstrap 5.2 -->
     <!-- Otros Script -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="./js/funciones-login.js"></script>
+    <script src="./owner_code/js/funciones-login.js"></script>
     <!-- /Otros Script -->
 
 </body>

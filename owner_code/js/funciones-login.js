@@ -41,7 +41,7 @@ $(document).ready(function () {
         $("#alert-error").addClass("d-none");
       }, 2500);
     } else {
-      window.location.href = "./php/dashboard.php";
+      window.location.href = "./mvc/vista/dashboard.php";
     }
   });
 });

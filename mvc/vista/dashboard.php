@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link class="icon-inicio" rel="shortcut icon" href="../img/globe-dashboard.svg">
+    <link class="icon-inicio" rel="shortcut icon" href="../../img/globe-dashboard.svg">
     <title>Dashboard Aso. Tierra Fértil</title>
     <!-- Importacion de librerias de Bootstrap 5.2 -->
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../librery_code/css/bootstrap.min.css" />
     <!-- /Importacion de librerias de Bootstrap 5.2 -->
     <!-- Otras importaciones -->
-    <link rel="stylesheet" type="text/css" href="../css/style-dashboard.css" />
+    <link rel="stylesheet" type="text/css" href="../../owner_code/css/style-dashboard.css" />
     <!-- /Otras importaciones -->
 </head>
 
@@ -20,7 +20,7 @@
         <div id="header" class="container-fluid pt-1 pb-1">
             <div class="row d-flex align-items-center mx-2">
                 <div class="col">
-                    <img class="img-fluid" src="../img/LogoTierraFertil_305px_75px-dashboard.png" alt="logo-empresa" />
+                    <img class="img-fluid" src="../../img/LogoTierraFertil_305px_75px-dashboard.png" alt="logo-empresa" />
                 </div>
                 <div class="col d-flex align-items-end flex-column">
 
@@ -32,7 +32,7 @@
 
                                     <li class="nav-item dropdown">
                                         <a id="texto-usuario" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <img src="../img/ProfileUser_32px-dashboard.png" alt="icono-usuario" /> grupo3
+                                            <img src="../../img/ProfileUser_32px-dashboard.png" alt="icono-usuario" /> grupo3
                                         </a>
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item text-center" href="#" role="switch">
@@ -41,7 +41,7 @@
                                                         <label class="form-check-label" for="flexSwitchCheckDefault">Modo Ocuro</label>
                                                     </div>
                                                 </a></li>
-                                            <li><a class="dropdown-item text-center" href="../index.php"><img src="../img/log_out_24px-dashboard.png" alt="icono-logout" style="margin-right: 12px;" />Cerrar Sesion</a></li>
+                                            <li><a class="dropdown-item text-center" href="../index.php"><img src="../../img/log_out_24px-dashboard.png" alt="icono-logout" style="margin-right: 12px;" />Cerrar Sesion</a></li>
                                         </ul>
                                     </li>
 
@@ -68,7 +68,7 @@
                                     
                                     <div id="contenedor-img" class="row pt-5 mx-auto">
                                         <div class="col text-end">
-                                            <img id="img-section" src="../img/clock_32px-dashboard.png" alt="icono-reloj" />
+                                            <img id="img-section" src="../../img/clock_32px-dashboard.png" alt="icono-reloj" />
                                         </div>
                                         <div class="col-7 text-start">
                                             <div id="clock"></div>
@@ -77,7 +77,7 @@
 
                                     <div id="contenedor-img" class="row pt-3 mx-auto pb-4">
                                         <div id="img-section" class="col text-end">
-                                            <img id="img-section" src="../img/calendar_32px-dashboard.png" alt="icono-calendario" />
+                                            <img id="img-section" src="../../img/calendar_32px-dashboard.png" alt="icono-calendario" />
                                         </div>
                                         <div class="col-7 text-start">
                                             <div id="date"></div>
@@ -90,7 +90,7 @@
                                     <!-- Seccion de primer menu de Acopio y sub menus -->
                                     <div class="row pt-5">
                                         <div class="col-1 text-end">
-                                            <img id="img-submenu" src="../img/ico_acopio_32px-dashboard.png" alt="icono-contenedor" />
+                                            <img id="img-submenu" src="../../img/ico_acopio_32px-dashboard.png" alt="icono-contenedor" />
                                         </div>
                                         <div id="titulo-menu" class="col text-start ms-1">
                                             Acopio
@@ -114,7 +114,7 @@
                                     <!-- Seccion de segundo menu de Acopio y sub menus -->
                                     <div class="row pt-5">
                                         <div class="col-1 text-end">
-                                            <img id="img-submenu" src="../img/playlist_32px-dashboard.png" alt="icono-contenedor" />
+                                            <img id="img-submenu" src="../../img/playlist_32px-dashboard.png" alt="icono-contenedor" />
                                         </div>
                                         <div id="titulo-menu" class="col text-start ms-2">
                                             Reportes
@@ -155,11 +155,11 @@
     </main>
 
     <!-- Script Bootstrap 5.2 -->
-    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../../librery_code/js/bootstrap.bundle.min.js"></script>
     <!-- /Script Bootstrap 5.2 -->
     <!-- Otros Script -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../js/funciones-dashboard.js"></script>
+    <script src="../../owner_code/js/funciones-dashboard.js"></script>
     <!-- /Otros Script -->
 </body>
 
