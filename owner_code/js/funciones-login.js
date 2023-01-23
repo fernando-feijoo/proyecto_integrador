@@ -30,19 +30,14 @@
 
 // Validacion de usurio y contraseña. Caso contrario muestra alerta y se oculata sola.
 $(document).ready(function () {
-  $("#boton-inicio").on("click", function (e) {
-    e.preventDefault();
-    var username = $("input[type='text']").val();
-    var password = $("input[type='password']").val();
+  $("#boton-inicio").on("click", function () {
+    // e.preventDefault();
 
-    if (username !== "grupo3" || password !== "3") {
       $("#alert-error").removeClass("d-none");
       setTimeout(function () {
         $("#alert-error").addClass("d-none");
-      }, 2500);
-    } else {
-      window.location.href = "./mvc/vista/dashboard.php";
-    }
+      }, 4500);
+      
   });
 });
 

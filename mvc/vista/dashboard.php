@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (empty($_SESSION["id"])) {
+    header("location: ./../../index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -32,7 +38,10 @@
 
                                     <li class="nav-item dropdown">
                                         <a id="texto-usuario" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <img src="../../img/ProfileUser_32px-dashboard.png" alt="icono-usuario" /> grupo3
+                                            <img src="../../img/ProfileUser_32px-dashboard.png" alt="icono-usuario" />
+                                            <?php
+                                            echo $_SESSION["nombre"];
+                                            ?>
                                         </a>
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item text-center" href="#" role="switch">
@@ -41,7 +50,7 @@
                                                         <label class="form-check-label" for="flexSwitchCheckDefault">Modo Ocuro</label>
                                                     </div>
                                                 </a></li>
-                                            <li><a class="dropdown-item text-center" href="../index.php"><img src="../../img/log_out_24px-dashboard.png" alt="icono-logout" style="margin-right: 12px;" />Cerrar Sesion</a></li>
+                                            <li><a class="dropdown-item text-center" href="./../controlador/controlador_cerrar_sesion.php"><img src="../../img/log_out_24px-dashboard.png" alt="icono-logout" style="margin-right: 12px;" />Cerrar Sesion</a></li>
                                         </ul>
                                     </li>
 
@@ -65,7 +74,7 @@
                             <div class="row mx-auto">
                                 <div class="col">
                                     <!-- Seccion de hora y fecha menu lateral -->
-                                    
+
                                     <div id="contenedor-img" class="row pt-5 mx-auto">
                                         <div class="col text-end">
                                             <img id="img-section" src="../../img/clock_32px-dashboard.png" alt="icono-reloj" />
