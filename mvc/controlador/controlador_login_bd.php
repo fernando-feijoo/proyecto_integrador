@@ -18,9 +18,6 @@ if (!empty($_POST["btningresar"])) {
         }
     } else {
         // echo "Campos vacios";
-        echo "<div class='alert alert-danger d-none mt-4 mb-4 text-center' id='alert-error' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
-                ¡Usuario o contraseña incorrectos, vifique!
-              </div>";
     }
 }
 ?>
