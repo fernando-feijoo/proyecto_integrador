@@ -9,15 +9,18 @@ if (!empty($_POST["btningresar"])) {
         if ($datos = $sql->fetch_object()) {
             $_SESSION["id"] = $datos->id;
             $_SESSION["nombre"] = $datos->nombre;
+            $_SESSION["rol"] = $datos->usuario;
 
             header("location: ./mvc/vista/dashboard.php");
         } else {
-            echo "<div class='alert alert-danger d-none mt-4 mb-4 text-center' id='alert-error' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
+            echo "<div class='alert alert-danger mt-4 mb-4 text-center' id='alert-error' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
         ¡Usuario o contraseña incorrectos, vifique!
     </div>";
         }
     } else {
-        // echo "Campos vacios";
+        echo "<div class='alert alert-warning mt-4 mb-4 text-center' id='alert-error' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
+        ¡Campos incompletos, por favor completar!
+    </div>";
     }
 }
 ?>

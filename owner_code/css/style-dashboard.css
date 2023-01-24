@@ -1,23 +1,13 @@
-/* main #escritorio-contenedor {
-  height: 90vh;
-} */
-
 body {
   background-color: rgb(247, 246, 246);
 }
 
-main {
-  min-height: 564px;
-  max-height: 800px;
-}
 section #menu-navegacion {
-  min-height: 560px;
-  max-height: 790px;
   background-color: rgb(204, 204, 204);
 }
-section #contenedor-escritorio-contenido {
-  min-height: 560px;
-  max-height: 790px;
+
+#escritorio-contenido{
+  background-color: rgb(230,230,230);
 }
 
 #texto-usuario {
@@ -39,6 +29,7 @@ section #contenedor-escritorio-contenido {
   font-size: 1.3em;
 }
 
+/*Solo es la linea de separacion entre horas-fecha y menú*/
 #caja-separacion {
   background-color: rgb(112, 39, 1);
   width: 100%;
@@ -51,24 +42,29 @@ section #contenedor-escritorio-contenido {
   font-size: 1.4rem;
 }
 
-.botones-menu button {
-  text-align: left;
+div #opcion-menu {
+  color: black;
+  text-decoration: none;
   font-size: 1.1rem;
   font-weight: 650;
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-  border-left: 15px solid !important;
-  border-color: transparent !important;
-
-  border: none;
-  background: none;
-  padding: 0;
 }
 
-.botones-menu button:hover {
-  background-color: rgb(223, 238, 255);
+#opcion-menu{
+  padding-left: 1rem;
 }
+
+#botones-menu{
+  height: 2.5rem;
+  width: 15rem;
+}
+
+#botones-menu:hover {
+  background-color: rgba(223, 238, 255, 0.692);
+  border-radius: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
 
 /* Establece el ancho del elemento para pantallas menores a: */
 @media (max-width: 1250px) {
@@ -88,15 +84,10 @@ section #contenedor-escritorio-contenido {
     width: 28px !important;
     height: 28px !important;
   }
-  .botones-menu button {
+  #botones-menu a{
     font-size: 85%;
-  }
-}
-/* Establece el ancho del elemento para pantallas mayores a: */
-@media (min-width: 1251px) {
-  #img-section {
-    width: 32px !important;
-    height: 32px !important;
+    height: 80%;
+    width: 80%;
   }
 }
 
@@ -112,14 +103,29 @@ section #contenedor-escritorio-contenido {
     width: 20px !important;
     height: 20px !important;
   }
-  #titulo-menu {
-    font-size: 80%;
-  }
+  #titulo-menu,
   #img-submenu {
+    font-size: 80%;
     width: 22px !important;
     height: 22px !important;
   }
-  .botones-menu button {
+  #botones-menu a{
     font-size: 70%;
+  }
+}
+
+/* Establece el ancho del elemento para pantallas mayores a: */
+@media (min-width: 1251px) {
+  #img-section {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  #contenedor-menu-navegacion,
+  #contenedor-escritorio-contenido {
+    height: 55.1rem;
+  }
+  #menu-navegacion,
+  #escritorio-contenido {
+    height: 54.5rem;
   }
 }

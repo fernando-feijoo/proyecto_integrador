@@ -56,7 +56,7 @@
             <div class="d-flex justify-content-around mt-2">
                 <div class="d-flex align-items-center gap-1">
                     <input class="form-check-input" type="checkbox" />
-                    <div class="pt-1" style="font-size: 0.9rem; color: rgb(255, 243, 74)">Recordarme</div>
+                    <div class="pt-1" style="font-size: 0.9rem; color: #99d98c">Recordarme</div>
                 </div>
                 <div class="pt-1">
                     <a id="password-forget" href="#" class="text-decoration-none text-info fw-semibold fst-italic">¿Olvidó su contraseña?</a>
