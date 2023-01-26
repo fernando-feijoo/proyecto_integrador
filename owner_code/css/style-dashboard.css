@@ -125,6 +125,16 @@ div #opcion-menu {
   #botones-menu a {
     font-size: 65%;
   }
+  
+  /*Para atributos de escritorio Garita-Grupo3*/
+  div #titulo-escritorio{
+    font-size: 75%;
+  }
+  #ico-home img {
+      width: 22px !important;
+      height: 22px !important;
+      margin-left: 0.5rem;
+  }
 }
 
 /* Establece el ancho del elemento para pantallas mayores a: */
