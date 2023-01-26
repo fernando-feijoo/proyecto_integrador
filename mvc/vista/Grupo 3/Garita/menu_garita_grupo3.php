@@ -40,7 +40,7 @@
                         <div class="row pt-3">
                             <div class="col-md-10 offset-md-2 text-start">
                                 <div id="botones-menu">
-                                    <a id="opcion-menu" href="#" name="opcion-registro">Registro llegada</a>
+                                    <a id="opcion-menu" href="./Grupo 3/Garita/op/datos_llegada_garita.php" name="opcion-registro">Registro llegada</a>
                                 </div>
                             </div>
                         </div>

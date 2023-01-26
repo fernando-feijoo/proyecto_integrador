@@ -1,6 +1,8 @@
-<div id="contenedor-escritorio-contenido" class="container-fluid col text-center pe-2 ps-0">
-    <!-- Contenedor de escritorio *interno -->
-    <section>
+<?php 
+    // require_once "./../../../dashboard.php";
+    require_once "./../escritorio_garita_grupo3.php";
+?>
+<section>
         <div id="escritorio-contenido" class="container-fluid mt-1 mb-1 rounded-4">
             <div class="row">
                 <!-- Titulo o encabezado del escritorio -->
@@ -112,5 +114,3 @@
         </div>
 </div>
 </section>
-<!-- /Contenedor de escritorio *interno -->
-</div>

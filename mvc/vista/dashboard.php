@@ -23,7 +23,7 @@ if (empty($_SESSION["id"])) {
 </head>
 
 <body>
-    <?php require "./layout/header.php"?>
+    <?php require_once "./../../layout/header.php" ?>
 
     <main>
         <div id="escritorio-contenedor" class="container-fluid pt-2">
@@ -31,11 +31,13 @@ if (empty($_SESSION["id"])) {
                 <!-- Contenedor de menu lateral -->
                 <?php
                 if ($_SESSION["rol"] == "grupo1") {
-                    require "./Grupo 1/menu_grupo1.php";
+                    require_once "./Grupo 1/menu_grupo1.php";
                 } elseif ($_SESSION["rol"] == "grupo2") {
-                    require "./Grupo 2/menu_grupo2.php";
+                    require_once "./Grupo 2/menu_grupo2.php";
                 } elseif ($_SESSION["rol"] == "grupo3") {
-                    require "./Grupo 3/menu_grupo3.php";
+                    require_once "./Grupo 3/menu_grupo3.php";
+                } elseif ($_SESSION["rol"] == "garita") {
+                    require_once "./Grupo 3/Garita/menu_garita_grupo3.php";
                 }
                 ?>
                 <!-- /Contenedor de menu lateral -->
@@ -43,14 +45,19 @@ if (empty($_SESSION["id"])) {
                 <!-- Contenedor de escritorio -->
                 <?php
                 if ($_SESSION["rol"] == "grupo1") {
-                    require "./Grupo 1/escritorio_grupo1.php";
+                    require_once "./Grupo 1/escritorio_grupo1.php";
                 } elseif ($_SESSION["rol"] == "grupo2") {
-                    require "./Grupo 2/escritorio_grupo2.php";
+                    require_once "./Grupo 2/escritorio_grupo2.php";
                 } elseif ($_SESSION["rol"] == "grupo3") {
-                    require "./Grupo 3/escritorio_grupo3.php";
+                    require_once "./Grupo 3/escritorio_grupo3.php";
+                } elseif ($_SESSION["rol"] == "garita") {
+                    require_once "./Grupo 3/Garita/escritorio_garita_grupo3.php";
                 }
                 ?>
                 <!-- /Contenedor de escritorio -->
+
+                <!-- /Contenedor de escritorio *interno -->
+            </div>
 
             </div>
         </div>
