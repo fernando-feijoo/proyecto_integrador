@@ -18,6 +18,7 @@ if (empty($_SESSION["id"])) {
     <!-- /Importacion de librerias de Bootstrap 5.2 -->
     <!-- Otras importaciones -->
     <link rel="stylesheet" type="text/css" href="../../owner_code/css/style-dashboard.css" />
+    <link rel="stylesheet" type="text/css" href="../../owner_code/css/Grupo 3/style-garita.css" />
     <!-- /Otras importaciones -->
 </head>
 
@@ -75,6 +76,8 @@ if (empty($_SESSION["id"])) {
                     include "./Grupo 2/menu_grupo2.php";
                 } elseif ($_SESSION["rol"] == "grupo3") {
                     include "./Grupo 3/menu_grupo3.php";
+                } elseif ($_SESSION["rol"] == "garita") {
+                    include "./Grupo 3/menu_garita_grupo3.php";
                 }
                 ?>
                 <!-- /Contenedor de menu lateral -->
@@ -87,6 +90,8 @@ if (empty($_SESSION["id"])) {
                     include "./Grupo 2/escritorio_grupo2.php";
                 } elseif ($_SESSION["rol"] == "grupo3") {
                     include "./Grupo 3/escritorio_grupo3.php";
+                } elseif ($_SESSION["rol"] == "garita") {
+                    include "./Grupo 3/escritorio_garita_grupo3.php";
                 }
                 ?>
                 <!-- /Contenedor de escritorio -->
