@@ -18,6 +18,7 @@ if (empty($_SESSION["id"])) {
     <!-- /Importacion de librerias de Bootstrap 5.2 -->
     <!-- Otras importaciones -->
     <link rel="stylesheet" type="text/css" href="../../owner_code/css/style-dashboard.css" />
+    <link rel="stylesheet" type="text/css" href="../../owner_code/css/Grupo 3/style-garita.css" />
     <!-- /Otras importaciones -->
 </head>
 
