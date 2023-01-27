@@ -162,4 +162,7 @@ div #opcion-menu {
   #escritorio-contenido {
     height: 54.5rem;
   }
+  #ico-home{
+    margin-left: 15px;
+  }
 }

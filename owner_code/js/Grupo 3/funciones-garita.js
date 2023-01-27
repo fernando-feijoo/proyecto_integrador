@@ -11,7 +11,7 @@ window.onload = function () {
   document.getElementById("fechaActual").value = year + "-" + mes + "-" + dia;
   document
     .getElementById("semanaActual")
-    .setAttribute("value", year + "-W" + week.toString().padStart(2, "0"));
+    .setAttribute("value", week.toString().padStart(2, "0"));
 
   var fecha = new Date(); //Fecha actual
   var hora = fecha.getHours(); //obteniendo hora
