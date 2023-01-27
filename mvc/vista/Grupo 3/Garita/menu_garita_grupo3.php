@@ -1,3 +1,7 @@
+<?php
+// require_once "./../../layout/header.php";
+
+?>
 <div id="contenedor-menu-navegacion" class="col-5 col-sm-4 col-md-3 col-lg-3 col-xl-3 text-center">
     <section>
         <div id="menu-navegacion" class="container-fluid mt-1 mb-1 rounded-4 text-center">
@@ -83,3 +87,6 @@
         </div>
     </section>
 </div>
+<?php
+// require_once "./../../layout/footer.php";
+?>
