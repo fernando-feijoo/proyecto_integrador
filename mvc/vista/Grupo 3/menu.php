@@ -5,7 +5,7 @@
                 <div class="col">
                     <!-- Seccion de hora y fecha menu lateral -->
 
-                    <div id="contenedor-img" class="row pt-5 mx-auto">
+                    <div id="contenedor-img" class="row pt-5 mx-auto top-menu">
                         <div class="col text-end">
                             <img id="img-section" src="../../img/clock_32px-dashboard.png" alt="icono-reloj" />
                         </div>
