@@ -162,4 +162,21 @@ div #opcion-menu {
   #escritorio-contenido {
     height: 54.5rem;
   }
+
+  #caja-separacion-pestañas {
+    background-color: rgb(112, 39, 1);
+    width: 100%;
+    height: 1px;
+    border-radius: 8px;
+  }
+  #separacion-pequeña{
+    background-color: black;
+    width: 180px;
+    height: 1px;
+  }
+  #linea-separacion-grande{
+    background-color: black;
+    width: 90%;
+    height: 1px;
+  }
 }
