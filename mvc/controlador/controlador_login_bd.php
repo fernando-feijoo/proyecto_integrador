@@ -14,7 +14,7 @@ if (!empty($_POST["btningresar"])) {
             header("location: ./mvc/vista/dashboard.php");
         } else {
             echo "<div class='alert alert-danger mt-4 mb-4 text-center' id='alert-error' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
-        ¡Usuario o contraseña incorrectos, vifique!
+        ¡Usuario o contraseña incorrectos, verifique!
     </div>";
         }
     } else {

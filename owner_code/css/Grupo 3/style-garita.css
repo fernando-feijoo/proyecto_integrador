@@ -1,4 +1,6 @@
-#titulo-escritorio {
+#titulo-escritorio,
+#titulo-escritorio-listado,
+#titulo-escritorio-reportes {
   margin-top: 24px;
   margin-bottom: 20px;
   font-weight: 650;
@@ -15,6 +17,14 @@
 
 /* Establece el ancho del elemento para pantallas menores a: */
 @media (max-width: 1367px) {
+  #titulo-escritorio {
+    margin-top: 1px !important;
+  }
+  #titulo-escritorio-listado,
+  #titulo-escritorio-reportes {
+    margin-top: 30px;
+    margin-bottom: 27px;
+  }
 }
 
 /* Establece el ancho del elemento para pantallas menores a: (768)*/
@@ -23,17 +33,17 @@
 
 /* Establece el ancho del elemento para pantallas mayores a: */
 @media (min-width: 1368px) {
-  #ico-home{
+  #ico-home {
     margin-left: 10px;
   }
-  #caja-separacion-escritorio{
+  #caja-separacion-escritorio {
     margin-top: 11px;
   }
   #inicio-datos,
   #inicio-formulario {
     margin-top: 50px !important;
   }
-  #boton-guardar-garita{
+  #boton-guardar-garita {
     margin-right: 70px;
     margin-top: 100px;
   }

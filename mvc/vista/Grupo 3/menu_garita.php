@@ -5,7 +5,7 @@
                 <div class="col">
                     <!-- Seccion de hora y fecha menu lateral -->
 
-                    <div id="contenedor-img" class="row pt-5 mx-auto">
+                    <div id="contenedor-img" class="row pt-5 mx-auto top-menu">
                         <div class="col text-end">
                             <img id="img-section" src="../../img/clock_32px-dashboard.png" alt="icono-reloj" />
                         </div>
@@ -48,7 +48,7 @@
                         <div class="row pt-3">
                             <div class="col-md-10 offset-md-2 text-start">
                                 <div id="botones-menu">
-                                    <a id="opcion-menu" href="#" name="opcion-listado">Listado datos</a>
+                                    <a id="opcion-menu" href="./vista_listado_garita_g3.php" name="opcion-listado">Listado datos</a>
                                 </div>
 
                             </div>
@@ -71,7 +71,7 @@
                         <div class="row pt-3">
                             <div class="col-xs-12 col-md-10 offset-md-2 text-start">
                                 <div id="botones-menu">
-                                    <a id="opcion-menu" href="#" name="opcion-reporte">Obtener reporte</a>
+                                    <a id="opcion-menu" href="./vista_reportes_garita_g3.php" name="opcion-reporte">Obtener reporte</a>
                                 </div>
                             </div>
                         </div>

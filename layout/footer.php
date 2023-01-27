@@ -1,6 +1,6 @@
 <!-- /Contenedor de escritorio -->
 </div>
-    </div>
+</div>
 </main>
 <footer>
     <!-- Script Bootstrap 5.2 -->

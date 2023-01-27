@@ -13,17 +13,16 @@ if ($_SESSION["rol"] == "grupo1") {
 ?>
 <div id="contenedor-escritorio-contenido" class="container-fluid col text-center pe-2 ps-0">
     <!-- Contenedor de escritorio *interno -->
-    <div id="escritorio-contenido" class="container-fluid mt-1 mb-1 rounded-4">
-        <div class="row">
+    <div id="escritorio-contenido" class="container-fluid mt-1 mb-1 rounded-4" style="background-image: url('./../../img/FondoHome 954px_598px.png'); background-size: cover; background-position: center;">
+        <!-- <div class="d-flex flex-row justify-content-center"> -->
             <!-- Titulo o encabezado del escritorio -->
-            <div class="col-10 me-3 ms-3 mt-4">
-                <div id="titulo-escritorio">
-                    <br><br><br>HOLA<br>
-                    BIENVENIDO
-                </div>
-            </div>
+            <!-- <div class="col-10 me-3 ms-3 mt-4"> -->
+                <!-- <div id="titulo-escritorio"> -->
+                    <!-- <img class="img-fluid" src="./../../img/FondoHome 954px_598px.png" alt="Fondo de Bienvenida"> -->
+                <!-- </div> -->
+            <!-- </div> -->
             <!-- /Titulo o encabezado del escritorio -->
-        </div>
+        <!-- </div> -->
     </div>
 </div>
 <?php
