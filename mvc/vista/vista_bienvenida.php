@@ -1,6 +1,15 @@
 <?php
 include_once "./../../layout/header.php";
-include_once "./Grupo 3/Garita/menu_garita_grupo3.php";
+if ($_SESSION["rol"] == "grupo1") {
+    include_once "./Grupo 1/menu.php";
+} elseif ($_SESSION["rol"] == "grupo2") {
+    include_once "./Grupo 2/menu.php";
+} elseif ($_SESSION["rol"] == "grupo3") {
+    include_once "./Grupo 3/menu.php";
+} elseif ($_SESSION["rol"] == "garita") {
+    include_once "./Grupo 3/menu_garita.php";
+}
+
 ?>
 <div id="contenedor-escritorio-contenido" class="container-fluid col text-center pe-2 ps-0">
     <!-- Contenedor de escritorio *interno -->

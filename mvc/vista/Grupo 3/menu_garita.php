@@ -1,7 +1,3 @@
-<?php
-// require_once "./../../layout/header.php";
-
-?>
 <div id="contenedor-menu-navegacion" class="col-5 col-sm-4 col-md-3 col-lg-3 col-xl-3 text-center">
     <section>
         <div id="menu-navegacion" class="container-fluid mt-1 mb-1 rounded-4 text-center">
@@ -44,7 +40,7 @@
                         <div class="row pt-3">
                             <div class="col-md-10 offset-md-2 text-start">
                                 <div id="botones-menu">
-                                    <a id="opcion-menu" href="./Grupo 3/Garita/op/datos_llegada_garita.php" name="opcion-registro">Registro llegada</a>
+                                    <a id="opcion-menu" href="./vista_llegada_g3.php" name="opcion-registro">Registro llegada</a>
                                 </div>
                             </div>
                         </div>
@@ -87,6 +83,3 @@
         </div>
     </section>
 </div>
-<?php
-// require_once "./../../layout/footer.php";
-?>

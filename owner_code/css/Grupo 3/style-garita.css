@@ -12,3 +12,29 @@
   height: 5px;
   border-radius: 8px;
 }
+
+/* Establece el ancho del elemento para pantallas menores a: */
+@media (max-width: 1367px) {
+}
+
+/* Establece el ancho del elemento para pantallas menores a: (768)*/
+@media (max-width: 1100px) {
+}
+
+/* Establece el ancho del elemento para pantallas mayores a: */
+@media (min-width: 1368px) {
+  #ico-home{
+    margin-left: 10px;
+  }
+  #caja-separacion-escritorio{
+    margin-top: 11px;
+  }
+  #inicio-datos,
+  #inicio-formulario {
+    margin-top: 50px !important;
+  }
+  #boton-guardar-garita{
+    margin-right: 70px;
+    margin-top: 100px;
+  }
+}
