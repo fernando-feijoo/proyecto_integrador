@@ -11,7 +11,7 @@ window.onload = function () {
   document.getElementById("fechaActual").value = year + "-" + mes + "-" + dia;
   document
     .getElementById("semanaActual")
-    .setAttribute("value", year + "-W" + week.toString().padStart(2, "0"));
+    .setAttribute("value", week.toString().padStart(2, "0"));
 
   var fecha = new Date(); //Fecha actual
   var hora = fecha.getHours(); //obteniendo hora
@@ -24,3 +24,20 @@ window.onload = function () {
     .getElementById("horaLlegada")
     .setAttribute("value", hora + ":" + minutos);
 };
+
+// Modelo queda funcional haciendo consultas dinamicas con ajax
+$(document).ready(function(){
+  $("#inputGroupSelect03").change(function(){
+      var id = $(this).val(); // obtenemos el valor seleccionado
+
+      $.ajax({
+          url: "./../modelo/Grupo 3/ajax/consulta_chofer_cedula.php", // url del archivo PHP
+          method: "post",
+          data: { id: id }, // enviamos el id seleccionado
+          success: function(response){
+              // actualizamos el valor del campo "C.I"
+              $("input[name='cedula']").val(response);
+          }
+      });
+  });
+});
