@@ -1,5 +1,5 @@
 <?php
-include_once ("./../modelo/conexion_bd.php");
+include ("./../../conexion_bd.php");
 // la función recibe el id del chofer seleccionado
 function obtener_datos_chofer($id) {
     // realizamos la consulta a la base de datos para obtener los datos del chofer
