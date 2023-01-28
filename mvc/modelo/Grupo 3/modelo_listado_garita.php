@@ -17,6 +17,8 @@ FROM
 registro_llegada AS dll
 INNER JOIN tipo_cajas tc ON tc.id = dll.id_tipo_caja
 INNER JOIN chofer ch ON ch.id = dll.id_chofer
+WHERE
+estado = 'ACTIVO'
 ORDER BY
 dll.fecha_inspeccion DESC;");
 ?>

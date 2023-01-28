@@ -50,7 +50,7 @@ include_once "./Grupo 3/menu_garita.php";
                         <td><?= $datos->tipo_de_caja ?></td>
                         <td><?= $datos->tipo_de_contenedor ?></td>
                         <td>
-                            <a href="" class="btn btn-small btn-warning" style="width: 70px;"><i class="fa-regular fa-pen-to-square"></i></a>
+                            <a id="boton-editar-garita" href="./vista_llegada_g3.php?id=<?= $datos->id?>" class="btn btn-small btn-warning" style="width: 70px;"><i class="fa-regular fa-pen-to-square"></i></a>
                             <a href="" class="btn btn-small btn-danger" style="width: 70px;"><i class="fa-regular fa-trash-can"></i></a>
                         </td>
                     </tr>

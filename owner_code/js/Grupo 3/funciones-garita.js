@@ -25,47 +25,76 @@
 // };
 
 // Modelo queda funcional haciendo consultas dinamicas con ajax
-$(document).ready(function(){
-  $("#inputGroupSelect03").change(function(){
-      var id = $(this).val(); // obtenemos el valor seleccionado
+$(document).ready(function () {
+  $("#inputGroupSelect03").change(function () {
+    var id = $(this).val(); // obtenemos el valor seleccionado
 
-      $.ajax({
-          url: "./../modelo/Grupo 3/ajax/consulta_chofer_cedula.php", // url del archivo PHP
-          method: "post",
-          data: { id: id }, // enviamos el id seleccionado
-          success: function(response){
-              // actualizamos el valor del campo "C.I"
-              $("input[name='cedula']").val(response);
-          }
-      });
+    $.ajax({
+      url: "./../modelo/Grupo 3/ajax/consulta_chofer_cedula.php", // url del archivo PHP
+      method: "post",
+      data: { id: id }, // enviamos el id seleccionado
+      success: function (response) {
+        // actualizamos el valor del campo "C.I"
+        $("input[name='cedula']").val(response);
+      },
+    });
   });
 });
 
 // Modelo queda funcional haciendo consultas dinamicas con ajax
-$(document).ready(function(){
-  $("#inputGroupSelect02").change(function(){
-      var id = $(this).val(); // obtenemos el valor seleccionado
+$(document).ready(function () {
+  $("#inputGroupSelect02").change(function () {
+    var id = $(this).val(); // obtenemos el valor seleccionado
 
-      $.ajax({
-          url: "./../modelo/Grupo 3/ajax/consulta_marca_vehiculo.php", // url del archivo PHP
-          method: "post",
-          data: { id: id }, // enviamos el id seleccionado
-          success: function(response){
-              // actualizamos el valor del campo "C.I"
-              $("input[name='marca']").val(response);
-          }
-      });
+    $.ajax({
+      url: "./../modelo/Grupo 3/ajax/consulta_marca_vehiculo.php", // url del archivo PHP
+      method: "post",
+      data: { id: id }, // enviamos el id seleccionado
+      success: function (response) {
+        // actualizamos el valor del campo "C.I"
+        $("input[name='marca']").val(response);
+      },
+    });
   });
 });
 
-setTimeout(function(){
-    document.getElementById('alerta-guardado-garita').style.display = 'none';
+// document.addEventListener("DOMContentLoaded", function () {
+//     //Guardar la ruta actual
+//     let rutaActual = window.location.href;
+  
+//     let botonGuardarGarita = document.getElementById("boton-guardar-garita");
+//     let botonActualizarGarita = document.getElementById(
+//       "boton-actualizar-garita"
+//     );
+  
+//     //Comprobar la ruta actual
+//     if (rutaActual === "/vista_llegada_g3.php") {
+//       botonGuardarGarita.classList.remove("d-none");
+//       botonActualizarGarita.classList.add("d-none");
+//     } else if (rutaActual === "./vista_listado_garita_g3.php") {
+//       botonGuardarGarita.classList.add("d-none");
+//       botonActualizarGarita.classList.remove("d-none");
+//     }
+//   });
+
+// document.getElementById("registro-llegada").addEventListener("click", function () {
+//     document.getElementById("boton-guardar-garita").classList.remove("d-none");
+//     document.getElementById("boton-actualizar-garita").classList.add("d-none");
+//   });
+
+// document.getElementById("boton-editar-garita").addEventListener("click", function () {
+//   document.getElementById("boton-guardar-garita").classList.add("d-none");
+//   document.getElementById("boton-actualizar-garita").classList.remove("d-none");
+// });
+
+setTimeout(function () {
+  document.getElementById("alerta-guardado-garita").style.display = "none";
 }, 3000);
 
-setTimeout(function(){
-    document.getElementById('error-guardado-garita').style.display = 'none';
+setTimeout(function () {
+  document.getElementById("error-guardado-garita").style.display = "none";
 }, 3000);
 
-setTimeout(function(){
-    document.getElementById('registro-incompleto').style.display = 'none';
+setTimeout(function () {
+  document.getElementById("registro-incompleto").style.display = "none";
 }, 3000);

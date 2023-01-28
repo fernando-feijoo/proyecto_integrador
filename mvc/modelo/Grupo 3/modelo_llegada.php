@@ -23,4 +23,10 @@ function datos_lista_chofer()
     $sql = $conexion->query("SELECT id, cedula, CONCAT(nombre,' ',apellido) AS nombres FROM chofer;");
     return $sql;
 }
+
+function datos_cargar_datos(){
+    $id = $_GET["id"];
+    $conexion = conexionBd();
+    $sql = $conexion->query("SELECT * FROM registro_llegada WHERE id = $id;");
+}
 ?>

@@ -24,7 +24,7 @@ if (!empty($_POST["btn-guardar"])) {
             VALUES 
             ('$fecha_insp','$semana','$fecha_hora_salida','$hora_llegada','$cupo','$contenedor','$nombre_acopio','$candados_llegada','$tipo_contenedor_eleccion','$id_tipo_caja','$id_vehiculo','$id_chofer');");
 
-        if ($sql==1) {
+        if ($sql == 1) {
             echo "<div class='alert alert-success text-center' id='alerta-guardado-garita' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
         ¡Datos guardados correctamente!
     </div>";
@@ -33,9 +33,22 @@ if (!empty($_POST["btn-guardar"])) {
         ¡Error al guardar los datos, vuelva a intentar y recargue la pagina!
     </div>";
         }
-    }else {
+    } else {
+        $_SESSION["fecha_inspeccion_gg3"] = $_POST["fecha_inspeccion_gg3"];
+        $_SESSION["semana_gg3"] = $_POST["semana_gg3"];
+        $_SESSION["fecha_hora_salida_gg3"] = $_POST["fecha_hora_salida_gg3"];
+        $_SESSION["hora_llegada_gg3"] = $_POST["hora_llegada_gg3"];
+        $_SESSION["cupo_gg3"] = $_POST["cupo_gg3"];
+        $_SESSION["contenedor_gg3"] = strtoupper($_POST["contenedor_gg3"]);
+        $_SESSION["nombre_copio_gg3"] = strtoupper($_POST["nombre_copio_gg3"]);
+        $_SESSION["candados_llegada_gg3"] = strtoupper($_POST["candados_llegada_gg3"]);
+        $_SESSION["tipo_caja_gg3"] = $_POST["tipo_caja_gg3"];
+        $_SESSION["placa_gg3"] = $_POST["placa_gg3"];
+        $_SESSION["chofer_gg3"] = $_POST["chofer_gg3"];
+
         echo "<div class='alert alert-danger text-center' id='registro-incompleto' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
         ¡Registre todos los datos necesarios, verifique!
     </div>";
     }
 }
+?>

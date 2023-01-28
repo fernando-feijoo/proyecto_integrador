@@ -133,7 +133,7 @@ include_once "./Grupo 3/menu_garita.php";
                 <div class="d-flex flex-row justify-content-end ms-auto me-5 mb-1 mt-3">
                     <div class="p-2">
                         <button id="boton-guardar-garita" class="btn btn-outline-primary" type="submit" name="btn-guardar" value="guardado">Guardar</button>
-                        <button id="boton-actualizar-garita" class="btn btn-outline-info d-none" type="submit" name="btn-actualizar" value="actualizado">Actualizar</button>
+                        <!-- <button id="boton-actualizar-garita" class="btn btn-outline-info" type="submit" name="btn-actualizar" value="actualizado">Actualizar</button> -->
                     </div>
                 </div>
             </form>
