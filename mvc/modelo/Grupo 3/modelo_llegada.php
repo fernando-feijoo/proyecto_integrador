@@ -24,9 +24,16 @@ function datos_lista_chofer()
     return $sql;
 }
 
-function datos_cargar_datos(){
-    $id = $_GET["id"];
-    $conexion = conexionBd();
-    $sql = $conexion->query("SELECT * FROM registro_llegada WHERE id = $id;");
+function cargar_datos()
+{
+    if (!empty($_GET["id"])) {
+        $id = $_GET["id"];
+        $conexion = conexionBd();
+        $sql = $conexion->query("SELECT * FROM registro_llegada WHERE id = $id;");
+        return $sql;
+    } else {
+        $validacion = false;
+        return $validacion;
+    }
 }
 ?>

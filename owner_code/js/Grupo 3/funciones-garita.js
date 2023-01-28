@@ -26,37 +26,58 @@
 
 // Modelo queda funcional haciendo consultas dinamicas con ajax
 $(document).ready(function () {
+  var id = $("#inputGroupSelect03").val(); // obtenemos el valor seleccionado
+  $.ajax({
+    url: "./../modelo/Grupo 3/ajax/consulta_chofer_cedula.php", // url del archivo PHP
+    method: "post",
+    data: { id: id }, // enviamos el id seleccionado
+    success: function (response) {
+      // actualizamos el valor del campo "C.I"
+      $("input[name='cedula']").val(response);
+    },
+  });
   $("#inputGroupSelect03").change(function () {
-    var id = $(this).val(); // obtenemos el valor seleccionado
+  var id = $(this).val(); // obtenemos el valor seleccionado
 
-    $.ajax({
-      url: "./../modelo/Grupo 3/ajax/consulta_chofer_cedula.php", // url del archivo PHP
-      method: "post",
-      data: { id: id }, // enviamos el id seleccionado
-      success: function (response) {
-        // actualizamos el valor del campo "C.I"
-        $("input[name='cedula']").val(response);
-      },
-    });
+  $.ajax({
+    url: "./../modelo/Grupo 3/ajax/consulta_chofer_cedula.php", // url del archivo PHP
+    method: "post",
+    data: { id: id }, // enviamos el id seleccionado
+    success: function (response) {
+      // actualizamos el valor del campo "C.I"
+      $("input[name='cedula']").val(response);
+    },
   });
 });
+});
 
-// Modelo queda funcional haciendo consultas dinamicas con ajax
+
 $(document).ready(function () {
+  var id = $("#inputGroupSelect02").val(); // obtenemos el valor seleccionado
+  $.ajax({
+    url: "./../modelo/Grupo 3/ajax/consulta_marca_vehiculo.php", // url del archivo PHP
+    method: "post",
+    data: { id: id }, // enviamos el id seleccionado
+    success: function (response) {
+      // actualizamos el valor del campo "C.I"
+      $("input[name='marca']").val(response);
+    },
+  });
   $("#inputGroupSelect02").change(function () {
-    var id = $(this).val(); // obtenemos el valor seleccionado
+  var id = $(this).val(); // obtenemos el valor seleccionado
 
-    $.ajax({
-      url: "./../modelo/Grupo 3/ajax/consulta_marca_vehiculo.php", // url del archivo PHP
-      method: "post",
-      data: { id: id }, // enviamos el id seleccionado
-      success: function (response) {
-        // actualizamos el valor del campo "C.I"
-        $("input[name='marca']").val(response);
-      },
-    });
+  $.ajax({
+    url: "./../modelo/Grupo 3/ajax/consulta_marca_vehiculo.php", // url del archivo PHP
+    method: "post",
+    data: { id: id }, // enviamos el id seleccionado
+    success: function (response) {
+      // actualizamos el valor del campo "C.I"
+      $("input[name='marca']").val(response);
+    },
   });
 });
+});
+
 
 // document.addEventListener("DOMContentLoaded", function () {
 //     //Guardar la ruta actual
