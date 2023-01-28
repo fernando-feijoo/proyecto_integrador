@@ -23,30 +23,32 @@ include_once "./Grupo 3/menu_garita.php";
             <thead class="bg-primary bg-gradient bg-opacity-75">
                 <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">NOMBRE</th>
-                    <th scope="col">APELLIDO</th>
-                    <th scope="col">CEDULA</th>
-                    <th scope="col">CIUDAD</th>
-                    <th scope="col">DIRECCION</th>
-                    <th scope="col">TELEFONO</th>
+                    <th scope="col">FECHA INSPECCION</th>
+                    <th scope="col">SEMANA</th>
+                    <th scope="col">HORA LLEGADA</th>
+                    <th scope="col">CONTENEDOR</th>
+                    <th scope="col">CHOFER</th>
+                    <th scope="col">ACOPIO</th>
+                    <th scope="col">TP CAJA</th>
+                    <th scope="col">TP CONTENEDOR</th>
                     <th scope="col" style="width: 160px;"></th>
                 </tr>
             </thead>
             <tbody class="table-group-divider">
                 <?php
-                include_once "./../modelo/conexion_bd.php";
-                $conexion = conexionBd();
-                $sql = $conexion->query("SELECT id, cedula, nombre, apellido, ciudad, direccion, telefono FROM chofer;");
+                include_once ("./../modelo/Grupo 3/modelo_listado_garita.php");
                 while ($datos = $sql->fetch_object()) {
                 ?>
                     <tr>
-                        <td><?= $datos->id?></td>
-                        <td><?= $datos->nombre?></td>
-                        <td><?= $datos->apellido?></td>
-                        <td><?= $datos->cedula?></td>
-                        <td><?= $datos->ciudad?></td>
-                        <td><?= $datos->direccion?></td>
-                        <td><?= $datos->telefono?></td>
+                        <td><?= $datos->id ?></td>
+                        <td><?= $datos->fecha_inspeccion ?></td>
+                        <td><?= $datos->semana ?></td>
+                        <td><?= $datos->hora_llegada ?></td>
+                        <td><?= $datos->contenedor ?></td>
+                        <td><?= $datos->chofer_nombres ?></td>
+                        <td><?= $datos->nombre_acopio ?></td>
+                        <td><?= $datos->tipo_de_caja ?></td>
+                        <td><?= $datos->tipo_de_contenedor ?></td>
                         <td>
                             <a href="" class="btn btn-small btn-warning" style="width: 70px;"><i class="fa-regular fa-pen-to-square"></i></a>
                             <a href="" class="btn btn-small btn-danger" style="width: 70px;"><i class="fa-regular fa-trash-can"></i></a>

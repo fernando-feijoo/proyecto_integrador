@@ -22,6 +22,7 @@ include_once "./Grupo 3/menu_garita.php";
             <div id="caja-separacion-escritorio" class="mx-auto"></div>
 
             <?php
+            include_once("./../modelo/conexion_bd.php");
             include_once "./../controlador/Grupo 3/registro_llegada.php";
             include("./../modelo/Grupo 3/modelo_llegada.php");
             ?>
@@ -99,7 +100,7 @@ include_once "./Grupo 3/menu_garita.php";
                         </select>
                     </div>
                     <div class="p-2">MARCA:
-                        <input type="text" placeholder="" style="width: 120px; height: 36px;" disabled value="">
+                        <input type="text" placeholder="" style="width: 120px; height: 36px;" disabled name="marca" value="">
                     </div>
                     <div class="input-group d-flex align-items-center" style="width: 270px;" name="">
                         CHOFER:
