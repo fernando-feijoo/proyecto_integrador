@@ -5,22 +5,41 @@ include_once("./../modelo/conexion_bd.php");
 
 function datos_lista_caja()
 {
-    $conexion = conexionBd();    
+    $conexion = conexionBd();
     $sql = $conexion->query("SELECT * FROM tipo_cajas;");
     return $sql;
 }
 
 function datos_lista_vehiculo()
 {
-    $conexion = conexionBd(); 
+    $conexion = conexionBd();
     $sql = $conexion->query("SELECT id, placa, marca FROM vehiculo;");
     return $sql;
 }
 
 function datos_lista_chofer()
 {
-    $conexion = conexionBd(); 
+    $conexion = conexionBd();
     $sql = $conexion->query("SELECT id, cedula, CONCAT(nombre,' ',apellido) AS nombres FROM chofer;");
     return $sql;
 }
+
+// function obtener_datos_chofer($id)
+// {
+//     $conexion = conexionBd();
+//     $sql = $conexion->query("SELECT id, cedula FROM chofer;");
+//     $resultados = $sql->fetch_all(MYSQLI_ASSOC);
+
+//     $busquedaId = $id;
+//     $cedula = "";
+
+//     for ($i = 0; $i < count($resultados); $i++) {
+//         if ($resultados[$i]['id'] == $busquedaId) {
+//             $cedula = $resultados[$i]['cedula'];
+//             break;
+//         }
+//     }
+
+//     return $cedula;
+// }
 ?>

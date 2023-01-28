@@ -86,7 +86,7 @@ include_once "./Grupo 3/menu_garita.php";
                 <div class="d-flex flex-row justify-content-center mb-3">
                     <div class="p-2 input-group d-flex align-items-center" style="width: 270px;" name="">
                         PLACA:
-                        <select class="ms-1 form-select" id="inputGroupSelect01" name="placa_gg3">
+                        <select class="ms-1 form-select" id="inputGroupSelect02" name="placa_gg3">
                             <option selected>Seleccione</option>
                             <?php
                             $sql = datos_lista_vehiculo();
@@ -103,7 +103,7 @@ include_once "./Grupo 3/menu_garita.php";
                     </div>
                     <div class="input-group d-flex align-items-center" style="width: 270px;" name="">
                         CHOFER:
-                        <select class="ms-1 form-select" id="inputGroupSelect01" name="chofer_gg3">
+                        <select class="ms-1 form-select" id="inputGroupSelect03" name="chofer_gg3">
                             <option selected>Seleccione</option>
                             <?php
                             $sql = datos_lista_chofer();
@@ -116,7 +116,7 @@ include_once "./Grupo 3/menu_garita.php";
                         </select>
                     </div>
                     <div class="p-2">C.I:
-                        <input type="number" placeholder="" disabled style="height: 36px;" name="">
+                        <input type="number" placeholder="" disabled style="height: 36px;" name="cedula" value="">
                     </div>
                 </div>
 

@@ -24,3 +24,19 @@ window.onload = function () {
     .getElementById("horaLlegada")
     .setAttribute("value", hora + ":" + minutos);
 };
+
+$(document).ready(function(){
+  $("#inputGroupSelect03").change(function(){
+      var id = $(this).val(); // obtenemos el valor seleccionado
+
+      $.ajax({
+          url: "chofer.php", // url del archivo PHP
+          method: "post",
+          data: { id: id }, // enviamos el id seleccionado
+          success: function(response){
+              // actualizamos el valor del campo "C.I"
+              $("input[name='cedula']").val(response);
+          }
+      });
+  });
+});
