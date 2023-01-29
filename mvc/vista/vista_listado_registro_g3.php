@@ -48,6 +48,11 @@ include_once "./Grupo 3/menu.php";
     include("./vista_higiene_contenedor_g3.php")
     ?>
   </div>
+  <div class="tab-pane fade" id="nav-despacho" role="tabpanel" aria-labelledby="nav-contact-tab">
+  <?php
+    include("./vista_despacho_g3.php")
+    ?>
+  </div>
 </div> 
  
 
