@@ -18,7 +18,7 @@ if (!empty($_POST["btningresar"])) {
     </div>";
         }
     } else {
-        echo "<div class='alert alert-warning mt-4 mb-4 text-center' id='alert-error' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
+        echo "<div class='alert alert-warning mt-4 mb-4 text-center' id='alert-complete' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
         ¡Campos incompletos, por favor completar!
     </div>";
     }

@@ -19,3 +19,11 @@ $(document).ready(function () {
     }
   });
 });
+
+setTimeout(function(){
+  document.getElementById('alert-error').style.display = 'none';
+}, 3000);
+
+setTimeout(function(){
+  document.getElementById('alert-complete').style.display = 'none';
+}, 3000);
