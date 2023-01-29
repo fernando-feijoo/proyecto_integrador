@@ -36,7 +36,7 @@ include_once "./Grupo 3/menu_garita.php";
             </thead>
             <tbody class="table-group-divider">
                 <?php
-                include_once ("./../modelo/Grupo 3/modelo_listado_garita.php");
+                include_once("./../modelo/Grupo 3/modelo_listado_garita.php");
                 while ($datos = $sql->fetch_object()) {
                 ?>
                     <tr>
@@ -50,7 +50,7 @@ include_once "./Grupo 3/menu_garita.php";
                         <td><?= $datos->tipo_de_caja ?></td>
                         <td><?= $datos->tipo_de_contenedor ?></td>
                         <td>
-                            <a id="boton-editar-garita" href="./vista_llegada_g3.php?id=<?= $datos->id?>" class="btn btn-small btn-warning" style="width: 70px;"><i class="fa-regular fa-pen-to-square"></i></a>
+                            <a id="boton-editar-garita" href="./vista_llegada_g3.php?id_listado=<?= $datos->id ?>" class="btn btn-small btn-warning" style="width: 70px;"><i class="fa-regular fa-pen-to-square"></i></a>
                             <a href="" class="btn btn-small btn-danger" style="width: 70px;"><i class="fa-regular fa-trash-can"></i></a>
                         </td>
                     </tr>
@@ -59,7 +59,38 @@ include_once "./Grupo 3/menu_garita.php";
 
             </tbody>
         </table>
-
+        <!-- <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <?php if ($pagina != 1) { ?>
+                        <li class="page-item">
+                            <a class="page-link" href="?pagina=<?= $pagina - 1 ?>">Previous</a>
+                        </li>
+                    <?php } ?>
+                    <?php for ($i = 1; $i <= $num_pags; $i++) { ?>
+                        <li class="page-item <?= $i == $pagina ? 'active' : '' ?>">
+                            <a class="page-link" href="?pagina=<?= $i ?>"><?= $i ?></a>
+                        </li>
+                    <?php } ?>
+                    <?php if ($pagina != $num_pags) { ?>
+                        <li class="page-item">
+                            <a class="page-link" href="?pagina=<?= $pagina + 1 ?>">Next</a>
+                        </li>
+                    <?php } ?>
+                </ul>
+            </nav> -->
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
     </div>
 </div>
 <?php

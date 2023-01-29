@@ -4,7 +4,7 @@ if (!empty($_POST["btn-guardar"])) {
     if (!empty($_POST["inlineRadioOptions_gg3"])) {
         $fecha_insp = $_POST["fecha_inspeccion_gg3"];
         $semana = $_POST["semana_gg3"];
-        $fecha_hora_salida = $_POST["fecha_hora_salida_gg3"];
+        $fecha_hora_salida = date("Y-m-d H:i:s", strtotime($_POST["fecha_hora_salida_gg3"]));
         $hora_llegada = $_POST["hora_llegada_gg3"];
         $cupo = $_POST["cupo_gg3"];
         $contenedor = strtoupper($_POST["contenedor_gg3"]);
@@ -34,17 +34,17 @@ if (!empty($_POST["btn-guardar"])) {
     </div>";
         }
     } else {
-        $_SESSION["fecha_inspeccion_gg3"] = $_POST["fecha_inspeccion_gg3"];
-        $_SESSION["semana_gg3"] = $_POST["semana_gg3"];
-        $_SESSION["fecha_hora_salida_gg3"] = $_POST["fecha_hora_salida_gg3"];
-        $_SESSION["hora_llegada_gg3"] = $_POST["hora_llegada_gg3"];
-        $_SESSION["cupo_gg3"] = $_POST["cupo_gg3"];
-        $_SESSION["contenedor_gg3"] = strtoupper($_POST["contenedor_gg3"]);
-        $_SESSION["nombre_copio_gg3"] = strtoupper($_POST["nombre_copio_gg3"]);
-        $_SESSION["candados_llegada_gg3"] = strtoupper($_POST["candados_llegada_gg3"]);
-        $_SESSION["tipo_caja_gg3"] = $_POST["tipo_caja_gg3"];
-        $_SESSION["placa_gg3"] = $_POST["placa_gg3"];
-        $_SESSION["chofer_gg3"] = $_POST["chofer_gg3"];
+        // $_SESSION["fecha_inspeccion_gg3"] = $_POST["fecha_inspeccion_gg3"];
+        // $_SESSION["semana_gg3"] = $_POST["semana_gg3"];
+        // $_SESSION["fecha_hora_salida_gg3"] = $_POST["fecha_hora_salida_gg3"];
+        // $_SESSION["hora_llegada_gg3"] = $_POST["hora_llegada_gg3"];
+        // $_SESSION["cupo_gg3"] = $_POST["cupo_gg3"];
+        // $_SESSION["contenedor_gg3"] = strtoupper($_POST["contenedor_gg3"]);
+        // $_SESSION["nombre_copio_gg3"] = strtoupper($_POST["nombre_copio_gg3"]);
+        // $_SESSION["candados_llegada_gg3"] = strtoupper($_POST["candados_llegada_gg3"]);
+        // $_SESSION["tipo_caja_gg3"] = $_POST["tipo_caja_gg3"];
+        // $_SESSION["placa_gg3"] = $_POST["placa_gg3"];
+        // $_SESSION["chofer_gg3"] = $_POST["chofer_gg3"];
 
         echo "<div class='alert alert-danger text-center' id='registro-incompleto' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
         ¡Registre todos los datos necesarios, verifique!

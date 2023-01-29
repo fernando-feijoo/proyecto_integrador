@@ -26,8 +26,8 @@ function datos_lista_chofer()
 
 function cargar_datos()
 {
-    if (!empty($_GET["id"])) {
-        $id = $_GET["id"];
+    if (!empty($_GET["id_listado"])) {
+        $id = $_GET["id_listado"];
         $conexion = conexionBd();
         $sql = $conexion->query("SELECT * FROM registro_llegada WHERE id = $id;");
         return $sql;

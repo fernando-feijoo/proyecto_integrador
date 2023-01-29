@@ -2,6 +2,13 @@
 include_once "./../modelo/conexion_bd.php";
 // Coloque algunas en mayusculas con UCASE(), pero luego deberia ser controlado desde el ingreso de datos y asi tener 
 // una BD limpiar con caracteres iguales en todos ellos.
+
+
+
+
+
+
+
 $conexion = conexionBd();
 $sql = $conexion->query("SELECT DISTINCT
 dll.id,
@@ -20,5 +27,6 @@ INNER JOIN chofer ch ON ch.id = dll.id_chofer
 WHERE
 estado = 'ACTIVO'
 ORDER BY
-dll.fecha_inspeccion DESC;");
+dll.fecha_inspeccion DESC
+LIMIT 9;");
 ?>

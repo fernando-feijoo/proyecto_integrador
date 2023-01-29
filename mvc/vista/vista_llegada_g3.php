@@ -28,7 +28,7 @@ include_once "./Grupo 3/menu_garita.php";
             ?>
 
 
-            <form action="#" method="post">
+            <form action="./vista_llegada_g3.php" method="post">
                 <?php
                 if (($valiacion = cargar_datos()) != false) {
                     $sql = cargar_datos();
@@ -60,7 +60,7 @@ include_once "./Grupo 3/menu_garita.php";
                                 <input type="number" id="semanaActual" value=<?= $carga_datos->semana ?> style="height: 36px; width: 120px;" name="semana_gg3">
                             </div>
                             <div class="p-2">FECHA/HORA SALIDA PATIO:
-                                <input type="datetime-local" style="height: 36px;" name="fecha_hora_salida_gg3" value=<?= $carga_datos->fecha_hora_salida ?>>
+                                <input type="datetime-local" style="height: 36px;" name="fecha_hora_salida_gg3" value=<?= date("Y-m-d\TH:i:s", strtotime($carga_datos->fecha_hora_salida)) ?>>
                             </div>
                         </div>
 
@@ -211,7 +211,7 @@ include_once "./Grupo 3/menu_garita.php";
                             </select>
                         </div>
                         <div class="p-2">MARCA:
-                            <input type="text" placeholder="" style="width: 120px; height: 36px;" disabled name="marca" value="">
+                            <input type="text" placeholder="" disabled style="width: 120px; height: 36px;" name="marca" value="">
                         </div>
                         <div class="input-group d-flex align-items-center" style="width: 270px;" name="">
                             CHOFER:
@@ -245,8 +245,17 @@ include_once "./Grupo 3/menu_garita.php";
                 ?>
                 <div class="d-flex flex-row justify-content-end ms-auto me-5 mb-1 mt-3">
                     <div class="p-2">
-                        <a id="boton-guardar-garita" class="btn btn-outline-primary" href="./vista_llegada_g3.php" type="submit" name="btn-guardar" value="guardado">Guardar</a>
-                        <!-- <button id="boton-actualizar-garita" class="btn btn-outline-info" type="submit" name="btn-actualizar" value="actualizado">Actualizar</button> -->
+                        <?php
+                        if (empty($_GET["id_listado"])) {
+                        ?>
+                            <button id="boton-guardar-garita" class="btn btn-outline-primary" type="submit" name="btn-guardar" value="guardado">Guardar</button>
+                        <?php
+                        } else {
+                        ?>
+                            <button id="boton-actualizar-garita" class="btn btn-outline-info" type="submit" name="btn-actualizar" value="actualizado">Actualizar</button>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </form>
