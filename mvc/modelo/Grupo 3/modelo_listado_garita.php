@@ -2,31 +2,38 @@
 include_once "./../modelo/conexion_bd.php";
 // Coloque algunas en mayusculas con UCASE(), pero luego deberia ser controlado desde el ingreso de datos y asi tener 
 // una BD limpiar con caracteres iguales en todos ellos.
-
-
-
-
-
-
-
 $conexion = conexionBd();
-$sql = $conexion->query("SELECT DISTINCT
-dll.id,
-dll.fecha_inspeccion,
-dll.semana,
-dll.hora_llegada,
-dll.contenedor,
-CONCAT(UCASE(ch.nombre), ' ', UCASE(ch.apellido)) AS chofer_nombres,
-UCASE(dll.nombre_acopio) AS nombre_acopio,
-tc.tipo_de_caja,
-dll.tipo_de_contenedor
-FROM
-registro_llegada AS dll
-INNER JOIN tipo_cajas tc ON tc.id = dll.id_tipo_caja
-INNER JOIN chofer ch ON ch.id = dll.id_chofer
-WHERE
-estado = 'ACTIVO'
-ORDER BY
-dll.fecha_inspeccion DESC
-LIMIT 9;");
-?>
+
+$cantidad_por_pagina = 9;
+
+if ((empty($_POST["button-busqueda"]) && empty($_SESSION["sesion_busqueda"])) || empty($_GET["busqueda"])) {
+    $sql_total = $conexion->query("SELECT COUNT(*) AS total FROM vista_registro_llegada;");
+    $total = $sql_total->fetch_assoc()['total'];
+    $num_pags = ceil($total / $cantidad_por_pagina);
+
+    $pagina = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
+    $inicio = ($pagina - 1) * $cantidad_por_pagina;
+
+    $sql = $conexion->query("SELECT * FROM vista_registro_llegada LIMIT $inicio, $cantidad_por_pagina;");
+    unset($_SESSION["sesion_busqueda"]);
+} else {
+    if (!empty($_POST["seleccionBusquedaGarita"]) && !empty($_POST["busqueda_garita"])) {
+        $filtro_busqueda = $_POST["seleccionBusquedaGarita"];
+        $valor_busqueda = $_POST["busqueda_garita"];
+    } elseif (!empty($_SESSION["sesion_busqueda"])) {
+        $filtro_busqueda = $_SESSION["sesion_filtro"];
+        $valor_busqueda = $_SESSION["sesion_busqueda"];
+    }
+
+    $_SESSION["sesion_filtro"] = $filtro_busqueda;
+    $_SESSION["sesion_busqueda"] = $valor_busqueda;
+
+    $sql_total = $conexion->query("SELECT COUNT(*) AS total FROM vista_registro_llegada WHERE $filtro_busqueda = '$valor_busqueda';");
+    $total = $sql_total->fetch_assoc()['total'];
+    $num_pags = ceil($total / $cantidad_por_pagina);
+
+    $pagina = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
+    $inicio = ($pagina - 1) * $cantidad_por_pagina;
+
+    $sql = $conexion->query("SELECT * FROM vista_registro_llegada WHERE $filtro_busqueda = '$valor_busqueda' LIMIT $inicio, $cantidad_por_pagina;");
+}
