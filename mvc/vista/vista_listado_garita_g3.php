@@ -32,7 +32,7 @@ include_once "./Grupo 3/menu_garita.php";
                     <input name="busqueda_garita" type="text" class="form-control" placeholder="Busqueda de datos" value="">
                     <div class="input-group-append">
                         <select class="form-select" name="seleccionBusquedaGarita" aria-label="Example select with button addon">
-                            <option selected>Filtro</option>
+                            <option value="tipo_de_contenedor">Filtro</option>
                             <option value="contenedor">CONTENEDOR</option>
                             <option value="chofer_nombres">CHOFER</option>
                             <option value="nombre_acopio">ACOPIO</option>
