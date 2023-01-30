@@ -45,7 +45,7 @@ include_once "./Grupo 3/menu.php";
   </div>
   <div class="tab-pane fade" id="nav-higiene" role="tabpanel" aria-labelledby="nav-contact-tab">
   <?php
-    include("./vista_sellos_contenedor_g3.php")
+    include("./vista_higiene_contenedor_g3.php")
     ?>
   </div>
 </div> 
