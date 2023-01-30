@@ -29,10 +29,10 @@
                     <!-- Seccion de primer menu de Acopio y sub menus -->
                     <div class="row pt-5">
                         <div class="col-1 text-end">
-                            <img id="img-submenu" src="../../img/ico_acopio_32px-dashboard.png" alt="icono-contenedor" />
+                            <img id="img-submenu" src="../../img/control.png" alt="icono-contenedor" />
                         </div>
                         <div id="titulo-menu" class="col text-start ms-1">
-                            Grupo 1
+                            Control
                         </div>
                         <hr style="width: 80%; margin-top: 0.5rem;" />
                     </div>
@@ -40,7 +40,7 @@
                         <div class="row pt-3">
                             <div class="col-md-10 offset-md-2 text-start">
                                 <div id="botones-menu">
-                                    <a id="opcion-menu" href="#" name="opcion-registro">Registro contenedores</a>
+                                    <a id="opcion-menu" href="./vista_registro_eva_g1.php" name="opcion-registro">Registro evaluación</a>
                                 </div>
                             </div>
                         </div>
@@ -48,7 +48,7 @@
                         <div class="row pt-3">
                             <div class="col-md-10 offset-md-2 text-start">
                                 <div id="botones-menu">
-                                    <a id="opcion-menu" href="#" name="opcion-listado">Listado contenedores</a>
+                                    <a id="opcion-menu" href="./vista_listado_eva_g1.php" name="opcion-listado">Listado evaluación</a>
                                 </div>
 
                             </div>
@@ -71,7 +71,7 @@
                         <div class="row pt-3">
                             <div class="col-xs-12 col-md-10 offset-md-2 text-start">
                                 <div id="botones-menu">
-                                    <a id="opcion-menu" href="#" name="opcion-reporte">Obtener reportes</a>
+                                    <a id="opcion-menu" href="./vista_reportes_g1.php" name="opcion-reporte">Obtener reportes</a>
                                 </div>
                             </div>
                         </div>
