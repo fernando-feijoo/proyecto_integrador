@@ -27,7 +27,7 @@ if (empty($_SESSION["id"])) {
         <div id="header" class="container-fluid pt-1 pb-1">
             <div class="row d-flex align-items-center mx-2">
                 <div class="col">
-                    <img class="img-fluid" src="./../../img/LogoTierraFertil_305px_75px-dashboard.png" alt="logo-empresa" />
+                    <a href="./dashboard.php"><img class="img-fluid" src="./../../img/LogoTierraFertil_305px_75px-dashboard.png" alt="logo-empresa" /></a>
                 </div>
                 <div class="col d-flex align-items-end flex-column">
 

@@ -40,7 +40,7 @@
                         <div class="row pt-3">
                             <div class="col-md-10 offset-md-2 text-start">
                                 <div id="botones-menu">
-                                    <a id="opcion-menu" href="./vista_llegada_g3.php" name="opcion-registro">Registro llegada</a>
+                                    <a id="registro-llegada" class="opcion-menu" href="./vista_llegada_g3.php" name="opcion-registro">Registro llegada</a>
                                 </div>
                             </div>
                         </div>
@@ -48,7 +48,7 @@
                         <div class="row pt-3">
                             <div class="col-md-10 offset-md-2 text-start">
                                 <div id="botones-menu">
-                                    <a id="opcion-menu" href="./vista_listado_garita_g3.php" name="opcion-listado">Listado datos</a>
+                                    <a id="listado-registros" class="opcion-menu" href="./vista_listado_garita_g3.php" name="opcion-listado">Listado datos</a>
                                 </div>
 
                             </div>
@@ -71,7 +71,7 @@
                         <div class="row pt-3">
                             <div class="col-xs-12 col-md-10 offset-md-2 text-start">
                                 <div id="botones-menu">
-                                    <a id="opcion-menu" href="./vista_reportes_garita_g3.php" name="opcion-reporte">Obtener reporte</a>
+                                    <a class="opcion-menu" href="./vista_reportes_garita_g3.php" name="opcion-reporte">Obtener reporte</a>
                                 </div>
                             </div>
                         </div>
