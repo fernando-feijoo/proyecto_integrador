@@ -160,8 +160,8 @@ botonesEliminar.forEach(boton => {
       text: "Esta acción no se puede deshacer",
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#9b9b9b',
       confirmButtonText: 'Eliminar'
     }).then((result) => {
       if (result.value) {
