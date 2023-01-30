@@ -37,20 +37,19 @@ $(document).ready(function () {
     },
   });
   $("#inputGroupSelect03").change(function () {
-  var id = $(this).val(); // obtenemos el valor seleccionado
+    var id = $(this).val(); // obtenemos el valor seleccionado
 
-  $.ajax({
-    url: "./../modelo/Grupo 3/ajax/consulta_chofer_cedula.php", // url del archivo PHP
-    method: "post",
-    data: { id: id }, // enviamos el id seleccionado
-    success: function (response) {
-      // actualizamos el valor del campo "C.I"
-      $("input[name='cedula']").val(response);
-    },
+    $.ajax({
+      url: "./../modelo/Grupo 3/ajax/consulta_chofer_cedula.php", // url del archivo PHP
+      method: "post",
+      data: { id: id }, // enviamos el id seleccionado
+      success: function (response) {
+        // actualizamos el valor del campo "C.I"
+        $("input[name='cedula']").val(response);
+      },
+    });
   });
 });
-});
-
 
 $(document).ready(function () {
   var id = $("#inputGroupSelect02").val(); // obtenemos el valor seleccionado
@@ -64,30 +63,29 @@ $(document).ready(function () {
     },
   });
   $("#inputGroupSelect02").change(function () {
-  var id = $(this).val(); // obtenemos el valor seleccionado
+    var id = $(this).val(); // obtenemos el valor seleccionado
 
-  $.ajax({
-    url: "./../modelo/Grupo 3/ajax/consulta_marca_vehiculo.php", // url del archivo PHP
-    method: "post",
-    data: { id: id }, // enviamos el id seleccionado
-    success: function (response) {
-      // actualizamos el valor del campo "C.I"
-      $("input[name='marca']").val(response);
-    },
+    $.ajax({
+      url: "./../modelo/Grupo 3/ajax/consulta_marca_vehiculo.php", // url del archivo PHP
+      method: "post",
+      data: { id: id }, // enviamos el id seleccionado
+      success: function (response) {
+        // actualizamos el valor del campo "C.I"
+        $("input[name='marca']").val(response);
+      },
+    });
   });
 });
-});
-
 
 // document.addEventListener("DOMContentLoaded", function () {
 //     //Guardar la ruta actual
 //     let rutaActual = window.location.href;
-  
+
 //     let botonGuardarGarita = document.getElementById("boton-guardar-garita");
 //     let botonActualizarGarita = document.getElementById(
 //       "boton-actualizar-garita"
 //     );
-  
+
 //     //Comprobar la ruta actual
 //     if (rutaActual === "/vista_llegada_g3.php") {
 //       botonGuardarGarita.classList.remove("d-none");
@@ -119,3 +117,56 @@ setTimeout(function () {
 setTimeout(function () {
   document.getElementById("registro-incompleto").style.display = "none";
 }, 3000);
+
+// $(document).ready(function() {
+//   $('#exampleModal').modal('show');
+// });
+
+// function confirmacion_eliminado() {
+//   var respuesta = confirm("¿Desea realmente borrar el registro?");
+//   if (respuesta == true) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+
+// const botonEliminar = document.getElementById("boton-eliminar-garita");
+// botonEliminar.addEventListener("click", function () {
+//   Swal.fire({
+//     title: "¿Desea eliminar el registro?",
+//     text: "Esta acción no se puede deshacer",
+//     icon: "warning",
+//     showCancelButton: true,
+//     confirmButtonColor: "#3085d6",
+//     cancelButtonColor: "#d33",
+//     confirmButtonText: "Eliminar",
+//   }).then((result) => {
+//     if (result.value) {
+//       // aqui se puede poner el codigo que se ejecutaria cuando se haga click en eliminar
+//       // por ejemplo, redirigir a la página que elimina el registro
+//       window.location =
+//         "./vista_listado_garita_g3.php?id_eliminar=<?=$datos->id?>";
+//     }
+//   });
+// });
+
+const botonesEliminar = document.querySelectorAll("#boton-eliminar-garita");
+botonesEliminar.forEach(boton => {
+  boton.addEventListener("click", function(event) {
+    event.preventDefault();
+    Swal.fire({
+      title: '¿Desea eliminar el registro?',
+      text: "Esta acción no se puede deshacer",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Eliminar'
+    }).then((result) => {
+      if (result.value) {
+        window.location.href = boton.href;
+      }
+    });
+  });
+});

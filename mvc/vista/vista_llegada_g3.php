@@ -30,6 +30,13 @@ include_once "./Grupo 3/menu_garita.php";
 
             <form action="./vista_llegada_g3.php" method="post">
                 <?php
+                // echo $_SESSION["id_listado"];
+
+                if (!empty($_GET["id_listado"])) {
+                    $_SESSION["id_listado"] = $_GET["id_listado"];
+                    // echo $_SESSION["id_listado"];
+                }
+
                 if (($valiacion = cargar_datos()) != false) {
                     $sql = cargar_datos();
                     while ($carga_datos = $sql->fetch_object()) {

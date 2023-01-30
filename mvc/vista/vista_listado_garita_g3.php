@@ -20,6 +20,7 @@ include_once "./Grupo 3/menu_garita.php";
         <div id="caja-separacion-escritorio" class="mx-auto"></div>
 
         <?php
+        include_once("./../controlador/Grupo 3/eliminar_registro_garita.php");
         include("./../modelo/Grupo 3/modelo_listado_garita.php");
         ?>
 
@@ -79,7 +80,7 @@ include_once "./Grupo 3/menu_garita.php";
                         <td><?= $datos->tipo_de_contenedor ?></td>
                         <td>
                             <a id="boton-editar-garita" href="./vista_llegada_g3.php?id_listado=<?= $datos->id ?>" class="btn btn-small btn-warning" style="width: 70px;"><i class="fa-regular fa-pen-to-square"></i></a>
-                            <a href="" class="btn btn-small btn-danger" style="width: 70px;"><i class="fa-regular fa-trash-can"></i></a>
+                            <a id="boton-eliminar-garita" class="btn btn-small btn-danger" href="./vista_listado_garita_g3.php?id_eliminar=<?= $datos->id ?>" style="width: 70px;"><i class="fa-regular fa-trash-can"></i></a>
                         </td>
                     </tr>
                 <?php }
@@ -135,8 +136,6 @@ include_once "./Grupo 3/menu_garita.php";
         <?php
         }
         ?>
-
-
 
     </div>
 </div>
