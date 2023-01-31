@@ -4,19 +4,19 @@
     <div  class="d-flex flex-row justify-content-center line-height:0;">
         <div class="p-2">Filtro:
             <label for="radio">1</label>
-            <input type="RADIO" id="radio1" value="" name="filtro">
+            <input type="RADIO" id="radio1"  name="filtro">
             <label for="radio">2</label>
-            <input type="RADIO" id="radio2" value="" name="filtro">
+            <input type="RADIO" id="radio2"  name="filtro">
             <label for="radio">ninguno</label>
-            <input type="RADIO" id="radio3" value="" name="filtro">
+            <input type="RADIO" id="radio3"  name="filtro">
         </div>
         <div class="p-2">Termografo:
             <label for="termografo">P19</label>
-            <input type="RADIO" id="termografo1" value="" name="termografo">
+            <input type="RADIO" id="termografo1"  name="termografo">
             <label for="termografo">P18</label>
-            <input type="RADIO" id="termografo2" value="" name="termografo">
+            <input type="RADIO" id="termografo2"  name="termografo">
             <label for="termografo">ninguno</label>
-            <input type="RADIO" id="termografo3" value="" name="termografo">
+            <input type="RADIO" id="termografo3"  name="termografo">
         </div>
         <div class="p-2">Termografo#:
             <input type="TEXT" style="width: 285px; height: 25px;;" name="TERMOGRAFO#" id="TERMOGRAFO#1">

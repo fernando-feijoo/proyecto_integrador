@@ -6,9 +6,9 @@
     <table class="tables borde ">
         <thead>
             <tr>
-                <th class="borde">ORDEN</th>
-                <th class="borde">LUGAR</th>
-                <th class="borde">OK</th>
+                <th class="borde" style="background-color: gray;" >ORDEN</th>
+                <th class="borde" style="background-color: gray;" >LUGAR</th>
+                <th class="borde" style="background-color: gray;" >OK</th>
             </tr>
         </thead>
         <tbody>
