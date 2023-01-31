@@ -4,7 +4,7 @@ include_once "./../modelo/conexion_bd.php";
 // una BD limpiar con caracteres iguales en todos ellos.
 $conexion = conexionBd();
 
-$cantidad_por_pagina = 9;
+$cantidad_por_pagina = 7;
 
 if ((empty($_POST["button-busqueda"]) && empty($_SESSION["sesion_busqueda"])) || empty($_GET["busqueda"])) {
     $sql_total = $conexion->query("SELECT COUNT(*) AS total FROM vista_registro_llegada;");
