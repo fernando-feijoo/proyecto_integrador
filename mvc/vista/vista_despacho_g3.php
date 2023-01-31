@@ -32,11 +32,11 @@
     </div>
     <div class="d-flex flex-row justify-content-center line-height:0;">
         <div class="p-2"> Sello Exportador Candado:
-            <input type="TEXT" style="width: 340px; height: 25px;" name="sello_expotador_candado" id="sello_expotador_candado1">
+            <input type="TEXT" style="width: 300px; height: 25px;" name="sello_expotador_candado" id="sello_expotador_candado1">
         </div>
-        <div class="p-1"> Fecha y Hora Salida:
+        <div class="p-2"> Fecha y Hora Salida:
             <input type="date" style="width: 110px; height: 25px;" name="fecha" id="fecha1">
-            <input type="time" style="width: 60px; height: 25px" name="hora" id="hora1">
+            <input type="time" style="width: 75px; height: 25px" name="hora" id="hora1">
         </div>
     </div>
     <div class="d-flex flex-row justify-content-center line-height:0; ">
@@ -77,7 +77,7 @@
     </div>
     <div class="d-flex flex-row justify-content-center  line-height:0;">
         <div class="p-2"> Objetivo:
-            <input type="TEXT" style="width: 798px; height: 25px;" name="objetivo" id="objetivo1">
+            <input type="TEXT" style="width: 785px; height: 25px;" name="objetivo" id="objetivo1">
         </div>
 
     </div>
