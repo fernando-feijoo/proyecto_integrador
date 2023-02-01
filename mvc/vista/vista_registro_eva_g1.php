@@ -18,22 +18,40 @@ include_once "./Grupo 1/menu.php";
             <!-- /Titulo o encabezado del escritorio -->
         </div>
         <div id="caja-separacion-escritorio" class="mx-auto"></div>
+
         <nav>
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Detalles Generales</button>
-    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Grado Calibre</button>
-    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Largo Dedo</button>
-    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Asepcias</button>
-    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Seleccion Empaque</button>
+
+    <button class="nav-link active" id="nav-dg-tab" data-bs-toggle="tab" data-bs-target="#nav-dg" type="button" role="tab" aria-controls="nav-dg" aria-selected="true">Detalles Generales</button>
+    <button class="nav-link" id="nav-gc-tab" data-bs-toggle="tab" data-bs-target="#nav-gc" type="button" role="tab" aria-controls="nav-gc" aria-selected="false">Grado Calibre</button>
+    <button class="nav-link" id="nav-ld-tab" data-bs-toggle="tab" data-bs-target="#nav-ld" type="button" role="tab" aria-controls="nav-ld" aria-selected="false">Largo Dedo</button>
+    <button class="nav-link" id="nav-asepsias-tab" data-bs-toggle="tab" data-bs-target="#nav-asepsias" type="button" role="tab" aria-controls="nav-asepsias" aria-selected="false">Asepcias</button>
+    <button class="nav-link" id="nav-se-tab" data-bs-toggle="tab" data-bs-target="#nav-se" type="button" role="tab" aria-controls="nav-se" aria-selected="false">Seleccion Empaque</button>
     
   </div>
-</nav>
-<div class="tab-content" id="nav-tabContent">
-  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"><?php include("./vista_detalles_generales_g1.php")?></div>
-  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"><?php include("./vista_gc_g1.php")?></div>
-  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"><?php include("./vista_detalles_generales_g1.php")?></div>
-</div>
-    </div>
+</nav> 
+ <div class="tab-content" id="nav-tabContent">
+    
+  <div class="tab-pane fade show active" id="nav-dg" role="tabpanel" aria-labelledby="nav-dg-tab"><?php 
+  include_once("./../modelo/conexion_bd.php");
+  include("./../modelo/Grupo 1/modelo_rellenar_dg_g1.php");
+  include("./vista_detalles_generales_g1.php");?></div>
+  
+  <div class="tab-pane fade" id="nav-gc" role="tabpanel" aria-labelledby="nav-gc-tab"><?php 
+  include("./vista_gc_g1.php")?></div>
+
+  <div class="tab-pane fade" id="nav-ld" role="tabpanel" aria-labelledby="nav-ld-tab"><?php 
+  include("./vista_ld_g1.php")?></div>
+
+<div class="tab-pane fade" id="nav-asepsias" role="tabpanel" aria-labelledby="nav-asepsias-tab"><?php 
+  include("./vista_asepsias_g1.php")?></div>
+
+<div class="tab-pane fade" id="nav-se" role="tabpanel" aria-labelledby="nav-se-tab"><?php 
+  include("./vista_se_g1.php")?></div>
+</div> 
+
+
+  </div>
 </div>
 <?php 
 include_once "./../../layout/footer.php";
