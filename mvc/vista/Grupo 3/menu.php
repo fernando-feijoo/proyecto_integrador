@@ -40,7 +40,7 @@
                         <div class="row pt-3">
                             <div class="col-md-10 offset-md-2 text-start">
                                 <div id="botones-menu">
-                                    <a id="opcion-menu" href="#" name="opcion-registro">Registro contenedores</a>
+                                    <a class="opcion-menu" href="./vista_listado_registro_g3.php" name="opcion-registro">Registro contenedores</a>
                                 </div>
                             </div>
                         </div>
@@ -48,7 +48,7 @@
                         <div class="row pt-3">
                             <div class="col-md-10 offset-md-2 text-start">
                                 <div id="botones-menu">
-                                    <a id="opcion-menu" href="#" name="opcion-listado">Listado contenedores</a>
+                                    <a class="opcion-menu" href="#" name="opcion-listado">Listado contenedores</a>
                                 </div>
 
                             </div>
@@ -71,7 +71,7 @@
                         <div class="row pt-3">
                             <div class="col-xs-12 col-md-10 offset-md-2 text-start">
                                 <div id="botones-menu">
-                                    <a id="opcion-menu" href="#" name="opcion-reporte">Obtener reportes</a>
+                                    <a class="opcion-menu" href="#" name="opcion-reporte">Obtener reportes</a>
                                 </div>
                             </div>
                         </div>
