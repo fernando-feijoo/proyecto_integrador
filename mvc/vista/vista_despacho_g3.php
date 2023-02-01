@@ -1,83 +1,83 @@
-<div class="row">
+<div class="row mx-auto">
 <form>
     <h2>Despacho</h2>
-    <div id="inicio-formulario" class="d-flex flex-row justify-content-center mb-3 ">
+    <div  class="d-flex flex-row justify-content-center line-height:0;">
         <div class="p-2">Filtro:
             <label for="radio">1</label>
-            <input type="RADIO" id="radio" value="" name="filtro">
+            <input type="RADIO" id="radio1"  name="filtro">
             <label for="radio">2</label>
-            <input type="RADIO" id="radio" value="" name="filtro">
+            <input type="RADIO" id="radio2"  name="filtro">
             <label for="radio">ninguno</label>
-            <input type="RADIO" id="radio" value="" name="filtro">
+            <input type="RADIO" id="radio3"  name="filtro">
         </div>
         <div class="p-2">Termografo:
             <label for="termografo">P19</label>
-            <input type="RADIO" id="termografo" value="" name="termografo">
+            <input type="RADIO" id="termografo1"  name="termografo">
             <label for="termografo">P18</label>
-            <input type="RADIO" id="termografo" value="" name="termografo">
+            <input type="RADIO" id="termografo2"  name="termografo">
             <label for="termografo">ninguno</label>
-            <input type="RADIO" id="termografo" value="" name="termografo">
+            <input type="RADIO" id="termografo3"  name="termografo">
         </div>
         <div class="p-2">Termografo#:
-            <input type="TEXT" style="width: 260px; height: 25px;;" name="TERMOGRAFO#">
+            <input type="TEXT" style="width: 285px; height: 25px;;" name="TERMOGRAFO#" id="TERMOGRAFO#1">
         </div>
     </div>
-    <div class="d-flex flex-row justify-content-center mb-3 ">
+    <div class="d-flex flex-row justify-content-center line-height:0; ">
         <div class="p-2">Sello Adhesivo:
-            <input type="TEXT" style="width: 405px; height: 25px;" name="sello_adhesivo">
+            <input type="TEXT" style="width: 405px; height: 25px;" name="sello_adhesivo" id="sello_adhesivo1">
         </div>
         <div class="p-2"> Sello Verificador:
-            <input type="TEXT" style="width: 200px; height: 25px;;" name="sello_vericador">
+            <input type="TEXT" style="width: 200px; height: 25px;;" name="sello_vericador" id="sello_vericador1">
         </div>
     </div>
-    <div class="d-flex flex-row justify-content-center mb-3 ">
+    <div class="d-flex flex-row justify-content-center line-height:0;">
         <div class="p-2"> Sello Exportador Candado:
-            <input type="TEXT" style="width: 350px; height: 25px;" name="sello_adhesivo">
+            <input type="TEXT" style="width: 300px; height: 25px;" name="sello_expotador_candado" id="sello_expotador_candado1">
         </div>
-        <div class="p-1"> Fecha y Hora Salida:
-            <input type="date" style="width: 100px; height: 25px;" name="fecha">
-            <input type="time" style="width: 60px; height: 25px" name="hora">
+        <div class="p-2"> Fecha y Hora Salida:
+            <input type="date" style="width: 110px; height: 25px;" name="fecha" id="fecha1">
+            <input type="time" style="width: 75px; height: 25px" name="hora" id="hora1">
         </div>
     </div>
-    <div class="d-flex flex-row justify-content-center mb-3 ">
+    <div class="d-flex flex-row justify-content-center line-height:0; ">
         <div class="p-2"> Sello Exportador cable:
-            <input type="TEXT" style="width: 250px; height: 25px;" name="sello_cable">
+            <input type="TEXT" style="width: 250px; height: 25px;" name="sello_cable" id="sello_cable1">
         </div>
         <div class="p-2"> Compañia Transportista:
-            <input type="TEXT" style="width: 250px; height: 25px;" name="trasnportista">
+            <input type="TEXT" style="width: 250px; height: 25px;" name="trasnportista" id="transportista1">
         </div>
     </div>
-    <div class="d-flex flex-row justify-content-center mb-3 ">
+    <div class="d-flex flex-row justify-content-center  line-height:0;">
         <div class="p-2"> Sello Nave:
-            <input type="TEXT" style="width: 245px; height: 25px;" name="sello_nave">
+            <input type="TEXT" style="width: 245px; height: 25px;" name="sello_nave" id="sello_nave1">
         </div>
         <div class="p-2"> Vapor:
-            <input type="TEXT" style="width: 195px; height: 25px;" name="vapor">
+            <input type="TEXT" style="width: 195px; height: 25px;" name="vapor" id="vapor1">
         </div>
         <div class="p-2"> Destino:
-            <input type="TEXT" style="width: 195px; height: 25px;" name="Destino">
+            <input type="TEXT" style="width: 195px; height: 25px;" name="Destino" id="Destino1">
         </div>
     </div>
-    <div class="d-flex flex-row justify-content-center mb-3 ">
+    <div class="d-flex flex-row justify-content-center  line-height:0; ">
         <div class="p-2"> Nombre de Paletizadores:
-            <input type="TEXT" style="width: 675px; height: 25px;" name="paletzador">
+            <input type="TEXT" style="width: 675px; height: 25px;" name="paletzador" id="paletizador1">
         </div>
 
     </div>
-    <div class="d-flex flex-row justify-content-center mb-3 ">
+    <div class="d-flex flex-row justify-content-center  line-height:0;">
         <div class="p-2">Total a Viajar:
-            <input type="TEXT" style="width: 150px; height: 25px;" name="sello_nave">
+            <input type="TEXT" style="width: 150px; height: 25px;" name="viajar" id="viajar1">
         </div>
         <div class="p-2">Cajas:
-            <input type="TEXT" style="width: 195px; height: 25px;" name="vapor">
+            <input type="TEXT" style="width: 195px; height: 25px;" name="cajas" id="cajas1">
         </div>
         <div class="p-2"> Cantidad de Pallet:
-            <input type="TEXT" style="width: 200px; height: 25px;" name="Destino">
+            <input type="TEXT" style="width: 200px; height: 25px;" name="cantidad_cajas" id="pallet1">
         </div>
     </div>
-    <div class="d-flex flex-row justify-content-center mb-3 ">
+    <div class="d-flex flex-row justify-content-center  line-height:0;">
         <div class="p-2"> Objetivo:
-            <input type="TEXT" style="width: 800px; height: 25px;" name="paletzador">
+            <input type="TEXT" style="width: 785px; height: 25px;" name="objetivo" id="objetivo1">
         </div>
 
     </div>
