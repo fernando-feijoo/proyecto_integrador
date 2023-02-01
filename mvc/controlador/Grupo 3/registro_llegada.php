@@ -31,7 +31,7 @@ if (!empty($_POST["btn-guardar"]) || !empty($_POST["btn-actualizar"])) {
 
         $sql_consulta = "SELECT `insertarDatosLlegada` ($id_listado,'$fecha_insp','$semana','$fecha_hora_salida','$hora_llegada','$cupo','$contenedor','$nombre_acopio','$candados_llegada','$tipo_contenedor_eleccion','$id_tipo_caja','$id_vehiculo','$id_chofer');";
 
-        $sql = $conexion->query("SELECT `insertarDatosLlegada` ($id_listado,'$fecha_insp','$semana','$fecha_hora_salida','$hora_llegada','$cupo','$contenedor','$nombre_acopio','$candados_llegada','$tipo_contenedor_eleccion','$id_tipo_caja','$id_vehiculo','$id_chofer');");
+        $sql = $conexion->query($sql_consulta);
 
         if ( ($conexion->query($sql_consulta) === TRUE || !empty($_POST["btn-guardar"])) || ($conexion->query($sql_consulta) === TRUE || !empty($_POST["btn-actualizar"])) ) {
             if (!empty($_POST["btn-guardar"])) {
