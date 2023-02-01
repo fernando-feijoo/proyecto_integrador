@@ -55,6 +55,11 @@ include_once "./Grupo 3/menu.php";
         include("./vista_despacho_g3.php")
         ?>
       </div>
+      <div class="tab-pane fade" id="nav-paletizado" role="tabpanel" aria-labelledby="nav-contact-tab">
+        <?php
+        include("./vista_paletizado_g3.php")
+        ?>
+      </div>
 
     </div>
 

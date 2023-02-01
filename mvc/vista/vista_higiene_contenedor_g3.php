@@ -6,39 +6,72 @@
 
             </div>
 
-            <table style="background-color:white;" width="500" action="seleccion.php" method="post" class="datos">
-                <tr>
-                    <th> </th>
-                    <th>Accion</th>
-                    <th> </th>
-                    <th>Accion</th>
-                </tr>
+            <table class="table-bordered " style="margin-top: 10px;border-color: black;">
 
-                <tr>
-                    <td style="border-bottom: 1px solid black; border-right: 1px solid black;" height="20"> Llegó lavado</td>
-                    <td style="border-bottom: 1px solid black; border-right: 1px solid black;"><input class="radio-input" type="radio" id="si" name="ep" value="si"> Si <input class="radio-input2" type="radio" id="no" name="ep" value="no"> No </td>
-                    <td style="border-bottom: 1px solid black; border-right: 1px solid black;" height="20"> Presencia de insectos en el contenedor</td>
-            <td style="border-bottom: 1px solid black; border-right: 1px solid black;"><input class="radio-input" type="radio" id="si" name="ep" value="si"> Si <input class="radio-input2" type="radio" id="no" name="ep" value="no"> No </td>
-                </tr>
+                <thead style="background-color: gray;">
+                    <th></th>
+                    <th>Acción</th>
+                    <th></th>
+                    <th>Acción</th>
+                </thead>
 
+                <tbody style="background-color: white;">
+                    <tr>
+                        <td> Llegó lavado</td>
+                        <td>
+                            <input class="lavado_si" type="radio" id="lavado_si" name="lavado" value="si"> Si
+                            <input class="lavado_no" type="radio" id="lavado_no" name="lavado" value="no"> No
+                        </td>
+                        <td> Presencia de insectos en el contenedor</td>
+                        <td>
+                            <input class="insectos_si" type="radio" id="insectos_si" name="insectos" value="si"> Si
+                            <input class="insectos_no" type="radio" id="insectos_mo"name="insectos"  value="no"> No
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> Drenajes limpios</td>
+                        <td>
+                            <input class="drenajes_si" type="radio" id="drenajes_si" name="drenaje" value="si"> Si
+                            <input class="drenajes_no" type="radio" id="drenajes_no" name="drenaje" value="no"> No
+                        </td>
+                        <td> Llego con sello de llegada</td>
+                        <td>
+                            <input class="sello_si" type="radio" id="sello_si" name="sello" value="si"> Si
+                            <input class="sello_no" type="radio" id="sello_no" name="sello" value="no"> No
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> Olor aceptable</td>
+                        <td>
+                            <input class="olor_si" type="radio" id="olor_si" name="olor" value="si"> Si
+                            <input class="olor_no" type="radio" id="olor_no" name="olor" value="no"> No
+                        </td>
+                        <td> Presencia de moho dentro del contenedor</td>
+                        <td>
+                            <input class="moho_si" type="radio" id="moho_si"  name="moho" value="si"> Si 
+                            <input class="moho_no" type="radio" id="moho_no"  name="moho" value="no"> No
+                        </td>
+                    </tr>
 
-
-                <tr>
-                    <td style="border-bottom: 1px solid black; border-right: 1px solid black;" height="28"> Drenajes Limpios</td>
-                    <td style="border-bottom: 1px solid black; border-right: 1px solid black;"><input class="radio-input" type="radio" id="si" name="ep" value="si"> Si <input class="radio-input2" type="radio" id="no" name="ep" value="no"> No </td>
-                    <td style="border-bottom: 1px solid black; border-right: 1px solid black;" height="28"> Sello con sello de llegada</td>
-                    <td style="border-bottom: 1px solid black; border-right: 1px solid black;"><input class="radio-input" type="radio" id="si" name="ep" value="si"> Si <input class="radio-input2" type="radio" id="no" name="ep" value="no"> No </td>
-                </tr>
-
-
-
-
-
-
-
-
-
+                    <tr>
+                        <td> Residuos químicos</td>
+                        <td><input class="quimicos_si" type="radio" id="quimicos_si" name="quimicos"  value="si"> Si
+                            <input class="quimicos_no" type="radio" id="quimicos_no" name="quimicos"  value="no"> No
+                        </td>
+                        <td> Contenedor aceptable</td>
+                        <td>
+                            <input class="contenedor_si" type="radio" id="contenedor_si" name="contenedor"   value="si"> Si 
+                            <input class="contenedor_no" type="radio" id="contenedor_no"  name="contenedor" value="no"> No </td>
+                    </tr>
+                </tbody>
             </table>
+            <div class="text-start  fs-5 fw-semibold" style="margin-top: 20px;">
+                Observaciones:
+                <textarea class="form-control" id="observacion_higiene" rows="3"></textarea>
+
+
+            </div>
+
         </div>
     </div>
 </div>
