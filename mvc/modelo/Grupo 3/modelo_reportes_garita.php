@@ -6,7 +6,7 @@ $conexion = conexionBd();
 
 $cantidad_por_pagina = 5;
 
-if (empty($_POST["button-busqueda-reportes"]) && (empty($_SESSION["sesion_fecha_inicial"]) || empty($_SESSION["sesion_fecha_final"])) || empty($_GET["busqueda"])) {
+if ((empty($_POST["button-busqueda-reportes"]) && (empty($_SESSION["sesion_fecha_inicial"]) || empty($_SESSION["sesion_fecha_final"]))) || empty($_GET["busqueda"])) {
     $sql_total = $conexion->query("SELECT COUNT(*) AS total FROM vista_registro_llegada;");
     $total = $sql_total->fetch_assoc()['total'];
     $num_pags = ceil($total / $cantidad_por_pagina);
@@ -18,23 +18,31 @@ if (empty($_POST["button-busqueda-reportes"]) && (empty($_SESSION["sesion_fecha_
     unset($_SESSION["sesion_fecha_inicial"]);
     unset($_SESSION["sesion_fecha_final"]);
 } else {
+    // alerta aun hay que tabajarla.
+    if (empty($_SESSION["sesion_fecha_final"]) || $_SESSION["sesion_fecha_final"] == '1997-09-30') {
+        echo "<div class='alert alert-danger text-center' id='alertas' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
+        ¡Ingrese las fechas a buscar, Desde y Hasta!
+    </div>";
+        $filtro_fecha_inicial = '1995-09-28';
+        $filtro_fecha_final = '1997-09-30';
+    }
     if (!empty($_POST["busqueda_reporte_final"]) && !empty($_POST["busqueda_reporte_inicio"])) {
-        $filtro_busqueda = $_POST["seleccionBusquedaGarita"];
-        $valor_busqueda = $_POST["busqueda_garita"];
-    } elseif (!empty($_SESSION["sesion_busqueda_reportes"])) {
-        $filtro_busqueda = $_SESSION["sesion_filtro"];
-        $valor_busqueda = $_SESSION["sesion_busqueda_reportes"];
+        $filtro_fecha_inicial = $_POST["busqueda_reporte_inicio"];
+        $filtro_fecha_final = $_POST["busqueda_reporte_final"];
+    } elseif (!empty($_SESSION["sesion_fecha_inicial"]) && !empty($_SESSION["sesion_fecha_final"])) {
+        $filtro_fecha_inicial = $_SESSION["sesion_fecha_inicial"];
+        $filtro_fecha_final = $_SESSION["sesion_fecha_final"];
     }
 
     $_SESSION["sesion_fecha_inicial"] = $filtro_fecha_inicial;
     $_SESSION["sesion_fecha_final"] = $filtro_fecha_final;
 
-    $sql_total = $conexion->query("SELECT COUNT(*) AS total FROM vista_registro_llegada WHERE $filtro_busqueda = '$valor_busqueda';");
+    $sql_total = $conexion->query("SELECT COUNT(*) AS total FROM vista_registro_llegada WHERE fecha_inspeccion >= '$filtro_fecha_inicial' && fecha_inspeccion <= '$filtro_fecha_final';");
     $total = $sql_total->fetch_assoc()['total'];
     $num_pags = ceil($total / $cantidad_por_pagina);
 
     $pagina = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
     $inicio = ($pagina - 1) * $cantidad_por_pagina;
 
-    $sql = $conexion->query("SELECT * FROM vista_registro_llegada WHERE fecha_inspeccion >= '2023-01-25' && fecha_inspeccion <= '2023-01-28' LIMIT $inicio, $cantidad_por_pagina;");
+    $sql = $conexion->query("SELECT * FROM vista_registro_llegada WHERE fecha_inspeccion >= '$filtro_fecha_inicial' && fecha_inspeccion <= '$filtro_fecha_final' LIMIT $inicio, $cantidad_por_pagina;");
 }

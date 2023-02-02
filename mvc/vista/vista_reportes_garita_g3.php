@@ -20,12 +20,11 @@ include_once "./Grupo 3/menu_garita.php";
         <div id="caja-separacion-escritorio" class="mx-auto"></div>
 
         <?php
-        include_once("./../controlador/Grupo 3/eliminar_registro_garita.php");
-        include("./../modelo/Grupo 3/modelo_listado_garita.php");
+        include("./../modelo/Grupo 3/modelo_reportes_garita.php");
         ?>
 
         <div class="d-flex justify-content-center align-items-center flex-row mt-4">
-            <form action="#" method="post">
+            <form action="?busqueda=1" method="post">
                 <div class="input-group" style="width: 700px;">
                     <div class="d-flex align-items-center me-1 fw-semibold">Desde:</div><input name="busqueda_reporte_inicio" type="date" class="form-control" value="">
                     <div class="d-flex align-items-center me-1 ms-1 fw-semibold">Hasta:</div><input name="busqueda_reporte_final" type="date" class="form-control" value="">
@@ -54,7 +53,6 @@ include_once "./Grupo 3/menu_garita.php";
             </thead>
             <tbody class="table-group-divider">
                 <?php
-                // include_once("./../modelo/Grupo 3/modelo_listado_garita.php");
                 while ($datos = $sql->fetch_object()) {
                 ?>
                     <tr>
@@ -98,6 +96,7 @@ include_once "./Grupo 3/menu_garita.php";
             </nav>
         <?php
         } else {
+            
         ?>
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">

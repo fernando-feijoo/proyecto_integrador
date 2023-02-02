@@ -13,12 +13,12 @@ if (!empty($_POST["btningresar"])) {
 
             header("location: ./mvc/vista/dashboard.php");
         } else {
-            echo "<div class='alert alert-danger mt-4 mb-4 text-center' id='alert-error' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
+            echo "<div class='alert alert-danger mt-4 mb-4 text-center' id='alertas' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
         ¡Usuario o contraseña incorrectos, verifique!
     </div>";
         }
     } else {
-        echo "<div class='alert alert-warning mt-4 mb-4 text-center' id='alert-complete' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
+        echo "<div class='alert alert-warning mt-4 mb-4 text-center' id='alertas' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
         ¡Campos incompletos, por favor completar!
     </div>";
     }

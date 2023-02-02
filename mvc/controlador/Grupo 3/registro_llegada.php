@@ -35,21 +35,21 @@ if (!empty($_POST["btn-guardar"]) || !empty($_POST["btn-actualizar"])) {
 
         if ( ($conexion->query($sql_consulta) === TRUE || !empty($_POST["btn-guardar"])) || ($conexion->query($sql_consulta) === TRUE || !empty($_POST["btn-actualizar"])) ) {
             if (!empty($_POST["btn-guardar"])) {
-                echo "<div class='alert alert-success text-center' id='alerta-guardado-garita' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
+                echo "<div class='alert alert-success text-center' id='alertas' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
         ¡Datos guardados correctamente!
     </div>";
             }else{
-                echo "<div class='alert alert-success text-center' id='alerta-guardado-garita' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
+                echo "<div class='alert alert-success text-center' id='alertas' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
         ¡Datos actualizados correctamente!
     </div>";
             }
         } else {
-            echo "<div class='alert alert-danger text-center' id='error-guardado-garita' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
+            echo "<div class='alert alert-danger text-center' id='alertas' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
         ¡Error al guardar los datos, vuelva a intentar y recargue la pagina!
     </div>";
         }
     } else {
-        echo "<div class='alert alert-danger text-center' id='registro-incompleto' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
+        echo "<div class='alert alert-danger text-center' id='alertas' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
         ¡Registre todos los datos necesarios, verifique!
     </div>";
     }
