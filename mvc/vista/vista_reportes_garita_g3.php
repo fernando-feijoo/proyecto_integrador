@@ -23,17 +23,23 @@ include_once "./Grupo 3/menu_garita.php";
         include("./../modelo/Grupo 3/modelo_reportes_garita.php");
         ?>
 
-        <div class="d-flex justify-content-center align-items-center flex-row mt-4">
+        <div class="d-flex justify-content-center flex-row mt-4">
             <form action="?busqueda=1" method="post">
                 <div class="input-group" style="width: 700px;">
-                    <div class="d-flex align-items-center me-1 fw-semibold">Desde:</div><input name="busqueda_reporte_inicio" type="date" class="form-control" value="">
-                    <div class="d-flex align-items-center me-1 ms-1 fw-semibold">Hasta:</div><input name="busqueda_reporte_final" type="date" class="form-control" value="">
+                    <div class="d-flex align-items-center me-1 fw-semibold">Desde:</div>
+                    <input name="busqueda_reporte_inicio" type="date" class="form-control" value="">
+                    <div class="d-flex align-items-center me-1 ms-1 fw-semibold">Hasta:
+                    </div><input name="busqueda_reporte_final" type="date" class="form-control" value="">
                     <button class="btn btn-outline-primary" type="submit" name="button-busqueda-reportes" value="buscando">Buscar registros</button>
+
                 </div>
             </form>
             <?php
             ?>
 
+        </div>
+        <div class="d-flex justify-content-end align-items-center me-5">
+            <div class="fw-semibold me-3">Imprimir:</div> <a href="#"><i class="fa-regular fa-file-pdf" style="font-size: 40px !important;"></i></a>
         </div>
         <!-- /Barra de busqueda del listado llegada -->
 
@@ -96,7 +102,7 @@ include_once "./Grupo 3/menu_garita.php";
             </nav>
         <?php
         } else {
-            
+
         ?>
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">

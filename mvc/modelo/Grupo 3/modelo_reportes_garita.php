@@ -19,12 +19,13 @@ if ((empty($_POST["button-busqueda-reportes"]) && (empty($_SESSION["sesion_fecha
     unset($_SESSION["sesion_fecha_final"]);
 } else {
     // alerta aun hay que tabajarla.
-    if (empty($_SESSION["sesion_fecha_final"]) || $_SESSION["sesion_fecha_final"] == '1997-09-30') {
+
+    if ((empty($_POST["busqueda_reporte_inicio"]) || empty($_POST["busqueda_reporte_final"])) && empty($_SESSION["sesion_fecha_final"])) {
         echo "<div class='alert alert-danger text-center' id='alertas' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
         ¡Ingrese las fechas a buscar, Desde y Hasta!
-    </div>";
-        $filtro_fecha_inicial = '1995-09-28';
-        $filtro_fecha_final = '1997-09-30';
+        </div>";
+        $filtro_fecha_final = '';
+        $filtro_fecha_inicial = '';
     }
     if (!empty($_POST["busqueda_reporte_final"]) && !empty($_POST["busqueda_reporte_inicio"])) {
         $filtro_fecha_inicial = $_POST["busqueda_reporte_inicio"];
