@@ -18,7 +18,7 @@ class PDF extends FPDF
     $this->SetFont('Arial', '', 8);
     $this->Cell(40, 8, utf8_decode('BANANO ORGÁNICO'));
 
-    $this->SetY(38);
+    $this->SetY(25);
     $this->SetX(105);
     $this->SetFont('Arial', 'B', 15);
     $this->Cell(89, 8, utf8_decode('REPORTE DATOS DE LLEGADA'), 0, 1);
