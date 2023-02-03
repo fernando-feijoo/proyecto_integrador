@@ -12,7 +12,7 @@ include_once "./Grupo 3/menu_garita.php";
 			</div>
 			<div class="col-10 me-3 ms-3 mt-4">
 				<div id="titulo-escritorio-listado">
-					REPORTE DE DATOS LLEGADA
+					REPORTE DATOS DE LLEGADA
 				</div>
 			</div>
 			<!-- /Titulo o encabezado del escritorio -->
@@ -23,6 +23,7 @@ include_once "./Grupo 3/menu_garita.php";
 		include("./../modelo/Grupo 3/modelo_reportes_garita.php");
 		?>
 
+		<!-- Barra de busqueda del listado llegada -->
 		<div class="d-flex justify-content-center flex-row mt-4">
 			<form action="?busqueda=1" method="post">
 				<div class="input-group" style="width: 700px;">
@@ -36,10 +37,10 @@ include_once "./Grupo 3/menu_garita.php";
 			</form>
 			<?php
 			?>
-
+		<!-- Boton de impresion de reporte -->
 		</div>
 		<div class="d-flex justify-content-end align-items-center me-5">
-			<div class="fw-semibold me-3">Imprimir:</div> <a href="#"><i class="fa-regular fa-file-pdf" style="font-size: 40px !important;"></i></a>
+			<div class="fw-semibold me-3">Imprimir:</div> <a href="./../controlador//Grupo 3/reporte_garita.php" target="_blank"><i class="btn btn-outline-danger fa-regular fa-file-pdf" style="font-size: 40px !important;"></i></a>
 		</div>
 		<!-- /Barra de busqueda del listado llegada -->
 
