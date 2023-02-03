@@ -42,7 +42,7 @@ section #menu-navegacion {
   font-size: 1.4rem;
 }
 
-div .opcion-menu{
+div .opcion-menu {
   color: black;
   text-decoration: none;
   font-size: 1.1rem;
@@ -99,10 +99,10 @@ div .opcion-menu{
   #escritorio-contenido {
     height: 35rem;
   }
-  .top-menu{
+  .top-menu {
     padding-top: 25px !important;
   }
-  #ico-home{
+  #ico-home {
     margin-left: 15px;
   }
 }
@@ -131,15 +131,15 @@ div .opcion-menu{
   #botones-menu a {
     font-size: 65%;
   }
-  
+
   /*Para atributos de escritorio Garita-Grupo3*/
-  div #titulo-escritorio{
+  div #titulo-escritorio {
     font-size: 75%;
   }
   #ico-home img {
-      width: 22px !important;
-      height: 22px !important;
-      margin-left: 0.5rem;
+    width: 22px !important;
+    height: 22px !important;
+    margin-left: 0.5rem;
   }
 }
 
@@ -149,7 +149,7 @@ div .opcion-menu{
     width: 32px !important;
     height: 32px !important;
   }
-  #botones-menu{
+  #botones-menu {
     height: 2.5rem;
     width: 15rem;
   }
@@ -162,8 +162,7 @@ div .opcion-menu{
   #escritorio-contenido {
     height: 54.5rem;
   }
-  #ico-home{
+  #ico-home {
     margin-left: 15px;
   }
-  
 }

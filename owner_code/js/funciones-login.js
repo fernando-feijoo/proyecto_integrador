@@ -1,7 +1,7 @@
 // Ingresar al presionar el Enter del teclado aunque falte mas validaciones es funcional.
-document.addEventListener("keyup", function(event) {
+document.addEventListener("keyup", function (event) {
   if (event.code === "Enter" || event.keyCode === 13) {
-      document.getElementById("boton-inicio").click();
+    document.getElementById("boton-inicio").click();
   }
 });
 
@@ -20,10 +20,10 @@ $(document).ready(function () {
   });
 });
 
-setTimeout(function(){
-  document.getElementById('alert-error').style.display = 'none';
+setTimeout(function () {
+  document.getElementById("alert-error").style.display = "none";
 }, 3000);
 
-setTimeout(function(){
-  document.getElementById('alert-complete').style.display = 'none';
+setTimeout(function () {
+  document.getElementById("alert-complete").style.display = "none";
 }, 3000);

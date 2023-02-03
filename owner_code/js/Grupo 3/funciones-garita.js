@@ -56,17 +56,17 @@ setTimeout(function () {
 }, 3000);
 
 const botonesEliminar = document.querySelectorAll("#boton-eliminar-garita");
-botonesEliminar.forEach(boton => {
-  boton.addEventListener("click", function(event) {
+botonesEliminar.forEach((boton) => {
+  boton.addEventListener("click", function (event) {
     event.preventDefault();
     Swal.fire({
-      title: '¿Desea eliminar el registro?',
+      title: "¿Desea eliminar el registro?",
       text: "Esta acción no se puede deshacer",
-      icon: 'warning',
+      icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: '#d33',
-      cancelButtonColor: '#9b9b9b',
-      confirmButtonText: 'Eliminar'
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#9b9b9b",
+      confirmButtonText: "Eliminar",
     }).then((result) => {
       if (result.value) {
         window.location.href = boton.href;
