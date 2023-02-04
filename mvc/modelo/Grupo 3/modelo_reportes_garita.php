@@ -46,4 +46,6 @@ if ((empty($_POST["button-busqueda-reportes"]) && (empty($_SESSION["sesion_fecha
 	$inicio = ($pagina - 1) * $cantidad_por_pagina;
 
 	$sql = $conexion->query("SELECT * FROM vista_registro_llegada WHERE fecha_inspeccion >= '$filtro_fecha_inicial' && fecha_inspeccion <= '$filtro_fecha_final' LIMIT $inicio, $cantidad_por_pagina;");
+
+	
 }

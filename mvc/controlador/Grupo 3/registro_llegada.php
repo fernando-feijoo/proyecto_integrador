@@ -1,8 +1,6 @@
 <?php
 if (!empty($_POST["btn-guardar"]) || !empty($_POST["btn-actualizar"])) {
-	// echo "Boton presionado <br>";
 	if (!empty($_POST["inlineRadioOptions_gg3"])) {
-		// echo $_SESSION["id_listado"];
 		$id_listado = $_SESSION["id_listado"];
 		$fecha_insp = $_POST["fecha_inspeccion_gg3"];
 		$semana = $_POST["semana_gg3"];
@@ -22,12 +20,6 @@ if (!empty($_POST["btn-guardar"]) || !empty($_POST["btn-actualizar"])) {
 		// Para visualizar en pantalla de trabajo, prueba.
 		// echo $fecha_insp. ' <br> ' .$semana. ' <br> ' .$fecha_hora_salida. ' <br> ' .$hora_llegada. ' <br> ' .$cupo. ' <br> ' .$contenedor. ' <br> ' .$nombre_acopio. ' <br> ' .$candados_llegada. ' <br> ' .$tipo_contenedor_eleccion. ' <br> ' .$id_tipo_caja. ' <br> ' .$id_vehiculo. ' <br> ' .$id_chofer;
 		$conexion = conexionBd();
-		// SQL anterior ahora sera con funcion.
-		// $sql = $conexion->query("INSERT INTO 
-		// registro_llegada 
-		// (fecha_inspeccion, semana, fecha_hora_salida, hora_llegada, cupo, contenedor, nombre_acopio, candados, tipo_de_contenedor, id_tipo_caja, id_vehiculo, id_chofer) 
-		// VALUES 
-		// ('$fecha_insp','$semana','$fecha_hora_salida','$hora_llegada','$cupo','$contenedor','$nombre_acopio','$candados_llegada','$tipo_contenedor_eleccion','$id_tipo_caja','$id_vehiculo','$id_chofer');");
 
 		$sql_consulta = "SELECT `insertarDatosLlegada` ($id_listado,'$fecha_insp','$semana','$fecha_hora_salida','$hora_llegada','$cupo','$contenedor','$nombre_acopio','$candados_llegada','$tipo_contenedor_eleccion','$id_tipo_caja','$id_vehiculo','$id_chofer');";
 

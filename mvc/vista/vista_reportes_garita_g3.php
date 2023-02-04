@@ -20,7 +20,7 @@ include_once "./Grupo 3/menu_garita.php";
 		<div id="caja-separacion-escritorio" class="mx-auto"></div>
 
 		<?php
-		include("./../modelo/Grupo 3/modelo_reportes_garita.php");
+		include_once("./../modelo/Grupo 3/modelo_reportes_garita.php");
 		?>
 
 		<!-- Barra de busqueda del listado llegada -->
@@ -37,10 +37,17 @@ include_once "./Grupo 3/menu_garita.php";
 			</form>
 			<?php
 			?>
-		<!-- Boton de impresion de reporte -->
+			<!-- Boton de impresion de reporte -->
 		</div>
+		<?php
+		// Validacion para no tener error y que no salgan datos de impresion en caso de no ingresarse.
+		if (empty($_SESSION['sesion_fecha_inicial']) || empty($_SESSION['sesion_fecha_final'])) {
+			$filtro_fecha_inicial = 0;
+			$filtro_fecha_final = 0;
+		}
+		?>
 		<div class="d-flex justify-content-end align-items-center me-5">
-			<div class="fw-semibold me-3">Imprimir:</div> <a href="./../controlador//Grupo 3/reporte_garita.php" target="_blank"><i class="btn btn-outline-danger fa-regular fa-file-pdf" style="font-size: 40px !important;"></i></a>
+			<div class="fw-semibold me-3">Imprimir:</div> <a href="./../controlador//Grupo 3/reporte_garita.php?f_ini=<?= $filtro_fecha_inicial ?>&&f_fin=<?= $filtro_fecha_final ?>" target="_blank"><i class="btn btn-outline-danger fa-regular fa-file-pdf" style="font-size: 40px !important;"></i></a>
 		</div>
 		<!-- /Barra de busqueda del listado llegada -->
 
