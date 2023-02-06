@@ -1,28 +1,26 @@
 <?php
-include('./../../layout/header.php');
-include('./Grupo 3/menu.php');
+include_once('./../../layout/header.php');
+include_once('./Grupo 3/menu.php');
 ?>
 <div id="contenedor-escritorio-contenido" class="container-fluid col text-center pe-2 ps-0">
 	<!-- Contenedor de escritorio *interno -->
-	<section>
-		<div id="escritorio-contenido" class="container-fluid mt-1 mb-1 rounded-4">
-			<div class="row">
-				<!-- Titulo o encabezado del escritorio -->
-				<div class="col-1 d-flex align-items-end mb-1">
-					<a id="ico-home" href="./dashboard.php"><img src="./../../img/home_32x32-escritorio.png" alt="icono-home" /></a>
-				</div>
-				<div class="col-10 me-3 ms-3 mt-4">
-					<div id="titulo-escritorio">
-						CONTENEDORES DISPONIBLES<br>
-						PARA INSPECCIONAR
-					</div>
-				</div>
-				<!-- /Titulo o encabezado del escritorio -->
+	<div id="escritorio-contenido" class="container-fluid mt-1 mb-1 rounded-4">
+		<div class="row">
+			<!-- Titulo o encabezado del escritorio -->
+			<div class="col-1 d-flex align-items-end mb-1">
+				<a id="ico-home" href="./dashboard.php"><img src="./../../img/home_32x32-escritorio.png" alt="icono-home" /></a>
 			</div>
-			<div id="caja-separacion-escritorio" class="mx-auto"></div>
+			<div class="col-10 me-3 ms-3 mt-4">
+				<div id="titulo-escritorio">
+					CONTENEDORES DISPONIBLES<br>
+					PARA INSPECCIONAR
+				</div>
+			</div>
+			<!-- /Titulo o encabezado del escritorio -->
+		</div>
+		<div id="caja-separacion-escritorio" class="mx-auto"></div>
 
-
-			<table class="table table-striped table-hover table-sm table-bordered border-dark align-middle mt-5 mx-auto" style="width: 1100px;">
+		<table class="table table-striped table-hover table-sm table-bordered border-dark align-middle mt-5 mx-auto" style="width: 900px !important;">
 			<thead class="bg-primary bg-gradient bg-opacity-75">
 				<tr>
 					<th scope="col">CONTENEDOR</th>
@@ -46,19 +44,16 @@ include('./Grupo 3/menu.php');
 						<td><?= $datos->nombre_acopio ?></td>
 						<td><?= $datos->tipo_de_caja ?></td>
 						<td>
-							<a id="boton-registrar-contenedor" href="./vista_listado_registro_g3.php?id_regis=<?= $datos-> id ?>&&numCont=<?= $datos -> num_contenedor?>" class="btn btn-small btn-outline-success" style="width: 70px;"><i class="fa-solid fa-file-pen"></i></a>
+							<a id="boton-registrar-contenedor" href="./vista_listado_registro_g3.php?id_regis=<?= $datos->id ?>&&numCont=<?= $datos->num_contenedor ?>" class="btn btn-small btn-outline-success" style="width: 70px;"><i class="fa-solid fa-file-pen"></i></a>
 						</td>
 					</tr>
 				<?php }
 				?>
-
 			</tbody>
 		</table>
 
-
-      </div>
-	</section>
+	</div>
 </div>
 <?php
-include('./../../layout/footer.php')
+include_once('./../../layout/footer.php')
 ?>

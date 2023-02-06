@@ -26,7 +26,6 @@ include_once "./Grupo 3/menu_garita.php";
 
 		<!-- Barra de busqueda del listado llegada -->
 		<div class="d-flex justify-content-center flex-row">
-
 			<form action="?busqueda=1" method="post">
 				<div class="input-group mt-5" style="width: 700px;">
 					<input name="busqueda_garita" type="text" class="form-control" placeholder="Busqueda de datos" value="">
@@ -42,9 +41,6 @@ include_once "./Grupo 3/menu_garita.php";
 					<button class="btn btn-outline-primary" type="submit" name="button-busqueda" value="buscando">Buscar registro</button>
 				</div>
 			</form>
-			<?php
-			?>
-
 		</div>
 		<!-- /Barra de busqueda del listado llegada -->
 
