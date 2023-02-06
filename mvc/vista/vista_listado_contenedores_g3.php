@@ -74,6 +74,8 @@ include_once "./Grupo 3/menu.php";
 						<td><?= $datos->hora_llegada ?></td>
 						<td><?= $datos->contenedor ?></td>
 						<td><?= $datos->nombre_acopio ?></td>
+						<td></td>
+
 						
 						
 						
@@ -87,6 +89,60 @@ include_once "./Grupo 3/menu.php";
 
 			</tbody>
 		</table>
+		<?php
+		if (empty($_GET["busqueda"])) {
+		?>
+			<nav aria-label="Page navigation example">
+				<ul class="pagination justify-content-center">
+					<?php if ($pagina != 1) { ?>
+						<li class="page-item">
+							<a class="page-link" href="?pagina=<?= $pagina - 1 ?>">Previous</a>
+						</li>
+					<?php } ?>
+					<?php for ($i = 1; $i <= $num_pags; $i++) { ?>
+						<li class="page-item <?= $i == $pagina ? 'active' : '' ?>">
+							<a class="page-link" href="?pagina=<?= $i ?>"><?= $i ?></a>
+						</li>
+					<?php } ?>
+					<?php if ($pagina != $num_pags) { ?>
+						<li class="page-item">
+							<a class="page-link" href="?pagina=<?= $pagina + 1 ?>">Next</a>
+						</li>
+					<?php } ?>
+				</ul>
+			</nav>
+		<?php
+		} else {
+		?>
+			<nav aria-label="Page navigation example">
+				<ul class="pagination justify-content-center">
+					<?php if ($pagina != 1) { ?>
+						<li class="page-item">
+							<a class="page-link" href="?busqueda=1&pagina=<?= $pagina - 1 ?>">Previous</a>
+						</li>
+					<?php } ?>
+					<?php for ($i = 1; $i <= $num_pags; $i++) { ?>
+						<li class="page-item <?= $i == $pagina ? 'active' : '' ?>">
+							<a class="page-link" href="?busqueda=1&pagina=<?= $i ?>"><?= $i ?></a>
+						</li>
+					<?php } ?>
+					<?php if ($pagina != $num_pags) { ?>
+						<li class="page-item">
+							<a class="page-link" href="?busqueda=1&pagina=<?= $pagina + 1 ?>">Next</a>
+						</li>
+					<?php } ?>
+				</ul>
+			</nav>
+		<?php
+		}
+		?>
+		 </div>
+
+</div>
+
+
+</div>
+</div>
 
 		<?php
 		
