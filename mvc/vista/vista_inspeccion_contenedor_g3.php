@@ -14,79 +14,79 @@
         <tbody>
             <tr>
 
-                <td class="borde">1</td>
-                <td class="borde">Puertas</td>
-                <td class="borde"> <input type="checkbox" name="puertas" id="PUERTAS"></td>
+                <td class="borde color"style="background-color:white">1</td>
+                <td class="borde color">Puertas</td>
+                <td class="borde color"> <input type="checkbox" name="puertas" id="PUERTAS"></td>
 
             </tr>
             <tr>
 
-                <td class="borde">2</td>
-                <td class="borde">Pared Izquierda</td>
-                <td class="borde"><input type="checkbox" name="pared_izquierda" id="p_izquierda"></td>
+                <td class="borde color">2</td>
+                <td class="borde color">Pared Izquierda</td>
+                <td class="borde color"><input type="checkbox" name="pared_izquierda" id="p_izquierda"></td>
 
             </tr>
             <tr>
 
-                <td class="borde">3</td>
-                <td class="borde">Espaciadores</td>
-                <td class="borde"><input type="checkbox" name="espaciadores" id="espa"></td>
+                <td class="borde color">3</td>
+                <td class="borde color">Espaciadores</td>
+                <td class="borde color"><input type="checkbox" name="espaciadores" id="espa"></td>
 
             </tr>
             <tr>
 
-                <td class="borde">4</td>
-                <td class="borde">Pared Frontal</td>
-                <td class="borde"><input type="checkbox" name="pared_frontal" id="pa_frontal"></td>
+                <td class="borde color">4</td>
+                <td class="borde color">Pared Frontal</td>
+                <td class="borde color"><input type="checkbox" name="pared_frontal" id="pa_frontal"></td>
 
             </tr>
             <tr>
 
-                <td class="borde">5</td>
-                <td class="borde">Pared Derecha</td>
-                <td class="borde"><input type="checkbox" name="pared_derecha" id="pa_derecha"></td>
+                <td class="borde color">5</td>
+                <td class="borde color">Pared Derecha</td>
+                <td class="borde color"><input type="checkbox" name="pared_derecha" id="pa_derecha"></td>
 
             </tr>
             <tr>
 
-                <td class="borde">6</td>
-                <td class="borde">Techo</td>
-                <td class="borde"><input type="checkbox" name="techo" id="techo"></td>
+                <td class="borde color">6</td>
+                <td class="borde color">Techo</td>
+                <td class="borde color"><input type="checkbox" name="techo" id="techo"></td>
 
             </tr>
             <tr>
 
-                <td class="borde">7</td>
-                <td class="borde">Piso Interior</td>
-                <td class="borde"><input type="checkbox" name="piso_interior" id="pi_interior"></td>
+                <td class="borde color">7</td>
+                <td class="borde color">Piso Interior</td>
+                <td class="borde color"><input type="checkbox" name="piso_interior" id="pi_interior"></td>
 
             </tr>
             <tr>
 
-                <td class="borde">8</td>
-                <td class="borde">Piso Exterior</td>
-                <td class="borde"><input type="checkbox" name="piso_exterior" id="pi_exterior"></td>
+                <td class="borde color">8</td>
+                <td class="borde color">Piso Exterior</td>
+                <td class="borde color"><input type="checkbox" name="piso_exterior" id="pi_exterior"></td>
 
             </tr>
             <tr>
 
-                <td class="borde">9</td>
-                <td class="borde">Evaporadores</td>
-                <td class="borde"><input type="checkbox" name="eva" id="evapo"></td>
+                <td class="borde color">9</td>
+                <td class="borde color">Evaporadores</td>
+                <td class="borde color"><input type="checkbox" name="eva" id="evapo"></td>
 
             </tr>
             <tr>
 
-                <td class="borde">10</td>
-                <td class="borde">Tornillo Seguridad</td>
-                <td class="borde"><input type="checkbox" name="torinillo" id="tor_segu"></td>
+                <td class="borde color">10</td>
+                <td class="borde color">Tornillo Seguridad</td>
+                <td class="borde color"><input type="checkbox" name="torinillo" id="tor_segu"></td>
 
             </tr>
             <tr>
 
-                <td class="borde">11</td>
-                <td class="borde">Delefactor</td>
-                <td class="borde"><input type="checkbox" name="delefactor" id="dele"></td>
+                <td class="borde color">11</td>
+                <td class="borde color">Delefactor</td>
+                <td class="borde color"><input type="checkbox" name="delefactor" id="dele"></td>
 
             </tr>
 
@@ -105,7 +105,9 @@
         height: 50px;
         margin: 10px;
     }
-
+     .color {
+    background-color:white;
+     }
     .borde {
         border: #b2b2b2 1px solid;
     }

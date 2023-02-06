@@ -1,6 +1,6 @@
 <?php
 // Esta ruta de conexion es desde donde se esta usando el codigo de modelo
-// En este caso es cista_llegada_g3.php
+// En este caso es vista_llegada_g3.php
 include_once("./../modelo/conexion_bd.php");
 
 function datos_lista_caja()
