@@ -49,9 +49,6 @@
 			<?php
 			include "./mvc/controlador/controlador_login_bd.php";
 			?>
-			<!-- <div class="alert alert-danger d-none mt-4 mb-4 text-center" id="alert-error" role="alert" style="width: 85%; margin: auto !important; margin-top: 1rem !important;">
-                ¡Usuario o contraseña incorrectos, vifique!
-            </div> -->
 
 			<div class="d-flex justify-content-around mt-2">
 				<div class="d-flex align-items-center gap-1">
