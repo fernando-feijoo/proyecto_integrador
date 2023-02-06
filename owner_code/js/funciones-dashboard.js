@@ -32,3 +32,23 @@ function displayDate() {
   document.getElementById("date").innerHTML = dateString;
 }
 setInterval(displayDate, 1000);
+
+const botonRegistro = document.querySelectorAll("#boton-registrar-contenedor");
+botonRegistro.forEach((boton) => {
+  boton.addEventListener("click", function (event) {
+    event.preventDefault();
+    Swal.fire({
+      title: "¿Desea inspeccionar el contenedor?",
+      text: "Antes de continuar, verifique el correcto",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonColor: "#0d6efd",
+      cancelButtonColor: "#9b9b9b",
+      confirmButtonText: "Hacer Inspección",
+    }).then((result) => {
+      if (result.value) {
+        window.location.href = boton.href;
+      }
+    });
+  });
+});

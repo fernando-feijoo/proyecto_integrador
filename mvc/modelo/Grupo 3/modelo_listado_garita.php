@@ -17,7 +17,6 @@ if ((empty($_POST["button-busqueda"]) && empty($_SESSION["sesion_busqueda"])) ||
 	$sql = $conexion->query("SELECT * FROM vista_registro_llegada LIMIT $inicio, $cantidad_por_pagina;");
 	unset($_SESSION["sesion_busqueda"]);
 } else {
-	// alerta aun hay que tabajarla.
 	if (empty($_POST["busqueda_garita"]) && empty($_SESSION["sesion_busqueda"])) {
 		echo "<div class='alert alert-danger text-center' id='alertas' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
         ¡Ingrese los datos a buscar ademas del filtro!

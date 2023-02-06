@@ -40,6 +40,14 @@
                         <div class="row pt-3">
                             <div class="col-md-10 offset-md-2 text-start">
                                 <div id="botones-menu">
+                                    <a class="opcion-menu" href="./vista_contenedores_g3.php" name="opcion-registro">Seleccionar Contenedor</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row pt-3">
+                            <div class="col-md-10 offset-md-2 text-start">
+                                <div id="botones-menu">
                                     <a class="opcion-menu" href="./vista_listado_registro_g3.php" name="opcion-registro">Registro contenedores</a>
                                 </div>
                             </div>

@@ -65,7 +65,6 @@ include_once "./Grupo 3/menu_garita.php";
 			</thead>
 			<tbody class="table-group-divider">
 				<?php
-				// include_once("./../modelo/Grupo 3/modelo_listado_garita.php");
 				while ($datos = $sql->fetch_object()) {
 				?>
 					<tr>
