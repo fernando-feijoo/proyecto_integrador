@@ -255,12 +255,12 @@ include_once "./Grupo 3/menu_garita.php";
 						<?php
 						if (empty($_GET["id_listado"])) {
 						?>
-							<input type="hidden" name="btn-guardar" id="btn-guardar-value1" value="guardado">
+							<input type="hidden" name="btn-guardar" id="btn-guardar-value" value="guardado">
 							<button id="boton-guardar-garita" class="btn btn-outline-primary" type="submit" name="btn-guardar" value="guardado">Guardar</button>
 						<?php
 						} else {
 						?>
-							<input type="hidden" name="btn-actualizar" id="btn-guardar-value2" value="actualizado">
+							<input type="hidden" name="btn-actualizar" id="btn-actualizar-value" value="actualizado">
 							<button id="boton-actualizar-garita" class="btn btn-outline-info" type="submit" name="btn-actualizar" value="actualizado">Actualizar</button>
 						<?php
 						}
