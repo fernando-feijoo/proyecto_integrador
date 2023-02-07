@@ -34,6 +34,7 @@ include_once "./Grupo 1/menu.php";
     
   <div class="tab-pane fade show active" id="nav-dg" role="tabpanel" aria-labelledby="nav-dg-tab"><?php 
   include_once("./../modelo/conexion_bd.php");
+  include_once ("./../controlador/Grupo 1/registro_eva.php");
   include("./../modelo/Grupo 1/modelo_rellenar_dg_g1.php");
   include("./vista_detalles_generales_g1.php");?></div>
   
