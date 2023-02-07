@@ -20,7 +20,6 @@
 
     <form action="./vista_registro_eva_g1.php" method="post">
         <?php
-
         if (!empty($_GET["id_eva"])) {
             $_SESSION["id_eva"] = $_GET["id_eva"];
             // echo $_SESSION["id_listado"];
@@ -164,7 +163,7 @@
                         <div class="p-2">
 
                             <button id="boton-guardar_eva" class="btn btn-outline-info" type="submit" name="guardar_eva"
-                                value="actualizado">Guardar</button>
+                                value="actualizado" onclick="<?= guardar_evaluacion()?>">Guardar</button>
 
                         </div>
                     </div>

@@ -9,7 +9,7 @@ function cargar_datos()
         FROM evaluaciones eva inner join productores_inspectores pi ON
         pi.codigo = eva.cod_prod_insp where eva.id=$id;");
         return $sql;
-    } else {
+    } else {   
         $validacion = false;
         return $validacion;
     }
