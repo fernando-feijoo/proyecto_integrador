@@ -77,8 +77,8 @@ include_once "./Grupo 3/menu.php";
 						<td scope="row"><?php echo $resultados['nombre_acopio'] ?></td>
 						<td scope="row"><?php echo $resultados['vapor'] ?></td>
 						<td>
-							<a id="boton-editar-contenedor" href="./vista_listado_registro_g3.php?= $datos->id ?>" class="btn btn-small btn-warning" style="width: 70px;"><i class="fa-regular fa-pen-to-square"></i></a>
-							<a id="boton-eliminar-contenedor" class="btn btn-small btn-danger" href="./vista_listado_contenedores_g3.php?= $datos->id ?>" style="width: 70px;"><i class="fa-regular fa-trash-can"></i></a>
+							<a id="boton-editar-contenedor" href="./vista_listado_registro_g3.php?id_conExpo=<?= $resultados['id'] ?>" class="btn btn-small btn-warning" style="width: 70px;"><i class="fa-regular fa-pen-to-square"></i></a>
+							<a id="boton-eliminar-contenedor" class="btn btn-small btn-danger" href="./vista_listado_contenedores_g3.php?id_conExpo=<?= $resultados['id'] ?>" style="width: 70px;"><i class="fa-regular fa-trash-can"></i></a>
 						</td>
 					</tr>
 				<?php }
