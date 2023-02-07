@@ -1,20 +1,24 @@
 <?php
-include("../controlador/Grupo 3/registro_sellos.php");
+			include_once("./../modelo/conexion_bd.php");
+			include_once "./../controlador/Grupo 3/registro_sellos.php";
+			
+			?>
 
-?>
+    <div id="inicio-datos" class="row mx-auto">
 
-<form action="./vista_sellos_contenedor_g3.php" method="post">
+    <form action="./vista_listado_registro_g3.php" method="post">
     <?php
 
-    if (!empty($_GET["id_listado"])) {
-        $_SESSION["id_regist"] = $_GET["id_regist"];
+    if (!empty($_GET["id_conExpo"])  || !empty($_GET["id_regis"])  || !empty($_GET["numCont"])) {
+
+        $_SESSION["id_regis"] = $_GET["id_regis"];
         $_SESSION["numCont"] = $_GET["numCont"];
     }
-
+    
 
     ?>
 
-    <div id="inicio-datos" class="row mx-auto">
+    
         <div class="containe text-start m-1">
             <div class="row">
                 <div class="col form-check form-check-inline ms-2 fs-5 fw-semibold">
@@ -66,7 +70,7 @@ include("../controlador/Grupo 3/registro_sellos.php");
                 <div class="d-flex flex-row justify-content-end ms-auto me-5 mb-1 mt-3">
                     <div class="p-2">
                         <?php
-                        if (empty($_GET["id_listado"])) {
+                        if (empty($_GET["id_conExpo"])) {
                         ?>
                             <input type="hidden" name="btn-guardar" id="btn-guardar-value1" value="guardado">
                             <button id="boton-guardar-garita" class="btn btn-outline-primary" type="submit" name="btn-guardar" value="guardado">Guardar</button>

@@ -23,7 +23,7 @@ include_once "./Grupo 3/menu.php";
 		include_once("./../controlador/Grupo 3/eliminar_registro_contenedores_g3.php");
 		include("./../modelo/Grupo 3/modelo_listado_contenedores_g3.php");
 		?>
- 
+
 		<!-- Barra de busqueda del listado llegada -->
 		<div class="d-flex justify-content-center flex-row">
 
@@ -34,10 +34,10 @@ include_once "./Grupo 3/menu.php";
 						<select class="form-select" name="seleccionBusquedaContenedor" aria-label="Example select with button addon">
 							<option value="tipo_de_contenedor">Filtro</option>
 							<option value="contenedor">CONTENEDOR</option>
-							
+
 							<option value="nombre_acopio">ACOPIO</option>
 							<option value="semana">SEMANA</option>
-              <option value="vapor">VAPOR</option>
+							<option value="vapor">VAPOR</option>
 						</select>
 					</div>
 					<button class="btn btn-outline-primary" type="submit" name="button-busqueda" value="buscando">Buscar registro</button>
@@ -53,32 +53,33 @@ include_once "./Grupo 3/menu.php";
 			<thead class="bg-primary bg-gradient bg-opacity-75">
 				<tr>
 					<th scope="col">ID</th>
-                    <th scope="col">FECHA INSPECCION</th>
-                    <th scope="col">SEMANA</th>
-                    <th scope="col">HORA LLEGADA</th>
-                    <th scope="col">CONTENEDOR</th>
-                     <th scope="col">ACOPIO</th>
-                    <th scope="col">VAPOR</th>
-                    <th scope="col" style="width: 160px;"></th>
+					<th scope="col">FECHA INSPECCION</th>
+					<th scope="col">SEMANA</th>
+					<th scope="col">HORA LLEGADA</th>
+					<th scope="col">CONTENEDOR</th>
+					<th scope="col">ACOPIO</th>
+					<th scope="col">VAPOR</th>
+					<th scope="col" style="width: 160px;"></th>
 				</tr>
 			</thead>
 			<tbody class="table-group-divider">
-			<?php
-			
-			$sql= $conexion->query("SELECT * FROM vista_registro_contenedores");
-				while ($resultados = $sql->fetch_assoc()) {
+				<?php
+
+				$sql = $conexion->query("SELECT * FROM vista_registro_contenedores");
+				while ($datos = $sql->fetch_object()) {
 				?>
 					<tr>
-						<td scope="row"><?php echo $resultados['id'] ?></td>
-						<td scope="row"><?php echo $resultados['fecha_inspeccion'] ?></td>
-						<td scope="row"><?php echo $resultados['semana'] ?></td>
-						<td scope="row"><?php echo $resultados['hora_llegada'] ?></td>
-						<td scope="row"><?php echo $resultados['contenedor'] ?></td>
-						<td scope="row"><?php echo $resultados['nombre_acopio'] ?></td>
-						<td scope="row"><?php echo $resultados['vapor'] ?></td>
+						<td><?= $datos->id ?></td>
+						<td><?= $datos->fecha_inspeccion ?></td>
+						<td><?= $datos->semana ?></td>
+						<td><?= $datos->hora_llegada ?></td>
+						<td><?= $datos->contenedor ?></td>
+						<td><?= $datos->nombre_acopio ?></td>
+						<td><?= $datos->vapor ?></td>
+
 						<td>
-							<a id="boton-editar-contenedor" href="./vista_listado_registro_g3.php?id_conExpo=<?= $resultados['id'] ?>" class="btn btn-small btn-warning" style="width: 70px;"><i class="fa-regular fa-pen-to-square"></i></a>
-							<a id="boton-eliminar-contenedor" class="btn btn-small btn-danger" href="./vista_listado_contenedores_g3.php?id_conExpo=<?= $resultados['id'] ?>" style="width: 70px;"><i class="fa-regular fa-trash-can"></i></a>
+							<a id="boton-editar-contenedor" href="./vista_listado_registro_g3.php?id_conExpo=<?= $datos->id?>" class="btn btn-small btn-warning" style="width: 70px;"><i class="fa-regular fa-pen-to-square"></i></a>
+							<a id="boton-eliminar-contenedor" class="btn btn-small btn-danger" href="./vista_listado_contenedores_g3.php?id_eliminado=<?= $datos->id ?>" style="width: 70px;"><i class="fa-regular fa-trash-can"></i></a>
 						</td>
 					</tr>
 				<?php }
