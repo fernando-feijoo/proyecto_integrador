@@ -52,7 +52,7 @@
             <input type="TEXT" style="width: 245px; height: 25px;" name="sello_nave" id="sello_nave1">
         </div>
         <div class="p-2"> Vapor:
-            <input type="TEXT" style="width: 195px; height: 25px;" name="vapor" id="vapor1">
+            <input type="TEXT" style="width: 195px; height: 25px;" name="vapor" id="vapor1" >
         </div>
         <div class="p-2"> Destino:
             <input type="TEXT" style="width: 195px; height: 25px;" name="Destino" id="Destino1">

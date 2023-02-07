@@ -63,25 +63,22 @@ include_once "./Grupo 3/menu.php";
 				</tr>
 			</thead>
 			<tbody class="table-group-divider">
-				<?php
-				// include_once("./../modelo/Grupo 3/modelo_listado_contenedores_g3.php");
-				while ($datos = $sql->fetch_object()) {
+			<?php
+			
+			$sql= $conexion->query("SELECT * FROM vista_registro_contenedores");
+				while ($resultados = $sql->fetch_assoc()) {
 				?>
 					<tr>
-						<td><?= $datos->id ?></td>
-						<td><?= $datos->fecha_inspeccion ?></td>
-						<td><?= $datos->semana ?></td>
-						<td><?= $datos->hora_llegada ?></td>
-						<td><?= $datos->contenedor ?></td>
-						<td><?= $datos->nombre_acopio ?></td>
-						<td></td>
-
-						
-						
-						
+						<td scope="row"><?php echo $resultados['id'] ?></td>
+						<td scope="row"><?php echo $resultados['fecha_inspeccion'] ?></td>
+						<td scope="row"><?php echo $resultados['semana'] ?></td>
+						<td scope="row"><?php echo $resultados['hora_llegada'] ?></td>
+						<td scope="row"><?php echo $resultados['contenedor'] ?></td>
+						<td scope="row"><?php echo $resultados['nombre_acopio'] ?></td>
+						<td scope="row"><?php echo $resultados['vapor'] ?></td>
 						<td>
-							<a id="boton-editar-contenedores" href="./vista_listado_contenedores_g3.php?= $datos->id ?>" class="btn btn-small btn-warning" style="width: 70px;"><i class="fa-regular fa-pen-to-square"></i></a>
-							<a id="boton-eliminar-contenedores" class="btn btn-small btn-danger" href="./vista_listado_contenedores_g3.php?= $datos->id ?>" style="width: 70px;"><i class="fa-regular fa-trash-can"></i></a>
+							<a id="boton-editar-contenedor" href="./vista_listado_registro_g3.php?= $datos->id ?>" class="btn btn-small btn-warning" style="width: 70px;"><i class="fa-regular fa-pen-to-square"></i></a>
+							<a id="boton-eliminar-contenedor" class="btn btn-small btn-danger" href="./vista_listado_contenedores_g3.php?= $datos->id ?>" style="width: 70px;"><i class="fa-regular fa-trash-can"></i></a>
 						</td>
 					</tr>
 				<?php }
@@ -89,6 +86,7 @@ include_once "./Grupo 3/menu.php";
 
 			</tbody>
 		</table>
+
 		<?php
 		if (empty($_GET["busqueda"])) {
 		?>
@@ -136,16 +134,9 @@ include_once "./Grupo 3/menu.php";
 		<?php
 		}
 		?>
-		 </div>
 
+	</div>
 </div>
-
-
-</div>
-</div>
-
-		<?php
-		
-
-include_once "./../../layout/footer.php";
+<?php
+include_once "./../../layout/footer.php"
 ?>

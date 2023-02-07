@@ -2,6 +2,9 @@
 include_once "./../modelo/conexion_bd.php";
 $conexion = conexionBd();
 
+
+
+
 $cantidad_por_pagina = 5;
 
 if ((empty($_POST["button-busqueda"]) && empty($_SESSION["sesion_busqueda"])) || empty($_GET["busqueda"])) {

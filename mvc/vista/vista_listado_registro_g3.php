@@ -34,8 +34,8 @@ include_once "./Grupo 3/menu.php";
 
       <div class="tab-pane fade show active" id="nav-sellos" role="tabpanel" aria-labelledby="nav-home-tab">
         <?php
-        include("../modelo/Grupo 3/modelo_listado_contenedores_g3.php");
-        include("../controlador/Grupo 3/registro_contenedores.php");
+        include("./../modelo/conexion_bd.php");
+       
         include("./vista_sellos_contenedor_g3.php")
         ?>
       </div>
