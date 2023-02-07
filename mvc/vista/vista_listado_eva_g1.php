@@ -22,8 +22,22 @@ include_once "./Grupo 1/menu.php";
     include_once("./../controlador/Grupo 1/eliminar_registros_eva.php");
     include("./../modelo/Grupo 1/modelo_listado_eva.php");
     ?>
+    <div class="d-flex justify-content-center flex-row">
+
+      <form action="?busqueda=1" method="post">
+        <div class="input-group mt-5" style="width: 700px;">
+          <input name="busqueda_evaluaciones" type="text" class="form-control text-uppercase"
+            placeholder="Ingrese el código de la evaluación" value="">
+          <button class="btn btn-outline-primary" type="submit" name="button-busqueda" value="buscando">Buscar
+            registro</button>
+        </div>
+      </form>
+      <?php
+      ?> 
+
+    </div>
     <table class="table mt-2">
-      <thead style="background-color: greenyellow;">
+      <thead class="" style="background-color: greenyellow;">
         <tr>
           <th scope="col">ID</th>
           <th scope="col">COD</th>
@@ -39,21 +53,33 @@ include_once "./Grupo 1/menu.php";
         while ($datos = $sql->fetch_object()) {
           ?>
           <tr>
-            <td><?= $datos->id ?></td>
-            <td><?= $datos->cod_evaluacion ?></td>
-            <td><?= $datos->nombre_p ?></td>
-            <td><?= $datos->apellido_p ?></td>
-            <td><?= $datos->finca ?></td>
+            <td>
+              <?= $datos->id ?>
+            </td>
+            <td>
+              <?= $datos->cod_evaluacion ?>
+            </td>
+            <td>
+              <?= $datos->nombre_p ?>
+            </td>
+            <td>
+              <?= $datos->apellido_p ?>
+            </td>
+            <td>
+              <?= $datos->finca ?>
+            </td>
             <td>
               <a class="btn btn-small btn-warning" href="vista_registro_eva_g1.php?id_eva=<?= $datos->id ?>"><i
                   class="fa-regular fa-pen-to-square"></i></a>
-              <a class="btn btn-small btn-danger" href="./vista_listado_eva_g1.php?id_delete=<?= $datos->id ?>"><i class="fa-regular fa-trash-can"></i></a>
+              <a id="boton-eliminar-garita" class="btn btn-small btn-danger"
+                href="./vista_listado_eva_g1.php?id_delete=<?= $datos->id ?>"><i class="fa-regular fa-trash-can"></i></a>
             </td>
           </tr>
         <?php }
         ?>
       </tbody>
     </table>
+
   </div>
 </div>
 <?php
