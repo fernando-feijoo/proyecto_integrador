@@ -21,7 +21,7 @@ if ((empty($_POST["button-busqueda"]) && empty($_SESSION["sesion_busqueda"])) ||
 		echo "<div class='alert alert-danger text-center' id='alertas' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
         ¡Ingrese los datos a buscar ademas del filtro!
     </div>";
-		$filtro_busqueda = "tipo_de_contenedor";
+		$filtro_busqueda = "nombre_acopio";
 		$valor_busqueda = "";
 	}
 	if (!empty($_POST["seleccionBusquedaContenedores"]) || !empty($_POST["busqueda_contenedores"])) {

@@ -16,23 +16,20 @@ if (!empty($_POST["btn-guardar"]) || !empty($_POST["btn-actualizar"])) {
 		$sellos_externos7 = $_POST["sellos_externos7"];
 		$sellos_externos8 = $_POST["sellos_externos8"];
 		$sellos_externos9 = $_POST["sellos_externos9"];
-
-
-
-
-
-
-
+		$_SESSION['numCont']=$_GET["numCont"];
+		$_SESSION['id_regist']=$_GET["id_regist"];
 		
+
+	
+	
 
 		// Para visualizar en pantalla de trabajo, prueba.
 		// echo $fecha_insp. ' <br> ' .$semana. ' <br> ' .$fecha_hora_salida. ' <br> ' .$hora_llegada. ' <br> ' .$cupo. ' <br> ' .$contenedor. ' <br> ' .$nombre_acopio. ' <br> ' .$candados_llegada. ' <br> ' .$tipo_contenedor_eleccion. ' <br> ' .$id_tipo_caja. ' <br> ' .$id_vehiculo. ' <br> ' .$id_chofer;
 		$conexion = conexionBd();
 
-		$sql_consulta = "SELECT `insertarDatosSellos` ($id_sellos,'$sellos_internos','$sellos_externos');";
+		$sql_consulta = "SELECT `insertarDatosContExport` ($id_sellos,'$_SESSION','$sellos_externos1','$sellos_interno,'$_SESSION');";
 
 		$sql = $conexion->query($sql_consulta);
-
 		if (($conexion->query($sql_consulta) === TRUE || !empty($_POST["btn-guardar"])) || ($conexion->query($sql_consulta) === TRUE || !empty($_POST["btn-actualizar"]))) {
 			if (!empty($_POST["btn-guardar"])) {
 				echo "<div class='alert alert-success text-center' id='alertas' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
@@ -54,3 +51,4 @@ if (!empty($_POST["btn-guardar"]) || !empty($_POST["btn-actualizar"])) {
     </div>";
 	}
 }
+?>
