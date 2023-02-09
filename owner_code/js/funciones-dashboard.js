@@ -52,3 +52,25 @@ botonRegistro.forEach((boton) => {
     });
   });
 });
+
+// FUNCION PARA EL GRUPO 3 EL ROL DE GRUPO 3 BY Fernando F. Feijoo
+
+var id = "<?php echo $_GET['id_regis']; ?>";
+var numCont = "<?php echo $_GET['numCont']; ?>";
+const botonesSeleccionar = document.querySelectorAll(
+  "#boton-seleccionar-contenedor"
+);
+botonesSeleccionar.forEach((boton) => {
+  boton.addEventListener("click", (event) => {
+    event.preventDefault();
+    if (!boton.href.includes(`?id_regis=${id}&&numCont=${numCont}`)) {
+      Swal.fire({
+        title: "Acceso denegado",
+        text: "Seleccione un contenedor.",
+        icon: "error",
+      }).then(() => {
+        window.location.href = "./vista_contenedores_g3.php";
+      });
+    }
+  });
+});
