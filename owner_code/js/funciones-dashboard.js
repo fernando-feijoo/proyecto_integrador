@@ -18,14 +18,59 @@ function displayTime() {
 }
 setInterval(displayTime, 1000);
 
-
 function displayDate() {
-    var currentDate = new Date();
-    var day = currentDate.getDate();
-    var month = currentDate.getMonth() + 1;
-    var year = currentDate.getFullYear();
-    var dateString = (day < 10 ? "0" + day : day) + "/" + (month < 10 ? "0" + month : month) + "/" + year;
-    document.getElementById("date").innerHTML = dateString;
-  }
-  setInterval(displayDate, 1000);
-  
+  var currentDate = new Date();
+  var day = currentDate.getDate();
+  var month = currentDate.getMonth() + 1;
+  var year = currentDate.getFullYear();
+  var dateString =
+    (day < 10 ? "0" + day : day) +
+    "/" +
+    (month < 10 ? "0" + month : month) +
+    "/" +
+    year;
+  document.getElementById("date").innerHTML = dateString;
+}
+setInterval(displayDate, 1000);
+
+const botonRegistro = document.querySelectorAll("#boton-registrar-contenedor");
+botonRegistro.forEach((boton) => {
+  boton.addEventListener("click", function (event) {
+    event.preventDefault();
+    Swal.fire({
+      title: "¿Desea inspeccionar el contenedor?",
+      text: "Antes de continuar, verifique el correcto",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonColor: "#0d6efd",
+      cancelButtonColor: "#9b9b9b",
+      confirmButtonText: "Hacer Inspección",
+    }).then((result) => {
+      if (result.value) {
+        window.location.href = boton.href;
+      }
+    });
+  });
+});
+
+// FUNCION PARA EL GRUPO 3 EL ROL DE GRUPO 3 BY Fernando F. Feijoo
+
+var id = "<?php echo $_GET['id_regis']; ?>";
+var numCont = "<?php echo $_GET['numCont']; ?>";
+const botonesSeleccionar = document.querySelectorAll(
+  "#boton-seleccionar-contenedor"
+);
+botonesSeleccionar.forEach((boton) => {
+  boton.addEventListener("click", (event) => {
+    event.preventDefault();
+    if (!boton.href.includes(`?id_regis=${id}&&numCont=${numCont}`)) {
+      Swal.fire({
+        title: "Acceso denegado",
+        text: "Seleccione un contenedor.",
+        icon: "error",
+      }).then(() => {
+        window.location.href = "./vista_contenedores_g3.php";
+      });
+    }
+  });
+});
