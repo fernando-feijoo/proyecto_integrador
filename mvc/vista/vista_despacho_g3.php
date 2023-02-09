@@ -74,10 +74,13 @@
             <input type="TEXT" style="width: 200px; height: 25px;" name="cantidad_cajas" id="pallet1">
         </div>
     </div>
-    <div class="d-flex flex-row justify-content-center  line-height:0;">
-        <div class="p-1"> Objetivo:
-            <input type="TEXT" style="width: 785px; height: 25px;" name="objetivo" id="objetivo1">
-        </div>
+    
+    <div class="text-start  fs-5 fw-semibold" style="margin-top: 20px;">
+                Observaciones:
+                <textarea class="form-control" id="observacion_higiene" rows="3"></textarea>
+
+
+            </div>
 
     </div>
 
