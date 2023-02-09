@@ -1,12 +1,12 @@
 <?php
 if (!empty($_POST["btn-guardar"]) || !empty($_POST["btn-actualizar"])) {
-	if (!empty($_POST["inlineRadioOptions_gg3"])) {
+	if ((!empty($_POST["inlineRadioOptions_gg3"])) && (($_POST["tipo_caja_gg3"] != 'Seleccione') && ($_POST["placa_gg3"] != 'Seleccione') && ($_POST["chofer_gg3"] != 'Seleccione'))) {
 		if (!empty($_POST["btn-guardar"])) {
 			$id_listado = $_SESSION["id_conteo"];
-			// unset($_SESSION["id_listado"]);
+			unset($_SESSION["id_listado"]);
 		} else if (!empty($_POST["btn-actualizar"])) {
 			$id_listado = $_SESSION["id_listado"];
-			// unset($_SESSION["id_conteo"]);
+			unset($_SESSION["id_conteo"]);
 		}
 		$fecha_insp = $_POST["fecha_inspeccion_gg3"];
 		$semana = $_POST["semana_gg3"];
@@ -27,7 +27,7 @@ if (!empty($_POST["btn-guardar"]) || !empty($_POST["btn-actualizar"])) {
 		// echo $fecha_insp. ' <br> ' .$semana. ' <br> ' .$fecha_hora_salida. ' <br> ' .$hora_llegada. ' <br> ' .$cupo. ' <br> ' .$contenedor. ' <br> ' .$nombre_acopio. ' <br> ' .$candados_llegada. ' <br> ' .$tipo_contenedor_eleccion. ' <br> ' .$id_tipo_caja. ' <br> ' .$id_vehiculo. ' <br> ' .$id_chofer;
 		$conexion = conexionBd();
 
-		$sql_consulta = "SELECT `insertarDatosLlegada` ($id_listado,'$fecha_insp','$semana','$fecha_hora_salida','$hora_llegada','$cupo','$contenedor','$nombre_acopio','$candados_llegada','$tipo_contenedor_eleccion','$id_tipo_caja','$id_vehiculo','$id_chofer');";
+		$sql_consulta = "SELECT `insertarDatosLlegada` ('$id_listado','$fecha_insp','$semana','$fecha_hora_salida','$hora_llegada','$cupo','$contenedor','$nombre_acopio','$candados_llegada','$tipo_contenedor_eleccion','$id_tipo_caja','$id_vehiculo','$id_chofer');";
 
 		$sql = $conexion->query($sql_consulta);
 
@@ -48,7 +48,7 @@ if (!empty($_POST["btn-guardar"]) || !empty($_POST["btn-actualizar"])) {
 		}
 	} else {
 		echo "<div class='alert alert-danger text-center' id='alertas' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
-        ¡Registre todos los datos necesarios, verifique!
+        ¡Registre todos los datos necesarios \" * \", verifique!
     </div>";
 	}
 }

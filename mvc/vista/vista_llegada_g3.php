@@ -185,7 +185,7 @@ include_once "./Grupo 3/menu_garita.php";
 							<input type="time" id="horaLlegada" value="" style="height: 36px;" name="hora_llegada_gg3">
 						</div>
 						<div class="input-group d-flex align-items-center" style="width: 230px;" name="">
-							TIPO DE CAJA:
+							TIPO DE CAJA<H5 style="color: red;">*</H5>:
 							<select class="ms-1 form-select" id="inputGroupSelect01" name="tipo_caja_gg3">
 								<option selected>Seleccione</option>
 								<?php
@@ -208,7 +208,7 @@ include_once "./Grupo 3/menu_garita.php";
 
 					<div class="d-flex flex-row justify-content-center mb-3">
 						<div class="p-2 input-group d-flex align-items-center" style="width: 270px;" name="">
-							PLACA:
+							PLACA<H5 style="color: red;">*</H5>:
 							<select class="ms-1 form-select" id="inputGroupSelect02" name="placa_gg3">
 								<option selected>Seleccione</option>
 								<?php
@@ -225,7 +225,7 @@ include_once "./Grupo 3/menu_garita.php";
 							<input type="text" placeholder="" disabled style="width: 120px; height: 36px;" name="marca" value="">
 						</div>
 						<div class="input-group d-flex align-items-center" style="width: 270px;" name="">
-							CHOFER:
+							CHOFER<H5 style="color: red;">*</H5>:
 							<select class="ms-1 form-select" id="inputGroupSelect03" name="chofer_gg3">
 								<option selected>Seleccione</option>
 								<?php
