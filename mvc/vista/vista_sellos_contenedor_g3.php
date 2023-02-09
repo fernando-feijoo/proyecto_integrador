@@ -9,10 +9,10 @@
     <form action="./vista_listado_registro_g3.php" method="post">
     <?php
 
-    if (!empty($_GET["id_conExpo"])  || !empty($_GET["id_regis"])  || !empty($_GET["numCont"])) {
+    if (!empty($_GET["id_conExpo"])) {
 
-        $_SESSION["id_regis"] = $_GET["id_regis"];
-        $_SESSION["numCont"] = $_GET["numCont"];
+        $_SESSION["id_conExpo"] = $_GET["id_conExpo"];
+        
     }
     
 
