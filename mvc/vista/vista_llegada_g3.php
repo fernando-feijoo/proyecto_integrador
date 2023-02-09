@@ -30,9 +30,15 @@ include_once "./Grupo 3/menu_garita.php";
 
 			<form action="./vista_llegada_g3.php" method="post">
 				<?php
+				$valor_conteo = numero_dato_garita();
 
 				if (!empty($_GET["id_listado"])) {
 					$_SESSION["id_listado"] = $_GET["id_listado"];
+				}else{
+					while($valor = $valor_conteo->fetch_object()){
+						$_SESSION["id_conteo"] = $valor->id+1;
+						// echo $_SESSION["id_conteo"];
+					}
 				}
 
 				if (($valiacion = cargar_datos()) != false) {

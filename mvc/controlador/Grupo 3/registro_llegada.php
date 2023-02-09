@@ -1,7 +1,13 @@
 <?php
 if (!empty($_POST["btn-guardar"]) || !empty($_POST["btn-actualizar"])) {
 	if (!empty($_POST["inlineRadioOptions_gg3"])) {
-		$id_listado = $_SESSION["id_listado"];
+		if (!empty($_POST["btn-guardar"])) {
+			$id_listado = $_SESSION["id_conteo"];
+			// unset($_SESSION["id_listado"]);
+		} else if (!empty($_POST["btn-actualizar"])) {
+			$id_listado = $_SESSION["id_listado"];
+			// unset($_SESSION["id_conteo"]);
+		}
 		$fecha_insp = $_POST["fecha_inspeccion_gg3"];
 		$semana = $_POST["semana_gg3"];
 		$fecha_hora_salida = date("Y-m-d H:i:s", strtotime($_POST["fecha_hora_salida_gg3"]));

@@ -36,3 +36,10 @@ function cargar_datos()
 		return $validacion;
 	}
 }
+
+function numero_dato_garita()
+{
+	$conexion = conexionBd();
+	$sql = $conexion->query("SELECT MAX(id) AS id FROM registro_llegada;");
+	return $sql;
+}
