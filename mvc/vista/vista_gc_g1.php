@@ -1,13 +1,19 @@
 <style>
 .pi{
-    margin-left: 1px;
-}
-</style>
+    margin-right: 6px;
+}   
 
-<div class="Container">
+.tot{
+    background-color: white;
+}
+
+</style>
+<div class="grado_calibre">
+<div class="Container-f1">
 <h6 class="p-1" style="text-align: left;">Ingrese la cantidad:</h6>
 <div class="row">
-    <div class="col-10 d-flex" style="background-color: aqua;">
+    <div class="col-10 d-flex" style="background-color: white; border-top-left-radius : 15px;
+    border-bottom-left-radius : 15px; margin-bottom: 10px; padding: 20px;">
     <div class="defectos d-flex">
         <div class="c-f1">
         <h6 class="p-1">-36</h6>
@@ -82,26 +88,121 @@
 
     </div>
     </div>
-    <div class="col-2" style="background-color: blue;">
-    <div class="c2-total d-flex">
-    <div class="c-total">
+    <div class="col-2 d-flex" style="background-color: lightgray; border-top-right-radius : 15px;
+    border-bottom-right-radius : 15px; margin-bottom: 10px; padding: 20px;" >
+        <div class="f2-total">
+        <div class="c-total" >
         <h6 class="p-1">Total</h6>
-        <input type="text" placeholder="0" style="width: 50px; margin-top: 5px;">
+        <input class = "tot" type="text" placeholder="0" style="width: 50px; margin-top: 5px;" disabled>
         </div>
     </div>
     </div>
 
 </div>
 </div>
+
 <HR></HR>
-<div class="Container">
+
+<div class="Container-f2">
 <div class="row">
-    <div class="col-10 d-flex" style="background-color: aqua;">
-    
+    <div class="col-10 d-flex" style="background-color: white; border-top-left-radius : 15px;
+    border-bottom-left-radius : 15px; margin-top: 10px; padding: 20px;">
+    <div class="defectos d-flex">
+        <div class="c1-f2">
+        <h6 class="p-1">-36</h6>
+        <input class="pi" type="number" placeholder="0" style="width: 40px; margin-top: 5px;" disabled>
+        </div>
+        <div class="c2-f2">
+        <h6 class="p-1">37</h6>
+        <input class="pi" type="number" placeholder="0" style="width: 40px; margin-top: 5px;" disabled>
+        </div>
+        <div class="c3-f2">
+        <h6 class="p-1">38</h6>
+        <input class="pi" type="number" placeholder="0" style="width: 40px; margin-top: 5px;" disabled>
+        </div>
+        <div class="c4-f2">
+        <h6 class="p-1">39</h6>
+        <input class="pi" type="number" placeholder="0" style="width: 40px; margin-top: 5px;" disabled>
+        </div>
+        <div class="c5-f2">
+        <h6 class="p-1">40</h6>
+        <input class="pi" type="number" placeholder="0" style="width: 40px; margin-top: 5px;" disabled>
+        </div>
+        <div class="c6-f2">
+        <h6 class="p-1">41</h6>
+        <input class="pi" type="number" placeholder="0" style="width: 40px; margin-top: 5px;" disabled>
+        </div>
+        <div class="c7-f2">
+        <h6 class="p-1">42</h6>
+        <input class="pi" type="number" placeholder="0" style="width: 40px; margin-top: 5px;" disabled>
+        </div>
+        <div class="c8-f2">
+        <h6 class="p-1">43</h6>
+        <input class="pi" type="number" placeholder="0" style="width: 40px; margin-top: 5px;" disabled>
+        </div>
+        <div class="c9-f2">
+        <h6 class="p-1">44</h6>
+        <input class="pi" type="number" placeholder="0" style="width: 40px; margin-top: 5px;" disabled>
+        </div>
+        <div class="c10-f2">
+        <h6 class="p-1">45</h6>
+        <input class="pi" type="number" placeholder="0" style="width: 40px; margin-top: 5px;" disabled>
+        </div>
+        <div class="c11-f2">
+        <h6 class="p-1">46</h6>
+        <input class="pi" type="number" placeholder="0" style="width: 40px; margin-top: 5px;" disabled>
+        </div>
+        <div class="c12-f2">
+        <h6 class="p-1">47</h6>
+        <input class="pi" type="number" placeholder="0" style="width: 40px; margin-top: 5px;" disabled>
+        </div>
+        <div class="c13-f2">
+        <h6 class="p-1">48</h6>
+        <input class="pi" type="number" placeholder="0" style="width: 40px; margin-top: 5px;" disabled>
+        </div>
+        <div class="c14-f2">
+        <h6 class="p-1">49</h6>
+        <input class="pi" type="number" placeholder="0" style="width: 40px; margin-top: 5px;" disabled>
+        </div>
+        <div class="c15-f2">
+        <h6 class="p-1">50</h6>
+        <input class="pi" type="number" placeholder="0" style="width: 40px; margin-top: 5px;" disabled>
+        </div>
+        <div class="c16-f2">
+        <h6 class="p-1">51</h6>
+        <input class="pi" type="number" placeholder="0" style="width: 40px; margin-top: 5px;" disabled>
+        </div>
+        <div class="c17-f2">
+        <h6 class="p-1">+52</h6>
+        <input class="pi" type="number" placeholder="0" style="width: 40px; margin-top: 5px;" disabled>
+        </div>
     </div>
-    <div class="col-2" style="background-color: blue;">
-    <h3>hi</h3>
     </div>
 
+    <div class="col-2 d-flex" style="background-color: lightgray; border-top-right-radius : 15px;
+    border-bottom-right-radius : 15px; margin-top: 10px; padding: 20px;">
+    <div class="f2-total">
+        <div class="c-total">
+        <h6 class="p-1">Total</h6>
+        <input  class = "tot" type="text" placeholder="0" style="width: 50px; margin-top: 5px;" disabled>
+        </div>
+    </div>
+    <div class="f2-promedio">
+        <div class="c-promedio">
+        <h6 class="p-1">Promedio</h6>
+        <input  class = "tot" type="text" placeholder="0" style="width: 50px; margin-top: 5px;" disabled>
+        </div>
+    </div>
+    </div>
+
+</div>
+</div>
+<div class="d-flex flex-row justify-content-end">
+                        <div class="p-2">
+
+                            <button id="boton-guardar_gc" class="btn btn-outline-info" type="submit" name="guardar_gc"
+                                value="actualizado">Guardar</button>
+
+                        </div>
 </div>
 </div>
