@@ -89,11 +89,17 @@
                 <td class="borde color"><input type="checkbox" name="delefactor" id="dele"></td>
 
             </tr>
-
         </tbody>
     </table>
     <img class="foto2" src="../../img/Contenedor.png" />
+    
 </div>
+<div class="text-start  fs-5 fw-semibold" style="margin-top: 20px;">
+                Observaciones:
+                <textarea class="form-control" id="observacion_higiene" rows="3"></textarea>
+
+
+            </div>
   </div>
 
 
