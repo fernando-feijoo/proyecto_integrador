@@ -27,12 +27,13 @@ include_once "./Grupo 3/menu_garita.php";
 		<div class="d-flex justify-content-center flex-row mt-4">
 			<form action="?busqueda=1" method="post">
 				<div class="input-group" style="width: 700px;">
-					<div class="d-flex align-items-center me-1 fw-semibold">Desde:</div>
+					<div class="d-flex align-items-center me-1 fw-semibold">Desde<H5 style="color: red;">*</H5>:
+					</div>
 					<input name="busqueda_reporte_inicio" type="date" class="form-control" value="">
-					<div class="d-flex align-items-center me-1 ms-1 fw-semibold">Hasta:
-					</div><input name="busqueda_reporte_final" type="date" class="form-control" value="">
+					<div class="d-flex align-items-center me-1 ms-1 fw-semibold">Hasta<H5 style="color: red;">*</H5>:
+					</div>
+					<input name="busqueda_reporte_final" type="date" class="form-control" value="">
 					<button class="btn btn-outline-primary" type="submit" name="button-busqueda-reportes" value="buscando">Buscar registros</button>
-
 				</div>
 			</form>
 			<?php
