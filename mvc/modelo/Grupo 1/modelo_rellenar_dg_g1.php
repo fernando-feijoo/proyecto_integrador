@@ -4,14 +4,19 @@ function cargar_datos()
     if (!empty($_GET["id_eva"])) {
         $id = $_GET["id_eva"];
         $conexion = conexionBd();
-        $sql = $conexion->query("SELECT DISTINCT
-        eva.*, pi.*
-        FROM evaluaciones eva inner join productores_inspectores pi ON
-        pi.codigo = eva.cod_prod_insp where eva.id=$id;");
+        $sql = $conexion->query("SELECT DISTINCT *
+        FROM evaluaciones  where id=$id;");
         return $sql;
     } else {   
         $validacion = false;
         return $validacion;
     }
+}
+
+function id_max()
+{
+	$conexion = conexionBd();
+	$sql = $conexion->query("SELECT MAX(id) AS id FROM evaluaciones;");
+	return $sql;
 }
 ?>
