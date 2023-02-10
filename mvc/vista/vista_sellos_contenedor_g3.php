@@ -11,8 +11,7 @@
   
     if (!empty($_GET["id_conExpo"])||!empty($_GET["id_regis"]) || !empty($_GET["numCont"])) {
 
-        $_SESSION["id_regis"] = $_GET["id_regis"];
-        $_SESSION["numCont"] = $_GET["numCont"];
+      
 
         
     }

@@ -29,22 +29,21 @@ include_once "./Grupo 3/menu.php";
 
 			<form action="?busqueda=1" method="post">
 				<div class="input-group mt-5" style="width: 700px;">
-					<input name="busqueda_garita" type="text" class="form-control" placeholder="Busqueda de datos" value="">
+					<input name="busqueda_contenedor" type="text" class="form-control" placeholder="Busqueda de datos" value="">
 					<div class="input-group-append">
-						<select class="form-select" name="seleccionBusquedaContenedor" aria-label="Example select with button addon">
-							<option value="tipo_de_contenedor">Filtro</option>
+						<select class="form-select" name="seleccionContenedor" aria-label="Example select with button addon">
+							<option value="contenedor">Filtro</option>
 							<option value="contenedor">CONTENEDOR</option>
 
 							<option value="nombre_acopio">ACOPIO</option>
 							<option value="semana">SEMANA</option>
-							<option value="vapor">VAPOR</option>
+							
 						</select>
 					</div>
 					<button class="btn btn-outline-primary" type="submit" name="button-busqueda" value="buscando">Buscar registro</button>
 				</div>
 			</form>
-			<?php
-			?>
+			
 
 		</div>
 		<!-- /Barra de busqueda del listado llegada -->
@@ -78,8 +77,8 @@ include_once "./Grupo 3/menu.php";
 						<td><?= $datos->vapor ?></td>
 
 						<td>
-							<a id="boton-editar-contenedor" href="./vista_listado_registro_g3.php?id_conExpo=<?= $datos->id?>" class="btn btn-small btn-warning" style="width: 70px;"><i class="fa-regular fa-pen-to-square"></i></a>
-							<a id="boton-eliminar-contenedor" class="btn btn-small btn-danger" href="./vista_listado_contenedores_g3.php?id_eliminado=<?= $datos->id ?>" style="width: 70px;"><i class="fa-regular fa-trash-can"></i></a>
+							<a id="boton-editar-garita" href="./vista_listado_registro_g3.php?id_conExpo=<?= $datos->id?>" class="btn btn-small btn-warning" style="width: 70px;"><i class="fa-regular fa-pen-to-square"></i></a>
+							<a id="boton-eliminar-garita" class="btn btn-small btn-danger" href="./vista_listado_contenedores_g3.php?id_eliminar=<?= $datos->id ?>" style="width: 70px;"><i class="fa-regular fa-trash-can"></i></a>
 						</td>
 					</tr>
 				<?php }
