@@ -42,7 +42,27 @@
 						<div class="row pt-3">
 							<div class="col-xs-12 col-md-10 offset-md-2 text-start">
 								<div id="botones-menu">
-									<a class="opcion-menu" href="./vista_reportes_garita_g3.php" name="opcion-reporte">Gestion de datos</a>
+									<a class="opcion-menu" href="./vista_admin_reg_cajas_g3.php" name="opcion-reporte">Registro de Cajas</a>
+								</div>
+							</div>
+						</div>
+					</section>
+					
+					<section>
+						<div class="row pt-3">
+							<div class="col-xs-12 col-md-10 offset-md-2 text-start">
+								<div id="botones-menu">
+									<a class="opcion-menu" href="./vista_admin_reg_vehi_g3.php" name="opcion-reporte">Registro de Vehiculos</a>
+								</div>
+							</div>
+						</div>
+					</section>
+					
+					<section>
+						<div class="row pt-3">
+							<div class="col-xs-12 col-md-10 offset-md-2 text-start">
+								<div id="botones-menu">
+									<a class="opcion-menu" href="./vista_admin_reg_chof_g3.php" name="opcion-reporte">Registro de Choferes</a>
 								</div>
 							</div>
 						</div>
