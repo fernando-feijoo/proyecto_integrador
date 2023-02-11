@@ -1,3 +1,16 @@
+<form method="post">
+    <?php
+  
+    if (!empty($_GET["id_inspeccion"])) {
+
+        $_SESSION["id_inspeccion"] = $_GET["id_inspeccion"];
+       
+    }
+    
+
+    ?>
+
+
 <div class="row mx-auto">
 
     <h3>Inspeccion del Contenedor</h3>
@@ -100,7 +113,9 @@
 
 
     </div>
+    
 </div>
+</form>
 
 
 <style>
