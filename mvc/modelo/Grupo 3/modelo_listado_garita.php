@@ -27,13 +27,14 @@ if ((empty($_POST["button-busqueda"]) && empty($_SESSION["sesion_busqueda"])) ||
 	if (!empty($_POST["seleccionBusquedaGarita"]) || !empty($_POST["busqueda_garita"])) {
 		$filtro_busqueda = $_POST["seleccionBusquedaGarita"];
 		$valor_busqueda = $_POST["busqueda_garita"];
+		
 	} elseif (!empty($_SESSION["sesion_busqueda"])) {
 		$filtro_busqueda = $_SESSION["sesion_filtro"];
 		$valor_busqueda = $_SESSION["sesion_busqueda"];
 	}
 
-	$_SESSION["sesion_filtro"] = $filtro_busqueda;
-	$_SESSION["sesion_busqueda"] = $valor_busqueda;
+	// $_SESSION["sesion_filtro"] = $filtro_busqueda;
+	// $_SESSION["sesion_busqueda"] = $valor_busqueda;
 
 	$sql_total = $conexion->query("SELECT COUNT(*) AS total FROM vista_registro_llegada WHERE $filtro_busqueda = '$valor_busqueda';");
 	$total = $sql_total->fetch_assoc()['total'];

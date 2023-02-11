@@ -126,7 +126,7 @@
             </div>
             <div class="text-start  fs-5 fw-semibold" style="margin-top: 20px;">
                 Observaciones:
-                <textarea class="form-control" id="observacion_higiene" rows="3"></textarea>
+                <textarea class="form-control" id="observacion_higiene" name="paletizaado_contenedor" rows="3"></textarea>
 
 
             </div>
