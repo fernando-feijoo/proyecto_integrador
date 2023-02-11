@@ -39,6 +39,8 @@ include_once "./Grupo 1/menu.php";
   include("./vista_detalles_generales_g1.php");?></div>
   
   <div class="tab-pane fade" id="nav-gc" role="tabpanel" aria-labelledby="nav-gc-tab"><?php 
+  include("./../modelo/Grupo 1/modelo_rellenar_gc_g1.php");
+  include_once ("./../controlador/Grupo 1/registro_gc.php");
   include("./vista_gc_g1.php")?></div>
 
   <div class="tab-pane fade" id="nav-ld" role="tabpanel" aria-labelledby="nav-ld-tab"><?php 
