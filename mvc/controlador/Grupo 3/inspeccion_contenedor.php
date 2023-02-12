@@ -6,8 +6,24 @@ if (!empty($_POST["btn-guardar-inspeccion"]) || !empty($_POST["btn-actualizar"])
         console.log("Ingreso al controlador")
     </script>
     <?php
-    
-    $id_contenedor_export = $_GET["numCont"];
+
+    // Se coloca esta validacion para saber si es un insert o un update, ya que si es 
+    // guardado por primera vez seria con numCont, pero caso contrario seria con id_contExpo para actualizar.
+    if (!empty($_GET["numCont"])) {
+    ?>
+        <script>
+            console.log("Ingreso a numCont")
+        </script>
+    <?php
+        $id_contenedor_export = $_GET["numCont"];
+    } else {
+        $id_contenedor_export = $_GET["id_contExpo"];
+        ?>
+        <script>
+            console.log("Ingreso a id_contExpo")
+        </script>
+    <?php
+    }
 
     // Para visualizar en pantalla de trabajo, prueba.
     $conexion = conexionBd();

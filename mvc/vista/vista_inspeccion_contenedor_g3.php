@@ -1,9 +1,4 @@
 <?php
-if (!empty($_GET["id_conExpo"])) {
-	$_SESSION["id_conExpo"] = $_GET["id_conExpo"];
-}
-?>
-<?php
 if (($valiacion = cargar_dato_inpeccion()) != false) {
 	$sql = cargar_dato_inpeccion();
 	$datos_inspeccion = array();
@@ -50,7 +45,7 @@ if (($valiacion = cargar_dato_inpeccion()) != false) {
 				<tr>
 					<td class="borde color">6</td>
 					<td class="borde color">Techo</td>
-					<td class="borde color"><input class="form-check-input" type="checkbox" name="sies" id="inlineRadio6" value="1" <?php if ($datos_inspeccion[5]['verificacion'] == 1) echo "checked"; ?>></td>
+					<td class="borde color"><input class="form-check-input" type="checkbox" name="seis" id="inlineRadio6" value="1" <?php if ($datos_inspeccion[5]['verificacion'] == 1) echo "checked"; ?>></td>
 				</tr>
 				<tr>
 					<td class="borde color">7</td>
@@ -89,7 +84,6 @@ if (($valiacion = cargar_dato_inpeccion()) != false) {
 } else {
 ?>
 	<div class="row mx-auto">
-
 		<h3>Inspeccion del Contenedor</h3>
 		<br>
 		<div class="d-flex flex-row justify-content-center  line-height:0;">

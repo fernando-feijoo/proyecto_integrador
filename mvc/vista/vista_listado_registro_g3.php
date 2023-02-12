@@ -34,7 +34,7 @@ include_once "./Grupo 3/menu.php";
     include("./../modelo/conexion_bd.php");
     include_once("./../controlador/Grupo 3/registro_sellos.php");
     include_once("./../controlador/Grupo 3/inspeccion_contenedor.php");
-    include_once("./../modelo/Grupo 3/modelo_inspeccion_contenedor_g3.php");
+    include_once("./../modelo/Grupo 3/modelo_inspeccion_contenedor.php");
     include_once("./../modelo/Grupo 3/modelo_despacho.php");
     ?>
 
@@ -49,7 +49,6 @@ include_once "./Grupo 3/menu.php";
 
         <div class="tab-pane fade" id="nav-inspeccion" role="tabpanel" aria-labelledby="nav-profile-tab">
           <?php
-
           include_once("./vista_inspeccion_contenedor_g3.php");
           ?>
         </div>
