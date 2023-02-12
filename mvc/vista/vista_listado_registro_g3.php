@@ -35,6 +35,7 @@ include_once "./Grupo 3/menu.php";
     include_once("./../controlador/Grupo 3/registro_sellos.php");
     include_once("./../controlador/Grupo 3/inspeccion_contenedor.php");
     include_once("./../modelo/Grupo 3/modelo_inspeccion_contenedor_g3.php");
+    include_once("./../modelo/Grupo 3/modelo_despacho.php");
     ?>
 
     <form action="#" method="post">

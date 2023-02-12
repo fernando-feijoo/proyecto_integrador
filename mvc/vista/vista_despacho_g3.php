@@ -59,7 +59,18 @@
         </div>
         <div class="d-flex flex-row justify-content-center  line-height:0; ">
             <div class="p-1"> Nombre de Paletizadores:
-                <input type="TEXT" style="width: 675px; height: 25px;" name="paletzador" id="paletizador1">
+                <select type="form-select"  aria-label="Disabled select example"  style="width: 675px; height: 25px;" name="paletzador" id="paletizador1">
+                <option selected>Seleccione Nombre</option>
+                <?php
+			    $sql =  datos_lista_paletizador();
+				while ($datos_paletizador = $sql->fetch_object()) {
+				?>
+				<option value=<?= $$datos_paletizador->id ?> <?= ($$datos_paletizador->id == $carga_datos->id_paletizador) ? "selected" : "" ?>><?= $$datos_paletizador->nombres ?></option>
+				<?php
+				}
+				?>
+                
+            </select>
             </div>
 
         </div>
