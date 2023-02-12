@@ -30,42 +30,46 @@ include_once "./Grupo 3/menu.php";
       </div>
     </nav>
 
-    <div class="tab-content" id="nav-tabContent">
+    <?php
+    include("./../modelo/conexion_bd.php");
+    include_once("./../controlador/Grupo 3/registro_sellos.php");
+    include_once("./../controlador/Grupo 3/inspeccion_contenedor.php");
+    ?>
 
-      <div class="tab-pane fade show active" id="nav-sellos" role="tabpanel" aria-labelledby="nav-home-tab">
-        <?php
-        include("./../modelo/conexion_bd.php");
-       include_once("./../controlador/Grupo 3/registro_sellos.php");
-        include("./vista_sellos_contenedor_g3.php")
-        ?>
+    <form action="#" method="post">
+      <div class="tab-content" id="nav-tabContent">
+
+        <div class="tab-pane fade show active" id="nav-sellos" role="tabpanel" aria-labelledby="nav-home-tab">
+          <?php
+          include("./vista_sellos_contenedor_g3.php");
+          ?>
+        </div>
+
+        <div class="tab-pane fade" id="nav-inspeccion" role="tabpanel" aria-labelledby="nav-profile-tab">
+          <?php
+
+          include_once("./vista_inspeccion_contenedor_g3.php");
+          ?>
+        </div>
+
+        <div class="tab-pane fade" id="nav-higiene" role="tabpanel" aria-labelledby="nav-contact-tab">
+          <?php
+          include("./vista_higiene_contenedor_g3.php");
+          ?>
+        </div>
+
+        <div class="tab-pane fade" id="nav-despacho" role="tabpanel" aria-labelledby="nav-contact-tab">
+          <?php
+          include("./vista_despacho_g3.php");
+          ?>
+        </div>
+        <div class="tab-pane fade" id="nav-paletizado" role="tabpanel" aria-labelledby="nav-contact-tab">
+          <?php
+          include("./vista_paletizado_g3.php");
+          ?>
+        </div>
       </div>
-
-      <div class="tab-pane fade" id="nav-inspeccion" role="tabpanel" aria-labelledby="nav-profile-tab">
-        <?php
-        include("./vista_inspeccion_contenedor_g3.php")
-        ?>
-      </div>
-
-      <div class="tab-pane fade" id="nav-higiene" role="tabpanel" aria-labelledby="nav-contact-tab">
-        <?php
-        include("./vista_higiene_contenedor_g3.php")
-        ?>
-      </div>
-
-      <div class="tab-pane fade" id="nav-despacho" role="tabpanel" aria-labelledby="nav-contact-tab">
-        <?php
-        include("./vista_despacho_g3.php")
-        ?>
-      </div>
-      <div class="tab-pane fade" id="nav-paletizado" role="tabpanel" aria-labelledby="nav-contact-tab">
-        <?php
-        include("./vista_paletizado_g3.php")
-        ?>
-      </div>
-
-    </div>
-
-
+    </form>
   </div>
 </div>
 
