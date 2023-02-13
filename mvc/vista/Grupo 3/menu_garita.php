@@ -78,6 +78,28 @@
 					</section>
 					<!-- /Seccion de segundo menu de Acopio y sub menus -->
 
+					<!-- Seccion de tercer menu de Acopio y sub menus ADMIN -->
+					<div class="row pt-5">
+						<div class="col-1 text-end">
+							<img id="img-submenu" src="../../img/configuration_32x32px.png" alt="icono-admin" />
+						</div>
+						<div id="titulo-menu" class="col text-start ms-2">
+							Administrar
+						</div>
+					</div>
+					<hr style="width: 80%; margin-top: 0.5rem;" />
+
+					<section>
+						<div class="row pt-3">
+							<div class="col-xs-12 col-md-10 offset-md-2 text-start">
+								<div id="botones-menu">
+									<a class="opcion-menu" href="./vista_bienvenida.php?admin=1" name="opcion-reporte">Gestion de datos</a>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- /Seccion de tercer menu de Acopio y sub menus ADMIN -->
+
 				</div>
 			</div>
 		</div>
