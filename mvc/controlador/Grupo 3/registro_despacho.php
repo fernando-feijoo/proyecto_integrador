@@ -56,10 +56,6 @@ if (!empty($_POST["btn-guardar-general"])) {
 
   $conexion = conexionBd();
 
-  $sql_consulta = "INSERT INTO 
-  datos_despacho
-  (id, filtro, termografo, termografo_numero, sello_adhesivo, sello_verificador, sello_exp_candado, fecha_hora_salida, sello_exp_cable, compania_transportista, sello_naviero, vapor, destino, paletizadores, total_viajar, cajas, cantidad_palet, observacion_despacho, id_cont_export) 
-  VALUES 
-  ('$id','$filtro_rb','$termografo_rb','$termografo_num','$sello_adhesivo','$sello_verificador','$sello_exp_cand','$fecha_hora_salida','$sello_exp_cable','$compania_transporte','$sello_nave','$vapor','$destino','$paletizadores','$total_viajar','$cajas','$cantidad_pallet','$observaciones','$id_cont_export');";
+  $sql_consulta = "SELECT insertarDatosDespacho ('$id','$filtro_rb','$termografo_rb','$termografo_num','$sello_adhesivo','$sello_verificador','$sello_exp_cand','$fecha_hora_salida','$sello_exp_cable','$compania_transporte','$sello_nave','$vapor','$destino','$paletizadores','$total_viajar','$cajas','$cantidad_pallet','$observaciones','$id_cont_export');";
   $sql = $conexion->query($sql_consulta);
 }

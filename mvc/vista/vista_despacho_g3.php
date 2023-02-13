@@ -87,6 +87,13 @@ if (($valiacion = carga_datos_despacho()) != false) {
 				</div>
 			</div>
 
+			<?php
+			// Este algoritmo traer el campo 1;2;1;2 y lo divide en un array para luego poderlo mostrar.
+				$paletizadores = $carga_datos_despacho->paletizadores;
+				$array_paletizadores = explode(";", $paletizadores);
+				$array_paletizadores = array_pad($array_paletizadores, 4, 0);		
+			?>
+
 			<div class="d-flex flex-row justify-content-center  line-height:0; ">
 				<div class="p-1"> Nombre de Paletizadores:
 					<select type="form-select" aria-label="Disabled select example" style="width: 160px; height: 36px;" name="paletizador1">
@@ -95,7 +102,7 @@ if (($valiacion = carga_datos_despacho()) != false) {
 						$sql_despacho =  datos_lista_paletizador();
 						while ($datos_paletizador = $sql_despacho->fetch_object()) {
 						?>
-							<option value=<?= $datos_paletizador->id ?>><?= $datos_paletizador->nombres ?></option>
+							<option value=<?= $datos_paletizador->id ?> <?= ($datos_paletizador->id == $array_paletizadores[0]) ? "selected" : "" ?>><?= $datos_paletizador->nombres ?></option>
 						<?php
 						}
 						?>
@@ -106,7 +113,7 @@ if (($valiacion = carga_datos_despacho()) != false) {
 						$sql_despacho =  datos_lista_paletizador();
 						while ($datos_paletizador = $sql_despacho->fetch_object()) {
 						?>
-							<option value=<?= $datos_paletizador->id ?>><?= $datos_paletizador->nombres ?></option>
+							<option value=<?= $datos_paletizador->id ?> <?= ($datos_paletizador->id == $array_paletizadores[1]) ? "selected" : "" ?>><?= $datos_paletizador->nombres ?></option>
 						<?php
 						}
 						?>
@@ -117,7 +124,7 @@ if (($valiacion = carga_datos_despacho()) != false) {
 						$sql_despacho =  datos_lista_paletizador();
 						while ($datos_paletizador = $sql_despacho->fetch_object()) {
 						?>
-							<option value=<?= $datos_paletizador->id ?>><?= $datos_paletizador->nombres ?></option>
+							<option value=<?= $datos_paletizador->id ?> <?= ($datos_paletizador->id == $array_paletizadores[2]) ? "selected" : "" ?>><?= $datos_paletizador->nombres ?></option>
 						<?php
 						}
 						?>
@@ -128,7 +135,7 @@ if (($valiacion = carga_datos_despacho()) != false) {
 						$sql_despacho =  datos_lista_paletizador();
 						while ($datos_paletizador = $sql_despacho->fetch_object()) {
 						?>
-							<option value=<?= $datos_paletizador->id ?>><?= $datos_paletizador->nombres ?></option>
+							<option value=<?= $datos_paletizador->id ?> <?= ($datos_paletizador->id == $array_paletizadores[3]) ? "selected" : "" ?>><?= $datos_paletizador->nombres ?></option>
 						<?php
 						}
 						?>
