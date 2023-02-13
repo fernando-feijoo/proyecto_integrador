@@ -1,26 +1,26 @@
 <?php
-if (!empty($_POST["btn-guardar-inspeccion"]) || !empty($_POST["btn-actualizar"])) {
+if (!empty($_POST["btn-guardar-general"])) {
     // $id_inpeccion = $_SESSION['id_conExpo'];
 ?>
     <script>
-        console.log("Ingreso al controlador")
+        console.log("Ingreso al controlador INSPECCION")
     </script>
     <?php
 
     // Se coloca esta validacion para saber si es un insert o un update, ya que si es 
     // guardado por primera vez seria con numCont, pero caso contrario seria con id_contExpo para actualizar.
-    if (!empty($_GET["numCont"])) {
+    if (!empty($_SESSION["id_contExpo"])) {
+        $id_contenedor_export = $_SESSION["id_contExpo"];
     ?>
         <script>
-            console.log("Ingreso a numCont")
+            console.log("Ingreso a controlador inspeccion - id_contExpo")
         </script>
     <?php
-        $id_contenedor_export = $_GET["numCont"];
-    } else {
-        $id_contenedor_export = $_GET["id_contExpo"];
+    } else if(!empty($_SESSION["numCont"])){
+        $id_contenedor_export = $_SESSION["numCont"];
         ?>
         <script>
-            console.log("Ingreso a id_contExpo")
+            console.log("Ingreso a controlador inspeccion - numCont")
         </script>
     <?php
     }

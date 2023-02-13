@@ -164,7 +164,5 @@ if (($valiacion = cargar_dato_inpeccion()) != false) {
 <?php
 }
 ?>
-<input type="hidden" name="btn-guardar-inspeccion" id="btn-guardar-value1" value="guardado">
-<button id="boton-guardar-inspeccion" class="btn btn-outline-primary" type="submit" name="btn-guardar-inspeccion" value="guardado">Guardar</button>
-<input type="hidden" name="btn-actualizar-inspeccion" id="btn-actualizar-value" value="actualizado">
-<button id="boton-actualizar-inspeccion" class="btn btn-outline-info" type="submit" name="btn-actualizar-inspeccion" value="actualizado">Actualizar</button>
+<input type="hidden" name="btn-guardar-general" id="btn-guardar-value1" value="guardado">
+<button class="btn btn-outline-primary" type="submit" name="btn-guardar-general" value="guardado">Guardar</button>
