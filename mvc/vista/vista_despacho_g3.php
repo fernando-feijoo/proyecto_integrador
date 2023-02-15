@@ -3,8 +3,8 @@ if (($valiacion = carga_datos_despacho()) != false) {
 	$sql = carga_datos_despacho();
 	while ($carga_datos_despacho = $sql->fetch_object()) {
 ?>
-		<div class="row mx-auto">
-			<h2>Despacho</h2>
+		<div class="row mx-auto me-5 ms-5 mt-3">
+			<div class="fs-5 fw-semibold">DESPACHO</div>
 			<div class="d-flex flex-row justify-content-center">
 
 				<div class="form-check form-check-inline fw-bold mt-2">
@@ -89,9 +89,9 @@ if (($valiacion = carga_datos_despacho()) != false) {
 
 			<?php
 			// Este algoritmo traer el campo 1;2;1;2 y lo divide en un array para luego poderlo mostrar.
-				$paletizadores = $carga_datos_despacho->paletizadores;
-				$array_paletizadores = explode(";", $paletizadores);
-				$array_paletizadores = array_pad($array_paletizadores, 4, 0);		
+			$paletizadores = $carga_datos_despacho->paletizadores;
+			$array_paletizadores = explode(";", $paletizadores);
+			$array_paletizadores = array_pad($array_paletizadores, 4, 0);
 			?>
 
 			<div class="d-flex flex-row justify-content-center  line-height:0; ">
@@ -155,17 +155,17 @@ if (($valiacion = carga_datos_despacho()) != false) {
 				</div>
 			</div>
 
-			<div class="text-start  fs-5 fw-semibold" style="margin-top: 20px;">
+			<div class="text-start  fs-5 fw-semibold mt-5">
 				Observaciones:
-				<textarea class="form-control" name="observacion_despacho" rows="3"><?php echo $carga_datos_despacho->observacion_despacho ;?></textarea>
+				<textarea class="form-control mt-3" name="observacion_despacho" rows="3"><?php echo $carga_datos_despacho->observacion_despacho; ?></textarea>
 			</div>
 		</div>
 	<?php
 	}
 } else {
 	?>
-	<div class="row mx-auto">
-		<h2>Despacho</h2>
+	<div class="row mx-auto me-5 ms-5 mt-3">
+		<div class="fs-5 fw-semibold">DESPACHO</div>
 		<div class="d-flex flex-row justify-content-center">
 
 			<div class="form-check form-check-inline fw-bold mt-2">
@@ -309,13 +309,11 @@ if (($valiacion = carga_datos_despacho()) != false) {
 			</div>
 		</div>
 
-		<div class="text-start  fs-5 fw-semibold" style="margin-top: 20px;">
+		<div class="text-start  fs-5 fw-semibold mt-5">
 			Observaciones:
-			<textarea class="form-control" name="observacion_despacho" rows="3"></textarea>
+			<textarea class="form-control mt-3" name="observacion_despacho" rows="3"></textarea>
 		</div>
 	</div>
 <?php
 }
 ?>
-<input type="hidden" name="btn-guardar-general" id="btn-guardar-value1" value="guardado">
-<button class="btn btn-outline-primary" type="submit" name="btn-guardar-general" value="guardado">Guardar</button>
