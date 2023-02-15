@@ -71,7 +71,7 @@ include_once "./Grupo 1/menu.php";
                         </td>
                         <td>
                             <a class="btn btn-small btn-secondary"
-                                href="vista_reportes_g1.php?id_reportes=<?= $datos->id ?>"><i
+                                href="./../controlador//Grupo 1/reporte_eva.php?id_reportes=<?= $datos->id ?>"><i
                                     class="fa-solid fa-file-pen"></i></a>
                         </td>
                     </tr>
