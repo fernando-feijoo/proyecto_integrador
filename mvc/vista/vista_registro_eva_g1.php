@@ -28,6 +28,28 @@ include_once "./Grupo 1/menu.php";
     <nav>
       <div class="nav nav-tabs" id="nav-tab" role="tablist">
 
+    <button class="nav-link active" id="nav-dg-tab" data-bs-toggle="tab" data-bs-target="#nav-dg" type="button" role="tab" aria-controls="nav-dg" aria-selected="true">Detalles Generales</button>
+    <button class="nav-link" id="nav-gc-tab" data-bs-toggle="tab" data-bs-target="#nav-gc" type="button" role="tab" aria-controls="nav-gc" aria-selected="false">Grado Calibre</button>
+    <button class="nav-link" id="nav-ld-tab" data-bs-toggle="tab" data-bs-target="#nav-ld" type="button" role="tab" aria-controls="nav-ld" aria-selected="false">Largo Dedo</button>
+    <button class="nav-link" id="nav-asepsias-tab" data-bs-toggle="tab" data-bs-target="#nav-asepsias" type="button" role="tab" aria-controls="nav-asepsias" aria-selected="false">Asepcias</button>
+    <button class="nav-link" id="nav-se-tab" data-bs-toggle="tab" data-bs-target="#nav-se" type="button" role="tab" aria-controls="nav-se" aria-selected="false">Seleccion Empaque</button>
+    
+  </div>
+</nav> 
+ <div class="tab-content" id="nav-tabContent">
+    
+  <div class="tab-pane fade show active" id="nav-dg" role="tabpanel" aria-labelledby="nav-dg-tab"><?php 
+  include_once("./../modelo/conexion_bd.php");
+  include("./../modelo/Grupo 1/modelo_rellenar_dg_g1.php");
+  include_once ("./../controlador/Grupo 1/registro_eva.php");
+  include("./vista_detalles_generales_g1.php");?></div>
+  
+  <div class="tab-pane fade" id="nav-gc" role="tabpanel" aria-labelledby="nav-gc-tab"><?php 
+  include("./../modelo/Grupo 1/modelo_rellenar_gc_g1.php");
+  include_once ("./../controlador/Grupo 1/registro_gc.php");
+  include("./vista_gc_g1.php")?></div>
+
+
         <button class="nav-link active" id="nav-dg-tab" data-bs-toggle="tab" data-bs-target="#nav-dg" type="button"
           role="tab" aria-controls="nav-dg" aria-selected="true">Detalles Generales</button>
         <button class="nav-link" id="nav-gc-tab" data-bs-toggle="tab" data-bs-target="#nav-gc" type="button" role="tab"
