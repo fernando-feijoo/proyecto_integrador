@@ -23,6 +23,8 @@ include_once "./Grupo 1/menu.php";
     include_once("./../modelo/conexion_bd.php");
     include("./../modelo/Grupo 1/modelo_rellenar_dg_g1.php");
     include_once("./../controlador/Grupo 1/registro_eva.php");
+    include_once("./../controlador/Grupo 1/registro_asepcias.php");
+    
     ?>
 
     <nav>
@@ -42,6 +44,18 @@ include_once "./Grupo 1/menu.php";
       </div>
     </nav>
     <form action="./vista_registro_eva_g1.php" method="post">
+      <?php 
+      $dato_ = id_max();
+      if (!empty($_GET["id_eva"])) {
+          $_SESSION["id_eva"] = $_GET["id_eva"];
+          // echo $_SESSION["id_listado"];
+      } else {
+          while ($dato = $dato_->fetch_object()) {
+              $_SESSION["id_conteo"] = $dato->id + 1;
+              //echo $_SESSION["id_conteo"];
+          }
+      }
+      ?>
       <div class="tab-content" id="nav-tabContent">
 
         <div class="tab-pane fade show active" id="nav-dg" role="tabpanel" aria-labelledby="nav-dg-tab">
@@ -61,7 +75,7 @@ include_once "./Grupo 1/menu.php";
 
         <div class="tab-pane fade" id="nav-asepsias" role="tabpanel" aria-labelledby="nav-asepsias-tab">
           <?php
-          include("./vista_asepsias_g1.php") ?>
+          include("./vista_asepcias_g1.php") ?>
         </div>
 
         <div class="tab-pane fade" id="nav-se" role="tabpanel" aria-labelledby="nav-se-tab">
