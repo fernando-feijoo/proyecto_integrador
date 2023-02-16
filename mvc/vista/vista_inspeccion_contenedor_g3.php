@@ -6,6 +6,11 @@ if (($valiacion = cargar_dato_inpeccion()) != false) {
 		$datos_inspeccion[] = $carga_datos_inspeccion;
 	}
 ?>
+	<script>
+		console.log("Ingreso a vista inspeccion")
+	</script>
+	<?php
+	?>
 	<div class="row mx-auto me-5 ms-5 mt-3">
 		<div class="fs-5 fw-semibold">INSPECCION DEL CONTENEDOR</div>
 		<div class="d-flex flex-row justify-content-center">
@@ -80,7 +85,11 @@ if (($valiacion = cargar_dato_inpeccion()) != false) {
 		</div>
 		<div class="text-start fs-5 fw-semibold mt-4">
 			Observaciones:
-			<textarea class="form-control mt-3" rows="3" name="obs_inspeccion"></textarea>
+			<?php
+				$sql_comnt = cargar_observacion_inspeccion();
+				$cargar_comentario = $sql_comnt->fetch_object();
+			?>
+			<textarea class="form-control mt-3" rows="3" name="obs_inspeccion"><?= $cargar_comentario -> obser_ins_contenedor?></textarea>
 		</div>
 	</div>
 <?php

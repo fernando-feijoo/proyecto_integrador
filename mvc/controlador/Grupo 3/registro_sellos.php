@@ -1,8 +1,6 @@
 <?php
 if (!empty($_POST["btn-guardar-general"]) || !empty($_POST["btn-actualizar-general"])) {
 	if (!empty($_POST["sello_interno1"])) {
-
-
 		// Se coloca esta validacion para saber si es un insert o un update, ya que si es 
 		// guardado por primera vez seria con numCont, pero caso contrario seria con id_contExpo para actualizar.
 		if (!empty($_SESSION["id_contExpo"])) {

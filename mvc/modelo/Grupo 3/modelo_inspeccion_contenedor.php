@@ -14,8 +14,13 @@ function cargar_dato_inpeccion()
 
 function cargar_observacion_inspeccion()
 {
-	$id = $_GET["id_contExpo"];
-	$obs_inspeccion = $_POST["obs_inspeccion"];
-	$conexion = conexionBd();
-	$sql = $conexion->query("UPDATE cont_export SET obser_ins_contenedor = $obs_inspeccion;");
+	if (!empty($_GET["id_contExpo"])) {
+		$id = $_GET["id_contExpo"];
+		$conexion = conexionBd();
+		$sql = $conexion->query("SELECT obser_ins_contenedor FROM cont_export WHERE id = $id;");
+		return $sql;
+	} else {
+		$validacion = false;
+		return $validacion;
+	}
 }

@@ -145,13 +145,13 @@ if (($valiacion = carga_datos_despacho()) != false) {
 
 			<div class="d-flex flex-row justify-content-center">
 				<div class="p-1">Total a Viajar:
-					<input type="text" style="width: 150px; height: 36px;" name="total_viajar" value="<?= $carga_datos_despacho->total_viajar ?>">
+					<input type="number" style="width: 150px; height: 36px;" name="total_viajar" value="<?= $carga_datos_despacho->total_viajar ?>">
 				</div>
 				<div class="p-1">Cajas:
-					<input type="text" style="width: 195px; height: 36px;" name="cajas" value="<?= $carga_datos_despacho->cajas ?>">
+					<input type="number" style="width: 195px; height: 36px;" name="cajas" value="<?= $carga_datos_despacho->cajas ?>">
 				</div>
 				<div class="p-1"> Cantidad de Pallet:
-					<input type="text" style="width: 200px; height: 36px;" name="cantidad_pallet" value="<?= $carga_datos_despacho->cantidad_palet ?>">
+					<input type="number" style="width: 200px; height: 36px;" name="cantidad_pallet" value="<?= $carga_datos_despacho->cantidad_palet ?>">
 				</div>
 			</div>
 
@@ -299,13 +299,13 @@ if (($valiacion = carga_datos_despacho()) != false) {
 
 		<div class="d-flex flex-row justify-content-center">
 			<div class="p-1">Total a Viajar:
-				<input type="text" style="width: 150px; height: 36px;" name="total_viajar" id="viajar1">
+				<input type="number" style="width: 150px; height: 36px;" name="total_viajar">
 			</div>
 			<div class="p-1">Cajas:
-				<input type="text" style="width: 195px; height: 36px;" name="cajas" id="cajas1">
+				<input type="number" style="width: 195px; height: 36px;" name="cajas">
 			</div>
 			<div class="p-1"> Cantidad de Pallet:
-				<input type="text" style="width: 200px; height: 36px;" name="cantidad_pallet" id="pallet1">
+				<input type="number" style="width: 200px; height: 36px;" name="cantidad_pallet">
 			</div>
 		</div>
 

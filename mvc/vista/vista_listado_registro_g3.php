@@ -32,12 +32,12 @@ include_once "./Grupo 3/menu.php";
 
     <?php
     include("./../modelo/conexion_bd.php");
-    include("./../modelo/Grupo 3/modelo_sellos_llegada.php");
-    include("./../controlador/Grupo 3/registro_sellos.php");
-    include("./../modelo/Grupo 3/modelo_inspeccion_contenedor.php");
-    include("./../controlador/Grupo 3/inspeccion_contenedor.php");
-    include("./../modelo/Grupo 3/modelo_despacho.php");
-    include("./../controlador/Grupo 3/registro_despacho.php");
+    include_once("./../modelo/Grupo 3/modelo_sellos_llegada.php");
+    include_once("./../controlador/Grupo 3/registro_sellos.php");
+    include_once("./../modelo/Grupo 3/modelo_inspeccion_contenedor.php");
+    include_once("./../controlador/Grupo 3/inspeccion_contenedor.php");
+    include_once("./../modelo/Grupo 3/modelo_despacho.php");
+    include_once("./../controlador/Grupo 3/registro_despacho.php");
     ?>
 
     <?php

@@ -1,5 +1,5 @@
 <?php
-if (!empty($_POST["btn-guardar-general"]) || !empty($_POST["btn-actualizado-general"])) {
+if (!empty($_POST["btn-guardar-general"]) || !empty($_POST["btn-actualizar-general"])) {
 ?>
   <script>
     console.log("Ingreso al controlador DESPACHO")

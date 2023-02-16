@@ -4,6 +4,11 @@ if (($valiacion = carga_datos_sellos()) != false) {
   while ($carga_datos_sellos = $sql_sellos->fetch_object()) {
 ?>
     <?php
+    ?>
+    <script>
+      console.log("Ingreso a vista sellos")
+    </script>
+    <?php
     // Este algoritmo traer el campo 1;2;1;2 y lo divide en un array para luego poderlo mostrar.
     $sellos_internos = $carga_datos_sellos->sellos_internos;
     $array_sellos_internos = explode(";", $sellos_internos);
