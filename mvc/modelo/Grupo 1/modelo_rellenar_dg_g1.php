@@ -1,5 +1,5 @@
 <?php
-function cargar_datos()
+function cargar_dg()
 {
     if (!empty($_GET["id_eva"])) {
         $id = $_GET["id_eva"];

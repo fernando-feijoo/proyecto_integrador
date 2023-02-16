@@ -29,8 +29,8 @@
                 }
             }
 
-            if (($valiacion = cargar_datos()) != false) {
-                $sql = cargar_datos();
+            if (($valiacion = cargar_dg()) != false) {
+                $sql = cargar_dg();
                 while ($carga_datos = $sql->fetch_object()) {
                     // echo $carga_datos -> cod_eva;
                     ?>
