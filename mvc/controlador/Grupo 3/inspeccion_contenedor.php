@@ -1,6 +1,5 @@
 <?php
-if (!empty($_POST["btn-guardar-general"])) {
-    // $id_inpeccion = $_SESSION['id_conExpo'];
+if (!empty($_POST["btn-guardar-general"]) || !empty($_POST["btn-actualizado-general"])) {
 ?>
     <script>
         console.log("Ingreso al controlador INSPECCION")
@@ -16,9 +15,9 @@ if (!empty($_POST["btn-guardar-general"])) {
             console.log("Ingreso a controlador inspeccion - id_contExpo")
         </script>
     <?php
-    } else if(!empty($_SESSION["numCont"])){
+    } else if (!empty($_SESSION["numCont"])) {
         $id_contenedor_export = $_SESSION["numCont"];
-        ?>
+    ?>
         <script>
             console.log("Ingreso a controlador inspeccion - numCont")
         </script>
@@ -78,7 +77,7 @@ if (!empty($_POST["btn-guardar-general"])) {
                 $verificacion = $verificacion_once == 1 ? 1 : 0;
                 break;
         }
-        $sql_guardado_inspeccion = "SELECT insertarDatosInspeccion ('$id','$verificacion','$id_contenedor_export','$id_verificar_lugar');";
+        $sql_guardado_inspeccion = "SELECT `insertarDatosInspeccion` ('$id','$verificacion','$id_contenedor_export','$id_verificar_lugar');";
         $sql = $conexion->query($sql_guardado_inspeccion);
     ?>
         <?php
@@ -91,5 +90,15 @@ if (!empty($_POST["btn-guardar-general"])) {
         }
         ?>
 <?php
+    }
+    if (!empty($_POST["obs_inspeccion"])) {
+        $obs_inspeccion = $_POST["obs_inspeccion"];
+        $conexion = conexionBd();
+        $sql = $conexion->query("UPDATE `cont_export` SET obser_ins_contenedor = $obs_inspeccion;");
+        ?>
+        <script>
+            console.log("Guardado Correcto - INSPECCION CONTENEDOR + OBSERVACION")
+        </script>
+        <?php
     }
 }

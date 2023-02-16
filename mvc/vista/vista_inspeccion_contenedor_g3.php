@@ -12,9 +12,9 @@ if (($valiacion = cargar_dato_inpeccion()) != false) {
 			<table class="table table-bordered table-sm" style="width: 500px;">
 				<thead>
 					<tr>
-						<th class="borde" style="background-color: gray;">ORDEN</th>
-						<th class="borde" style="background-color: gray;">LUGAR</th>
-						<th class="borde" style="background-color: gray;">OK</th>
+						<th class="borde bg-secondary bg-opacity-50">ORDEN</th>
+						<th class="borde bg-secondary bg-opacity-50">LUGAR</th>
+						<th class="borde bg-secondary bg-opacity-50">OK</th>
 					</tr>
 				</thead>
 
@@ -80,7 +80,7 @@ if (($valiacion = cargar_dato_inpeccion()) != false) {
 		</div>
 		<div class="text-start fs-5 fw-semibold mt-4">
 			Observaciones:
-			<textarea class="form-control mt-3" id="observacion_higiene" rows="3"></textarea>
+			<textarea class="form-control mt-3" rows="3" name="obs_inspeccion"></textarea>
 		</div>
 	</div>
 <?php
@@ -88,13 +88,13 @@ if (($valiacion = cargar_dato_inpeccion()) != false) {
 ?>
 	<div class="row mx-auto me-5 ms-5 mt-3">
 		<div class="fs-5 fw-semibold">INSPECCION DEL CONTENEDOR</div>
-		<div class="d-flex flex-row justify-content-center  line-height:0;">
+		<div class="d-flex flex-row justify-content-center">
 			<table class="table table-bordered table-sm" style="width: 500px;">
 				<thead>
 					<tr>
-						<th class="borde" style="background-color: gray;">ORDEN</th>
-						<th class="borde" style="background-color: gray;">LUGAR</th>
-						<th class="borde" style="background-color: gray;">OK</th>
+						<th class="borde bg-secondary bg-opacity-50">ORDEN</th>
+						<th class="borde bg-secondary bg-opacity-50">LUGAR</th>
+						<th class="borde bg-secondary bg-opacity-50">OK</th>
 					</tr>
 				</thead>
 
@@ -160,7 +160,7 @@ if (($valiacion = cargar_dato_inpeccion()) != false) {
 		</div>
 		<div class="text-start fs-5 fw-semibold mt-4">
 			Observaciones:
-			<textarea class="form-control mt-3" id="observacion_higiene" rows="3"></textarea>
+			<textarea class="form-control mt-3" rows="3" name="obs_inspeccion"></textarea>
 		</div>
 	</div>
 <?php

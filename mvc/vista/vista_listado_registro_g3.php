@@ -32,11 +32,12 @@ include_once "./Grupo 3/menu.php";
 
     <?php
     include("./../modelo/conexion_bd.php");
-    include_once("./../controlador/Grupo 3/registro_sellos.php");
-    include_once("./../controlador/Grupo 3/inspeccion_contenedor.php");
-    include_once("./../modelo/Grupo 3/modelo_inspeccion_contenedor.php");
-    include_once("./../modelo/Grupo 3/modelo_despacho.php");
-    include_once("./../controlador/Grupo 3/registro_despacho.php");
+    include("./../modelo/Grupo 3/modelo_sellos_llegada.php");
+    include("./../controlador/Grupo 3/registro_sellos.php");
+    include("./../modelo/Grupo 3/modelo_inspeccion_contenedor.php");
+    include("./../controlador/Grupo 3/inspeccion_contenedor.php");
+    include("./../modelo/Grupo 3/modelo_despacho.php");
+    include("./../controlador/Grupo 3/registro_despacho.php");
     ?>
 
     <?php
@@ -44,10 +45,12 @@ include_once "./Grupo 3/menu.php";
     if (!empty($_GET["id_contExpo"])) {
     ?>
       <script>
-        console.log("Ingreso al SESSION id_contExpo")
+        console.log("Ingreso al SESSION ACTUALIZACION")
       </script>
     <?php
       $_SESSION["id_contExpo"] = $_GET["id_contExpo"];
+      $_SESSION["id_numCont"] = $_GET["id_numCont"];
+      $_SESSION["id_regisLleg"] = $_GET["id_regisLleg"];
       unset($_SESSION["numCont"]);
       unset($_SESSION["id_regis"]);
       // Este de aqui es cuando se va a guardar por primera vez, puedes agregar el id de la tabla 
@@ -55,12 +58,14 @@ include_once "./Grupo 3/menu.php";
     } else if (!empty($_GET["id_regis"])) {
     ?>
       <script>
-        console.log("Ingreso al SESSION numCont && id_regis")
+        console.log("Ingreso al SESSION REGISTRO NUEVO")
       </script>
     <?php
       $_SESSION["numCont"] = $_GET["numCont"];
       $_SESSION["id_regis"] = $_GET["id_regis"];
       unset($_SESSION["id_contExpo"]);
+      unset($_SESSION["id_numCont"]);
+      unset($_SESSION["id_regisLleg"]);
     }
     ?>
 
