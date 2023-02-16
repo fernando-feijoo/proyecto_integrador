@@ -7,7 +7,7 @@
 
       <div class="d-flex fw-semibold" style="margin-left: 85%;margin-top: 10px;">
         <div class="me-2">Numero de cajas:</div>
-        <select name="cajas">
+        <select name="cajas_lista">
           <option value="1">48</option>
           <option value="2">54</option>
         </select>
