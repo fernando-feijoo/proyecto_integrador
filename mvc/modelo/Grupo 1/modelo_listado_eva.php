@@ -21,7 +21,7 @@ if (empty($_POST["busqueda_evaluaciones"]) ||empty($_POST["button-busqueda"]) ||
     $pagina = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
 	$inicio = ($pagina - 1) * $cantidad_por_pagina;
 
-    $sql = $conexion->query("SELECT * FROM evaluaciones where estado='ACTIVO' LIMIT $inicio, $cantidad_por_pagina;");
+    $sql = $conexion->query("SELECT * FROM evaluaciones where estado='ACTIVO' ORDER BY id DESC LIMIT $inicio, $cantidad_por_pagina;");
     unset($_SESSION["busqueda_evaluaciones"]);
 
 }else if(!empty($_POST["button-busqueda"]) && !empty($_POST["busqueda_evaluaciones"]) ){
@@ -35,6 +35,6 @@ if (empty($_POST["busqueda_evaluaciones"]) ||empty($_POST["button-busqueda"]) ||
 	$pagina = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
 	$inicio = ($pagina - 1) * $cantidad_por_pagina;
 
-    $sql = $conexion->query("SELECT * FROM evaluaciones WHERE estado = 'ACTIVO' and cod_eva= '$busqueda' LIMIT $inicio, $cantidad_por_pagina;");
+    $sql = $conexion->query("SELECT * FROM evaluaciones WHERE estado = 'ACTIVO' and cod_eva= '$busqueda' ORDER BY id DESC LIMIT $inicio, $cantidad_por_pagina;");
 }
 ?>

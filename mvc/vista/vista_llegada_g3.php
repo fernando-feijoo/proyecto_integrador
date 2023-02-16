@@ -34,9 +34,9 @@ include_once "./Grupo 3/menu_garita.php";
 
 				if (!empty($_GET["id_listado"])) {
 					$_SESSION["id_listado"] = $_GET["id_listado"];
-				}else{
-					while($valor = $valor_conteo->fetch_object()){
-						$_SESSION["id_conteo"] = $valor->id+1;
+				} else {
+					while ($valor = $valor_conteo->fetch_object()) {
+						$_SESSION["id_conteo"] = $valor->id + 1;
 						// echo $_SESSION["id_conteo"];
 					}
 				}
