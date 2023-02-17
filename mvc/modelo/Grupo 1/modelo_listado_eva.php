@@ -2,14 +2,39 @@
 include_once "./../modelo/conexion_bd.php";
 $conexion = conexionBd();
 
-$sql = $conexion->query("SELECT eva.id, eva.cod_evaluacion, pi.nombre_p, pi.apellido_p,pi.finca FROM evaluaciones eva inner join productores_inspectores pi ON pi.codigo=eva.cod_prod_insp WHERE estado='ACTIVO';");
+$sql = $conexion->query("SELECT * FROM evaluaciones WHERE estado='ACTIVO';");
 ?>
 
 <?php 
 include_once "./../modelo/conexion_bd.php";
 
-$cantidad = 7;
-if (!empty($_POST["busqueda_evaluaciones"])) {
-    $valor_busqueda = $_POST["busqueda_evaluaciones"];
+$conexion = conexionBd();
+
+$cantidad_por_pagina = 5;
+
+if (empty($_POST["busqueda_evaluaciones"]) ||empty($_POST["button-busqueda"]) || empty($_GET["busqueda"])) {
+
+    $sql_total = $conexion->query("SELECT COUNT(*) AS total FROM evaluaciones WHERE estado='ACTIVO';");
+    $total = $sql_total->fetch_assoc()['total'];
+	$num_pags = ceil($total / $cantidad_por_pagina);
+
+    $pagina = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
+	$inicio = ($pagina - 1) * $cantidad_por_pagina;
+
+    $sql = $conexion->query("SELECT * FROM evaluaciones where estado='ACTIVO' ORDER BY id DESC LIMIT $inicio, $cantidad_por_pagina;");
+    unset($_SESSION["busqueda_evaluaciones"]);
+
+}else if(!empty($_POST["button-busqueda"]) && !empty($_POST["busqueda_evaluaciones"]) ){
+
+    $busqueda = $_POST["busqueda_evaluaciones"];
+
+    $sql_total = $conexion->query("SELECT COUNT(*) AS total FROM evaluaciones WHERE estado='ACTIVO';");
+	$total = $sql_total->fetch_assoc()['total'];
+	$num_pags = ceil($total / $cantidad_por_pagina);
+
+	$pagina = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
+	$inicio = ($pagina - 1) * $cantidad_por_pagina;
+
+    $sql = $conexion->query("SELECT * FROM evaluaciones WHERE estado = 'ACTIVO' and cod_eva= '$busqueda' ORDER BY id DESC LIMIT $inicio, $cantidad_por_pagina;");
 }
 ?>

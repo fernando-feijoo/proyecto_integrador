@@ -22,22 +22,19 @@ include_once "./Grupo 1/menu.php";
     include_once("./../controlador/Grupo 1/eliminar_registros_eva.php");
     include("./../modelo/Grupo 1/modelo_listado_eva.php");
     ?>
-    <div class="d-flex justify-content-center flex-row">
-
-      <form action="?busqueda=1" method="post">
-        <div class="input-group mt-5" style="width: 700px;">
-          <input name="busqueda_evaluaciones" type="text" class="form-control text-uppercase"
-            placeholder="Ingrese el código de la evaluación" value="">
-          <button class="btn btn-outline-primary" type="submit" name="button-busqueda" value="buscando">Buscar
-            registro</button>
-        </div>
-      </form>
-      <?php
-      ?> 
-
+  
+<div class="d-flex justify-content-center flex-row">
+<form action="?busqueda=1" method="post">
+    <div class="input-group mt-3" style="width: 700px;">
+        <input class="text-uppercase" name="busqueda_evaluaciones" type="text" class="form-control" placeholder="Ingrese el código de la evaluación" value="" style="width: 550px; border-radius: 5px;">
+        <button class="btn btn-outline-primary" type="submit" name="button-busqueda" value="buscando">Buscar registro</button>
     </div>
-    <table class="table mt-2">
-      <thead class="" style="background-color: greenyellow;">
+</form>
+
+</div>
+
+    <table class="table table-striped table-hover table-sm table-bordered border-dark align-middle mt-3 mx-auto">
+      <thead class="bg-primary bg-gradient bg-opacity-75">
         <tr>
           <th scope="col">ID</th>
           <th scope="col">COD</th>
@@ -57,7 +54,7 @@ include_once "./Grupo 1/menu.php";
               <?= $datos->id ?>
             </td>
             <td>
-              <?= $datos->cod_evaluacion ?>
+              <?= $datos->cod_eva ?>
             </td>
             <td>
               <?= $datos->nombre_p ?>
@@ -80,6 +77,54 @@ include_once "./Grupo 1/menu.php";
       </tbody>
     </table>
 
+    <?php
+        if (empty($_GET["busqueda"])) {
+        ?>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <?php if ($pagina != 1) { ?>
+                        <li class="page-item">
+                            <a class="page-link" href="?pagina=<?= $pagina - 1 ?>">Previous</a>
+                        </li>
+                    <?php } ?>
+                    <?php for ($i = 1; $i <= $num_pags; $i++) { ?>
+                        <li class="page-item <?= $i == $pagina ? 'active' : '' ?>">
+                            <a class="page-link" href="?pagina=<?= $i ?>"><?= $i ?></a>
+                        </li>
+                    <?php } ?>
+                    <?php if ($pagina != $num_pags) { ?>
+                        <li class="page-item">
+                            <a class="page-link" href="?pagina=<?= $pagina + 1 ?>">Next</a>
+                        </li>
+                    <?php } ?>
+                </ul>
+            </nav>
+        <?php
+        } else {
+        ?>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <?php if ($pagina != 1) { ?>
+                        <li class="page-item">
+                            <a class="page-link" href="?busqueda=1&pagina=<?= $pagina - 1 ?>">Previous</a>
+                        </li>
+                    <?php } ?>
+                    <?php for ($i = 1; $i <= $num_pags; $i++) { ?>
+                        <li class="page-item <?= $i == $pagina ? 'active' : '' ?>">
+                            <a class="page-link" href="?busqueda=1&pagina=<?= $i ?>"><?= $i ?></a>
+                        </li>
+                    <?php } ?>
+                    <?php if ($pagina != $num_pags) { ?>
+                        <li class="page-item">
+                            <a class="page-link" href="?busqueda=1&pagina=<?= $pagina + 1 ?>">Next</a>
+                        </li>
+                    <?php } ?>
+                </ul>
+            </nav>
+        <?php
+        }
+        ?>
+    
   </div>
 </div>
 <?php
