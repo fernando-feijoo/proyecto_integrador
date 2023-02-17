@@ -20,7 +20,7 @@ if (!empty($_POST["btn-guardar-general"]) || !empty($_POST["btn-actualizar-gener
 			<script>
 				console.log("Ingreso a controlador sellos - nuevo registro")
 			</script>
-<?php
+		<?php
 		}
 
 		$sellos_internos = $_POST["sello_interno1"] . ';';
@@ -43,5 +43,13 @@ if (!empty($_POST["btn-guardar-general"]) || !empty($_POST["btn-actualizar-gener
 		$sql_consulta = "SELECT `insertarDatosSellos` ($id,'$num_conte','$sellos_externos','$sellos_internos','$id_registro');";
 
 		$conexion->query($sql_consulta);
+
+		if ($conexion->query($sql_consulta) == TRUE) {
+		?>
+			<script>
+				console.log("Guardado Correcto - SELLOS CONTENEDOR")
+			</script>
+		<?php
+		}
 	}
 }

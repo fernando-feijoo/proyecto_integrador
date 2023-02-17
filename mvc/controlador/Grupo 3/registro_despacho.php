@@ -49,7 +49,7 @@ if (!empty($_POST["btn-guardar-general"]) || !empty($_POST["btn-actualizar-gener
     <script>
       console.log("Ingreso a controlador despacho - numCont")
     </script>
-<?php
+  <?php
   }
 
   $id_cont_export = $id;
@@ -58,4 +58,11 @@ if (!empty($_POST["btn-guardar-general"]) || !empty($_POST["btn-actualizar-gener
 
   $sql_consulta = "SELECT insertarDatosDespacho ('$id','$filtro_rb','$termografo_rb','$termografo_num','$sello_adhesivo','$sello_verificador','$sello_exp_cand','$fecha_hora_salida','$sello_exp_cable','$compania_transporte','$sello_nave','$vapor','$destino','$paletizadores','$total_viajar','$cajas','$cantidad_pallet','$observaciones','$id_cont_export');";
   $sql = $conexion->query($sql_consulta);
+  if ($conexion->query($sql_consulta) == TRUE) {
+  ?>
+    <script>
+      console.log("Guardado Correcto - DESPACHO CONTENEDOR")
+    </script>
+<?php
+  }
 }

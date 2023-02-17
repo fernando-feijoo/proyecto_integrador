@@ -24,7 +24,6 @@ if (!empty($_POST["btn-guardar-general"]) || !empty($_POST["btn-actualizar-gener
     <?php
     }
 
-    // Para visualizar en pantalla de trabajo, prueba.
     $conexion = conexionBd();
 
     $maxDato = (($id_contenedor_export * 11) - 11);
@@ -81,7 +80,7 @@ if (!empty($_POST["btn-guardar-general"]) || !empty($_POST["btn-actualizar-gener
         $sql = $conexion->query($sql_guardado_inspeccion);
     ?>
         <?php
-        if ($conexion->query($sql_guardado_inspeccion) === TRUE) {
+        if ($conexion->query($sql_guardado_inspeccion) == TRUE) {
         ?>
             <script>
                 console.log("Guardado Correcto - INSPECCION CONTENEDOR")

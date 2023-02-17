@@ -36,8 +36,11 @@ include_once "./Grupo 3/menu.php";
     include_once("./../controlador/Grupo 3/registro_sellos.php");
     include_once("./../modelo/Grupo 3/modelo_inspeccion_contenedor.php");
     include_once("./../controlador/Grupo 3/inspeccion_contenedor.php");
+    include_once("./../modelo/Grupo 3/modelo_higiene_contenedor.php");
+    include_once("./../controlador/Grupo 3/registro_higiene.php");
     include_once("./../modelo/Grupo 3/modelo_despacho.php");
     include_once("./../controlador/Grupo 3/registro_despacho.php");
+    include_once("./../modelo/Grupo 3/modelo_paletizado_contenedor.php");
     ?>
 
     <?php

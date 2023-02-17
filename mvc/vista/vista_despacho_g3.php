@@ -48,7 +48,7 @@ if (($valiacion = carga_datos_despacho()) != false) {
 				</div>
 			</div>
 
-			<div class="d-flex flex-row justify-content-center line-height:0; ">
+			<div class="d-flex flex-row justify-content-center  ">
 				<div class="p-1">Sello Adhesivo:
 					<input type="text" style="width: 405px; height: 36px;" name="sello_adhesivo" value="<?= $carga_datos_despacho->sello_adhesivo ?>">
 				</div>
@@ -57,7 +57,7 @@ if (($valiacion = carga_datos_despacho()) != false) {
 				</div>
 			</div>
 
-			<div class="d-flex flex-row justify-content-center line-height:0;">
+			<div class="d-flex flex-row justify-content-center ">
 				<div class="p-1"> Sello Exportador Candado:
 					<input type="text" style="width: 270px; height: 36px;" name="sello_expotador_candado" value="<?= $carga_datos_despacho->sello_exp_candado ?>">
 				</div>
@@ -66,7 +66,7 @@ if (($valiacion = carga_datos_despacho()) != false) {
 				</div>
 			</div>
 
-			<div class="d-flex flex-row justify-content-center line-height:0; ">
+			<div class="d-flex flex-row justify-content-center  ">
 				<div class="p-1"> Sello Exportador cable:
 					<input type="text" style="width: 250px; height: 36px;" name="sello_cable" value="<?= $carga_datos_despacho->sello_exp_cable ?>">
 				</div>
@@ -75,7 +75,7 @@ if (($valiacion = carga_datos_despacho()) != false) {
 				</div>
 			</div>
 
-			<div class="d-flex flex-row justify-content-center  line-height:0;">
+			<div class="d-flex flex-row justify-content-center  ">
 				<div class="p-1"> Sello Nave:
 					<input type="text" style="width: 245px; height: 36px;" name="sello_nave" value="<?= $carga_datos_despacho->sello_naviero ?>">
 				</div>
@@ -94,7 +94,7 @@ if (($valiacion = carga_datos_despacho()) != false) {
 			$array_paletizadores = array_pad($array_paletizadores, 4, 0);
 			?>
 
-			<div class="d-flex flex-row justify-content-center  line-height:0; ">
+			<div class="d-flex flex-row justify-content-center   ">
 				<div class="p-1"> Nombre de Paletizadores:
 					<select type="form-select" aria-label="Disabled select example" style="width: 160px; height: 36px;" name="paletizador1">
 						<option selected>Seleccione</option>
@@ -209,7 +209,7 @@ if (($valiacion = carga_datos_despacho()) != false) {
 			</div>
 		</div>
 
-		<div class="d-flex flex-row justify-content-center line-height:0; ">
+		<div class="d-flex flex-row justify-content-center">
 			<div class="p-1">Sello Adhesivo:
 				<input type="text" style="width: 405px; height: 36px;" name="sello_adhesivo" id="sello_adhesivo1">
 			</div>
@@ -218,7 +218,7 @@ if (($valiacion = carga_datos_despacho()) != false) {
 			</div>
 		</div>
 
-		<div class="d-flex flex-row justify-content-center line-height:0;">
+		<div class="d-flex flex-row justify-content-center">
 			<div class="p-1"> Sello Exportador Candado:
 				<input type="text" style="width: 270px; height: 36px;" name="sello_expotador_candado" id="sello_expotador_candado1">
 			</div>
@@ -227,7 +227,7 @@ if (($valiacion = carga_datos_despacho()) != false) {
 			</div>
 		</div>
 
-		<div class="d-flex flex-row justify-content-center line-height:0; ">
+		<div class="d-flex flex-row justify-content-center">
 			<div class="p-1"> Sello Exportador cable:
 				<input type="text" style="width: 250px; height: 36px;" name="sello_cable" id="sello_cable1">
 			</div>
@@ -236,7 +236,7 @@ if (($valiacion = carga_datos_despacho()) != false) {
 			</div>
 		</div>
 
-		<div class="d-flex flex-row justify-content-center  line-height:0;">
+		<div class="d-flex flex-row justify-content-center">
 			<div class="p-1"> Sello Nave:
 				<input type="text" style="width: 245px; height: 36px;" name="sello_nave" id="sello_nave1">
 			</div>
@@ -248,7 +248,7 @@ if (($valiacion = carga_datos_despacho()) != false) {
 			</div>
 		</div>
 
-		<div class="d-flex flex-row justify-content-center  line-height:0; ">
+		<div class="d-flex flex-row justify-content-center">
 			<div class="p-1"> Nombre de Paletizadores:
 				<select type="form-select" aria-label="Disabled select example" style="width: 160px; height: 36px;" name="paletizador1">
 					<option selected>Seleccione</option>
