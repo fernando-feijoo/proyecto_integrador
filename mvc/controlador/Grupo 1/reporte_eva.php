@@ -43,7 +43,7 @@ function Footer()
 }
 //conexion a la base de datos y obtener la consulta
 $conexion = conexionBd();
-$id_reporte=$_GET['id_reportes'];
+$id_reporte=$_GET["id_reportes"];
 $sql = $conexion->query("SELECT * FROM evaluaciones WHERE id = $id_reporte;");
 $data = mysqli_fetch_all($sql);
 

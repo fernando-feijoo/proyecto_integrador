@@ -102,7 +102,7 @@
         });
     });
 </script>
-<form id="formulario_gc">
+
     <div class="grado_calibre">
         <div class="Container-f1">
             <h6 class="p-1" style="text-align: left;">Ingrese la cantidad:</h6>
@@ -364,4 +364,4 @@
             </div>
         </div>
     </div>
-</form>
+

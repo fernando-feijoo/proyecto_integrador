@@ -18,19 +18,9 @@
 
 <div class="container-fluid mt-0">
             <?php
-            $dato_ = id_max();
-            if (!empty($_GET["id_eva"])) {
-                $_SESSION["id_eva"] = $_GET["id_eva"];
-                // echo $_SESSION["id_listado"];
-            } else {
-                while ($dato = $dato_->fetch_object()) {
-                    $_SESSION["id_conteo"] = $dato->id + 1;
-                    //echo $_SESSION["id_conteo"];
-                }
-            }
 
-            if (($valiacion = cargar_datos()) != false) {
-                $sql = cargar_datos();
+            if (($valiacion = cargar_dg()) != false) {
+                $sql = cargar_dg();
                 while ($carga_datos = $sql->fetch_object()) {
                     // echo $carga_datos -> cod_eva;
                     ?>
