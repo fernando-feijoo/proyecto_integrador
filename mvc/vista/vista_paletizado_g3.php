@@ -143,17 +143,16 @@ if (($valiacion = cargar_datos_paletizado()) != false) {
         </div>
       </div>
 
-      
-
       <div class="d-flex flex-row justify-content-center">
         <div class="p-1">Responsable de Acopio
           <select type="form-select" aria-label="Disabled select example" style="width: 160px; height: 36px;" name="firmante1">
-            <option selected>Seleccione</option>
             <?php
             $sql_firmantes =  datos_lista_firmantes();
+            $sql_id_firmas = cargar_firmas_contenedor();
+            $id_firmas = $sql_id_firmas->fetch_object();
             while ($datos_firmantes = $sql_firmantes->fetch_object()) {
             ?>
-              <option value=<?= $datos_firmantes->id ?>><?= $datos_firmantes->nombres ?></option>
+              <option value=<?= $datos_firmantes->id ?> <?= ($datos_firmantes->id == $id_firmas->firmante_uno) ? "selected" : "" ?>><?= $datos_firmantes->nombres ?></option>
             <?php
             }
             ?>
@@ -161,12 +160,13 @@ if (($valiacion = cargar_datos_paletizado()) != false) {
         </div>
         <div class="p-1">Evaluador de Fruta
           <select type="form-select" aria-label="Disabled select example" style="width: 160px; height: 36px;" name="firmante2">
-            <option selected>Seleccione</option>
             <?php
             $sql_firmantes =  datos_lista_firmantes();
+            $sql_id_firmas = cargar_firmas_contenedor();
+            $id_firmas = $sql_id_firmas->fetch_object();
             while ($datos_firmantes = $sql_firmantes->fetch_object()) {
             ?>
-              <option value=<?= $datos_firmantes->id ?>><?= $datos_firmantes->nombres ?></option>
+              <option value=<?= $datos_firmantes->id ?> <?= ($datos_firmantes->id == $id_firmas->firmante_dos) ? "selected" : "" ?>><?= $datos_firmantes->nombres ?></option>
             <?php
             }
             ?>
@@ -174,12 +174,13 @@ if (($valiacion = cargar_datos_paletizado()) != false) {
         </div>
         <div class="p-1">Verificador de Contenedor
           <select type="form-select" aria-label="Disabled select example" style="width: 160px; height: 36px;" name="firmante3">
-            <option selected>Seleccione</option>
             <?php
             $sql_firmantes =  datos_lista_firmantes();
+            $sql_id_firmas = cargar_firmas_contenedor();
+            $id_firmas = $sql_id_firmas->fetch_object();
             while ($datos_firmantes = $sql_firmantes->fetch_object()) {
             ?>
-              <option value=<?= $datos_firmantes->id ?>><?= $datos_firmantes->nombres ?></option>
+              <option value=<?= $datos_firmantes->id ?> <?= ($datos_firmantes->id == $id_firmas->firmante_tres) ? "selected" : "" ?>><?= $datos_firmantes->nombres ?></option>
             <?php
             }
             ?>
@@ -187,12 +188,13 @@ if (($valiacion = cargar_datos_paletizado()) != false) {
         </div>
         <div class="p-1">Chofer de Contenedor
           <select type="form-select" aria-label="Disabled select example" style="width: 160px; height: 36px;" name="firmante4">
-            <option selected>Seleccione</option>
             <?php
             $sql_chofer =  datos_lista_chofer();
+            $sql_id_firmas = cargar_firmas_contenedor();
+            $id_firmas = $sql_id_firmas->fetch_object();
             while ($datos_chofer = $sql_chofer->fetch_object()) {
             ?>
-              <option value=<?= $datos_chofer->id ?>><?= $datos_chofer->nombres ?></option>
+              <option value=<?= $datos_chofer->id ?> <?= ($datos_chofer->id == $id_firmas->firmante_cuatro) ? "selected" : "" ?>><?= $datos_chofer->nombres ?></option>
             <?php
             }
             ?>
@@ -307,7 +309,7 @@ if (($valiacion = cargar_datos_paletizado()) != false) {
               </td>
               <td class="fw-bold"> 9</td>
               <td>
-                <input type="number" name="caja9_" style="width: 200px; height: 40px;">
+                <input type="number" name="caja_9" style="width: 200px; height: 40px;">
               </td>
               <td class="fw-bold"> 14</td>
               <td>
@@ -352,7 +354,6 @@ if (($valiacion = cargar_datos_paletizado()) != false) {
       <div class="d-flex flex-row justify-content-center">
         <div class="p-1">Responsable de Acopio
           <select type="form-select" aria-label="Disabled select example" style="width: 160px; height: 36px;" name="firmante1">
-            <option selected>Seleccione</option>
             <?php
             $sql_firmantes =  datos_lista_firmantes();
             while ($datos_firmantes = $sql_firmantes->fetch_object()) {
@@ -365,7 +366,6 @@ if (($valiacion = cargar_datos_paletizado()) != false) {
         </div>
         <div class="p-1">Evaluador de Fruta
           <select type="form-select" aria-label="Disabled select example" style="width: 160px; height: 36px;" name="firmante2">
-            <option selected>Seleccione</option>
             <?php
             $sql_firmantes =  datos_lista_firmantes();
             while ($datos_firmantes = $sql_firmantes->fetch_object()) {
@@ -378,7 +378,6 @@ if (($valiacion = cargar_datos_paletizado()) != false) {
         </div>
         <div class="p-1">Verificador de Contenedor
           <select type="form-select" aria-label="Disabled select example" style="width: 160px; height: 36px;" name="firmante3">
-            <option selected>Seleccione</option>
             <?php
             $sql_firmantes =  datos_lista_firmantes();
             while ($datos_firmantes = $sql_firmantes->fetch_object()) {
@@ -391,7 +390,6 @@ if (($valiacion = cargar_datos_paletizado()) != false) {
         </div>
         <div class="p-1">Chofer de Contenedor
           <select type="form-select" aria-label="Disabled select example" style="width: 160px; height: 36px;" name="firmante4">
-            <option selected>Seleccione</option>
             <?php
             $sql_chofer =  datos_lista_chofer();
             while ($datos_chofer = $sql_chofer->fetch_object()) {
