@@ -143,6 +143,8 @@ if (($valiacion = cargar_datos_paletizado()) != false) {
         </div>
       </div>
 
+      
+
       <div class="d-flex flex-row justify-content-center">
         <div class="p-1">Responsable de Acopio
           <select type="form-select" aria-label="Disabled select example" style="width: 160px; height: 36px;" name="firmante1">

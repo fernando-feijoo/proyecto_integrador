@@ -1,4 +1,8 @@
 <?php
+
+date_default_timezone_set('America/Guayaquil');
+$conexion = conexionBd();
+
 if (!empty($_POST["btn-guardar-general"]) || !empty($_POST["btn-actualizar-general"])) {
   if (!empty($_SESSION["id_contExpo"])) {
     $id_contenedor_export = $_SESSION['id_contExpo'];
@@ -17,8 +21,6 @@ if (!empty($_POST["btn-guardar-general"]) || !empty($_POST["btn-actualizar-gener
   }
 
   $id_cantidad_cajas = $_POST["cantidad_cajas"];
-
-  $conexion = conexionBd();
 
   $maxDato = (($id_contenedor_export * 20) - 20);
   for ($i = 1; $i < 21; $i++) {
@@ -104,44 +106,7 @@ if (!empty($_POST["btn-guardar-general"]) || !empty($_POST["btn-actualizar-gener
     } else if (!empty($_SESSION["numCont"])) {
       $id = $_SESSION["numCont"];
     }
-    $conexion = conexionBd();
-    $sql_guardado_obs = "UPDATE `cont_export` SET obser_general = '$obs_general' WHERE id = '$id';";
-    $sql_nuevo = $conexion->query($sql_guardado_obs);
-    ?>
-    <script>
-      console.log("Guardado Correcto - PALLET CONTENEDOR + OBSERVACION")
-    </script>
-    <?php
-  }
-
-  if (!empty($_POST["firmantes1"])) {
-    if ($_POST["firmantes1"] != 'Seleccione') {
-      $firmante1 = $_POST["obs_general"];
-      if (!empty($_SESSION["id_contExpo"])) {
-        $id = $_SESSION["id_contExpo"];
-      } else if (!empty($_SESSION["numCont"])) {
-        $id = $_SESSION["numCont"];
-      }
-      $conexion = conexionBd();
-      $sql_guardado_firmante = "UPDATE `cont_export` SET obser_general = '$obs_general' WHERE id = '$id';";
-      $sql_guardado_obs = "UPDATE `cont_export` SET obser_general = '$obs_general' WHERE id = '$id';";
-      $sql_nuevo = $conexion->query($sql_guardado_obs);
-    ?>
-      <script>
-        console.log("Guardado Correcto - PALLET CONTENEDOR + OBSERVACION")
-      </script>
-    <?php
-    }
-  }
-
-  if (!empty($_POST["obs_general"])) {
-    $obs_general = $_POST["obs_general"];
-    if (!empty($_SESSION["id_contExpo"])) {
-      $id = $_SESSION["id_contExpo"];
-    } else if (!empty($_SESSION["numCont"])) {
-      $id = $_SESSION["numCont"];
-    }
-    $conexion = conexionBd();
+    
     $sql_guardado_obs = "UPDATE `cont_export` SET obser_general = '$obs_general' WHERE id = '$id';";
     $sql_nuevo = $conexion->query($sql_guardado_obs);
     ?>
@@ -151,37 +116,87 @@ if (!empty($_POST["btn-guardar-general"]) || !empty($_POST["btn-actualizar-gener
   <?php
   }
 
-  if (!empty($_POST["obs_general"])) {
-    $obs_general = $_POST["obs_general"];
+  date_default_timezone_set('America/Guayaquil');
+
+  if (!empty($_POST["firmante1"])) {
+    $firmante1 = isset($_POST["firmante1"]) ? $_POST["firmante1"] : 0;
+    $id_firma = $firmante1 == 'Seleccione' ? 0 : $firmante1;
+    $fecha = date('Y-m-d H:i:s');
     if (!empty($_SESSION["id_contExpo"])) {
       $id = $_SESSION["id_contExpo"];
     } else if (!empty($_SESSION["numCont"])) {
       $id = $_SESSION["numCont"];
     }
-    $conexion = conexionBd();
-    $sql_guardado_obs = "UPDATE `cont_export` SET obser_general = '$obs_general' WHERE id = '$id';";
-    $sql_nuevo = $conexion->query($sql_guardado_obs);
+    
+    $sql_guardado_firma_tabla = "SELECT insertarFirmaResAcopio ('$id','$fecha','$id_firma');";
+    $sql_guardado_firmante = "UPDATE `cont_export` SET id_firma_resp_acopio = '$id' WHERE id = '$id';";
+    $sql_firma = $conexion->query($sql_guardado_firma_tabla);
+    $sql_firmante = $conexion->query($sql_guardado_firmante);
   ?>
     <script>
-      console.log("Guardado Correcto - PALLET CONTENEDOR + OBSERVACION")
+      console.log("Guardado Correcto - PALLET CONTENEDOR + FIRMA 1")
     </script>
   <?php
   }
 
-  if (!empty($_POST["obs_general"])) {
-    $obs_general = $_POST["obs_general"];
+  if (!empty($_POST["firmante2"])) {
+    $firmante2 = isset($_POST["firmante2"]) ? $_POST["firmante2"] : 0;
+    $id_firma = $firmante2 == 'Seleccione' ? 0 : $firmante2;
+    $fecha = date('Y-m-d H:i:s');
     if (!empty($_SESSION["id_contExpo"])) {
       $id = $_SESSION["id_contExpo"];
     } else if (!empty($_SESSION["numCont"])) {
       $id = $_SESSION["numCont"];
     }
-    $conexion = conexionBd();
-    $sql_guardado_obs = "UPDATE `cont_export` SET obser_general = '$obs_general' WHERE id = '$id';";
-    $sql_nuevo = $conexion->query($sql_guardado_obs);
+    
+    $sql_guardado_firma_tabla = "SELECT insertarFirmaEvalFruta ('$id','$fecha','$id_firma');";
+    $sql_guardado_firmante = "UPDATE `cont_export` SET id_firma_eval_fruta = '$id' WHERE id = '$id';";
+    $sql_firma = $conexion->query($sql_guardado_firma_tabla);
+    $sql_firmante = $conexion->query($sql_guardado_firmante);
   ?>
     <script>
-      console.log("Guardado Correcto - PALLET CONTENEDOR + OBSERVACION")
+      console.log("Guardado Correcto - PALLET CONTENEDOR + FIRMA 2")
     </script>
-<?php
+  <?php
   }
+
+  if (!empty($_POST["firmante3"])) {
+    $firmante3 = isset($_POST["firmante3"]) ? $_POST["firmante3"] : 0;
+    $id_firma = $firmante3 == 'Seleccione' ? 0 : $firmante3;
+    $fecha = date('Y-m-d H:i:s');
+    if (!empty($_SESSION["id_contExpo"])) {
+      $id = $_SESSION["id_contExpo"];
+    } else if (!empty($_SESSION["numCont"])) {
+      $id = $_SESSION["numCont"];
+    }
+    
+    $sql_guardado_firma_tabla = "SELECT insertarFirmaVerCont ('$id','$fecha','$id_firma');";
+    $sql_guardado_firmante = "UPDATE `cont_export` SET id_firma_verif_contenedor = '$id' WHERE id = '$id';";
+    $sql_firma = $conexion->query($sql_guardado_firma_tabla);
+    $sql_firmante = $conexion->query($sql_guardado_firmante);
+  ?>
+    <script>
+      console.log("Guardado Correcto - PALLET CONTENEDOR + FIRMA 3")
+    </script>
+  <?php
+  }
+
+  if (!empty($_POST["firmante4"])) {
+    $firmante4 = isset($_POST["firmante4"]) ? $_POST["firmante4"] : 0;
+    $id_firma = $firmante4 == 'Seleccione' ? 0 : $firmante4;
+    if (!empty($_SESSION["id_contExpo"])) {
+      $id = $_SESSION["id_contExpo"];
+    } else if (!empty($_SESSION["numCont"])) {
+      $id = $_SESSION["numCont"];
+    }
+    
+    $sql_guardado_firmante = "UPDATE `cont_export` SET id_firma_chofer_contenedor = '$id_firma' WHERE id = '$id';";
+    $sql_firmante = $conexion->query($sql_guardado_firmante);
+  ?>
+    <script>
+      console.log("Guardado Correcto - PALLET CONTENEDOR + FIRMA 4")
+    </script>
+  <?php
+  }
+  
 }
