@@ -32,7 +32,7 @@
                             <img id="img-submenu" src="../../img/ico_acopio_32px-dashboard.png" alt="icono-contenedor" />
                         </div>
                         <div id="titulo-menu" class="col text-start ms-1">
-                            Grupo 2
+                            Acopio
                         </div>
                         <hr style="width: 80%; margin-top: 0.5rem;" />
                     </div>
