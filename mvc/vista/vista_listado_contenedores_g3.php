@@ -20,8 +20,8 @@ include_once "./Grupo 3/menu.php";
 		<div id="caja-separacion-escritorio" class="mx-auto"></div>
 
 		<?php
-		include_once("./../controlador/Grupo 3/eliminar_registro_contenedores_g3.php");
-		include("./../modelo/Grupo 3/modelo_listado_contenedores_g3.php");
+		include_once("./../controlador/Grupo 3/eliminar_registro_contenedores.php");
+		include("./../modelo/Grupo 3/modelo_listado_contenedores.php");
 		?>
 
 		<!-- Barra de busqueda del listado llegada -->
@@ -78,7 +78,7 @@ include_once "./Grupo 3/menu.php";
 
 						<td>
 							<a id="boton-editar-garita" href="./vista_listado_registro_g3.php?id_contExpo=<?= $datos->id?>&&id_numCont=<?= $datos->num_contenedor_fk?>&&id_regisLleg=<?= $datos->id_registro_llegada?>" class="btn btn-small btn-warning" style="width: 70px;"><i class="fa-regular fa-pen-to-square"></i></a>
-							<a id="boton-eliminar-garita" class="btn btn-small btn-danger" href="./vista_listado_contenedores_g3.php?id_eliminar=<?= $datos->id ?>" style="width: 70px;"><i class="fa-regular fa-trash-can"></i></a>
+							<a id="boton-eliminar-garita" class="btn btn-small btn-danger" href="./vista_listado_contenedores_g3.php?id_eliminar=<?= $datos->id_registro_llegada ?>" style="width: 70px;"><i class="fa-regular fa-trash-can"></i></a>
 						</td>
 					</tr>
 				<?php }
