@@ -152,8 +152,15 @@ if (!empty($_POST["guardar_eva"]) || !empty($_POST["actualizar_eva"])) {
 
         $conexion = conexionBd();
 
-        $sql_asepcias = $conexion->query("SELECT insertarAsepcias($id,'$valor',$id_eva,$num);");
-
+        if (!empty($_POST["guardar_eva"])) {
+            $sql_asepcias = $conexion->query("INSERT INTO asepcias(id, tipo, id_eva, id_datos_asepcias) VALUES ($id,'$valor',$id_eva,$num);");
+        }elseif (!empty($_POST["actualizar_eva"])) {
+            //echo $id_eva. "<br>";
+            //echo $valor. "<br>";
+            //echo $num. "<br>";
+            
+            $sql_asepcias = $conexion->query("UPDATE asepcias SET tipo='$valor' WHERE id=$id;");
+        }
     }
 
      if ($sql_asepcias==true and $sql_eva==true) {
