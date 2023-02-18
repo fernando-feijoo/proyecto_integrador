@@ -22,18 +22,22 @@ include_once "./Grupo 2/menu.php";
         <nav>
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
     <button class="nav-link active" id="nav-uno-tab" data-bs-toggle="tab" data-bs-target="#nav-uno" type="button" role="tab" aria-controls="nav-uno" aria-selected="true">Home</button>
-    <button class="nav-link" id="nav-dos-tab" data-bs-toggle="tab" data-bs-target="#nav-dos" type="button" role="tab" aria-controls="nav-dos" aria-selected="false">Profile</button>
+    <button class="nav-link " id="nav-dos-tab" data-bs-toggle="tab" data-bs-target="#nav-dos" type="button" role="tab" aria-controls="nav-dos" aria-selected="true">Profile</button>
   </div>
 </nav>
 
 <div class="tab-content" id="nav-tabContent">
   <div class="tab-pane fade show active" id="nav-uno" role="tabpanel" aria-labelledby="nav-uno-tab">
-    <?php 
-    require("./vista_pest_inicial_g2.php")
+    <?php
+    include_once("./../modelo/conexion_bd.php");
+    include_once ("./../controlador/Grupo 2/controlador_guardar_inicio.php");
+    require("./vista_pest_inicial_g2.php");
     ?>
   </div>
-  <div class="tab-pane fade" id="nav-dos" role="tabpanel" aria-labelledby="nav-dos-tab">
+  <div class="tab-pane fade" id="nav-dos" role="tabpane2" aria-labelledby="nav-dos-tab">
     <?php 
+    include_once("./../modelo/conexion_bd.php");
+    include_once ("./../controlador/Grupo 2/controlador_guardar_cajas.php");
     require("./vista_pest_sec_g2.php")
     ?></div>
 

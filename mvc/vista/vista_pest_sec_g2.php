@@ -1,9 +1,13 @@
-<div class="row">
-<form>
 <h2>Evaluaciones</h2>
 <table width="1152" height="300" border="2">
 	<tr>
     <td>
+    <form action="./vista_control_calidad_g2.php" method="post">
+    <div class="d-flex flex-row justify-content-center mb-3 ">
+        <div class="p-2"> Evaluacion N:
+            <input type="number" style="width: 50px; height: 25px;" name="g2_txt_evaluac">
+        </div>
+    </div>
 
     <div class="d-flex flex-row justify-content-center mb-3 ">
         <div class="p-2"> Caja Inspeccionada:
@@ -40,16 +44,15 @@
             <input type="TEXT" style="width: 200px; height: 25px;" name="g2_txt_def">
         </div>
         <div class="p-2"> Total Defectos:
-            <input type="TEXT" style="width: 200px; height: 25px;;" name="g2_txt_tot_def">
+            <input type="number" style="width: 200px; height: 25px;;" name="g2_txt_tot_def">
         </div>
     </div>
     <div class="d-flex flex-row justify-content-end ms-auto me-5 mb-1 mt-3">
         <div class="p-2">
-         <a name="g2_btn_nueva_caja" id="boton_nueva_caja_acopio" class="btn btn-outline-primary">Nueva Caja</a>
+            <button  id="g2_boton_nueva_caja" class="btn btn-outline-info" type="submit" name="g2_btn_nuev_caj" value="guardado">Nueva caja</button>        
         </div>
-</div>
-</form>
-</div>
+    </div>
+    </form>
 
     </td>
     </tr>
