@@ -31,7 +31,7 @@ if (!empty($_POST["btn-guardar"]) || !empty($_POST["btn-actualizar"])) {
 
 		$sql = $conexion->query($sql_consulta);
 
-		if (($conexion->query($sql_consulta) === TRUE || !empty($_POST["btn-guardar"])) || ($conexion->query($sql_consulta) === TRUE || !empty($_POST["btn-actualizar"]))) {
+		if (($conexion->query($sql_consulta) == TRUE || !empty($_POST["btn-guardar"])) || ($conexion->query($sql_consulta) == TRUE || !empty($_POST["btn-actualizar"]))) {
 			if (!empty($_POST["btn-guardar"])) {
 				echo "<div class='alert alert-success text-center' id='alertas' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
         ¡Datos guardados correctamente!

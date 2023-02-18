@@ -30,42 +30,81 @@ include_once "./Grupo 3/menu.php";
       </div>
     </nav>
 
-    <div class="tab-content" id="nav-tabContent">
+    <?php
+    include("./../modelo/conexion_bd.php");
+    include_once("./../modelo/Grupo 3/modelo_sellos_llegada.php");
+    include_once("./../controlador/Grupo 3/registro_sellos.php");
+    include_once("./../modelo/Grupo 3/modelo_inspeccion_contenedor.php");
+    include_once("./../controlador/Grupo 3/inspeccion_contenedor.php");
+    include_once("./../modelo/Grupo 3/modelo_higiene_contenedor.php");
+    include_once("./../controlador/Grupo 3/registro_higiene.php");
+    include_once("./../modelo/Grupo 3/modelo_despacho.php");
+    include_once("./../controlador/Grupo 3/registro_despacho.php");
+    include_once("./../modelo/Grupo 3/modelo_paletizado_contenedor.php");
+    ?>
 
-      <div class="tab-pane fade show active" id="nav-sellos" role="tabpanel" aria-labelledby="nav-home-tab">
-        <?php
-        include("./../modelo/conexion_bd.php");
-       
-        include("./vista_sellos_contenedor_g3.php")
-        ?>
+    <?php
+    // Este de aqui es para cuando se va a actualizar.
+    if (!empty($_GET["id_contExpo"])) {
+    ?>
+      <script>
+        console.log("Ingreso al SESSION ACTUALIZACION")
+      </script>
+    <?php
+      $_SESSION["id_contExpo"] = $_GET["id_contExpo"];
+      $_SESSION["id_numCont"] = $_GET["id_numCont"];
+      $_SESSION["id_regisLleg"] = $_GET["id_regisLleg"];
+      unset($_SESSION["numCont"]);
+      unset($_SESSION["id_regis"]);
+      // Este de aqui es cuando se va a guardar por primera vez, puedes agregar el id de la tabla 
+      // datos llegada para que lo almacene y luego borrarlo arriba.
+    } else if (!empty($_GET["id_regis"])) {
+    ?>
+      <script>
+        console.log("Ingreso al SESSION REGISTRO NUEVO")
+      </script>
+    <?php
+      $_SESSION["numCont"] = $_GET["numCont"];
+      $_SESSION["id_regis"] = $_GET["id_regis"];
+      unset($_SESSION["id_contExpo"]);
+      unset($_SESSION["id_numCont"]);
+      unset($_SESSION["id_regisLleg"]);
+    }
+    ?>
+
+    <form action="./vista_listado_registro_g3.php" method="post">
+      <div class="tab-content" id="nav-tabContent">
+
+        <div class="tab-pane fade show active" id="nav-sellos" role="tabpanel" aria-labelledby="nav-home-tab">
+          <?php
+          include("./vista_sellos_contenedor_g3.php");
+          ?>
+        </div>
+
+        <div class="tab-pane fade" id="nav-inspeccion" role="tabpanel" aria-labelledby="nav-profile-tab">
+          <?php
+          include_once("./vista_inspeccion_contenedor_g3.php");
+          ?>
+        </div>
+
+        <div class="tab-pane fade" id="nav-higiene" role="tabpanel" aria-labelledby="nav-contact-tab">
+          <?php
+          include("./vista_higiene_contenedor_g3.php");
+          ?>
+        </div>
+
+        <div class="tab-pane fade" id="nav-despacho" role="tabpanel" aria-labelledby="nav-contact-tab">
+          <?php
+          include("./vista_despacho_g3.php");
+          ?>
+        </div>
+        <div class="tab-pane fade" id="nav-paletizado" role="tabpanel" aria-labelledby="nav-contact-tab">
+          <?php
+          include("./vista_paletizado_g3.php");
+          ?>
+        </div>
       </div>
-
-      <div class="tab-pane fade" id="nav-inspeccion" role="tabpanel" aria-labelledby="nav-profile-tab">
-        <?php
-        include("./vista_inspeccion_contenedor_g3.php")
-        ?>
-      </div>
-
-      <div class="tab-pane fade" id="nav-higiene" role="tabpanel" aria-labelledby="nav-contact-tab">
-        <?php
-        include("./vista_higiene_contenedor_g3.php")
-        ?>
-      </div>
-
-      <div class="tab-pane fade" id="nav-despacho" role="tabpanel" aria-labelledby="nav-contact-tab">
-        <?php
-        include("./vista_despacho_g3.php")
-        ?>
-      </div>
-      <div class="tab-pane fade" id="nav-paletizado" role="tabpanel" aria-labelledby="nav-contact-tab">
-        <?php
-        include("./vista_paletizado_g3.php")
-        ?>
-      </div>
-
-    </div>
-
-
+    </form>
   </div>
 </div>
 

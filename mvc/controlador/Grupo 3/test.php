@@ -2,7 +2,7 @@
 require('./../../modelo/conexion_bd.php');
 $conexion = conexionBd();
 $sql = $conexion->query("SELECT * FROM vista_registro_llegada;");
-$data = mysqli_fetch_assoc($sql);
+$data = mysqli_fetch_all($sql);
 var_dump($data);
 
 // if ($sql === false) {

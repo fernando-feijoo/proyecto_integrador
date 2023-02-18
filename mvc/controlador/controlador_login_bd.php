@@ -9,7 +9,8 @@ if (!empty($_POST["btningresar"])) {
 		if ($datos = $sql->fetch_object()) {
 			$_SESSION["id"] = $datos->id;
 			$_SESSION["nombre"] = $datos->nombre;
-			$_SESSION["rol"] = $datos->usuario;
+			$_SESSION["usuario"] = $datos->usuario;
+			$_SESSION["rol"] = $datos->rol;
 
 			header("location: ./mvc/vista/dashboard.php");
 		} else {
