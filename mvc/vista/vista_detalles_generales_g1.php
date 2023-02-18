@@ -146,22 +146,5 @@
                     </div>
                 </div>
             <?php } ?>
-            <div class="d-flex flex-row justify-content-end ms-auto me-5 mb-1 mt-0">
-                <div class="p-2">
-                    <?php
-                    if (empty($_GET["id_eva"])) {
-                        ?>
-                        <button id="boton-guardar-eva" class="btn btn-outline-primary" type="submit" name="guardar_eva"
-                            value="guardado">Guardar</button>
-                        <?php
-                    } else {
-                        ?>
-                        <button id="boton-actualizar-eva" class="btn btn-outline-info" type="submit" name="actualizar_eva"
-                            value="actualizado">Actualizar</button>
-                        <?php
-                    }
-                    ?>
-                </div>
-            </div>
         </div>
     </div>
