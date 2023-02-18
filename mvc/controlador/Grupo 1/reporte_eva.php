@@ -44,18 +44,53 @@ function Footer()
 //conexion a la base de datos y obtener la consulta
 $conexion = conexionBd();
 $id_reporte=$_GET["id_reportes"];
-$sql = $conexion->query("SELECT * FROM evaluaciones WHERE id = $id_reporte;");
-$data = mysqli_fetch_all($sql);
+$sql = $conexion->query("SELECT * FROM evaluaciones WHERE id = $id_reporte");
+//$data = mysqli_fetch_all($sql);
 
 $pdf = new PDF('L', 'mm', 'A4');
 $pdf->AliasNbPages();
 $pdf->AddPage();
-$pdf->SetAutoPageBreak(true,     20);
+$pdf->SetAutoPageBreak(true, 20);
 $pdf->SetTopMargin(15);
 $pdf->SetLeftMargin(10);
 $pdf->SetRightMargin(10);
 
+$pdf->SetFont('Arial', '', 12);
+
 //AQUI EMPEZAMOS A LLENAR DETALLES GENERALES
+
+$fila = mysqli_fetch_assoc($sql);
+
+$pdf->Cell(40,15,'ID:', 0, 0, 'L');
+$pdf->Cell(40,15,$fila['id'], 0, 1, 'L');
+$pdf->Cell(40,10,'Cod_eva:', 0, 0, 'L');
+$pdf->Cell(40,10,$fila['cod_eva'], 0, 1, 'L');
+$pdf->Cell(40,10,'Semana:', 0, 0, 'L');
+$pdf->Cell(40,10,$fila['semana'], 0, 1, 'L');
+$pdf->Cell(40,10,'Fecha_eva:', 0, 0, 'L');
+$pdf->Cell(40,10,$fila['fecha_eva'], 0, 1, 'L');
+$pdf->Cell(40,10,'Hora_eva:', 0, 0, 'L');
+$pdf->Cell(40,10,$fila['hora_eva'], 0, 1, 'L');
+$pdf->Cell(40,10,'Vapor:', 0, 0, 'L');
+$pdf->Cell(40,10,$fila['vapor'], 0, 1, 'L');
+$pdf->Cell(40,10,'Tipo de Caja:', 0, 0, 'L');
+$pdf->Cell(40,10,$fila['tipo_caja'], 0, 1, 'L');
+$pdf->Cell(40,10,'Placa:', 0, 0, 'L');
+$pdf->Cell(40,10,$fila['placa_vehiculo'], 0, 1, 'L');
+$pdf->Cell(40,10,'Cod_Productor:', 0, 0, 'L');
+$pdf->Cell(40,10,$fila['cod_prod'], 0, 1, 'L');
+$pdf->Cell(40,10,'Nombre_Prod:', 0, 0, 'L');
+$pdf->Cell(40,10,$fila['nombre_p'], 0, 1, 'L');
+$pdf->Cell(40,10,'Apellido_Prod:', 0, 0, 'L');
+$pdf->Cell(40,10,$fila['apellido_p'], 0, 1, 'L');
+$pdf->Cell(40,10,'Finca:', 0, 0, 'L');
+$pdf->Cell(40,10,$fila['finca'], 0, 1, 'L');
+$pdf->Cell(40,10,'Nombre_Insp:', 0, 0, 'L');
+$pdf->Cell(40,10,$fila['nombre_i'], 0, 1, 'L');
+$pdf->Cell(40,10,'Apellido_Insp:', 0, 0, 'L');
+$pdf->Cell(40,10,$fila['apellido_i'], 0, 1, 'L');
+
+
 
 
 //FIN DE DETALLES GENERALES
