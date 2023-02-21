@@ -1,6 +1,7 @@
 <?php
 include_once "./../../layout/header.php";
 include_once "./Grupo 3/menu_garita.php";
+include("./../modelo/conexion_bd.php");
 ?>
 <div id="contenedor-escritorio-contenido" class="container-fluid col text-center pe-2 ps-0">
 	<!-- Contenedor de escritorio *interno -->

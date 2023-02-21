@@ -208,7 +208,7 @@ if (($valiacion = cargar_datos_paletizado()) != false) {
         $sql_comnt = cargar_observacion_general();
         $cargar_comentario = $sql_comnt->fetch_object();
         ?>
-        <textarea class="form-control mt-3" id="observacion_higiene" name="obs_general" rows="3"><?= $cargar_comentario -> obser_general?></textarea>
+        <textarea class="form-control mt-3" id="observacion_higiene" name="obs_general" rows="3"><?= $cargar_comentario->obser_general ?></textarea>
       </div>
 
     </div>

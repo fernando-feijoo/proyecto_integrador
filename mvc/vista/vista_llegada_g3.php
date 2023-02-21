@@ -1,4 +1,5 @@
 <?php
+include("./../modelo/conexion_bd.php");
 include_once "./../../layout/header.php";
 include_once "./Grupo 3/menu_garita.php";
 ?>
@@ -22,7 +23,6 @@ include_once "./Grupo 3/menu_garita.php";
 			<div id="caja-separacion-escritorio" class="mx-auto"></div>
 
 			<?php
-			include_once("./../modelo/conexion_bd.php");
 			include_once "./../controlador/Grupo 3/registro_llegada.php";
 			include("./../modelo/Grupo 3/modelo_llegada.php");
 			?>
