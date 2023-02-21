@@ -12,7 +12,7 @@ include_once "./Grupo 3/menu.php";
 			</div>
 			<div class="col-10 me-3 ms-3 mt-4">
 				<div id="titulo-escritorio-listado">
-					REPORTE DATOS REGISTRO
+					REPORTE DATOS Contenedor
 				</div>
 			</div>
 			<!-- /Titulo o encabezado del escritorio -->
@@ -74,11 +74,10 @@ include_once "./Grupo 3/menu.php";
 						<td><?= $datos->contenedor ?></td>
 						<td><?= $datos->nombre_acopio ?></td>
 						<td><?= $datos->vapor ?></td>
-                        <td>
-                        <div class="d-flex justify-content-end align-items-center me-5">
-			 <a href="./../controlador//Grupo 3/reporte_garita.php?f_ini=<?= $filtro_fecha_inicial ?>&&f_fin=<?= $filtro_fecha_final ?>" target="_blank"><i class="btn btn-outline-danger fa-regular fa-file-pdf" style="font-size: 40px !important;"></i></a>
-		</div>
-                </td>
+						<td>
+                            <a href="./../controlador//Grupo 3/reporte_contenedor.php?id_reporte=<?= $datos->id ?>"><i
+                                class="btn btn-outline-danger fa-regular fa-file-pdf"></i></a>
+                        </td>
 					</tr>
 				<?php }
 				?>
