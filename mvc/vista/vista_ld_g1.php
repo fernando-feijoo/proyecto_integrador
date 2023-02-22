@@ -46,16 +46,11 @@
                                                         <h6 class="ld-med" style="margin-left: 28px">8</h6>
                                                 </div>
                                                 <div class="cm-2">
-                                                        <input class="cm" type="number" placeholder="0"
-                                                                style="width: 37px;">
-                                                        <input class="cm" type="number" placeholder="0"
-                                                                style="width: 37px;">
-                                                        <input class="cm" type="number" placeholder="0"
-                                                                style="width: 37px;">
-                                                        <input class="cm" type="number" placeholder="0"
-                                                                style="width: 37px;">
-                                                        <input class="cm" type="number" placeholder="0"
-                                                                style="width: 37px; margin-right: 4px;">
+                                                        <input class="cm" type="number" placeholder="0" style="width: 37px;">
+                                                        <input class="cm" type="number" placeholder="0" style="width: 37px;">
+                                                        <input class="cm" type="number" placeholder="0" style="width: 37px;">
+                                                        <input class="cm" type="number" placeholder="0" style="width: 37px;">
+                                                        <input class="cm" type="number" placeholder="0" style="width: 37px; margin-right: 4px;">
                                                 </div>
 
 
@@ -71,16 +66,11 @@
                                                         <h6 class="ld-med" style="margin-left: 28px">8</h6>
                                                 </div>
                                                 <div class="cm-2">
-                                                        <input class="cm" type="number" placeholder="0"
-                                                                style="width: 37px;">
-                                                        <input class="cm" type="number" placeholder="0"
-                                                                style="width: 37px;">
-                                                        <input class="cm" type="number" placeholder="0"
-                                                                style="width: 37px;">
-                                                        <input class="cm" type="number" placeholder="0"
-                                                                style="width: 37px;">
-                                                        <input class="cm" type="number" placeholder="0"
-                                                                style="width: 37px;">
+                                                        <input class="cm" type="number" placeholder="0" style="width: 37px;">
+                                                        <input class="cm" type="number" placeholder="0" style="width: 37px;">
+                                                        <input class="cm" type="number" placeholder="0" style="width: 37px;">
+                                                        <input class="cm" type="number" placeholder="0" style="width: 37px;">
+                                                        <input class="cm" type="number" placeholder="0" style="width: 37px;">
                                                 </div>
 
 
@@ -95,16 +85,11 @@
                                                         <h6 class="ld-med" style="margin-left: 28px">8</h6>
                                                 </div>
                                                 <div class="cm-2">
-                                                        <input class="cm" type="number" placeholder="0"
-                                                                style="width: 37px;">
-                                                        <input class="cm" type="number" placeholder="0"
-                                                                style="width: 37px;">
-                                                        <input class="cm" type="number" placeholder="0"
-                                                                style="width: 37px;">
-                                                        <input class="cm" type="number" placeholder="0"
-                                                                style="width: 37px;">
-                                                        <input class="cm" type="number" placeholder="0"
-                                                                style="width: 37px;">
+                                                        <input class="cm" type="number" placeholder="0" style="width: 37px;">
+                                                        <input class="cm" type="number" placeholder="0" style="width: 37px;">
+                                                        <input class="cm" type="number" placeholder="0" style="width: 37px;">
+                                                        <input class="cm" type="number" placeholder="0" style="width: 37px;">
+                                                        <input class="cm" type="number" placeholder="0" style="width: 37px;">
                                                 </div>
 
 
@@ -119,16 +104,11 @@
                                                         <h6 class="ld-med" style="margin-left: 28px">8</h6>
                                                 </div>
                                                 <div class="cm-2">
-                                                        <input class="cm" type="number" placeholder="0"
-                                                                style="width: 37px;">
-                                                        <input class="cm" type="number" placeholder="0"
-                                                                style="width: 37px;">
-                                                        <input class="cm" type="number" placeholder="0"
-                                                                style="width: 37px;">
-                                                        <input class="cm" type="number" placeholder="0"
-                                                                style="width: 37px;">
-                                                        <input class="cm" type="number" placeholder="0"
-                                                                style="width: 37px;">
+                                                        <input class="cm" type="number" placeholder="0" style="width: 37px;">
+                                                        <input class="cm" type="number" placeholder="0" style="width: 37px;">
+                                                        <input class="cm" type="number" placeholder="0" style="width: 37px;">
+                                                        <input class="cm" type="number" placeholder="0" style="width: 37px;">
+                                                        <input class="cm" type="number" placeholder="0" style="width: 37px;">
                                                 </div>
 
                                         </div>
@@ -142,16 +122,11 @@
                                                         <h6 class="ld-med" style="margin-left: 28px">8</h6>
                                                 </div>
                                                 <div class="cm-2">
-                                                        <input class="cm" type="number" placeholder="0"
-                                                                style="width: 37px;">
-                                                        <input class="cm" type="number" placeholder="0"
-                                                                style="width: 37px;">
-                                                        <input class="cm" type="number" placeholder="0"
-                                                                style="width: 37px;">
-                                                        <input class="cm" type="number" placeholder="0"
-                                                                style="width: 37px;">
-                                                        <input class="cm" type="number" placeholder="0"
-                                                                style="width: 37px;">
+                                                        <input class="cm" type="number" placeholder="0" style="width: 37px;">
+                                                        <input class="cm" type="number" placeholder="0" style="width: 37px;">
+                                                        <input class="cm" type="number" placeholder="0" style="width: 37px;">
+                                                        <input class="cm" type="number" placeholder="0" style="width: 37px;">
+                                                        <input class="cm" type="number" placeholder="0" style="width: 37px;">
                                                 </div>
 
                                         </div>
@@ -165,26 +140,19 @@
                                                         <h6 class="ld-med" style="margin-left: 28px">8</h6>
                                                 </div>
                                                 <div class="cm-2">
-                                                        <input class="cm" type="number" placeholder="0"
-                                                                style="width: 37px;">
-                                                        <input class="cm" type="number" placeholder="0"
-                                                                style="width: 37px;">
-                                                        <input class="cm" type="number" placeholder="0"
-                                                                style="width: 37px;">
-                                                        <input class="cm" type="number" placeholder="0"
-                                                                style="width: 37px;">
-                                                        <input class="cm" type="number" placeholder="0"
-                                                                style="width: 37px;">
+                                                        <input class="cm" type="number" placeholder="0" style="width: 37px;">
+                                                        <input class="cm" type="number" placeholder="0" style="width: 37px;">
+                                                        <input class="cm" type="number" placeholder="0" style="width: 37px;">
+                                                        <input class="cm" type="number" placeholder="0" style="width: 37px;">
+                                                        <input class="cm" type="number" placeholder="0" style="width: 37px;">
                                                 </div>
                                         </div>
 
                                 </div>
                                 <div class="total-f1">
-                                        <div class="c-total"
-                                                style="margin-left: 500px; margin-top: 20px; width: 200px;  margin-bottom: 20px;">
+                                        <div class="c-total" style="margin-left: 500px; margin-top: 20px; width: 200px;  margin-bottom: 20px;">
                                                 <h6 class="total-1" style="background-color: white;">Total</h6>
-                                                <input class="tots" type="text" placeholder="0" style="width: 200px;"
-                                                        disabled>
+                                                <input class="tots" type="text" placeholder="0" style="width: 200px;" disabled>
                                         </div>
                                 </div>
                         </div>
@@ -209,16 +177,11 @@
                                                 <h6 class="ld-med" style="margin-left: 28px">8</h6>
                                         </div>
                                         <div class="cm-2">
-                                                <input class="cm" type="number" placeholder="0" style="width: 37px;"
-                                                        disabled>
-                                                <input class="cm" type="number" placeholder="0" style="width: 37px;"
-                                                        disabled>
-                                                <input class="cm" type="number" placeholder="0" style="width: 37px;"
-                                                        disabled>
-                                                <input class="cm" type="number" placeholder="0" style="width: 37px;"
-                                                        disabled>
-                                                <input class="cm" type="number" placeholder="0"
-                                                        style="width: 37px; margin-right: 4px;" disabled>
+                                                <input class="cm" type="number" placeholder="0" style="width: 37px;" disabled>
+                                                <input class="cm" type="number" placeholder="0" style="width: 37px;" disabled>
+                                                <input class="cm" type="number" placeholder="0" style="width: 37px;" disabled>
+                                                <input class="cm" type="number" placeholder="0" style="width: 37px;" disabled>
+                                                <input class="cm" type="number" placeholder="0" style="width: 37px; margin-right: 4px;" disabled>
                                         </div>
 
 
@@ -234,16 +197,11 @@
                                                 <h6 class="ld-med" style="margin-left: 28px">8</h6>
                                         </div>
                                         <div class="cm-2">
-                                                <input class="cm" type="number" placeholder="0" style="width: 37px;"
-                                                        disabled>
-                                                <input class="cm" type="number" placeholder="0" style="width: 37px;"
-                                                        disabled>
-                                                <input class="cm" type="number" placeholder="0" style="width: 37px;"
-                                                        disabled>
-                                                <input class="cm" type="number" placeholder="0" style="width: 37px;"
-                                                        disabled>
-                                                <input class="cm" type="number" placeholder="0" style="width: 37px;"
-                                                        disabled>
+                                                <input class="cm" type="number" placeholder="0" style="width: 37px;" disabled>
+                                                <input class="cm" type="number" placeholder="0" style="width: 37px;" disabled>
+                                                <input class="cm" type="number" placeholder="0" style="width: 37px;" disabled>
+                                                <input class="cm" type="number" placeholder="0" style="width: 37px;" disabled>
+                                                <input class="cm" type="number" placeholder="0" style="width: 37px;" disabled>
                                         </div>
 
 
@@ -258,16 +216,11 @@
                                                 <h6 class="ld-med" style="margin-left: 28px">8</h6>
                                         </div>
                                         <div class="cm-2">
-                                                <input class="cm" type="number" placeholder="0" style="width: 37px;"
-                                                        disabled>
-                                                <input class="cm" type="number" placeholder="0" style="width: 37px;"
-                                                        disabled>
-                                                <input class="cm" type="number" placeholder="0" style="width: 37px;"
-                                                        disabled>
-                                                <input class="cm" type="number" placeholder="0" style="width: 37px;"
-                                                        disabled>
-                                                <input class="cm" type="number" placeholder="0" style="width: 37px;"
-                                                        disabled>
+                                                <input class="cm" type="number" placeholder="0" style="width: 37px;" disabled>
+                                                <input class="cm" type="number" placeholder="0" style="width: 37px;" disabled>
+                                                <input class="cm" type="number" placeholder="0" style="width: 37px;" disabled>
+                                                <input class="cm" type="number" placeholder="0" style="width: 37px;" disabled>
+                                                <input class="cm" type="number" placeholder="0" style="width: 37px;" disabled>
                                         </div>
 
 
@@ -282,16 +235,11 @@
                                                 <h6 class="ld-med" style="margin-left: 28px">8</h6>
                                         </div>
                                         <div class="cm-2">
-                                                <input class="cm" type="number" placeholder="0" style="width: 37px;"
-                                                        disabled>
-                                                <input class="cm" type="number" placeholder="0" style="width: 37px;"
-                                                        disabled>
-                                                <input class="cm" type="number" placeholder="0" style="width: 37px;"
-                                                        disabled>
-                                                <input class="cm" type="number" placeholder="0" style="width: 37px;"
-                                                        disabled>
-                                                <input class="cm" type="number" placeholder="0" style="width: 37px;"
-                                                        disabled>
+                                                <input class="cm" type="number" placeholder="0" style="width: 37px;" disabled>
+                                                <input class="cm" type="number" placeholder="0" style="width: 37px;" disabled>
+                                                <input class="cm" type="number" placeholder="0" style="width: 37px;" disabled>
+                                                <input class="cm" type="number" placeholder="0" style="width: 37px;" disabled>
+                                                <input class="cm" type="number" placeholder="0" style="width: 37px;" disabled>
                                         </div>
 
                                 </div>
@@ -305,16 +253,11 @@
                                                 <h6 class="ld-med" style="margin-left: 28px">8</h6>
                                         </div>
                                         <div class="cm-2">
-                                                <input class="cm" type="number" placeholder="0" style="width: 37px;"
-                                                        disabled>
-                                                <input class="cm" type="number" placeholder="0" style="width: 37px;"
-                                                        disabled>
-                                                <input class="cm" type="number" placeholder="0" style="width: 37px;"
-                                                        disabled>
-                                                <input class="cm" type="number" placeholder="0" style="width: 37px;"
-                                                        disabled>
-                                                <input class="cm" type="number" placeholder="0" style="width: 37px;"
-                                                        disabled>
+                                                <input class="cm" type="number" placeholder="0" style="width: 37px;" disabled>
+                                                <input class="cm" type="number" placeholder="0" style="width: 37px;" disabled>
+                                                <input class="cm" type="number" placeholder="0" style="width: 37px;" disabled>
+                                                <input class="cm" type="number" placeholder="0" style="width: 37px;" disabled>
+                                                <input class="cm" type="number" placeholder="0" style="width: 37px;" disabled>
                                         </div>
 
                                 </div>
@@ -328,30 +271,35 @@
                                                 <h6 class="ld-med" style="margin-left: 28px">8</h6>
                                         </div>
                                         <div class="cm-2">
-                                                <input class="cm" type="number" placeholder="0" style="width: 37px;"
-                                                        disabled>
-                                                <input class="cm" type="number" placeholder="0" style="width: 37px;"
-                                                        disabled>
-                                                <input class="cm" type="number" placeholder="0" style="width: 37px;"
-                                                        disabled>
-                                                <input class="cm" type="number" placeholder="0" style="width: 37px;"
-                                                        disabled>
-                                                <input class="cm" type="number" placeholder="0" style="width: 37px;"
-                                                        disabled>
+                                                <input class="cm" type="number" placeholder="0" style="width: 37px;" disabled>
+                                                <input class="cm" type="number" placeholder="0" style="width: 37px;" disabled>
+                                                <input class="cm" type="number" placeholder="0" style="width: 37px;" disabled>
+                                                <input class="cm" type="number" placeholder="0" style="width: 37px;" disabled>
+                                                <input class="cm" type="number" placeholder="0" style="width: 37px;" disabled>
                                         </div>
                                 </div>
 
                         </div>
-                        <div class="total-prom-f2" >
-                                <div class="c-total"
-                                        style="margin-left: 500px; margin-top: 20px; width: 200px;  margin-bottom: 20px;">
-                                        <h6 class="total-2" style="background-color: white;">Total</h6>
-                                        <input class="tots" type="text" placeholder="0" style="width: 200px;" disabled>
+                        <div class="total-prom-f2 d-flex">
+                                <div class="c-total" style="margin-left: 200px; margin-top: 20px; width: 200px;  margin-bottom: 20px;">
+                                        <div class="f2-total">
+                                                <div class="inp-total-1">
+                                                        <h6 class="total-2" style="background-color: white;">Total</h6>
+                                                </div>
+                                                <div class="inp-total-2">
+                                                        <input class="tots" type="text" placeholder="0" style="width: 200px;" disabled>
+                                                </div>
+                                        </div>
                                 </div>
-                                <div class="c-total"
-                                        style="margin-left: 500px; margin-top: 20px; width: 200px;  margin-bottom: 20px;">
-                                        <h6 class="promedio-2" style="background-color: white;">Promedio</h6>
-                                        <input class="tots" type="text" placeholder="0" style="width: 200px;" disabled>
+                                <div class="c-promedio" style="margin-left: 400px; margin-top: 20px; width: 200px;  margin-bottom: 20px;">
+                                        <div class="f2-promedio">
+                                                <div class="inp-prom-1">
+                                                        <h6 class="promedio-2" style="background-color: white;">Promedio</h6>
+                                                </div>
+                                                <div class="inp-prom-2">
+                                                        <input class="tots" type="text" placeholder="0" style="width: 200px;" disabled>
+                                                </div>
+                                        </div>
                                 </div>
                         </div>
                 </div>
