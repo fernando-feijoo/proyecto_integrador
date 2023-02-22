@@ -140,7 +140,7 @@ if (($valiacion = cargar_datos_higiene()) != false) {
         $sql_comnt = cargar_observacion_higiene();
         $cargar_comentario = $sql_comnt->fetch_object();
         ?>
-        <textarea class="form-control mt-3" id="observacion_higiene" name="obs_higiene" rows="3"><?= $cargar_comentario -> obser_hig_contenedor?></textarea>
+        <textarea class="text-uppercase form-control mt-3" id="observacion_higiene" name="obs_higiene" rows="3"><?= $cargar_comentario -> obser_hig_contenedor?></textarea>
       </div>
     </div>
   </div>
@@ -277,7 +277,7 @@ if (($valiacion = cargar_datos_higiene()) != false) {
       </table>
       <div class="text-start fs-5 fw-semibold mt-5">
         Observaciones:
-        <textarea class="form-control mt-3" id="observacion_higiene" name="obs_higiene" rows="3"></textarea>
+        <textarea class="text-uppercase form-control mt-3" id="observacion_higiene" name="obs_higiene" rows="3"></textarea>
       </div>
     </div>
   </div>

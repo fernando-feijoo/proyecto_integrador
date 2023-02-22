@@ -1,28 +1,27 @@
 <?php
 if (!empty($_POST["btn-guardar-general"]) || !empty($_POST["btn-actualizar-general"])) {
 ?>
-  <script>
-    console.log("Ingreso al controlador HIGIENE")
-  </script>
-  <?php
-  // Se coloca esta validacion para saber si es un insert o un update, ya que si es 
-  // guardado por primera vez seria con numCont, pero caso contrario seria con id_contExpo para actualizar.
-  if (!empty($_SESSION["id_contExpo"])) {
-    $id_contenedor_export = $_SESSION["id_contExpo"];
-  ?>
     <script>
-      console.log("Ingreso a controlador higiene - id_contExpo")
+        console.log("Ingreso al controlador HIGIENE")
     </script>
-  <?php
-  } else if (!empty($_SESSION["numCont"])) {
-    $id_contenedor_export = $_SESSION["numCont"];
-  ?>
-    <script>
-      console.log("Ingreso a controlador higiene - numCont")
-    </script>
-<?php
-  }
-  $conexion = conexionBd();
+    <?php
+    // Se coloca esta validacion para saber si es un insert o un update, ya que si es 
+    // guardado por primera vez seria con numCont, pero caso contrario seria con id_contExpo para actualizar.
+    if (!empty($_SESSION["id_contExpo"])) {
+        $id_contenedor_export = $_SESSION["id_contExpo"];
+    ?>
+        <script>
+            console.log("Ingreso a controlador higiene - id_contExpo")
+        </script>
+    <?php
+    } else if (!empty($_SESSION["numCont"])) {
+        $id_contenedor_export = $_SESSION["numCont"];
+    ?>
+        <script>
+            console.log("Ingreso a controlador higiene - numCont")
+        </script>
+    <?php
+    }
 
     $maxDato = (($id_contenedor_export * 8) - 8);
     for ($i = 1; $i < 9; $i++) {
@@ -62,36 +61,15 @@ if (!empty($_POST["btn-guardar-general"]) || !empty($_POST["btn-actualizar-gener
                 $opcion = $opcion_ocho == 1 ? 1 : 0;
                 break;
         }
-        $sql_guardado_higiene = "SELECT `insertarDatosHigiene` ('$id','$opcion','$id_contenedor_export','$id_verificar_lugar');";
-        $sql = $conexion->query($sql_guardado_higiene);
-    ?>
-        <?php
-        if ($conexion->query($sql_guardado_higiene) == TRUE) {
-        ?>
-            <script>
-                console.log("Guardado Correcto - HIGIENE CONTENEDOR")
-            </script>
-        <?php
-        }
-        ?>
-<?php
+        guardar_datos_higiene($id, $opcion, $id_contenedor_export, $id_verificar_lugar);
     }
     if (!empty($_POST["obs_higiene"])) {
-        $obs_higiene = $_POST["obs_higiene"];
+        $obs_higiene = strtoupper($_POST["obs_higiene"]);
         if (!empty($_SESSION["id_contExpo"])) {
             $id = $_SESSION["id_contExpo"];
-      
         } else if (!empty($_SESSION["numCont"])) {
             $id = $_SESSION["numCont"];
-       
         }
-        $conexion = conexionBd();
-        $sql_guardado_obs = "UPDATE `cont_export` SET obser_hig_contenedor = '$obs_higiene' WHERE id = '$id';";
-        $sql_nuevo = $conexion->query($sql_guardado_obs);
-        ?>
-        <script>
-            console.log("Guardado Correcto - HIGIENE CONTENEDOR + OBSERVACION")
-        </script>
-        <?php
+        insertar_comentario_higiene($obs_higiene, $id);
     }
 }

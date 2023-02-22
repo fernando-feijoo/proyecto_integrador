@@ -24,8 +24,6 @@ if (!empty($_POST["btn-guardar-general"]) || !empty($_POST["btn-actualizar-gener
     <?php
     }
 
-    $conexion = conexionBd();
-
     $maxDato = (($id_contenedor_export * 11) - 11);
     for ($i = 1; $i < 12; $i++) {
         $id = $maxDato + $i;
@@ -76,36 +74,15 @@ if (!empty($_POST["btn-guardar-general"]) || !empty($_POST["btn-actualizar-gener
                 $verificacion = $verificacion_once == 1 ? 1 : 0;
                 break;
         }
-        $sql_guardado_inspeccion = "SELECT `insertarDatosInspeccion` ('$id','$verificacion','$id_contenedor_export','$id_verificar_lugar');";
-        $sql = $conexion->query($sql_guardado_inspeccion);
-    ?>
-        <?php
-        if ($conexion->query($sql_guardado_inspeccion) == TRUE) {
-        ?>
-            <script>
-                console.log("Guardado Correcto - INSPECCION CONTENEDOR")
-            </script>
-        <?php
-        }
-        ?>
-<?php
+        guardar_datos_inspeccion($id, $verificacion, $id_contenedor_export, $id_verificar_lugar);
     }
     if (!empty($_POST["obs_inspeccion"])) {
-        $obs_inspeccion = $_POST["obs_inspeccion"];
+        $obs_inspeccion = strtoupper($_POST["obs_inspeccion"]);
         if (!empty($_SESSION["id_contExpo"])) {
             $id = $_SESSION["id_contExpo"];
-      
         } else if (!empty($_SESSION["numCont"])) {
             $id = $_SESSION["numCont"];
-       
         }
-        $conexion = conexionBd();
-        $sql_guardado_obs = "UPDATE `cont_export` SET obser_ins_contenedor = '$obs_inspeccion' WHERE id = '$id';";
-        $sql_nuevo = $conexion->query($sql_guardado_obs);
-        ?>
-        <script>
-            console.log("Guardado Correcto - INSPECCION CONTENEDOR + OBSERVACION")
-        </script>
-        <?php
+        insertar_comentario_contenedor($obs_inspeccion, $id);
     }
 }

@@ -208,7 +208,7 @@ if (($valiacion = cargar_datos_paletizado()) != false) {
         $sql_comnt = cargar_observacion_general();
         $cargar_comentario = $sql_comnt->fetch_object();
         ?>
-        <textarea class="form-control mt-3" id="observacion_higiene" name="obs_general" rows="3"><?= $cargar_comentario->obser_general ?></textarea>
+        <textarea class="text-uppercase form-control mt-3" id="observacion_higiene" name="obs_general" rows="3"><?= $cargar_comentario->obser_general ?></textarea>
       </div>
 
     </div>
@@ -404,7 +404,7 @@ if (($valiacion = cargar_datos_paletizado()) != false) {
 
       <div class="text-start  fs-5 fw-semibold mt-2">
         Observaciones:
-        <textarea class="form-control mt-3" id="observacion_higiene" name="obs_general" rows="3"></textarea>
+        <textarea class="text-uppercase form-control mt-3" id="observacion_higiene" name="obs_general" rows="3"></textarea>
       </div>
 
     </div>
@@ -417,14 +417,14 @@ if (empty($_GET["id_contExpo"])) {
 ?>
   <div class="mt-3 me-5 text-end">
     <input type="hidden" name="btn-guardar-general" id="btn-guardar-value1" value="guardado">
-    <button class="btn btn-outline-primary" type="submit" name="btn-guardar-general" value="guardado">Guardar</button>
+    <button id="btn-guardar-general-cont" class="btn btn-outline-primary" type="submit" name="btn-guardar-general" value="guardado">Guardar</button>
   </div>
 <?php
 } else {
 ?>
   <div class="mt-5 me-5 text-end">
     <input type="hidden" name="btn-actualizar-general" id="btn-actualizar-value1" value="actualizado">
-    <button class="btn btn-outline-info" type="submit" name="btn-actualizar-general" value="actualizado">Actualizar</button>
+    <button id="btn-actualizar-general-cont" class="btn btn-outline-info" type="submit" name="btn-actualizar-general" value="actualizado">Actualizar</button>
   </div>
 
 <?php

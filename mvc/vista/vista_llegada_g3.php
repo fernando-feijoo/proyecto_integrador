@@ -23,8 +23,8 @@ include_once "./Grupo 3/menu_garita.php";
 			<div id="caja-separacion-escritorio" class="mx-auto"></div>
 
 			<?php
-			include_once "./../controlador/Grupo 3/registro_llegada.php";
 			include("./../modelo/Grupo 3/modelo_llegada.php");
+			include("./../controlador/Grupo 3/registro_llegada.php");
 			?>
 
 

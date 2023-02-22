@@ -1,8 +1,5 @@
 <?php
-
 date_default_timezone_set('America/Guayaquil');
-$conexion = conexionBd();
-
 if (!empty($_POST["btn-guardar-general"]) || !empty($_POST["btn-actualizar-general"])) {
   if (!empty($_SESSION["id_contExpo"])) {
     $id_contenedor_export = $_SESSION['id_contExpo'];
@@ -87,33 +84,17 @@ if (!empty($_POST["btn-guardar-general"]) || !empty($_POST["btn-actualizar-gener
         $valor = isset($_POST["caja_20"]) ? $_POST["caja_20"] : '';
         break;
     }
-    $sql_guardado_paletizado = "SELECT `insertarDatosPallet` ('$id','$valor','$id_contenedor_export','$id_cantidad_cajas');";
-
-    $sql = $conexion->query($sql_guardado_paletizado);
-
-    if ($conexion->query($sql_guardado_paletizado) == TRUE) {
-    ?>
-      <script>
-        console.log("Guardado Correcto - PALETIZADO CONTENEDOR")
-      </script>
-    <?php
-    }
+    guardar_datos_pallet($id, $valor, $id_contenedor_export, $id_cantidad_cajas);
   }
+
   if (!empty($_POST["obs_general"])) {
-    $obs_general = $_POST["obs_general"];
+    $obs_general = strtoupper($_POST["obs_general"]);
     if (!empty($_SESSION["id_contExpo"])) {
       $id = $_SESSION["id_contExpo"];
     } else if (!empty($_SESSION["numCont"])) {
       $id = $_SESSION["numCont"];
     }
-    
-    $sql_guardado_obs = "UPDATE `cont_export` SET obser_general = '$obs_general' WHERE id = '$id';";
-    $sql_nuevo = $conexion->query($sql_guardado_obs);
-    ?>
-    <script>
-      console.log("Guardado Correcto - PALLET CONTENEDOR + OBSERVACION")
-    </script>
-  <?php
+    insertar_comentario_general($obs_general, $id);
   }
 
   date_default_timezone_set('America/Guayaquil');
@@ -127,16 +108,7 @@ if (!empty($_POST["btn-guardar-general"]) || !empty($_POST["btn-actualizar-gener
     } else if (!empty($_SESSION["numCont"])) {
       $id = $_SESSION["numCont"];
     }
-    
-    $sql_guardado_firma_tabla = "SELECT insertarFirmaResAcopio ('$id','$fecha','$id_firma');";
-    $sql_guardado_firmante = "UPDATE `cont_export` SET id_firma_resp_acopio = '$id' WHERE id = '$id';";
-    $sql_firma = $conexion->query($sql_guardado_firma_tabla);
-    $sql_firmante = $conexion->query($sql_guardado_firmante);
-  ?>
-    <script>
-      console.log("Guardado Correcto - PALLET CONTENEDOR + FIRMA 1")
-    </script>
-  <?php
+    guardar_firmas_uno($id, $fecha, $id_firma);
   }
 
   if (!empty($_POST["firmante2"])) {
@@ -148,16 +120,7 @@ if (!empty($_POST["btn-guardar-general"]) || !empty($_POST["btn-actualizar-gener
     } else if (!empty($_SESSION["numCont"])) {
       $id = $_SESSION["numCont"];
     }
-    
-    $sql_guardado_firma_tabla = "SELECT insertarFirmaEvalFruta ('$id','$fecha','$id_firma');";
-    $sql_guardado_firmante = "UPDATE `cont_export` SET id_firma_eval_fruta = '$id' WHERE id = '$id';";
-    $sql_firma = $conexion->query($sql_guardado_firma_tabla);
-    $sql_firmante = $conexion->query($sql_guardado_firmante);
-  ?>
-    <script>
-      console.log("Guardado Correcto - PALLET CONTENEDOR + FIRMA 2")
-    </script>
-  <?php
+    guardar_firmas_dos($id, $fecha, $id_firma);
   }
 
   if (!empty($_POST["firmante3"])) {
@@ -169,16 +132,7 @@ if (!empty($_POST["btn-guardar-general"]) || !empty($_POST["btn-actualizar-gener
     } else if (!empty($_SESSION["numCont"])) {
       $id = $_SESSION["numCont"];
     }
-    
-    $sql_guardado_firma_tabla = "SELECT insertarFirmaVerCont ('$id','$fecha','$id_firma');";
-    $sql_guardado_firmante = "UPDATE `cont_export` SET id_firma_verif_contenedor = '$id' WHERE id = '$id';";
-    $sql_firma = $conexion->query($sql_guardado_firma_tabla);
-    $sql_firmante = $conexion->query($sql_guardado_firmante);
-  ?>
-    <script>
-      console.log("Guardado Correcto - PALLET CONTENEDOR + FIRMA 3")
-    </script>
-  <?php
+    guardar_firmas_tres($id, $fecha, $id_firma);
   }
 
   if (!empty($_POST["firmante4"])) {
@@ -189,14 +143,6 @@ if (!empty($_POST["btn-guardar-general"]) || !empty($_POST["btn-actualizar-gener
     } else if (!empty($_SESSION["numCont"])) {
       $id = $_SESSION["numCont"];
     }
-    
-    $sql_guardado_firmante = "UPDATE `cont_export` SET id_firma_chofer_contenedor = '$id_firma' WHERE id = '$id';";
-    $sql_firmante = $conexion->query($sql_guardado_firmante);
-  ?>
-    <script>
-      console.log("Guardado Correcto - PALLET CONTENEDOR + FIRMA 4")
-    </script>
-  <?php
+    guardar_firmas_chofer($id, $id_firma);
   }
-  
 }

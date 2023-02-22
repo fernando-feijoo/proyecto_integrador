@@ -44,7 +44,7 @@ if (($valiacion = carga_datos_despacho()) != false) {
 				<!-- /Opciones de seleccion de radio button -->
 
 				<div class="p-1">Termografo#:
-					<input type="text" style="width: 182px; height: 36px;" name="termografo_num" value="<?= $carga_datos_despacho->termografo_numero ?>">
+					<input class="text-uppercase" type="text" style="width: 182px; height: 36px;" name="termografo_num" value="<?= $carga_datos_despacho->termografo_numero ?>">
 				</div>
 			</div>
 
@@ -53,13 +53,13 @@ if (($valiacion = carga_datos_despacho()) != false) {
 					<input type="text" style="width: 405px; height: 36px;" name="sello_adhesivo" value="<?= $carga_datos_despacho->sello_adhesivo ?>">
 				</div>
 				<div class="p-1"> Sello Verificador:
-					<input type="text" style="width: 200px; height: 36px;;" name="sello_vericador" value="<?= $carga_datos_despacho->sello_verificador ?>">
+					<input class="text-uppercase" type="text" style="width: 200px; height: 36px;;" name="sello_vericador" value="<?= $carga_datos_despacho->sello_verificador ?>">
 				</div>
 			</div>
 
 			<div class="d-flex flex-row justify-content-center ">
 				<div class="p-1"> Sello Exportador Candado:
-					<input type="text" style="width: 270px; height: 36px;" name="sello_expotador_candado" value="<?= $carga_datos_despacho->sello_exp_candado ?>">
+					<input class="text-uppercase" type="text" style="width: 270px; height: 36px;" name="sello_expotador_candado" value="<?= $carga_datos_despacho->sello_exp_candado ?>">
 				</div>
 				<div class="p-1"> Fecha y Hora Salida:
 					<input type="datetime-local" style="height: 36px;" name="fecha_hora_salida" value=<?= date("Y-m-d\TH:i:s", strtotime($carga_datos_despacho->fecha_hora_salida)) ?>>
@@ -68,22 +68,22 @@ if (($valiacion = carga_datos_despacho()) != false) {
 
 			<div class="d-flex flex-row justify-content-center  ">
 				<div class="p-1"> Sello Exportador cable:
-					<input type="text" style="width: 250px; height: 36px;" name="sello_cable" value="<?= $carga_datos_despacho->sello_exp_cable ?>">
+					<input class="text-uppercase" type="text" style="width: 250px; height: 36px;" name="sello_cable" value="<?= $carga_datos_despacho->sello_exp_cable ?>">
 				</div>
 				<div class="p-1"> Compañia Transportista:
-					<input type="text" style="width: 250px; height: 36px;" name="trasnportista" value="<?= $carga_datos_despacho->compania_transportista ?>">
+					<input class="text-uppercase" type="text" style="width: 250px; height: 36px;" name="trasnportista" value="<?= $carga_datos_despacho->compania_transportista ?>">
 				</div>
 			</div>
 
 			<div class="d-flex flex-row justify-content-center  ">
 				<div class="p-1"> Sello Nave:
-					<input type="text" style="width: 245px; height: 36px;" name="sello_nave" value="<?= $carga_datos_despacho->sello_naviero ?>">
+					<input class="text-uppercase" type="text" style="width: 245px; height: 36px;" name="sello_nave" value="<?= $carga_datos_despacho->sello_naviero ?>">
 				</div>
 				<div class="p-1"> Vapor:
-					<input type="text" style="width: 195px; height: 36px;" name="vapor" value="<?= $carga_datos_despacho->vapor ?>">
+					<input class="text-uppercase" type="text" style="width: 195px; height: 36px;" name="vapor" value="<?= $carga_datos_despacho->vapor ?>">
 				</div>
 				<div class="p-1"> Destino:
-					<input type="text" style="width: 195px; height: 36px;" name="destino" value="<?= $carga_datos_despacho->destino ?>">
+					<input class="text-uppercase" type="text" style="width: 195px; height: 36px;" name="destino" value="<?= $carga_datos_despacho->destino ?>">
 				</div>
 			</div>
 
@@ -157,7 +157,7 @@ if (($valiacion = carga_datos_despacho()) != false) {
 
 			<div class="text-start  fs-5 fw-semibold mt-5">
 				Observaciones:
-				<textarea class="form-control mt-3" name="observacion_despacho" rows="3"><?php echo $carga_datos_despacho->observacion_despacho; ?></textarea>
+				<textarea class="text-uppercase form-control mt-3" name="observacion_despacho" rows="3"><?php echo $carga_datos_despacho->observacion_despacho; ?></textarea>
 			</div>
 		</div>
 	<?php
@@ -205,22 +205,22 @@ if (($valiacion = carga_datos_despacho()) != false) {
 			<!-- /Opciones de seleccion de radio button -->
 
 			<div class="p-1">Termografo#:
-				<input type="text" style="width: 182px; height: 36px;" name="termografo_num" id="TERMOGRAFO_NUM">
+				<input class="text-uppercase" type="text" style="width: 182px; height: 36px;" name="termografo_num" id="TERMOGRAFO_NUM">
 			</div>
 		</div>
 
 		<div class="d-flex flex-row justify-content-center">
 			<div class="p-1">Sello Adhesivo:
-				<input type="text" style="width: 405px; height: 36px;" name="sello_adhesivo" id="sello_adhesivo1">
+				<input class="text-uppercase" type="text" style="width: 405px; height: 36px;" name="sello_adhesivo" id="sello_adhesivo1">
 			</div>
 			<div class="p-1"> Sello Verificador:
-				<input type="text" style="width: 200px; height: 36px;;" name="sello_vericador" id="sello_vericador1">
+				<input class="text-uppercase" type="text" style="width: 200px; height: 36px;;" name="sello_vericador" id="sello_vericador1">
 			</div>
 		</div>
 
 		<div class="d-flex flex-row justify-content-center">
 			<div class="p-1"> Sello Exportador Candado:
-				<input type="text" style="width: 270px; height: 36px;" name="sello_expotador_candado" id="sello_expotador_candado1">
+				<input class="text-uppercase" type="text" style="width: 270px; height: 36px;" name="sello_expotador_candado" id="sello_expotador_candado1">
 			</div>
 			<div class="p-1"> Fecha y Hora Salida:
 				<input type="datetime-local" style="height: 36px;" name="fecha_hora_salida">
@@ -229,22 +229,22 @@ if (($valiacion = carga_datos_despacho()) != false) {
 
 		<div class="d-flex flex-row justify-content-center">
 			<div class="p-1"> Sello Exportador cable:
-				<input type="text" style="width: 250px; height: 36px;" name="sello_cable" id="sello_cable1">
+				<input class="text-uppercase" type="text" style="width: 250px; height: 36px;" name="sello_cable" id="sello_cable1">
 			</div>
 			<div class="p-1"> Compañia Transportista:
-				<input type="text" style="width: 250px; height: 36px;" name="trasnportista" id="transportista1">
+				<input class="text-uppercase" type="text" style="width: 250px; height: 36px;" name="trasnportista" id="transportista1">
 			</div>
 		</div>
 
 		<div class="d-flex flex-row justify-content-center">
 			<div class="p-1"> Sello Nave:
-				<input type="text" style="width: 245px; height: 36px;" name="sello_nave" id="sello_nave1">
+				<input class="text-uppercase" type="text" style="width: 245px; height: 36px;" name="sello_nave" id="sello_nave1">
 			</div>
 			<div class="p-1"> Vapor:
-				<input type="text" style="width: 195px; height: 36px;" name="vapor" id="vapor1">
+				<input class="text-uppercase" type="text" style="width: 195px; height: 36px;" name="vapor" id="vapor1">
 			</div>
 			<div class="p-1"> Destino:
-				<input type="text" style="width: 195px; height: 36px;" name="destino" id="Destino1">
+				<input class="text-uppercase" type="text" style="width: 195px; height: 36px;" name="destino" id="Destino1">
 			</div>
 		</div>
 
@@ -311,7 +311,7 @@ if (($valiacion = carga_datos_despacho()) != false) {
 
 		<div class="text-start  fs-5 fw-semibold mt-5">
 			Observaciones:
-			<textarea class="form-control mt-3" name="observacion_despacho" rows="3"></textarea>
+			<textarea class="text-uppercase form-control mt-3" name="observacion_despacho" rows="3"></textarea>
 		</div>
 	</div>
 <?php
