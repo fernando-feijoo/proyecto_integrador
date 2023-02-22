@@ -4,21 +4,21 @@ $conexion = conexionBd();
 function datos_lista_caja()
 {
 	global $conexion;
-	$sql = $conexion->query("SELECT * FROM tipo_cajas;");
+	$sql = $conexion->query("SELECT * FROM tipo_cajas WHERE estado = 'ACTIVO';");
 	return $sql;
 }
 
 function datos_lista_vehiculo()
 {
 	global $conexion;
-	$sql = $conexion->query("SELECT id, placa, marca FROM vehiculo;");
+	$sql = $conexion->query("SELECT id, placa, marca FROM vehiculo WHERE estado = 'ACTIVO';");
 	return $sql;
 }
 
 function datos_lista_chofer()
 {
 	global $conexion;
-	$sql = $conexion->query("SELECT id, cedula, CONCAT(nombre,' ',apellido) AS nombres FROM chofer;");
+	$sql = $conexion->query("SELECT id, cedula, CONCAT(nombre,' ',apellido) AS nombres FROM chofer WHERE estado = 'ACTIVO';");
 	return $sql;
 }
 

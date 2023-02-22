@@ -2,7 +2,7 @@
 function listado_cajas()
 {
   $conexion = conexionBd();
-  $sql = $conexion->query("SELECT * FROM tipo_cajas;");
+  $sql = $conexion->query("SELECT * FROM tipo_cajas WHERE estado = 'ACTIVO';");
   return $sql;
 }
 
