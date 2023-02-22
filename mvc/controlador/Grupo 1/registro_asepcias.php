@@ -9,7 +9,6 @@ if (!empty($_POST["guardar_eva"]) || !empty($_POST["actualizar_eva"])) {
         unset($_SESSION["id_conteo"]);
     }
 
-
     $asepciasMax = ($id_eva * 22) - 22;
 
     for ($i = 1; $i < 23; $i++) {
@@ -163,7 +162,7 @@ if (!empty($_POST["guardar_eva"]) || !empty($_POST["actualizar_eva"])) {
         }
     }
 
-     if ($sql_asepcias==true and $sql_eva==true) {
+     if ($sql_eva==true and $sql_asepcias==true and $sql_gc_1==true) {
         echo "<div class='alert alert-success text-center' id='alertas' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
             ¡Datos guardados correctamente!</div>";
         } else {
