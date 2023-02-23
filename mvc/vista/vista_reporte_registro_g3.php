@@ -20,6 +20,7 @@ include_once "./Grupo 3/menu.php";
 		<div id="caja-separacion-escritorio" class="mx-auto"></div>
 
 		<?php
+		include("./../modelo/conexion_bd.php");
 		include_once("./../modelo/Grupo 3/modelo_reportes_con.php");
 		?>
 
@@ -67,7 +68,7 @@ include_once "./Grupo 3/menu.php";
 				while ($datos = $sql->fetch_object()) {
 				?>
 					<tr>
-						<<td><?= $datos->id ?></td>
+						<td><?= $datos->id ?></td>
 						<td><?= $datos->fecha_inspeccion ?></td>
 						<td><?= $datos->semana ?></td>
 						<td><?= $datos->hora_llegada ?></td>
@@ -75,7 +76,7 @@ include_once "./Grupo 3/menu.php";
 						<td><?= $datos->nombre_acopio ?></td>
 						<td><?= $datos->vapor ?></td>
 						<td>
-                            <a href="./../controlador//Grupo 3/reporte_contenedor.php?id_reporte=<?= $datos->id ?>"><i
+                            <a href="./../controlador//Grupo 3/reporte_contenedor.php?id_reporte=<?= $datos->id ?>" target="_blank"><i
                                 class="btn btn-outline-danger fa-regular fa-file-pdf"></i></a>
                         </td>
 					</tr>
