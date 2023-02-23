@@ -15,4 +15,3 @@ if (!empty($_GET["id_eliminar"])) {
     </div>";
     }
 }
-?>

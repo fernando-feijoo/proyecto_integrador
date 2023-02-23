@@ -28,7 +28,7 @@
 
 					<?php
 					include_once("./../modelo/conexion_bd.php");
-					include_once("./../modelo/Grupo 3/modelo_admin_reg_cajas.php");
+					include("./../modelo/Grupo 3/modelo_admin_reg_cajas.php");
 					?>
 
 					<!-- Seccion de tercer menu de Acopio y sub menus ADMIN -->
