@@ -98,6 +98,27 @@ da.observacion_despacho
 from registro_llegada re inner join cont_export con ON re.id=con.id_registro_llegada 
 inner join datos_despacho da ON con.id=da.id_cont_export inner join paletizadores pa ON pa.id=da.paletizadores where re.num_contenedor=$id_reporte ");
 
+$sql5 =$conexion->query("SELECT pal.cantidad,ca.cantidad as Cajas
+FROM registro_llegada re
+INNER JOIN cont_export con ON re.id = con.id_registro_llegada
+INNER JOIN control_pallet pal ON con.id=pal.id_cont_export inner join cantidad_cajas ca ON ca.id=pal.id_cantidad_cajas  where re.num_contenedor=$id_reporte  limit 5 ");
+$sql6 =$conexion->query("SELECT pal.id,pal.cantidad,ca.cantidad as Cajas
+FROM registro_llegada re
+INNER JOIN cont_export con ON re.id = con.id_registro_llegada
+INNER JOIN control_pallet pal ON con.id=pal.id_cont_export inner join cantidad_cajas ca ON ca.id=pal.id_cantidad_cajas where re.num_contenedor=$id_reporte  limit 5 OFFSET 5;");
+$sql7 =$conexion->query("SELECT pal.id,pal.cantidad,ca.cantidad as Cajas
+FROM registro_llegada re
+INNER JOIN cont_export con ON re.id = con.id_registro_llegada
+INNER JOIN control_pallet pal ON con.id=pal.id_cont_export inner join cantidad_cajas ca ON ca.id=pal.id_cantidad_cajas  where re.num_contenedor=$id_reporte  limit 5 OFFSET 10;");
+$sql8 =$conexion->query("SELECT pal.id,pal.cantidad,ca.cantidad as Cajas
+FROM registro_llegada re
+INNER JOIN cont_export con ON re.id = con.id_registro_llegada
+INNER JOIN control_pallet pal ON con.id=pal.id_cont_export inner join cantidad_cajas ca ON ca.id=pal.id_cantidad_cajas  where re.num_contenedor=$id_reporte  limit 5 OFFSET 15;");
+
+
+
+
+
 
 $pdf = new PDF('P', 'mm', 'A4');
 $pdf->AliasNbPages();
@@ -137,7 +158,7 @@ $pdf->SetFont('Arial','B',6);
 $pdf->Cell(30,5,'Fecha Hora y salida:', 0, 0, 'L');
 $pdf->SetFont('Arial','',6);
 $pdf->Cell(40,5,$fila['fecha_hora_salida'], 0, 0, 'L');
-$pdf->SetXY(165,35);
+$pdf->SetXY(160,35);
 $pdf->SetFont('Arial','B',6);
 $pdf->Cell(25,5,'Hora Llegada:', 0, 0, 'L');
 $pdf->SetFont('Arial','',6);
@@ -157,9 +178,9 @@ $pdf->SetFont('Arial','B',6);
 $pdf->Cell(30,5,'Contenedor:', 0, 0, 'L');
 $pdf->SetFont('Arial','',6);
 $pdf->Cell(60,5,$fila['contenedor'], 0, 0, 'L');
-$pdf->SetXY(165,40);
+$pdf->SetXY(160,40);
 $pdf->SetFont('Arial','B',6);
-$pdf->Cell(25,5,'PLaca:', 0, 0, 'L');
+$pdf->Cell(25,5,'Placa:', 0, 0, 'L');
 $pdf->SetFont('Arial','',6);
 $pdf->Cell(30,5,$fila['placa'], 0, 0, 'L');
 $pdf->SetXY(230,40);
@@ -219,7 +240,7 @@ $pdf->Ln();
 $pdf->SetFont('Arial', '', 7);
 while ($fila = mysqli_fetch_assoc($sql1)) {
     // Agregar los datos de la fila a la página
-    $pdf->Cell(55,4,$fila['lugar'], 1, 0, 'C');
+    $pdf->Cell(55,4,$fila[utf8_decode('lugar')], 1, 0, 'C');
     $pdf->Cell(30,4,$fila['verificacion'], 1, 1, 'C');
     
 }
@@ -233,26 +254,26 @@ $pdf->SetFont('Arial','B',12);
 $pdf->Cell(85,5,'Higiene Contenedor', 0, 0, 'L');
 $pdf->SetY(124.8);
 $pdf->SetFont('Arial', 'B', 10);
-$pdf->Cell(57, 4, utf8_decode('OPCIONES'), 1, 0, 'C', 0);
+$pdf->Cell(70, 4, utf8_decode('OPCIONES'), 1, 0, 'C', 0);
 $pdf->Cell(25, 4, utf8_decode('VERIFCACIÓN'), 1, 0, 'C', 0);
 $pdf->Ln();
 $pdf->SetFont('Arial', '', 7);
 while ($fila = mysqli_fetch_assoc($sql2)) {
     // Agregar los datos de la fila a la página
-    $pdf->Cell(57,4,$fila['opciones'], 1, 0, 'C');
+    $pdf->Cell(70,4,$fila[utf8_decode('opciones')], 1, 0, 'C');
     $pdf->Cell(25,4,$fila['opcion'], 1, 1, 'C');
 }
 
-$pdf->SetxY(92,124.8);
+$pdf->SetxY(105,124.8);
 $pdf->SetFont('Arial', 'B', 10);
-$pdf->Cell(57, 4, utf8_decode('OPCIONES'), 1, 0, 'C', 0);
+$pdf->Cell(70, 4, utf8_decode('OPCIONES'), 1, 0, 'C', 0);
 $pdf->Cell(25, 4, utf8_decode('VERIFCACIÓN'), 1, 0, 'C', 0);
 $pdf->Ln();
 $pdf->SetFont('Arial', '', 7);
 while ($fila = mysqli_fetch_assoc($sql4)) {
-    $pdf->SetX(92);
+    $pdf->SetX(105);
     // Agregar los datos de la fila a la página
-    $pdf->Cell(57,4,$fila['opciones'], 1, 0, 'C');
+    $pdf->Cell(70,4,$fila[utf8_decode('opciones')], 1, 0, 'C');
     $pdf->Cell(25,4,$fila['opcion'], 1, 1, 'C');
 }
 // Fin Higiene contenedor
@@ -324,11 +345,11 @@ $pdf->SetFont('Arial','B',6);
 $pdf->Cell(20,5,'Destino:', 0, 0, 'L');
 $pdf->SetFont('Arial','',6);
 $pdf->Cell(30,5,$fila['destino'], 0, 0, 'L');
-$pdf->SetXY(130,166);
+$pdf->SetXY(150,166);
 $pdf->SetFont('Arial','B',6);
-$pdf->Cell(35,5,'Nombre Paletizador:');
+$pdf->Cell(30,5,'Nombre Paletizador:');
 $pdf->SetFont('Arial','',6);
-$pdf->Cell(50,5,$fila['Nombre_Paletizador'], 0, 0, 'L');
+$pdf->Cell(60,5,$fila['Nombre_Paletizador'], 0, 0, 'L');
 $pdf->SetY(171);
 $pdf->SetFont('Arial','B',6);
 $pdf->Cell(31,5,'Total a Viajar::', 0, 0, 'L');
@@ -356,6 +377,56 @@ $pdf->SetFillColor(255, 255, 255); // Establecer el color de relleno del rectán
 $pdf->Rect(10, 175,190, 5, 'D');
 $pdf->SetFont('Arial','B',12);
 $pdf->Cell(85,5,'Control Pallet', 0, 0, 'L');
+
+$pdf->SetxY(10,180);
+$pdf->SetFont('Arial', 'B', 10);
+$pdf->Cell(25, 4, utf8_decode('Pallet'), 1, 0, 'C', 0);
+$pdf->Cell(25, 4, utf8_decode('Cajas'), 1, 0, 'C', 0);
+$pdf->Ln();
+$pdf->SetFont('Arial', '', 7);
+while ($fila = mysqli_fetch_assoc($sql5)) {
+    $pdf->SetX(10);
+    // Agregar los datos de la fila a la página
+    $pdf->Cell(25,4,$fila['cantidad'], 1, 0, 'C');
+    $pdf->Cell(25,4,$fila['Cajas'], 1, 1, 'C');
+}
+$pdf->SetxY(60,180);
+$pdf->SetFont('Arial', 'B', 10);
+$pdf->Cell(25, 4, utf8_decode('Pallet'), 1, 0, 'C', 0);
+$pdf->Cell(20, 4, utf8_decode('Cajas'), 1, 0, 'C', 0);
+$pdf->Ln();
+$pdf->SetFont('Arial', '', 7);
+while ($fila = mysqli_fetch_assoc($sql6)) {
+    $pdf->SetX(60);
+    // Agregar los datos de la fila a la página
+    $pdf->Cell(25,4,$fila['cantidad'], 1, 0, 'C');
+    $pdf->Cell(20,4,$fila['Cajas'], 1, 1, 'C');
+}
+$pdf->SetxY(105,180);
+$pdf->SetFont('Arial', 'B', 10);
+$pdf->Cell(25, 4, utf8_decode('Pallet'), 1, 0, 'C', 0);
+$pdf->Cell(20, 4, utf8_decode('Cajas'), 1, 0, 'C', 0);
+$pdf->Ln();
+$pdf->SetFont('Arial', '', 7);
+while ($fila = mysqli_fetch_assoc($sql7)) {
+    $pdf->SetX(105);
+    // Agregar los datos de la fila a la página
+    $pdf->Cell(25,4,$fila['cantidad'], 1, 0, 'C');
+    $pdf->Cell(20,4,$fila['Cajas'], 1, 1, 'C');
+}
+
+$pdf->SetxY(150,180);
+$pdf->SetFont('Arial', 'B', 10);
+$pdf->Cell(25, 4, utf8_decode('Pallet'), 1, 0, 'C', 0);
+$pdf->Cell(25, 4, utf8_decode('Cajas'), 1, 0, 'C', 0);
+$pdf->Ln();
+$pdf->SetFont('Arial', '', 7);
+while ($fila = mysqli_fetch_assoc($sql8)) {
+    $pdf->SetX(150);
+    // Agregar los datos de la fila a la página
+    $pdf->Cell(25,4,$fila['cantidad'], 1, 0, 'C');
+    $pdf->Cell(25,4,$fila['Cajas'], 1, 1, 'C');
+}
 
 $pdf->Output();
 ?>
