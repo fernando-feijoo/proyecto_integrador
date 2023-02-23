@@ -1,6 +1,7 @@
 <?php
 include_once "./../../layout/header.php";
 include_once "./Grupo 3/menu.php";
+include("./../modelo/conexion_bd.php");
 ?>
 <div id="contenedor-escritorio-contenido" class="container-fluid col text-center pe-2 ps-0">
 	<!-- Contenedor de escritorio *interno -->
@@ -51,7 +52,7 @@ include_once "./Grupo 3/menu.php";
 
 		<table class="table table-striped table-hover table-sm table-bordered border-dark align-middle mt-5 mx-auto">
 			<thead class="bg-primary bg-gradient bg-opacity-75">
-            <tr>
+				<tr>
 					<th scope="col">ID</th>
 					<th scope="col">FECHA INSPECCION</th>
 					<th scope="col">SEMANA</th>
@@ -59,7 +60,7 @@ include_once "./Grupo 3/menu.php";
 					<th scope="col">CONTENEDOR</th>
 					<th scope="col">ACOPIO</th>
 					<th scope="col">VAPOR</th>
-                    <th scope="col">IMPRIMIR</th>
+					<th scope="col">IMPRIMIR</th>
 				</tr>
 			</thead>
 			<tbody class="table-group-divider">
@@ -67,17 +68,18 @@ include_once "./Grupo 3/menu.php";
 				while ($datos = $sql->fetch_object()) {
 				?>
 					<tr>
-						<<td><?= $datos->id ?></td>
+						<td><?= $datos->id ?></td>
 						<td><?= $datos->fecha_inspeccion ?></td>
 						<td><?= $datos->semana ?></td>
 						<td><?= $datos->hora_llegada ?></td>
 						<td><?= $datos->contenedor ?></td>
 						<td><?= $datos->nombre_acopio ?></td>
 						<td><?= $datos->vapor ?></td>
-						<td>
-                            <a href="./../controlador//Grupo 3/reporte_contenedor.php?id_reporte=<?= $datos->id ?>"><i
-                                class="btn btn-outline-danger fa-regular fa-file-pdf"></i></a>
-                        </td>
+                        <td>
+                        <div class="d-flex justify-content-end align-items-center me-5">
+			 <a href="./../controlador//Grupo 3/reporte_garita.php?f_ini=<?= $filtro_fecha_inicial ?>&&f_fin=<?= $filtro_fecha_final ?>" target="_blank"><i class="btn btn-outline-danger fa-regular fa-file-pdf" style="font-size: 40px !important;"></i></a>
+		</div>
+                </td>
 					</tr>
 				<?php }
 				?>

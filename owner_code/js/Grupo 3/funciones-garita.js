@@ -53,7 +53,7 @@ $(document).ready(function () {
 
 setTimeout(function () {
   document.getElementById("alertas").style.display = "none";
-}, 3000);
+}, 4000);
 
 const botonesEliminar = document.querySelectorAll("#boton-eliminar-garita");
 botonesEliminar.forEach((boton) => {
@@ -97,6 +97,46 @@ botonGuardar.forEach((boton) => {
 
 const botonActualizar = document.querySelectorAll("#boton-actualizar-garita");
 botonActualizar.forEach((boton) => {
+  boton.addEventListener("click", function (event) {
+    event.preventDefault();
+    Swal.fire({
+      title: "¿Desea actualizar el registro?",
+      text: "Antes de actualizar verifique los datos",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonColor: "#0dcaf0",
+      cancelButtonColor: "#9b9b9b",
+      confirmButtonText: "Actualizar",
+    }).then((result) => {
+      if (result.value) {
+        document.querySelector("form").submit();
+      }
+    });
+  });
+});
+
+const botonGuardarCont = document.querySelectorAll("#btn-guardar-general-cont");
+botonGuardarCont.forEach((boton) => {
+  boton.addEventListener("click", function (event) {
+    event.preventDefault();
+    Swal.fire({
+      title: "¿Desea guardar el registro?",
+      text: "Antes de guardar verifique los datos",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonColor: "#0d6efd",
+      cancelButtonColor: "#9b9b9b",
+      confirmButtonText: "Guardar",
+    }).then((result) => {
+      if (result.value) {
+        document.querySelector("form").submit();
+      }
+    });
+  });
+});
+
+const botonActualizarCont = document.querySelectorAll("#btn-actualizar-general-cont");
+botonActualizarCont.forEach((boton) => {
   boton.addEventListener("click", function (event) {
     event.preventDefault();
     Swal.fire({

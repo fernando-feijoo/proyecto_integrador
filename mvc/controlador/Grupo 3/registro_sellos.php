@@ -20,36 +20,23 @@ if (!empty($_POST["btn-guardar-general"]) || !empty($_POST["btn-actualizar-gener
 			<script>
 				console.log("Ingreso a controlador sellos - nuevo registro")
 			</script>
-		<?php
+<?php
 		}
 
-		$sellos_internos = $_POST["sello_interno1"] . ';';
-		$sellos_internos .= $_POST["sello_interno2"] . ';';
-		$sellos_internos .= $_POST["sello_interno3"];
+		$sellos_internos = strtoupper($_POST["sello_interno1"]) . ';';
+		$sellos_internos .= strtoupper($_POST["sello_interno2"]) . ';';
+		$sellos_internos .= strtoupper($_POST["sello_interno3"]);
 
-		$sellos_externos = $_POST["sello_externo1"] . ';';
-		$sellos_externos .= $_POST["sello_externo2"] . ';';
-		$sellos_externos .= $_POST["sello_externo3"] . ';';
-		$sellos_externos .= $_POST["sello_externo4"] . ';';
-		$sellos_externos .= $_POST["sello_externo5"] . ';';
-		$sellos_externos .= $_POST["sello_externo6"] . ';';
-		$sellos_externos .= $_POST["sello_externo7"] . ';';
-		$sellos_externos .= $_POST["sello_externo8"] . ';';
-		$sellos_externos .= $_POST["sello_externo9"];
+		$sellos_externos = strtoupper($_POST["sello_externo1"]) . ';';
+		$sellos_externos .= strtoupper($_POST["sello_externo2"]) . ';';
+		$sellos_externos .= strtoupper($_POST["sello_externo3"]) . ';';
+		$sellos_externos .= strtoupper($_POST["sello_externo4"]) . ';';
+		$sellos_externos .= strtoupper($_POST["sello_externo5"]) . ';';
+		$sellos_externos .= strtoupper($_POST["sello_externo6"]) . ';';
+		$sellos_externos .= strtoupper($_POST["sello_externo7"]) . ';';
+		$sellos_externos .= strtoupper($_POST["sello_externo8"]) . ';';
+		$sellos_externos .= strtoupper($_POST["sello_externo9"]);
 
-		// Para visualizar en pantalla de trabajo, prueba.
-		$conexion = conexionBd();
-
-		$sql_consulta = "SELECT `insertarDatosSellos` ($id,'$num_conte','$sellos_externos','$sellos_internos','$id_registro');";
-
-		$conexion->query($sql_consulta);
-
-		if ($conexion->query($sql_consulta) == TRUE) {
-		?>
-			<script>
-				console.log("Guardado Correcto - SELLOS CONTENEDOR")
-			</script>
-		<?php
-		}
+		guardar_sellos_contenedor($id, $num_conte, $sellos_externos, $sellos_internos, $id_registro);
 	}
 }

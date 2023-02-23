@@ -28,7 +28,7 @@ if (empty($_POST["busqueda_evaluaciones"]) ||empty($_POST["button-busqueda"]) ||
 
     $busqueda = $_POST["busqueda_evaluaciones"];
 
-    $sql_total = $conexion->query("SELECT COUNT(*) AS total FROM evaluaciones WHERE estado='ACTIVO';");
+    $sql_total = $conexion->query("SELECT COUNT(*) AS total FROM evaluaciones WHERE estado='ACTIVO' and cod_eva= '$busqueda' ORDER BY id DESC;");
 	$total = $sql_total->fetch_assoc()['total'];
 	$num_pags = ceil($total / $cantidad_por_pagina);
 

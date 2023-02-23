@@ -89,7 +89,7 @@ if (($valiacion = cargar_dato_inpeccion()) != false) {
 				$sql_comnt = cargar_observacion_inspeccion();
 				$cargar_comentario = $sql_comnt->fetch_object();
 			?>
-			<textarea class="form-control mt-3" rows="3" name="obs_inspeccion"><?= $cargar_comentario -> obser_ins_contenedor?></textarea>
+			<textarea class="text-uppercase form-control mt-3" rows="3" name="obs_inspeccion"><?= $cargar_comentario -> obser_ins_contenedor?></textarea>
 		</div>
 	</div>
 <?php
@@ -169,7 +169,7 @@ if (($valiacion = cargar_dato_inpeccion()) != false) {
 		</div>
 		<div class="text-start fs-5 fw-semibold mt-4">
 			Observaciones:
-			<textarea class="form-control mt-3" rows="3" name="obs_inspeccion"></textarea>
+			<textarea class="text-uppercase form-control mt-3" rows="3" name="obs_inspeccion"></textarea>
 		</div>
 	</div>
 <?php

@@ -27,11 +27,39 @@ function cargar_asepcias()
         $id = $_GET["id_eva"];
         $conexion = conexionBd();
         $sql = $conexion->query("SELECT DISTINCT *
-        FROM asepcias  where id_eva=$id;");
+        FROM asepcias where id_eva=$id;");
         return $sql;
     } else {   
         $validacion = false;
         return $validacion;
     }
 }
+
+function cargar_gc1(){
+    if (!empty($_GET["id_eva"])) {
+        $id = $_GET["id_eva"];
+        $conexion = conexionBd();
+        $sql = $conexion->query("SELECT DISTINCT *
+        FROM grado_calibre where id_eva=$id;");
+        return $sql;
+    } else {   
+        $validacion = false;
+        return $validacion;
+    }
+}
+
+function cargar_gc2(){
+    if (!empty($_GET["id_eva"])) {
+        $id = $_GET["id_eva"];
+        $conexion = conexionBd();
+        $sql = $conexion->query("SELECT DISTINCT *
+        FROM grado_calibre_op where id_eva=$id;");
+        return $sql;
+    } else {   
+        $validacion = false;
+        return $validacion;
+    }
+}
+
+
 ?>
