@@ -23,15 +23,21 @@ include_once "./Grupo 3/menu_gestion_datos.php";
 			<!-- // HICE LA CONEXION EN EL MENU DE ADMINISTRACION -->
 			<?php
 			// include_once("./../modelo/Grupo 3/modelo_admin_reg_cajas.php");
-			include_once("./../controlador/Grupo 3/registro_admin_reg_cajas.php");
+			include("./../controlador/Grupo 3/registro_admin_reg_cajas.php");
+			include("./../modelo/Grupo 3/modelo_listado_reg_cajas.php");
 
-			if(!empty($_GET["id_listado"])){
+			if (!empty($_GET["id_listado"])) {
 				$_SESSION["id_listado"] = $_GET["id_listado"];
 				unset($_SESSION["id_max"]);
-			}else if(!empty($_GET["id_max"])){
+			} else if (!empty($_GET["id_max"])) {
 				$_SESSION["id_max"] = $_GET["id_max"];
 				unset($_SESSION["id_listado"]);
 			}
+
+			if (!empty($_GET["id_eliminar_caja"])) {
+				eliminado_reg_cajas();
+			}
+			
 			?>
 			<!-- Barra de ingreso de datos y actualizacion -->
 			<div class="d-flex justify-content-center flex-row">
@@ -48,10 +54,10 @@ include_once "./Grupo 3/menu_gestion_datos.php";
 						?>
 							<input name="nombre_caja" type="text" class="text-uppercase form-control" placeholder="Nombre de caja" value="<?= $dato_actualizar->tipo_de_caja ?>">
 						<?php
-						}else{
-							?>
+						} else {
+						?>
 							<input name="nombre_caja" type="text" class="text-uppercase form-control" placeholder="Nombre de caja" value="">
-							<?php
+						<?php
 						}
 						?>
 
@@ -81,7 +87,7 @@ include_once "./Grupo 3/menu_gestion_datos.php";
 				</thead>
 				<tbody class="table-group-divider">
 					<?php
-					$sql = listado_cajas();
+					$sql = $sql_lista;
 					$id_ = 1;
 					while ($datos = $sql->fetch_object()) {
 					?>
@@ -90,7 +96,7 @@ include_once "./Grupo 3/menu_gestion_datos.php";
 							<td><?= $datos->tipo_de_caja ?></td>
 							<td>
 								<a id="boton-editar-garita" href="./vista_admin_reg_cajas_g3.php?id_listado=<?= $datos->id ?>" class="btn btn-small btn-warning" style="width: 70px;"><i class="fa-regular fa-pen-to-square"></i></a>
-								<a id="boton-eliminar-garita" class="btn btn-small btn-danger" href="./vista_admin_reg_cajas_g3.php?id_eliminar=<?= $datos->id ?>" style="width: 70px;"><i class="fa-regular fa-trash-can"></i></a>
+								<a id="boton-eliminar-garita" class="btn btn-small btn-danger" href="./vista_admin_reg_cajas_g3.php?id_eliminar_caja=<?= $datos->id ?>" style="width: 70px;"><i class="fa-regular fa-trash-can"></i></a>
 							</td>
 						</tr>
 					<?php }
@@ -98,10 +104,31 @@ include_once "./Grupo 3/menu_gestion_datos.php";
 
 				</tbody>
 			</table>
+			
+			<nav aria-label="Page navigation example">
+				<ul class="pagination justify-content-center">
+					<?php if ($pagina != 1) { ?>
+						<li class="page-item">
+							<a class="page-link" href="?pagina=<?= $pagina - 1 ?>">Previous</a>
+						</li>
+					<?php } ?>
+					<?php for ($i = 1; $i <= $num_pags; $i++) { ?>
+						<li class="page-item <?= $i == $pagina ? 'active' : '' ?>">
+							<a class="page-link" href="?pagina=<?= $i ?>"><?= $i ?></a>
+						</li>
+					<?php } ?>
+					<?php if ($pagina != $num_pags) { ?>
+						<li class="page-item">
+							<a class="page-link" href="?pagina=<?= $pagina + 1 ?>">Next</a>
+						</li>
+					<?php } ?>
+				</ul>
+			</nav>
 
 		</div>
 	</section>
 </div>
+
 <?php
 include_once "./../../layout/footer.php";
 ?>

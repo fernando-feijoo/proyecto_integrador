@@ -48,7 +48,7 @@ include_once "./Grupo 3/menu_garita.php";
 						<div id="inicio-datos" class="row mx-auto">
 							<div class="col-12 text-start mt-1">
 								<div class="form-check form-check-inline ms-2 fs-5 fw-semibold ">
-									Ingrese el tipo de contendor:
+								Ingrese el tipo de contendor:<H5 class="form-check-inline" style="color: red;">*</H5>
 								</div>
 								<!-- Opciones de seleccion de radio button -->
 								<div class="form-check form-check-inline">
@@ -153,7 +153,7 @@ include_once "./Grupo 3/menu_garita.php";
 					<div id="inicio-datos" class="row mx-auto">
 						<div class="col-12 text-start mt-1">
 							<div class="form-check form-check-inline ms-2 fs-5 fw-semibold ">
-								Ingrese el tipo de contendor:
+								Ingrese el tipo de contendor:<H5 class="form-check-inline" style="color: red;">*</H5>
 							</div>
 							<!-- Opciones de seleccion de radio button -->
 							<div class="form-check form-check-inline">
@@ -185,7 +185,7 @@ include_once "./Grupo 3/menu_garita.php";
 							<input type="time" id="horaLlegada" value="" style="height: 36px;" name="hora_llegada_gg3">
 						</div>
 						<div class="input-group d-flex align-items-center" style="width: 230px;" name="">
-							TIPO DE CAJA<H5 style="color: red;">*</H5>:
+							TIPO DE CAJA:<H5 style="color: red;">*</H5>
 							<select class="ms-1 form-select" id="inputGroupSelect01" name="tipo_caja_gg3">
 								<option selected>Seleccione</option>
 								<?php
@@ -208,7 +208,7 @@ include_once "./Grupo 3/menu_garita.php";
 
 					<div class="d-flex flex-row justify-content-center mb-3">
 						<div class="p-2 input-group d-flex align-items-center" style="width: 270px;" name="">
-							PLACA<H5 style="color: red;">*</H5>:
+							PLACA:<H5 style="color: red;">*</H5>
 							<select class="ms-1 form-select" id="inputGroupSelect02" name="placa_gg3">
 								<option selected>Seleccione</option>
 								<?php
@@ -225,7 +225,7 @@ include_once "./Grupo 3/menu_garita.php";
 							<input type="text" placeholder="" disabled style="width: 120px; height: 36px;" name="marca" value="">
 						</div>
 						<div class="input-group d-flex align-items-center" style="width: 270px;" name="">
-							CHOFER<H5 style="color: red;">*</H5>:
+							CHOFER:<H5 style="color: red;">*</H5>
 							<select class="ms-1 form-select" id="inputGroupSelect03" name="chofer_gg3">
 								<option selected>Seleccione</option>
 								<?php
