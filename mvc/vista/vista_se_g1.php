@@ -64,28 +64,54 @@
     <div class="col-1" style="background-color: brown;">
     <h3>hi</h3>
     </div> -->
-    <table width="982" height="76" border="1">
+    <table width="1230" height="76" border="1">
 	  <tbody>
 	    <tr>
-	      <td width="48" aligned="center" >Peso Neto Lb</td>
-	      <td width="50" aligned="center" >Cluster por caja</td>
-	      <td width="48" aligned="center">PH</td>
+	      <td width="48" align="center" >Peso Neto Lb</td>
+	      <td width="50" align="center" >Cluster por caja</td>
+	      <td width="48" align="center">PH</td>
 	      <td width="455" align="center">Selección</td>
-	      <td width="198" align="center">Empaque</td>
+	      <td width="128" align="center">Empaque</td>
 	      <td width="143" align="center">Total Defectos</td>
         </tr>
 	    <tr>
 	      <td>&nbsp;</td>
 	      <td>&nbsp;</td>
 	      <td>&nbsp;</td>
-	      <td>&nbsp;</td>
-	      <td>&nbsp;</td>
+	      <td><table width="457" border="1">
+	        <tbody>
+	          <tr>
+	            <td width="25">BR</td>
+	            <td width="25">CC</td>
+	            <td width="25">CT</td>
+	            <td width="26">LF</td>
+	            <td width="26">NI</td>
+	            <td width="26">NS</td>
+	            <td width="26">PS</td>
+	            <td width="26">SK</td>
+	            <td width="26">SR</td>
+	            <td width="26">TC</td>
+	            <td width="26">TF</td>
+	            <td width="26">YB</td>
+	            <td width="29">SC</td>
+	            <td width="29">DP</td>
+              </tr>
+            </tbody>
+          </table></td>
+	      <td><table width="200" borde="0">
+	        <tbody>
+	          <tr>
+	            <td width="32">BR</td>
+	            <td width="32">SR</td>
+	            <td width="32">SRF</td>
+	            <td width="32">DP</td>
+              </tr>
+            </tbody>
+          </table></td>
 	      <td>&nbsp;</td>
         </tr>
   </tbody>
 </table>
-
-
 
 </div> 
 
