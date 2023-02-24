@@ -53,7 +53,9 @@ $sql_asepcias2= $conexion->query("SELECT da.nombre, ase.tipo FROM asepcias ase i
 //Consultas para Grado Calibre
 $sql_gc1= $conexion->query("SELECT * FROM grado_calibre WHERE id_eva=$id_reporte");
 $sql_gc2= $conexion->query("SELECT * FROM grado_calibre_op WHERE id_eva=$id_reporte");
-
+// Consultas para Largo Dedo
+$sql_ld1= $conexion->query("SELECT * FROM largo_dedo WHERE id_eva=$id_reporte");
+$sql_ld2= $conexion->query("SELECT * FROM largo_dedo_op WHERE id_eva=$id_reporte");
 
 $pdf = new PDF('P', 'mm', 'A4');
 $pdf->AliasNbPages();
@@ -65,7 +67,7 @@ $pdf->SetRightMargin(10);
 $pdf->SetFont('Arial', '', 12);
 
 // DETALLES GENERALES
-
+$pdf->Rect(10, 33,190, 20, 'D'); // Crear un rectángulo con bordes en la posición (10,35) con una anchura de 190 y una altura de 30.9 unidades
 $fila = mysqli_fetch_assoc($sql);
 $pdf->SetY(35);
 $pdf->SetFont('Arial', 'B', 11);
@@ -117,7 +119,7 @@ $pdf->SetFont('Arial', '', 11);
 $pdf->Cell(30,5,utf8_decode($fila['hora_eva']));
 // Fin de Detalles Generales
 
-// Datos de Grado Clibre
+// Datos de Grado Calibre
 $pdf->SetY(55);
 $pdf->SetFont('Arial', 'B', 12);
 $pdf->Cell(190,5,'GRADO CALIBRE', 0, 0, 'C');
@@ -133,7 +135,7 @@ $pdf->Cell(10,5,utf8_decode('46'),1,0,'C'); $pdf->Cell(10,5,utf8_decode('47'),1,
 $pdf->Cell(10,5,utf8_decode('48'),1,0,'C'); $pdf->Cell(10,5,utf8_decode('49'),1,0,'C');
 $pdf->Cell(10,5,utf8_decode('50'),1,0,'C'); $pdf->Cell(10,5,utf8_decode('51'),1,0,'C');
 $pdf->Cell(10,5,utf8_decode('+52'),1,0,'C'); $pdf->Cell(10,5,utf8_decode('Total'),1,0,'C');
-$pdf->Cell(10,5,utf8_decode('Pro'),1,0,'C');
+$pdf->Cell(10,5,utf8_decode('AVG'),1,0,'C');
 
 $fila = mysqli_fetch_assoc($sql_gc1);
 $pdf->SetY(65);
@@ -146,7 +148,7 @@ $pdf->Cell(10,5,utf8_decode($fila['d44']),1,0,'C'); $pdf->Cell(10,5,utf8_decode(
 $pdf->Cell(10,5,utf8_decode($fila['d46']),1,0,'C'); $pdf->Cell(10,5,utf8_decode($fila['d47']),1,0,'C');
 $pdf->Cell(10,5,utf8_decode($fila['d48']),1,0,'C'); $pdf->Cell(10,5,utf8_decode($fila['d49']),1,0,'C');
 $pdf->Cell(10,5,utf8_decode($fila['d50']),1,0,'C'); $pdf->Cell(10,5,utf8_decode($fila['d51']),1,0,'C');
-$pdf->Cell(10,5,utf8_decode($fila['d52']),1,0,'C'); $pdf->Cell(10,5,utf8_decode($fila['total_gc']),1,0,'C');
+$pdf->Cell(10,5,utf8_decode($fila['d52']),1,0,'C'); $pdf->Cell(10,5,utf8_decode($fila['total_gc']),1,0,'C'); $pdf->Cell(10,5,utf8_decode('XX'),1,0,'C');
 
 
 $fila = mysqli_fetch_assoc($sql_gc2);
@@ -164,16 +166,88 @@ $pdf->Cell(10,5,utf8_decode($fila['d52']),1,0,'C'); $pdf->Cell(10,5,utf8_decode(
 $pdf->Cell(10,5,utf8_decode($fila['promedio']),1,0,'C');
 
 // Fin de Datos de Grado Calibre
+
+// Datos de Largo dedo
 $pdf->SetY(80);
 $pdf->SetFont('Arial', 'B', 12);
-$pdf->Cell(190,5,'LARGO DEDO', 1, 0, 'C');
+$pdf->Cell(190,5,'LARGO DEDO', 0, 0, 'C');
 
+$pdf->SetY(85);
+$pdf->SetFont('Arial', 'B', 11);
+$pdf->Cell(27.33,5,utf8_decode('6'),1,0,'C'); 
+$pdf->Cell(27.33,5,utf8_decode('7'),1,0,'C');  
+$pdf->Cell(27.33,5,utf8_decode('8'),1,0,'C');
+$pdf->Cell(27.33,5,utf8_decode('9'),1,0,'C'); 
+$pdf->Cell(27.33,5,utf8_decode('10'),1,0,'C'); 
+$pdf->Cell(27.33,5,utf8_decode('11'),1,0,'C'); 
+$pdf->Cell(13,10,utf8_decode('Total'),1,0,'C'); 
+$pdf->Cell(13,10,utf8_decode('AVG'),1,0,'C');
+
+$pdf->SetY(90);
+$pdf->SetFont('Arial', 'B', 11);
+$pdf->Cell(5.46,5,utf8_decode('0'),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode('2'),1,0,'C');  
+$pdf->Cell(5.46,5,utf8_decode('4'),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode('6'),1,0,'C'); 
+$pdf->Cell(5.46,5,utf8_decode('8'),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode('0'),1,0,'C'); 
+$pdf->Cell(5.46,5,utf8_decode('2'),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode('4'),1,0,'C');
+$pdf->Cell(5.46,5,utf8_decode('6'),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode('8'),1,0,'C'); 
+$pdf->Cell(5.46,5,utf8_decode('0'),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode('2'),1,0,'C');  
+$pdf->Cell(5.46,5,utf8_decode('4'),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode('6'),1,0,'C'); 
+$pdf->Cell(5.46,5,utf8_decode('8'),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode('0'),1,0,'C'); 
+$pdf->Cell(5.46,5,utf8_decode('2'),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode('4'),1,0,'C');
+$pdf->Cell(5.46,5,utf8_decode('6'),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode('8'),1,0,'C'); 
+$pdf->Cell(5.46,5,utf8_decode('0'),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode('2'),1,0,'C');  
+$pdf->Cell(5.46,5,utf8_decode('4'),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode('6'),1,0,'C'); 
+$pdf->Cell(5.46,5,utf8_decode('8'),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode('0'),1,0,'C'); 
+$pdf->Cell(5.46,5,utf8_decode('2'),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode('4'),1,0,'C');
+$pdf->Cell(5.46,5,utf8_decode('6'),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode('8'),1,0,'C'); 
+
+$fila = mysqli_fetch_assoc($sql_ld1);
+$pdf->SetY(95);
+$pdf->SetFont('Arial', '', 11);
+$pdf->Cell(5.46,5,utf8_decode($fila['ld1']),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode($fila['ld2']),1,0,'C');
+$pdf->Cell(5.46,5,utf8_decode($fila['ld3']),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode($fila['ld4']),1,0,'C');
+$pdf->Cell(5.46,5,utf8_decode($fila['ld5']),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode($fila['ld6']),1,0,'C');
+$pdf->Cell(5.46,5,utf8_decode($fila['ld7']),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode($fila['ld8']),1,0,'C');
+$pdf->Cell(5.46,5,utf8_decode($fila['ld9']),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode($fila['ld10']),1,0,'C');
+$pdf->Cell(5.46,5,utf8_decode($fila['ld11']),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode($fila['ld12']),1,0,'C');
+$pdf->Cell(5.46,5,utf8_decode($fila['ld13']),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode($fila['ld14']),1,0,'C');
+$pdf->Cell(5.46,5,utf8_decode($fila['ld15']),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode($fila['ld16']),1,0,'C');
+$pdf->Cell(5.46,5,utf8_decode($fila['ld17']),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode($fila['ld18']),1,0,'C');
+$pdf->Cell(5.46,5,utf8_decode($fila['ld19']),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode($fila['ld20']),1,0,'C');
+$pdf->Cell(5.46,5,utf8_decode($fila['ld21']),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode($fila['ld22']),1,0,'C');
+$pdf->Cell(5.46,5,utf8_decode($fila['ld23']),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode($fila['ld24']),1,0,'C');
+$pdf->Cell(5.46,5,utf8_decode($fila['ld25']),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode($fila['ld26']),1,0,'C');
+$pdf->Cell(5.46,5,utf8_decode($fila['ld27']),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode($fila['ld28']),1,0,'C');
+$pdf->Cell(5.46,5,utf8_decode($fila['ld29']),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode($fila['ld30']),1,0,'C');
+$pdf->Cell(13,5,utf8_decode($fila['total_largo_dedo']),1,0,'C'); $pdf->Cell(13,5,utf8_decode('XX'),1,0,'C'); 
+
+$fila2 = mysqli_fetch_assoc($sql_ld2);
+$pdf->SetY(100);
+$pdf->SetFont('Times', '', 9);
+$pdf->Cell(5.46,5,utf8_decode($fila2['ld1']),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode($fila2['ld2']),1,0,'C');
+$pdf->Cell(5.46,5,utf8_decode($fila2['ld3']),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode($fila2['ld4']),1,0,'C');
+$pdf->Cell(5.46,5,utf8_decode($fila2['ld5']),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode($fila2['ld6']),1,0,'C');
+$pdf->Cell(5.46,5,utf8_decode($fila2['ld7']),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode($fila2['ld8']),1,0,'C');
+$pdf->Cell(5.46,5,utf8_decode($fila2['ld9']),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode($fila2['ld10']),1,0,'C');
+$pdf->Cell(5.46,5,utf8_decode($fila2['ld11']),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode($fila2['ld12']),1,0,'C');
+$pdf->Cell(5.46,5,utf8_decode($fila2['ld13']),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode($fila2['ld14']),1,0,'C');
+$pdf->Cell(5.46,5,utf8_decode($fila2['ld15']),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode($fila2['ld16']),1,0,'C');
+$pdf->Cell(5.46,5,utf8_decode($fila2['ld17']),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode($fila2['ld18']),1,0,'C');
+$pdf->Cell(5.46,5,utf8_decode($fila2['ld19']),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode($fila2['ld20']),1,0,'C');
+$pdf->Cell(5.46,5,utf8_decode($fila2['ld21']),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode($fila2['ld22']),1,0,'C');
+$pdf->Cell(5.46,5,utf8_decode($fila2['ld23']),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode($fila2['ld24']),1,0,'C');
+$pdf->Cell(5.46,5,utf8_decode($fila2['ld25']),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode($fila2['ld26']),1,0,'C');
+$pdf->Cell(5.46,5,utf8_decode($fila2['ld27']),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode($fila2['ld28']),1,0,'C');
+$pdf->Cell(5.46,5,utf8_decode($fila2['ld29']),1,0,'C'); $pdf->Cell(5.46,5,utf8_decode($fila2['ld30']),1,0,'C');
+$pdf->SetFont('Arial', '', 11);
+$pdf->Cell(13,5,utf8_decode($fila2['total_largo_dedo_op']),1,0,'C'); $pdf->Cell(13,5,utf8_decode($fila2['promedio']),1,0,'C'); 
+// Fin de Datos de Largo Dedo
 // Datos de Asepcias
-$pdf->SetY(105);
+$pdf->SetY(110);
 $pdf->SetFont('Arial', 'B', 12);
-$pdf->Cell(190,5,'ASEPCIAS EN PLANTA EMPACADORA', 1, 0, 'C');
+$pdf->Cell(190,5,'ASEPCIAS EN PLANTA EMPACADORA', 0, 0, 'C');
 
-$pdf->SetY(111);
+$pdf->SetY(116);
 $pdf->SetFont('Arial', 'B', 12);
 $pdf->Cell(70, 5, utf8_decode('PUNTO DE CONTROL'), 1, 0, 'C', 0);
 $pdf->Cell(24, 5, utf8_decode('OPCION'), 1, 0, 'C', 0);
@@ -185,7 +259,7 @@ while ($fila = mysqli_fetch_assoc($sql_asepcias1)) {
     $pdf->Cell(24,5,utf8_decode($fila['tipo']), 1, 1, 'C');
 }
 
-$pdf->SetXY(106,111);
+$pdf->SetXY(106,116);
 $pdf->SetFont('Arial', 'B', 12);
 $pdf->Cell(70, 5, utf8_decode('PUNTO DE CONTROL'), 1, 0, 'C', 0);
 $pdf->Cell(24, 5, utf8_decode('OPCION'), 1, 0, 'C', 0);

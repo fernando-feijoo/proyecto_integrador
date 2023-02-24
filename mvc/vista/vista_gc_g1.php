@@ -376,7 +376,7 @@ if (($validacion = cargar_gc1()) != false and ($validacion2 = cargar_gc2()) != f
                             name="sup38">
                     </div>
                     <div class="c-f4">
-                        <h6 class="p-1">38</h6>
+                        <h6 class="p-1">39</h6>
                         <input id="sup39" class="pi" type="number" value=" " style="width: 40px; margin-top: 5px;"
                             name="sup39">
                     </div>
