@@ -37,13 +37,13 @@ if (!empty($_POST["guardar_eva"]) || !empty($_POST["actualizar_eva"])) {
         '$vapor', '$tipoCaja', '$placa', 'ACTIVO', '$cod_prod', '$nombre_productor', '$apellido_productor', '$finca', 
         '$nombre_inspector', '$apellido_inspector')");
 
-        if ($sql_eva == true) {
-            echo "<div class='alert alert-success text-center' id='alertas' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
-            ¡Datos guardados correctamente!</div>";
-        } else {
-            echo "<div class='alert alert-danger text-center' id='alertas' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
-            ¡Error al guardar los datos! </div>";
-        }
+        // if ($sql_eva == true) {
+        //     echo "<div class='alert alert-success text-center' id='alertas' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
+        //     ¡Datos guardados correctamente!</div>";
+        // } else {
+        //     echo "<div class='alert alert-danger text-center' id='alertas' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
+        //     ¡Error al guardar los datos! </div>";
+        // }
     // }else{
     //     echo "<div class='alert alert-danger text-center' id='alertas' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
     //     ¡Rellene los campos necesarios! </div>";

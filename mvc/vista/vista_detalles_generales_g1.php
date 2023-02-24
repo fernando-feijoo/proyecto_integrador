@@ -27,7 +27,7 @@
             <div class="row">
                 <div class="col-6">
                     <h5 class="text-center text-secondary">DATOS DE PRODUCTOR</h5>
-                    <!-- <input type="text" value="<?= $_SESSION["id_eva"] ?>"> -->
+                    
                     <div class="p-2 left">CÓDIGO
                         <input class="inp_c text-uppercase" type="text" placeholder="CODIGO" style="height: 30px;"
                             value="<?= $carga_datos->cod_prod ?> " name="cod_p_i">
@@ -61,8 +61,8 @@
                     <h5 class="text-center text-secondary">DATOS DE LA EVALUACION</h5>
                     <div class="f1 mt3">
                         CÓDIGO
-                        <input class="inp_c text-uppercase" type="text" placeholder="CODIGO" style="height: 30px;"
-                            name="cod_evaluacion" value="<?= $carga_datos->cod_eva ?>">
+                        <input class="inp_c text-uppercase" type="text" placeholder="CODIGO" style="height: 30px; background-color: rgb(234, 234, 234);"
+                            name="cod_evaluacion" value="<?= $carga_datos->cod_eva ?> " readonly>
                         PLACA DEL VEHICULO
                         <input class="inp_n text-uppercase" type="text" placeholder="PLACA" style="height: 30px;"
                             value="<?= $carga_datos->placa_vehiculo ?>" name="placa">
@@ -146,22 +146,5 @@
                     </div>
                 </div>
             <?php } ?>
-            <div class="d-flex flex-row justify-content-end ms-auto me-5 mb-1 mt-0">
-                <div class="p-2">
-                    <?php
-                    if (empty($_GET["id_eva"])) {
-                        ?>
-                        <button id="boton-guardar-eva" class="btn btn-outline-primary" type="submit" name="guardar_eva"
-                            value="guardado">Guardar</button>
-                        <?php
-                    } else {
-                        ?>
-                        <button id="boton-actualizar-eva" class="btn btn-outline-info" type="submit" name="actualizar_eva"
-                            value="actualizado">Actualizar</button>
-                        <?php
-                    }
-                    ?>
-                </div>
-            </div>
         </div>
     </div>
