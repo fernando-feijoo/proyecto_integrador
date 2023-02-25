@@ -26,7 +26,7 @@ include_once "./Grupo 2/menu.php";
 <div class="d-flex justify-content-center flex-row">
 <form action="?busqueda=1" method="post">
     <div class="input-group mt-3" style="width: 700px;">
-        <input class="text-uppercase" name="g2_busq_evaluacionesiones" type="text" class="form-control" placeholder="Ingrese la fecha de la evaluación" value="" style="width: 550px; border-radius: 5px;">
+        <input name="g2_txt_busq_eval" type="date" placeholder="Ingrese la fecha de la evaluación" value="" style="width: 550px; border-radius: 5px;">
         <button class="btn btn-outline-primary" type="submit" name="g2_btn_busqueda" value="buscando">Buscar</button>
     </div>
 </form>

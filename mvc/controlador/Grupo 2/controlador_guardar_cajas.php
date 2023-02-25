@@ -1,18 +1,17 @@
 <?php
-    if (!empty($_POST["g2_btn_nueva_caja"]) ){
-        $g2_eval_ = $_POST("g2_txt_evaluac");
-        $g2_caj_imp = $_POST("g2_txt_caj_imp");
-        $g2_embal = $_POST("g2_txt_embal");
-        $g2_pes_net = $_POST("g2_txt_pes_net");
-        $g2_par_4 = $_POST("g2_txt_par_4");
-        $g2_par_6 = $_POST("g2_txt_par_6");
-        $g2_par_8 = $_POST("g2_txt_par_8");
-        $g2_imp_5 = $_POST("g2_txt_imp_5");
-        $g2_imp_7 = $_POST("g2_txt_imp_7");
-        $g2_defect = strtoupper($_POST("g2_txt_def"));
-        $g2_tot_def = $_POST("g2_txt_tot_def");
+    if (!empty($_POST["g2_btn_nuev_caj"]) ){
+        $g2_eval_ = $_POST["g2_txt_evaluac"];
+        $g2_caj_imp = $_POST["g2_txt_caj_imp"];
+        $g2_embal = $_POST["g2_txt_embal"];
+        $g2_pes_net = $_POST["g2_txt_pes_net"];
+        $g2_par_4 = $_POST["g2_txt_par_4"];
+        $g2_par_6 = $_POST["g2_txt_par_6"];
+        $g2_par_8 = $_POST["g2_txt_par_8"];
+        $g2_imp_5 = $_POST["g2_txt_imp_5"];
+        $g2_imp_7 = $_POST["g2_txt_imp_7"];
+        $g2_defect = strtoupper($_POST["g2_txt_def_enc"]);
+        $g2_tot_def = $_POST["g2_txt_tot_def"];
 
-        //$id_cont_c = $_GET("id_cont_cal");
 
         $g2_tot_gaj= $g2_par_4 + $g2_par_6 + $g2_par_8 + $g2_imp_5 + $g2_imp_7;    
         $g2_pcmd = (($g2_tot_def/$g2_tot_gaj ) - 1 )*100;
