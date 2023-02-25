@@ -31,6 +31,7 @@
                 background-color: white;
         }
 </style>
+
 <script>
         document.addEventListener('DOMContentLoaded', function () {
                 document.querySelector('#boton-calcular_ld').addEventListener('click', function () {
@@ -215,6 +216,7 @@
                                                         <h6 class="ld-med" style="margin-left: 28px">8</h6>
                                                 </div>
                                                 <div class="cm-2">
+                                                
                                                         <input class="cm" type="number" placeholder="0"
                                                                 style="width: 37px;" name="cm-6-0" id="cm-6-0">
                                                         <input class="cm" type="number" placeholder="0"
@@ -241,6 +243,7 @@
                                                         <h6 class="ld-med" style="margin-left: 28px">8</h6>
                                                 </div>
                                                 <div class="cm-2">
+                                                        
                                                         <input class="cm" type="number" placeholder="0"
                                                                 style="width: 37px;" name="cm-7-0" id="cm-7-0">
                                                         <input class="cm" type="number" placeholder="0"
@@ -265,6 +268,7 @@
                                                         <h6 class="ld-med" style="margin-left: 28px">8</h6>
                                                 </div>
                                                 <div class="cm-2">
+                                                        
                                                         <input class="cm" type="number" placeholder="0"
                                                                 style="width: 37px;" name="cm-8-0" id="cm-8-0">
                                                         <input class="cm" type="number" placeholder="0"
@@ -548,14 +552,6 @@
                                                         <input class="promedio-ld" type="text" placeholder="0"
                                                                 style="width: 200px;" name="promedio-ld" id="promedio-ld" disabled>
                                                 </div>
-                                        </div>
-                                </div>
-                                <div class="d-flex flex-row justify-content-end">
-                                        <div class="p-2">
-
-                                                <button id="boton-calcular_ld" class="btn btn-outline-info"
-                                                        type="button" value="actualizado"
-                                                        style="margin-top: 30px; margin-left: 10px">Guardar</button>
                                         </div>
                                 </div>
                         </div>
