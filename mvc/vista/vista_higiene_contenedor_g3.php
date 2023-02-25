@@ -9,8 +9,7 @@ if (($valiacion = cargar_datos_higiene()) != false) {
   <script>
     console.log("Ingreso a vista higiene")
   </script>
-  <?php
-  ?>
+  
   <div class="container mt-3">
     <div class="row me-5 ms-5">
       <div class="col form-check form-check-inline ms-2 fs-5 fw-semibold">
@@ -141,7 +140,7 @@ if (($valiacion = cargar_datos_higiene()) != false) {
         $sql_comnt = cargar_observacion_higiene();
         $cargar_comentario = $sql_comnt->fetch_object();
         ?>
-        <textarea class="form-control mt-3" id="observacion_higiene" name="obs_higiene" rows="3"><?= $cargar_comentario -> obser_hig_contenedor?></textarea>
+        <textarea class="text-uppercase form-control mt-3" id="observacion_higiene" name="obs_higiene" rows="3"><?= $cargar_comentario -> obser_hig_contenedor?></textarea>
       </div>
     </div>
   </div>
@@ -151,8 +150,7 @@ if (($valiacion = cargar_datos_higiene()) != false) {
   <script>
     console.log("Ingreso a vista higiene")
   </script>
-  <?php
-  ?>
+
   <div class="container mt-3">
     <div class="row me-5 ms-5">
       <div class="col form-check form-check-inline ms-2 fs-5 fw-semibold">
@@ -279,7 +277,7 @@ if (($valiacion = cargar_datos_higiene()) != false) {
       </table>
       <div class="text-start fs-5 fw-semibold mt-5">
         Observaciones:
-        <textarea class="form-control mt-3" id="observacion_higiene" name="obs_higiene" rows="3"></textarea>
+        <textarea class="text-uppercase form-control mt-3" id="observacion_higiene" name="obs_higiene" rows="3"></textarea>
       </div>
     </div>
   </div>

@@ -12,7 +12,7 @@ include_once "./Grupo 3/menu.php";
 			</div>
 			<div class="col-10 me-3 ms-3 mt-4">
 				<div id="titulo-escritorio-listado">
-					LISTADO DE DATOS CONTENDOR
+					REPORTE DATOS Contenedor
 				</div>
 			</div>
 			<!-- /Titulo o encabezado del escritorio -->
@@ -20,37 +20,39 @@ include_once "./Grupo 3/menu.php";
 		<div id="caja-separacion-escritorio" class="mx-auto"></div>
 
 		<?php
-		include_once("./../controlador/Grupo 3/eliminar_registro_contenedores.php");
-		include("./../modelo/Grupo 3/modelo_listado_contenedores.php");
+		include("./../modelo/conexion_bd.php");
+		include_once("./../modelo/Grupo 3/modelo_reportes_con.php");
 		?>
 
 		<!-- Barra de busqueda del listado llegada -->
-		<div class="d-flex justify-content-center flex-row">
-
+		<div class="d-flex justify-content-center flex-row mt-4">
 			<form action="?busqueda=1" method="post">
-				<div class="input-group mt-5" style="width: 700px;">
-					<input name="busqueda_contenedor" type="text" class="form-control" placeholder="Busqueda de datos" value="">
-					<div class="input-group-append">
-						<select class="form-select" name="seleccionContenedor" aria-label="Example select with button addon">
-							<option value="contenedor">Filtro</option>
-							<option value="contenedor">CONTENEDOR</option>
-
-							<option value="nombre_acopio">ACOPIO</option>
-							<option value="semana">SEMANA</option>
-							
-						</select>
+				<div class="input-group" style="width: 700px;">
+					<div class="d-flex align-items-center me-1 fw-semibold">Desde<H5 style="color: red;">*</H5>:
 					</div>
-					<button class="btn btn-outline-primary" type="submit" name="button-busqueda" value="buscando">Buscar registro</button>
+					<input name="busqueda_reporte_inicio" type="date" class="form-control" value="">
+					<div class="d-flex align-items-center me-1 ms-1 fw-semibold">Hasta<H5 style="color: red;">*</H5>:
+					</div>
+					<input name="busqueda_reporte_final" type="date" class="form-control" value="">
+					<button class="btn btn-outline-primary" type="submit" name="button-busqueda-reportes" value="buscando">Buscar registros</button>
 				</div>
 			</form>
-			
-
+			<?php
+			?>
+			<!-- Boton de impresion de reporte -->
 		</div>
+		<?php
+		// Validacion para no tener error y que no salgan datos de impresion en caso de no ingresarse.
+		if (empty($_SESSION['sesion_fecha_inicial']) || empty($_SESSION['sesion_fecha_final'])) {
+			$filtro_fecha_inicial = 0;
+			$filtro_fecha_final = 0;
+		}
+		?>
 		<!-- /Barra de busqueda del listado llegada -->
 
 		<table class="table table-striped table-hover table-sm table-bordered border-dark align-middle mt-5 mx-auto">
 			<thead class="bg-primary bg-gradient bg-opacity-75">
-				<tr>
+            <tr>
 					<th scope="col">ID</th>
 					<th scope="col">FECHA INSPECCION</th>
 					<th scope="col">SEMANA</th>
@@ -58,13 +60,11 @@ include_once "./Grupo 3/menu.php";
 					<th scope="col">CONTENEDOR</th>
 					<th scope="col">ACOPIO</th>
 					<th scope="col">VAPOR</th>
-					<th scope="col" style="width: 160px;"></th>
+                    <th scope="col">IMPRIMIR</th>
 				</tr>
 			</thead>
 			<tbody class="table-group-divider">
 				<?php
-
-				$sql = $conexion->query("SELECT * FROM vista_registro_contenedores");
 				while ($datos = $sql->fetch_object()) {
 				?>
 					<tr>
@@ -75,11 +75,10 @@ include_once "./Grupo 3/menu.php";
 						<td><?= $datos->contenedor ?></td>
 						<td><?= $datos->nombre_acopio ?></td>
 						<td><?= $datos->vapor ?></td>
-
 						<td>
-							<a id="boton-editar-garita" href="./vista_listado_registro_g3.php?id_contExpo=<?= $datos->id?>&&id_numCont=<?= $datos->num_contenedor_fk?>&&id_regisLleg=<?= $datos->id_registro_llegada?>" class="btn btn-small btn-warning" style="width: 70px;"><i class="fa-regular fa-pen-to-square"></i></a>
-							<a id="boton-eliminar-garita" class="btn btn-small btn-danger" href="./vista_listado_contenedores_g3.php?id_eliminar=<?= $datos->id_registro_llegada ?>" style="width: 70px;"><i class="fa-regular fa-trash-can"></i></a>
-						</td>
+                            <a href="./../controlador//Grupo 3/reporte_contenedor.php?id_reporte=<?= $datos->id ?>" target="_blank"><i
+                                class="btn btn-outline-danger fa-regular fa-file-pdf"></i></a>
+                        </td>
 					</tr>
 				<?php }
 				?>
@@ -111,6 +110,7 @@ include_once "./Grupo 3/menu.php";
 			</nav>
 		<?php
 		} else {
+
 		?>
 			<nav aria-label="Page navigation example">
 				<ul class="pagination justify-content-center">
@@ -135,6 +135,11 @@ include_once "./Grupo 3/menu.php";
 		}
 		?>
 
+	</div>
+</div>
+<?php
+include_once "./../../layout/footer.php"
+?>
 	</div>
 </div>
 <?php

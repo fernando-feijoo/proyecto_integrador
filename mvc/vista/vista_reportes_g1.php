@@ -70,7 +70,7 @@ include_once "./Grupo 1/menu.php";
                             <?= $datos->finca ?>
                         </td>
                         <td>
-                            <a href="./../controlador//Grupo 1/reporte_eva.php?id_reportes=<?= $datos->id ?>"><i
+                            <a href="./../controlador//Grupo 1/reporte_eva.php?id_reportes=<?= $datos->id?>" target="_blank"><i
                                 class="btn btn-outline-danger fa-regular fa-file-pdf"></i></a>
                         </td>
                     </tr>
