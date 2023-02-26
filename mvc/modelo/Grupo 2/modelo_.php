@@ -12,7 +12,7 @@ $conexion = conexionBd();
 
 $cantidad_por_pagina = 5;
 
-if (empty($_POST["busq_evaluaciones"]) ||empty($_POST["g2_btn_busqueda"]) || empty($_GET["busqueda"])) {
+if (empty($_POST["g2_txt_busq_eval"]) ||empty($_POST["g2_btn_busqueda"]) || empty($_GET["busqueda"])) {
 
     $sql_total = $conexion->query("SELECT COUNT(*) AS total FROM control_calidad WHERE estado=1;");
     $total = $sql_total->fetch_assoc()['total'];
@@ -22,11 +22,11 @@ if (empty($_POST["busq_evaluaciones"]) ||empty($_POST["g2_btn_busqueda"]) || emp
 	$inicio = ($pagina - 1) * $cantidad_por_pagina;
 
     $sql = $conexion->query("SELECT * FROM control_calidad where estado=1 LIMIT $inicio, $cantidad_por_pagina;");
-    unset($_SESSION["g2_busq_evaluaciones"]);
+    unset($_SESSION["g2_txt_busq_eval"]);
     
-}else if(!empty($_POST["g2_btn_busqueda"]) && !empty($_POST["g2_busq_evaluaciones"]) ){
+}else if(!empty($_POST["g2_btn_busqueda"]) && !empty($_POST["g2_txt_busq_eval"]) ){
 
-    $busqueda = $_POST["g2_busq_evaluaciones"];
+    $busqueda = date("Y-m-d ", strtotime($_POST["g2_txt_busq_eval"]));
 
     $sql_total = $conexion->query("SELECT COUNT(*) AS total FROM control_calidad WHERE estado=1;");
 	$total = $sql_total->fetch_assoc()['total'];
