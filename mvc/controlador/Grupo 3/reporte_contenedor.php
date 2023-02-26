@@ -114,18 +114,18 @@ $sql8 =$conexion->query("SELECT pal.id,pal.cantidad,ca.cantidad as Cajas
 FROM registro_llegada re
 INNER JOIN cont_export con ON re.id = con.id_registro_llegada
 INNER JOIN control_pallet pal ON con.id=pal.id_cont_export inner join cantidad_cajas ca ON ca.id=pal.id_cantidad_cajas  where re.num_contenedor=$id_reporte  limit 5 OFFSET 15;");
-$sql9 =$conexion->query("  SELECT CONCAT(IFNULL(fi.nombre,''), ' ', IFNULL(fi.apellido,'')) as Nombre_rep_acopio, fi.cedula
+$sql9 =$conexion->query("  SELECT CONCAT(NULLIF(fi.nombre,''), ' ', NULLIF(fi.apellido,'')) as Nombre_rep_acopio, fi.cedula
 FROM registro_llegada re inner join cont_export con ON re.id=con.id_registro_llegada inner join firma_rep_acopio fr on fr.id=con.id_firma_resp_acopio 
 inner join firmantes fi ON fi.id=fr.id_firmante where re.num_contenedor=$id_reporte");
-$sql10 =$conexion->query(" SELECT CONCAT(IFNULL(fi.nombre,''), ' ', IFNULL(fi.apellido,''))  as Nombre_eval_fruta, fi.cedula
+$sql10 =$conexion->query(" SELECT CONCAT(NULLIF(fi.nombre,''), ' ', NULLIF(fi.apellido,''))  as Nombre_eval_fruta, fi.cedula
 FROM registro_llegada re inner join cont_export con ON re.id=con.id_registro_llegada inner join firma_eval_fruta fr on fr.id=con.id_firma_eval_fruta 
 inner join firmantes fi ON fi.id=fr.id_firmante where re.num_contenedor=$id_reporte");
 
-$sql11 =$conexion->query("SELECT CONCAT(IFNULL(fi.nombre,''), ' ', IFNULL(fi.apellido,'')) as Nombre_verif_contenedor, fi.cedula
+$sql11 =$conexion->query("SELECT CONCAT(NULLIF(fi.nombre,''), ' ', NULLIF(fi.apellido,'')) as Nombre_verif_contenedor, fi.cedula
 FROM registro_llegada re inner join cont_export con ON re.id=con.id_registro_llegada inner join firma_verif_contenedor fr on fr.id=con.id_firma_verif_contenedor
 inner join firmantes fi ON fi.id=fr.id_firmante where re.num_contenedor=$id_reporte");
 
-$sql13 =$conexion->query("SELECT CONCAT(IFNULL(cho.nombre,''), ' ', IFNULL(cho.apellido,'')) as choferes, cho.cedula
+$sql13 =$conexion->query("SELECT CONCAT(NULLIF(cho.nombre,''), ' ', NULLIF(cho.apellido,'')) as choferes, cho.cedula
 FROM registro_llegada re inner join cont_export con ON re.id=con.id_registro_llegada inner join chofer cho ON cho.id=con.id_firma_chofer_contenedor where re.num_contenedor=$id_reporte");
 
 
@@ -444,74 +444,90 @@ while ($fila = mysqli_fetch_assoc($sql8)) {
 
 $fila = mysqli_fetch_assoc($sql9);
 $pdf->Line(10, 228, 45, 228);
-$pdf->SetY(230);
+
+$pdf->SetFont('Arial','B',9);
+$pdf->SetxY(10,230);
+$pdf->Cell(18,5,'Responsable de Acopio', 0, 0, 'L');
+
 $pdf->SetFont('Arial','B',7);
-$pdf->SetXY(10, 230); // Establecer la posición del cursor en (12,32)
+$pdf->SetXY(10, 236); // Establecer la posición del cursor en (12,32)
 $pdf->Cell(18,5,'Nombre:', 0, 0, 'L');
 
 $pdf->SetFont('Arial','',7);
-$pdf->SetXY(22, 230); // Establecer la posición del cursor en (42,32)
+$pdf->SetXY(22, 236); // Establecer la posición del cursor en (42,32)
 $pdf->Cell(40,5,$fila['Nombre_rep_acopio'], 0, 0, 'L');
 $pdf->SetFont('Arial','B',7);
-$pdf->SetXY(10, 232); // Establecer la posición del cursor en (12,32)
+$pdf->SetXY(10, 239); // Establecer la posición del cursor en (12,32)
 $pdf->Cell(18,5,'Cedula:', 0, 0, 'L');
 
 $pdf->SetFont('Arial','',7);
-$pdf->SetXY(22, 232); // Establecer la posición del cursor en (42,32)
+$pdf->SetXY(22, 239); // Establecer la posición del cursor en (42,32)
 $pdf->Cell(40,5,$fila['cedula'], 0, 0, 'L');
  
 $fila = mysqli_fetch_assoc($sql10);
 $pdf->Line(60, 228, 96, 228);
-$pdf->SetxY(20,230);
+$pdf->SetFont('Arial','B',9);
+$pdf->SetxY(60,230);
+$pdf->Cell(18,5,'Evaluador de Fruta', 0, 0, 'L');
+
+$pdf->SetxY(20,236);
 $pdf->SetFont('Arial','B',7);
-$pdf->SetXY(60, 230); // Establecer la posición del cursor en (12,32)
+$pdf->SetXY(60, 236); // Establecer la posición del cursor en (12,32)
 $pdf->Cell(18,5,'Nombre:', 0, 0, 'L');
 
 $pdf->SetFont('Arial','',7);
-$pdf->SetXY(72, 230); // Establecer la posición del cursor en (42,32)
+$pdf->SetXY(72, 236); // Establecer la posición del cursor en (42,32)
 $pdf->Cell(40,5,$fila['Nombre_eval_fruta'], 0, 0, 'L');
 $pdf->SetFont('Arial','B',7);
-$pdf->SetXY(60, 232); // Establecer la posición del cursor en (12,32)
+$pdf->SetXY(60, 239); // Establecer la posición del cursor en (12,32)
 $pdf->Cell(18,5,'Cedula:', 0, 0, 'L');
 
 $pdf->SetFont('Arial','',7);
-$pdf->SetXY(72, 232); // Establecer la posición del cursor en (42,32)
+$pdf->SetXY(72, 239); // Establecer la posición del cursor en (42,32)
 $pdf->Cell(40,5,$fila['cedula'], 0, 0, 'L');
 
 $fila = mysqli_fetch_assoc($sql11);
 $pdf->Line(110, 228, 146, 228);
-$pdf->SetxY(20,230);
+$pdf->SetFont('Arial','B',9);
+$pdf->SetxY(110,230);
+$pdf->Cell(18,5,'Verificador de Contenedor', 0, 0, 'L');
+
+$pdf->SetxY(20,236);
 $pdf->SetFont('Arial','B',7);
-$pdf->SetXY(110, 230); // Establecer la posición del cursor en (12,32)
+$pdf->SetXY(110, 236); // Establecer la posición del cursor en (12,32)
 $pdf->Cell(18,5,'Nombre:', 0, 0, 'L');
 
 $pdf->SetFont('Arial','',7);
-$pdf->SetXY(125, 230); // Establecer la posición del cursor en (42,32)
+$pdf->SetXY(125, 236); // Establecer la posición del cursor en (42,32)
 $pdf->Cell(40,5,$fila['Nombre_verif_contenedor'], 0, 0, 'L');
 $pdf->SetFont('Arial','B',7);
-$pdf->SetXY(110, 232); // Establecer la posición del cursor en (12,32)
+$pdf->SetXY(110, 239); // Establecer la posición del cursor en (12,32)
 $pdf->Cell(18,5,'Cedula:', 0, 0, 'L');
 
 $pdf->SetFont('Arial','',7);
-$pdf->SetXY(125, 232); // Establecer la posición del cursor en (42,32)
+$pdf->SetXY(125, 239); // Establecer la posición del cursor en (42,32)
 $pdf->Cell(40,5,$fila['cedula'], 0, 0, 'L');
 
 $fila = mysqli_fetch_assoc($sql13);
 $pdf->Line(160, 228, 196, 228);
-$pdf->SetxY(20,230);
+$pdf->SetFont('Arial','B',9);
+$pdf->SetxY(160,230);
+$pdf->Cell(18,5,'Chofer de Contenedor ', 0, 0, 'L');
+
+$pdf->SetxY(20,236);
 $pdf->SetFont('Arial','B',7);
-$pdf->SetXY(160, 230); // Establecer la posición del cursor en (12,32)
+$pdf->SetXY(160, 236); // Establecer la posición del cursor en (12,32)
 $pdf->Cell(18,5,'Nombre:', 0, 0, 'L');
 
 $pdf->SetFont('Arial','',7);
-$pdf->SetXY(175, 230); // Establecer la posición del cursor en (42,32)
+$pdf->SetXY(175, 236); // Establecer la posición del cursor en (42,32)
 $pdf->Cell(40,5,$fila['choferes'], 0, 0, 'L');
 $pdf->SetFont('Arial','B',7);
-$pdf->SetXY(162,232); // Establecer la posición del cursor en (12,32)
+$pdf->SetXY(160,239); // Establecer la posición del cursor en (12,32)
 $pdf->Cell(18,5,'Cedula:', 0, 0, 'L');
 
 $pdf->SetFont('Arial','',7);
-$pdf->SetXY(177, 232); // Establecer la posición del cursor en (42,32)
+$pdf->SetXY(177, 239); // Establecer la posición del cursor en (42,32)
 $pdf->Cell(40,5,$fila['cedula'], 0, 0, 'L');
 
 
