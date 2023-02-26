@@ -22,7 +22,6 @@ include_once "./Grupo 3/menu_gestion_datos.php";
 
 			<!-- // HICE LA CONEXION EN EL MENU DE ADMINISTRACION -->
 			<?php
-			// include_once("./../modelo/Grupo 3/modelo_admin_reg_cajas.php");
 			include("./../controlador/Grupo 3/registro_admin_reg_cajas.php");
 			include("./../modelo/Grupo 3/modelo_listado_reg_cajas.php");
 
@@ -37,7 +36,7 @@ include_once "./Grupo 3/menu_gestion_datos.php";
 			if (!empty($_GET["id_eliminar_caja"])) {
 				eliminado_reg_cajas();
 			}
-			
+
 			?>
 			<!-- Barra de ingreso de datos y actualizacion -->
 			<div class="d-flex justify-content-center flex-row">
@@ -64,11 +63,13 @@ include_once "./Grupo 3/menu_gestion_datos.php";
 						<?php
 						if (empty($_GET["id_listado"])) {
 						?>
-							<button class="btn btn-outline-primary" type="submit" name="btn-guardar-cajas" value="guardar">Guardar</button>
+							<input type="hidden" name="btn-guardar-cajas" id="btn-guardar-value" value="guardado">
+							<button id="btn-guardar-general-cont" class="btn btn-outline-primary" type="submit" name="btn-guardar-cajas" value="guardar">Guardar</button>
 						<?php
 						} else {
 						?>
-							<button class="btn btn-outline-info" type="submit" name="btn-actualizar-cajas" value="actualizar">Actualizar</button>
+							<input type="hidden" name="btn-actualizar-cajas" id="btn-actualizar-value" value="actualizado">
+							<button id="btn-actualizar-general-cont" class="btn btn-outline-info" type="submit" name="btn-actualizar-cajas" value="actualizar">Actualizar</button>
 						<?php
 						}
 						?>
@@ -104,7 +105,7 @@ include_once "./Grupo 3/menu_gestion_datos.php";
 
 				</tbody>
 			</table>
-			
+
 			<nav aria-label="Page navigation example">
 				<ul class="pagination justify-content-center">
 					<?php if ($pagina != 1) { ?>

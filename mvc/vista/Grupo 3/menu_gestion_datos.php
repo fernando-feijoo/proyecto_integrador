@@ -29,6 +29,7 @@
 					<?php
 					include_once("./../modelo/conexion_bd.php");
 					include("./../modelo/Grupo 3/modelo_admin_reg_cajas.php");
+					include("./../modelo/Grupo 3/modelo_admin_reg_vehi.php");
 					?>
 
 					<!-- Seccion de tercer menu de Acopio y sub menus ADMIN -->
@@ -60,7 +61,11 @@
 						<div class="row pt-3">
 							<div class="col-xs-12 col-md-10 offset-md-2 text-start">
 								<div id="botones-menu">
-									<a class="opcion-menu" href="./vista_admin_reg_vehi_g3.php" name="opcion-reporte">Registro de Vehiculos</a>
+								<?php
+									$id = id_max_vehi();
+									$dato_id = $id->fetch_object();
+									?>
+									<a class="opcion-menu" href="./vista_admin_reg_vehi_g3.php?id_max=<?= ($dato_id->id_max) + 1 ?>" name="opcion-reporte">Registro de Vehiculos</a>
 								</div>
 							</div>
 						</div>

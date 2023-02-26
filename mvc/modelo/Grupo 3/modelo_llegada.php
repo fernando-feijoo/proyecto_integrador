@@ -18,7 +18,7 @@ function datos_lista_vehiculo()
 function datos_lista_chofer()
 {
 	global $conexion;
-	$sql = $conexion->query("SELECT id, cedula, CONCAT(nombre,' ',apellido) AS nombres FROM chofer WHERE estado = 'ACTIVO';");
+	$sql = $conexion->query("SELECT id, cedula, CONCAT(nombre,' ',apellido) AS nombres FROM chofer WHERE estado = 'ACTIVO' && nombre != 'N/A';");
 	return $sql;
 }
 

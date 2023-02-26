@@ -48,7 +48,7 @@ include_once "./Grupo 3/menu_garita.php";
 						<div id="inicio-datos" class="row mx-auto">
 							<div class="col-12 text-start mt-1">
 								<div class="form-check form-check-inline ms-2 fs-5 fw-semibold ">
-								Ingrese el tipo de contendor:<H5 class="form-check-inline" style="color: red;">*</H5>
+								Ingrese el tipo de contendor:
 								</div>
 								<!-- Opciones de seleccion de radio button -->
 								<div class="form-check form-check-inline">

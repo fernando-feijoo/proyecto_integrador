@@ -135,7 +135,9 @@ botonGuardarCont.forEach((boton) => {
   });
 });
 
-const botonActualizarCont = document.querySelectorAll("#btn-actualizar-general-cont");
+const botonActualizarCont = document.querySelectorAll(
+  "#btn-actualizar-general-cont"
+);
 botonActualizarCont.forEach((boton) => {
   boton.addEventListener("click", function (event) {
     event.preventDefault();
@@ -154,5 +156,3 @@ botonActualizarCont.forEach((boton) => {
     });
   });
 });
-
-
