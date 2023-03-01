@@ -61,5 +61,30 @@ function cargar_gc2(){
     }
 }
 
+function cargar_ld1(){
+    if (!empty($_GET["id_eva"])) {
+        $id = $_GET["id_eva"];
+        $conexion = conexionBd();
+        $sql = $conexion->query("SELECT DISTINCT *
+        FROM largo_dedo where id_eva=$id;");
+        return $sql;
+    } else {   
+        $validacion = false;
+        return $validacion;
+    }
+}
+
+function cargar_ld2(){
+    if (!empty($_GET["id_eva"])) {
+        $id = $_GET["id_eva"];
+        $conexion = conexionBd();
+        $sql = $conexion->query("SELECT DISTINCT *
+        FROM largo_dedo_op where id_eva=$id;");
+        return $sql;
+    } else {   
+        $validacion = false;
+        return $validacion;
+    }
+}
 
 ?>
