@@ -5,7 +5,7 @@ if (!empty($_POST["btn-guardar-vehiculo"]) || !empty($_POST["btn-actualizar-vehi
 
     $chasis = strtoupper($_POST["nombre_chasis"]);
     $placa = strtoupper($_POST["nombre_placa"]);
-    $marca = strtoupper($_POST["nombre_marca"]);
+    $marca = mb_strtoupper($_POST["nombre_marca"], 'UTF-8');
 
     if (!empty($_SESSION["id_listado"])) {
       $id = $_SESSION["id_listado"];

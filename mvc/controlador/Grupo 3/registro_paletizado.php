@@ -14,7 +14,7 @@ if (!empty($_POST["btn-guardar-general"]) || !empty($_POST["btn-actualizar-gener
     <script>
       console.log("Ingreso a controlador pallet - nuevo registro")
     </script>
-    <?php
+<?php
   }
 
   $id_cantidad_cajas = $_POST["cantidad_cajas"];
@@ -88,7 +88,7 @@ if (!empty($_POST["btn-guardar-general"]) || !empty($_POST["btn-actualizar-gener
   }
 
   if (!empty($_POST["obs_general"])) {
-    $obs_general = strtoupper($_POST["obs_general"]);
+    $obs_general = mb_strtoupper($_POST["obs_general"], 'UTF-8');
     if (!empty($_SESSION["id_contExpo"])) {
       $id = $_SESSION["id_contExpo"];
     } else if (!empty($_SESSION["numCont"])) {

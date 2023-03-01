@@ -22,7 +22,7 @@ include_once "./Grupo 3/menu_gestion_datos.php";
 
 			<!-- // HICE LA CONEXION EN EL MENU DE ADMINISTRACION -->
 			<?php
-			include("./../controlador/Grupo 3/registro_admin_reg_vehi.php");	
+			include("./../controlador/Grupo 3/registro_admin_reg_vehi.php");
 			include("./../modelo/Grupo 3/modelo_listado_reg_vehi.php");
 
 			if (!empty($_GET["id_listado"])) {
@@ -133,7 +133,7 @@ include_once "./Grupo 3/menu_gestion_datos.php";
 					<?php } ?>
 				</ul>
 			</nav>
-			
+
 		</div>
 	</section>
 </div>

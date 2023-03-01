@@ -14,10 +14,10 @@ if (!empty($_POST["btn-guardar-general"]) || !empty($_POST["btn-actualizar-gener
   $sello_exp_cand = strtoupper($_POST["sello_expotador_candado"]);
   $fecha_hora_salida = date("Y-m-d H:i:s", strtotime($_POST["fecha_hora_salida"]));
   $sello_exp_cable = strtoupper($_POST["sello_cable"]);
-  $compania_transporte = strtoupper($_POST["trasnportista"]);
+  $compania_transporte = mb_strtoupper($_POST["trasnportista"], 'UTF-8');
   $sello_nave = strtoupper($_POST["sello_nave"]);
-  $vapor = strtoupper($_POST["vapor"]);
-  $destino = strtoupper($_POST["destino"]);
+  $vapor = mb_strtoupper($_POST["vapor"], 'UTF-8');
+  $destino = mb_strtoupper($_POST["destino"], 'UTF-8');
   // $paletizadores = $_POST["paletizador1"].';'.$_POST["paletizador2"].';'.$_POST["paletizador3"].';'.$_POST["paletizador4"];
   // Solo para concatenar plaetizadores en caso de no ser igual a Seleccione.
   $paletizadores = '';
@@ -33,7 +33,7 @@ if (!empty($_POST["btn-guardar-general"]) || !empty($_POST["btn-actualizar-gener
   $total_viajar = $_POST["total_viajar"];
   $cajas = $_POST["cajas"];
   $cantidad_pallet = $_POST["cantidad_pallet"];
-  $observaciones = strtoupper($_POST["observacion_despacho"]);
+  $observaciones = mb_strtoupper($_POST["observacion_despacho"], 'UTF-8');
 
   // Validar cuando sea un actualizar e ingreso por primera vez
   if (!empty($_SESSION["id_contExpo"])) {

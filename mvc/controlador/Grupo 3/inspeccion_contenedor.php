@@ -77,7 +77,7 @@ if (!empty($_POST["btn-guardar-general"]) || !empty($_POST["btn-actualizar-gener
         guardar_datos_inspeccion($id, $verificacion, $id_contenedor_export, $id_verificar_lugar);
     }
     if (!empty($_POST["obs_inspeccion"])) {
-        $obs_inspeccion = strtoupper($_POST["obs_inspeccion"]);
+        $obs_inspeccion = mb_strtoupper($_POST["obs_inspeccion"], 'UTF-8');
         if (!empty($_SESSION["id_contExpo"])) {
             $id = $_SESSION["id_contExpo"];
         } else if (!empty($_SESSION["numCont"])) {

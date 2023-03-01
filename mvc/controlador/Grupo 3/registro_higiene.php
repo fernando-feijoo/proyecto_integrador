@@ -64,7 +64,7 @@ if (!empty($_POST["btn-guardar-general"]) || !empty($_POST["btn-actualizar-gener
         guardar_datos_higiene($id, $opcion, $id_contenedor_export, $id_verificar_lugar);
     }
     if (!empty($_POST["obs_higiene"])) {
-        $obs_higiene = strtoupper($_POST["obs_higiene"]);
+        $obs_higiene = mb_strtoupper($_POST["obs_higiene"], 'UTF-8');
         if (!empty($_SESSION["id_contExpo"])) {
             $id = $_SESSION["id_contExpo"];
         } else if (!empty($_SESSION["numCont"])) {

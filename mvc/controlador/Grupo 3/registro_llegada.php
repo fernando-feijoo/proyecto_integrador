@@ -14,7 +14,7 @@ if (!empty($_POST["btn-guardar"]) || !empty($_POST["btn-actualizar"])) {
 		$hora_llegada = $_POST["hora_llegada_gg3"];
 		$cupo = $_POST["cupo_gg3"];
 		$contenedor = strtoupper($_POST["contenedor_gg3"]);
-		$nombre_acopio = strtoupper($_POST["nombre_copio_gg3"]);
+		$nombre_acopio = mb_strtoupper($_POST["nombre_copio_gg3"], 'UTF-8');
 		$candados_llegada = strtoupper($_POST["candados_llegada_gg3"]);
 
 		$tipo_contenedor_eleccion = $_POST["inlineRadioOptions_gg3"];

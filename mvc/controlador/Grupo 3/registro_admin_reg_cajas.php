@@ -3,7 +3,7 @@ if (!empty($_POST["btn-guardar-cajas"]) || !empty($_POST["btn-actualizar-cajas"]
 
   if (!empty($_POST["nombre_caja"])) {
 
-    $nombre = strtoupper($_POST["nombre_caja"]);
+    $nombre = mb_strtoupper($_POST["nombre_caja"], 'UTF-8');
 
     if (!empty($_SESSION["id_listado"])) {
       $id = $_SESSION["id_listado"];
