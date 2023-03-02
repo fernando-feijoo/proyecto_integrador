@@ -27,17 +27,16 @@ include_once "./Grupo 2/menu.php";
 <table width="1152" height="200" border="2">
 	<tr>
     <td>
-    <form action="./vista_ingreso_de_evaluaciones_g2.php" method="post">
+    <?php
+    if (!empty($_GET["g2_h"])) {
+        $dat_eva_emp = $_GET["g2_h"];
+    } else if(!empty($_GET["g2_hr"])) {
+        $dat_eva_emp = $_GET["g2_hr"];
+    }
+    ?>
+    <form action="./vista_ingreso_de_evaluaciones_g2.php?g2_hr=<?= $dat_eva_emp ?>" method="post">
     <div class="d-flex flex-row justify-content-center mb-3 ">
-        <div class="p-2"> Evaluacion N:
-            <input type="number" style="width: 50px; height: 25px;" name="g2_txt_evaluac">
-        </div>
-    </div>
-
-    <div class="d-flex flex-row justify-content-center mb-3 ">
-        <div class="p-2"> Caja Inspeccionada:
-            <input type="number" style="width: 200px; height: 25px;" name="g2_txt_caj_imp" value="0">
-        </div>
+    <!-- <input type="text" value="<?= $_SESSION["g2_id_caj"]=$dat_eva_emp ?>"> -->
         <div class="p-2"> Embalador:
             <input type="number" style="width: 200px; height: 25px;;" name="g2_txt_embal" value="0">
         </div>
@@ -164,10 +163,13 @@ include_once "./Grupo 2/menu.php";
     </tr>
 </table>
 </br>
+
 <table width="1152" height="200" border="2">
 	<tr>
     <td>
-
+        <?php 
+        require("./vista_tabla_g2.php");
+        ?>
     </td>
     </tr>
 </table>
