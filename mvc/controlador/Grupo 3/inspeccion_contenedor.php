@@ -1,6 +1,5 @@
 <?php
-if (!empty($_POST["btn-guardar-general"])) {
-    // $id_inpeccion = $_SESSION['id_conExpo'];
+if (!empty($_POST["btn-guardar-general"]) || !empty($_POST["btn-actualizar-general"])) {
 ?>
     <script>
         console.log("Ingreso al controlador INSPECCION")
@@ -16,17 +15,14 @@ if (!empty($_POST["btn-guardar-general"])) {
             console.log("Ingreso a controlador inspeccion - id_contExpo")
         </script>
     <?php
-    } else if(!empty($_SESSION["numCont"])){
+    } else if (!empty($_SESSION["numCont"])) {
         $id_contenedor_export = $_SESSION["numCont"];
-        ?>
+    ?>
         <script>
             console.log("Ingreso a controlador inspeccion - numCont")
         </script>
     <?php
     }
-
-    // Para visualizar en pantalla de trabajo, prueba.
-    $conexion = conexionBd();
 
     $maxDato = (($id_contenedor_export * 11) - 11);
     for ($i = 1; $i < 12; $i++) {
@@ -78,18 +74,15 @@ if (!empty($_POST["btn-guardar-general"])) {
                 $verificacion = $verificacion_once == 1 ? 1 : 0;
                 break;
         }
-        $sql_guardado_inspeccion = "SELECT insertarDatosInspeccion ('$id','$verificacion','$id_contenedor_export','$id_verificar_lugar');";
-        $sql = $conexion->query($sql_guardado_inspeccion);
-    ?>
-        <?php
-        if ($conexion->query($sql_guardado_inspeccion) === TRUE) {
-        ?>
-            <script>
-                console.log("Guardado Correcto - INSPECCION CONTENEDOR")
-            </script>
-        <?php
+        guardar_datos_inspeccion($id, $verificacion, $id_contenedor_export, $id_verificar_lugar);
+    }
+    if (!empty($_POST["obs_inspeccion"])) {
+        $obs_inspeccion = mb_strtoupper($_POST["obs_inspeccion"], 'UTF-8');
+        if (!empty($_SESSION["id_contExpo"])) {
+            $id = $_SESSION["id_contExpo"];
+        } else if (!empty($_SESSION["numCont"])) {
+            $id = $_SESSION["numCont"];
         }
-        ?>
-<?php
+        insertar_comentario_contenedor($obs_inspeccion, $id);
     }
 }

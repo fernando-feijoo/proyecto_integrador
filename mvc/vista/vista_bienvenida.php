@@ -1,4 +1,5 @@
 <?php
+include("./../modelo/conexion_bd.php");
 include_once "./../../layout/header.php";
 if ($_SESSION["rol"] == "control") {
 	include_once "./Grupo 1/menu.php";
@@ -7,9 +8,9 @@ if ($_SESSION["rol"] == "control") {
 } elseif ($_SESSION["rol"] == "verificacion") {
 	include_once "./Grupo 3/menu.php";
 } elseif ($_SESSION["rol"] == "garita") {
-	if(!empty($_GET["admin"])){
-		include_once ('./Grupo 3/menu_gestion_datos.php');
-	}else{
+	if (!empty($_GET["admin"])) {
+		include_once('./Grupo 3/menu_gestion_datos.php');
+	} else {
 		include_once "./Grupo 3/menu_garita.php";
 	}
 }

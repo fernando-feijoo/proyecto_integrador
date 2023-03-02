@@ -1,5 +1,5 @@
 <?php
-if (!empty($_POST["btn-guardar-general"])) {
+if (!empty($_POST["btn-guardar-general"]) || !empty($_POST["btn-actualizar-general"])) {
 ?>
   <script>
     console.log("Ingreso al controlador DESPACHO")
@@ -8,16 +8,16 @@ if (!empty($_POST["btn-guardar-general"])) {
 
   $filtro_rb = $_POST["inlineRadioOptions_fg3"];
   $termografo_rb = $_POST["inlineRadioOptions_tg3"];
-  $termografo_num = $_POST["termografo_num"];
-  $sello_adhesivo = $_POST["sello_adhesivo"];
-  $sello_verificador = $_POST["sello_vericador"];
-  $sello_exp_cand = $_POST["sello_expotador_candado"];
+  $termografo_num = strtoupper($_POST["termografo_num"]);
+  $sello_adhesivo = strtoupper($_POST["sello_adhesivo"]);
+  $sello_verificador = strtoupper($_POST["sello_vericador"]);
+  $sello_exp_cand = strtoupper($_POST["sello_expotador_candado"]);
   $fecha_hora_salida = date("Y-m-d H:i:s", strtotime($_POST["fecha_hora_salida"]));
-  $sello_exp_cable = $_POST["sello_cable"];
-  $compania_transporte = $_POST["trasnportista"];
-  $sello_nave = $_POST["sello_nave"];
-  $vapor = $_POST["vapor"];
-  $destino = $_POST["destino"];
+  $sello_exp_cable = strtoupper($_POST["sello_cable"]);
+  $compania_transporte = mb_strtoupper($_POST["trasnportista"], 'UTF-8');
+  $sello_nave = strtoupper($_POST["sello_nave"]);
+  $vapor = mb_strtoupper($_POST["vapor"], 'UTF-8');
+  $destino = mb_strtoupper($_POST["destino"], 'UTF-8');
   // $paletizadores = $_POST["paletizador1"].';'.$_POST["paletizador2"].';'.$_POST["paletizador3"].';'.$_POST["paletizador4"];
   // Solo para concatenar plaetizadores en caso de no ser igual a Seleccione.
   $paletizadores = '';
@@ -33,7 +33,7 @@ if (!empty($_POST["btn-guardar-general"])) {
   $total_viajar = $_POST["total_viajar"];
   $cajas = $_POST["cajas"];
   $cantidad_pallet = $_POST["cantidad_pallet"];
-  $observaciones = $_POST["observacion_despacho"];
+  $observaciones = mb_strtoupper($_POST["observacion_despacho"], 'UTF-8');
 
   // Validar cuando sea un actualizar e ingreso por primera vez
   if (!empty($_SESSION["id_contExpo"])) {
@@ -49,13 +49,10 @@ if (!empty($_POST["btn-guardar-general"])) {
     <script>
       console.log("Ingreso a controlador despacho - numCont")
     </script>
-<?php
+  <?php
   }
 
   $id_cont_export = $id;
 
-  $conexion = conexionBd();
-
-  $sql_consulta = "SELECT insertarDatosDespacho ('$id','$filtro_rb','$termografo_rb','$termografo_num','$sello_adhesivo','$sello_verificador','$sello_exp_cand','$fecha_hora_salida','$sello_exp_cable','$compania_transporte','$sello_nave','$vapor','$destino','$paletizadores','$total_viajar','$cajas','$cantidad_pallet','$observaciones','$id_cont_export');";
-  $sql = $conexion->query($sql_consulta);
+  guardar_datos_despacho($id,$filtro_rb,$termografo_rb,$termografo_num,$sello_adhesivo,$sello_verificador,$sello_exp_cand,$fecha_hora_salida,$sello_exp_cable,$compania_transporte,$sello_nave,$vapor,$destino,$paletizadores,$total_viajar,$cajas,$cantidad_pallet,$observaciones,$id_cont_export);
 }
