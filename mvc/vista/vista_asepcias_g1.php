@@ -469,9 +469,9 @@ if (($valiacion = cargar_asepcias()) != false) {
       </tr>
 
     </table>
-
   </div>
 <?php } ?>
+<h6 class="" style="text-align: left;">Al no seleccionar alguna opcion se mandara vacio</h6>
 <div class="d-flex flex-row justify-content-end ms-auto me-5 mb-1 mt-0">
                 <div class="p-2">
                     <?php
