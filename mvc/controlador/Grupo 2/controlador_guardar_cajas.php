@@ -6,6 +6,7 @@
         $g2_par_6 = $_POST["g2_txt_par_6"];
         $g2_par_8 = $_POST["g2_txt_par_8"];
         $g2_imp_5 = $_POST["g2_txt_imp_5"];
+        
         $g2_imp_7 = $_POST["g2_txt_imp_7"];
         $g2_defect = strtoupper($_POST["g2_txt_def_enc"]);
         $g2_tot_def = $_POST["g2_txt_tot_def"];
