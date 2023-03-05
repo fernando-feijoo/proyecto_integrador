@@ -48,7 +48,7 @@
                         <div class="row pt-3">
                             <div class="col-md-10 offset-md-2 text-start">
                                 <div id="botones-menu">
-                                    <a class="opcion-menu" href="./vista_ingreso_de_evaluaciones_g2.php" name="opcion-regisstro_2">Ingreso Evaluaciones</a>
+                                    <a id="boton-ingresar-control" class="opcion-menu" href="./vista_ingreso_de_evaluaciones_g2.php" name="opcion-regisstro_2">Ingreso Evaluaciones</a>
                                 </div>
 
                             </div>

@@ -74,3 +74,24 @@ botonesSeleccionar.forEach((boton) => {
     }
   });
 });
+
+// FUNCION PARA EL GRUPO 2 EL ROL DE GRUPO 2 BY Fernando F. Feijoo
+
+var id = "<?php echo $_GET['g2_h']; ?>";
+const botonesSeleccionarG2 = document.querySelectorAll(
+  "#boton-ingresar-control"
+);
+botonesSeleccionarG2.forEach((boton) => {
+  boton.addEventListener("click", (event) => {
+    event.preventDefault();
+    if (!boton.href.includes(`?g2_h=${id}`)) {
+      Swal.fire({
+        title: "Acceso denegado",
+        text: "Ingrese datos de control.",
+        icon: "error",
+      }).then(() => {
+        window.location.href = "./vista_control_calidad_g2.php";
+      });
+    }
+  });
+});
