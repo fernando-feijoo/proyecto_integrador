@@ -18,7 +18,7 @@
         $conexion = conexionBd();
 
         $sql_caj_g2 = $conexion->query("select insert_caj($g2_id_cajs,$g2_embal,$g2_pes_net,$g2_par_4,$g2_par_6,$g2_par_8,$g2_imp_5,$g2_imp_7,'$g2_defect',$g2_tot_def,$g2_tot_gaj,$g2_pcmd);");
-        if ($sql_caj_g2 == 0) {
+        if ($sql_caj_g2 == true) {
         echo "<div class='alert alert-success text-center' id='alerta-guardado-garita' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
         ¡Datos gurdado correctamente!
          </div>";
