@@ -24,6 +24,7 @@ include_once "./Grupo 1/menu.php";
     include("./../modelo/Grupo 1/modelo_rellenar_dg_g1.php");
     include_once("./../controlador/Grupo 1/registro_eva.php");
     include_once("./../controlador/Grupo 1/registro_gc.php");
+    include_once("./../controlador/Grupo 1/registro_ld.php");
     include_once("./../controlador/Grupo 1/registro_asepcias.php");
     
     ?>

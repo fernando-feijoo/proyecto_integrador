@@ -20,8 +20,8 @@ function Header()
     $this->SetFont('Arial', '', 8);
     $this->Cell(40, 8, utf8_decode('BANANO ORGÁNICO'));
 
-    $this->SetXY(140,18);
-    $this->SetFont('Arial', 'B', 15);
+    $this->SetXY(147,18);
+    $this->SetFont('Arial', 'B', 13);
     $this->Cell(89, 8, utf8_decode('HOJA DE EVALUACIÓN'), 0, 1);
     
     $this->Ln(2);
