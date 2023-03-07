@@ -4,7 +4,7 @@
         while ($dat_a_act = $sql->fetch_object()) {
             $dat = $dat_a_act->id;
 ?>
-<form action="./vista_control_calidad_g2.php?cntrid=<?= $dat ?>" method="post">
+<form action="./vista_control_calidad_g2.php?g2_n=<?= $dat ?>" method="post">
 <div class="d-flex flex-row justify-content-center mb-3 ">
     <!-- <input type="text" value="<?= $_SESSION["id_g2_eva_act"]=$dat ?>"> -->
     <div class="p-2">Fecha:
@@ -69,8 +69,9 @@
                 $dat_ = $dat_a_act->id;
                 $dat = $dat_ + 1;
 ?>
-<form action="./vista_control_calidad_g2.php?cntrins=<?= $dat ?>" method="post">
+<form action="./vista_control_calidad_g2.php?g2_r=<?= $dat ?>" method="post">
 <div class="d-flex flex-row justify-content-center mb-3 ">
+    <!-- <input type="text" value="<?= $_SESSION["id_g2_eva_ins"]=$dat ?>"> -->
     <div class="p-2">Fecha:
         <input name="g2_txt_fecha" type="date" id="fechaActual" value="" style="height: 36px;">
     </div>
@@ -136,14 +137,15 @@
             name="g2_btn_act" value="actuaizar">Actualizar</button>
             
             <?php 
-        } else if(!empty($_GET["cntrid"])){
+        } else if(!empty($_GET["g2_n"])){
             $c_id = $_SESSION['id_g2_eva_act'];
             ?>
-            <a class="btn btn-outline-primary" href="vista_ingreso_de_evaluaciones_g2.php?cntid=<?=$c_id?>">Siguiente</a>
+            <a class="btn btn-outline-primary" href="vista_ingreso_de_evaluaciones_g2.php?g2_h=<?=$c_id?>">Siguiente</a>
             <?php
-        } else if(!empty($_GET["cntrins"])){
+        } else if(!empty($_GET["g2_r"])){
+            $c_id = ($_SESSION['id_g2_eva_ins'])-1;
             ?>
-            <a class="btn btn-outline-primary" href="vista_ingreso_de_evaluaciones_g2.php>">Siguiente</a>
+            <a class="btn btn-outline-primary" href="vista_ingreso_de_evaluaciones_g2.php?g2_h=<?=$c_id?>">Siguiente</a>
             <?php 
         } else{
             ?>
