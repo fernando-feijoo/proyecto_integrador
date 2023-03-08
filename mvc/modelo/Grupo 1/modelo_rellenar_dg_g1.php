@@ -86,5 +86,17 @@ function cargar_ld2(){
         return $validacion;
     }
 }
+function cargar_se(){
+    if (!empty($_GET["id_eva"])) {
+        $id = $_GET["id_eva"];
+        $conexion = conexionBd();
+        $sql = $conexion->query("SELECT DISTINCT *
+        FROM seleccion_empaque_prueba where id_eva=$id;");
+        return $sql;
+    } else {   
+        $validacion = false;
+        return $validacion;
+    }
+}
 
 ?>
