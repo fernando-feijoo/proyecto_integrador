@@ -84,7 +84,7 @@
 
       const total_cluster = cluster1 + cluster2 + cluster3;
 
-      const total_ph = id_ph1 + id_ph2 + id_ph3;
+      const total_ph = (id_ph1 + id_ph2 + id_ph3)/3;
 
       const totald1 = brs1 + cc1 + lf1 + ni1 + ns1 + ps1 + sk1 + sr1 + tc1 + tf1 + yb1 + sc1 + dp1 + bre1 + sre1 + srf1 + dpe1;
       const totald2 = brs2 + cc2 + lf2 + ni2 + ns2 + ps2 + sk2 + sr2 + tc2 + tf2 + yb2 + sc2 + dp2 + bre2 + sre2 + srf2 + dpe2;
@@ -306,17 +306,9 @@
               <input id="id_totald1" class="class_totald1" type="number" value=" "
                 style="width: 203px; margin-top: 5px; margin-right:4px; margin-left:1px;" name="name_totald1">
             </div>
-
-
-
           </div>
-
         </div>
-
       </div>
-
-
-
     </div>
 
     <!-- Fila 2 -->
