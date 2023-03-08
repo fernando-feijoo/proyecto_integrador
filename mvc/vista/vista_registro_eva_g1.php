@@ -26,7 +26,7 @@ include_once "./Grupo 1/menu.php";
     include_once("./../controlador/Grupo 1/registro_gc.php");
     include_once("./../controlador/Grupo 1/registro_ld.php");
     include_once("./../controlador/Grupo 1/registro_asepcias.php");
-    
+    include_once("./../controlador/Grupo 1/registro_se.php");
     ?>
 
     <nav>
