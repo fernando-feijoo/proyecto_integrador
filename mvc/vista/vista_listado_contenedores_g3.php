@@ -63,8 +63,6 @@ include_once "./Grupo 3/menu.php";
 			</thead>
 			<tbody class="table-group-divider">
 				<?php
-
-				$sql = $conexion->query("SELECT * FROM vista_registro_contenedores");
 				while ($datos = $sql->fetch_object()) {
 				?>
 					<tr>
