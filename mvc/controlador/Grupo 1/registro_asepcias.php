@@ -198,25 +198,10 @@ if (!empty($_POST["guardar_eva"]) || !empty($_POST["actualizar_eva"])) {
         if (!empty($_POST["guardar_eva"])) {
             $sql_asepcias = $conexion->query("INSERT INTO asepcias(id, tipo, id_eva, id_datos_asepcias) VALUES ($id,'$valor',$id_eva,$num);");
         }elseif (!empty($_POST["actualizar_eva"])) {
-            //echo $id_eva. "<br>";
-            //echo $valor. "<br>";
-            //echo $num. "<br>";
             
             $sql_asepcias = $conexion->query("UPDATE asepcias SET tipo='$valor' WHERE id=$id;");
         }
     }
-
-     if (!empty($_POST["guardar_eva"]) and $sql_eva==true and $sql_asepcias==true and $sql_gc_1==true) {
-            echo "<div class='alert alert-success text-center' id='alertas' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
-            ¡Datos guardados correctamente!</div>";
-        } else if(!empty($_POST["actualizar_eva"])) {
-            echo "<div class='alert alert-success text-center' id='alertas' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
-            ¡Datos actualizados correctamente!</div>";
-           // echo"<script> window.location.href = ' vista_listado_eva_g1.php'</script>";
-        }else{
-            echo "<div class='alert alert-danger text-center' id='alertas' role='alert' style='width: 85%; margin: auto !important; margin-top: 1rem !important;'>
-            ¡Error al guardar los datos! </div>";
-        }
 
 }
 ?>

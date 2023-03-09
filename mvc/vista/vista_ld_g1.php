@@ -331,7 +331,7 @@ if (($validacion = cargar_ld1()) != false and ($validacion2 = cargar_ld2()) != f
                                                 <div class="p-2">
 
                                                         <button id="boton-calcular_ld" class="btn btn-outline-info"
-                                                                type="button" value="actualizado"
+                                                                type="button" value="actualizado" name="calcular_ld"
                                                                 style="margin-top: 30px; margin-left: 10px">Calcular</button>
                                                 </div>
                                         </div>
