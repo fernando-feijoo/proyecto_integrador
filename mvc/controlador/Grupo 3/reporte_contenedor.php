@@ -250,21 +250,21 @@ INNER JOIN cont_export con ON re.id = con.id_registro_llegada
 INNER JOIN tipo_cajas tp ON tp.id = re.id_tipo_caja 
 INNER JOIN vehiculo ve ON ve.id = re.id_vehiculo
 INNER JOIN chofer cho ON cho.id = re.id_chofer 
-WHERE re.num_contenedor = $id_reporte
+WHERE re.num_contenedor = $id_reporte");
 
-UNION ALL
 
-SELECT SUBSTRING_INDEX(SUBSTRING_INDEX(con.sellos_internos, ';', 2), ';', -1) AS sello
+
+$sql26= $conexion->query("SELECT SUBSTRING_INDEX(SUBSTRING_INDEX(con.sellos_internos, ';', 2), ';', -1) AS sell
 FROM registro_llegada re 
 INNER JOIN cont_export con ON re.id = con.id_registro_llegada
 INNER JOIN tipo_cajas tp ON tp.id = re.id_tipo_caja 
 INNER JOIN vehiculo ve ON ve.id = re.id_vehiculo
 INNER JOIN chofer cho ON cho.id = re.id_chofer 
-WHERE re.num_contenedor = $id_reporte
+WHERE re.num_contenedor = $id_reporte");
 
-UNION ALL
 
-SELECT SUBSTRING_INDEX(SUBSTRING_INDEX(con.sellos_internos, ';', 3), ';', -1) AS sello
+
+$sql25= $conexion->query ("SELECT SUBSTRING_INDEX(SUBSTRING_INDEX(con.sellos_internos, ';', 3), ';', -1) AS sell1
 FROM registro_llegada re 
 INNER JOIN cont_export con ON re.id = con.id_registro_llegada
 INNER JOIN tipo_cajas tp ON tp.id = re.id_tipo_caja 
@@ -280,21 +280,21 @@ INNER JOIN cont_export con ON re.id = con.id_registro_llegada
 INNER JOIN tipo_cajas tp ON tp.id = re.id_tipo_caja 
 INNER JOIN vehiculo ve ON ve.id = re.id_vehiculo
 INNER JOIN chofer cho ON cho.id = re.id_chofer 
-WHERE re.num_contenedor = $id_reporte
-UNION ALL
-SELECT SUBSTRING_INDEX(SUBSTRING_INDEX(con.sellos_externos, ';', 4), ';', -1) AS sello1,
-SUBSTRING_INDEX(SUBSTRING_INDEX(con.sellos_externos, ';', 5), ';', -1) AS sello2,
-SUBSTRING_INDEX(SUBSTRING_INDEX(con.sellos_externos, ';', 6), ';', -1) AS sello3
+WHERE re.num_contenedor = $id_reporte");
+
+$sql27= $conexion->query("SELECT SUBSTRING_INDEX(SUBSTRING_INDEX(con.sellos_externos, ';', 4), ';', -1) AS sello4,
+SUBSTRING_INDEX(SUBSTRING_INDEX(con.sellos_externos, ';', 5), ';', -1) AS sello5,
+SUBSTRING_INDEX(SUBSTRING_INDEX(con.sellos_externos, ';', 6), ';', -1) AS sello6
 FROM registro_llegada re 
 INNER JOIN cont_export con ON re.id = con.id_registro_llegada
 INNER JOIN tipo_cajas tp ON tp.id = re.id_tipo_caja 
 INNER JOIN vehiculo ve ON ve.id = re.id_vehiculo
 INNER JOIN chofer cho ON cho.id = re.id_chofer 
-WHERE re.num_contenedor = $id_reporte
-UNION ALL
-SELECT SUBSTRING_INDEX(SUBSTRING_INDEX(con.sellos_externos, ';', 7), ';', -1) AS sello1,
-SUBSTRING_INDEX(SUBSTRING_INDEX(con.sellos_externos, ';', 8), ';', -1) AS sello2,
-SUBSTRING_INDEX(SUBSTRING_INDEX(con.sellos_externos, ';', 9), ';', -1) AS sello3
+WHERE re.num_contenedor = $id_reporte");
+
+$sql28= $conexion->query("SELECT SUBSTRING_INDEX(SUBSTRING_INDEX(con.sellos_externos, ';', 7), ';', -1) AS sello7,
+SUBSTRING_INDEX(SUBSTRING_INDEX(con.sellos_externos, ';', 8), ';', -1) AS sello8,
+SUBSTRING_INDEX(SUBSTRING_INDEX(con.sellos_externos, ';', 9), ';', -1) AS sello9
 FROM registro_llegada re 
 INNER JOIN cont_export con ON re.id = con.id_registro_llegada
 INNER JOIN tipo_cajas tp ON tp.id = re.id_tipo_caja 
@@ -392,12 +392,14 @@ $pdf->Cell(85,5,'Sellos Internos:', 0, 0, 'L');
 $pdf->SetxY(20,49.8);
 $pdf->SetFont('Arial','',6);
 $pdf->Cell(30,5,$fila['sello'], 0, 0, 'L');
+$fila = mysqli_fetch_assoc($sql26);
 $pdf->SetxY(20,52.8);
 $pdf->SetFont('Arial','',6);
-$pdf->Cell(30,5,$fila['sello'], 0, 0, 'L');
+$pdf->Cell(30,5,$fila['sell'], 0, 0, 'L');
+$fila = mysqli_fetch_assoc($sql25);
 $pdf->SetxY(20,55.8);
 $pdf->SetFont('Arial','',6);
-$pdf->Cell(30,5,$fila['sello'], 0, 0, 'L');
+$pdf->Cell(30,5,$fila['sell1'], 0, 0, 'L');
 
 $fila = mysqli_fetch_assoc($sql24);
 $pdf->SetxY(130,47.5);
@@ -412,24 +414,26 @@ $pdf->Cell(30,5,$fila['sello2'], 0, 0, 'L');
 $pdf->SetxY(100,55.8);
 $pdf->SetFont('Arial','',6);
 $pdf->Cell(30,5,$fila['sello3'], 0, 0, 'L');
+$fila = mysqli_fetch_assoc($sql27);
 $pdf->SetxY(135,49.8);
 $pdf->SetFont('Arial','',6);
-$pdf->Cell(30,5,$fila['sello1'], 0, 0, 'L');
+$pdf->Cell(30,5,$fila['sello4'], 0, 0, 'L');
 $pdf->SetxY(135,52.8);
 $pdf->SetFont('Arial','',6);
-$pdf->Cell(30,5,$fila['sello2'], 0, 0, 'L');
+$pdf->Cell(30,5,$fila['sello5'], 0, 0, 'L');
 $pdf->SetxY(135,55.8);
 $pdf->SetFont('Arial','',6);
-$pdf->Cell(30,5,$fila['sello3'], 0, 0, 'L');
+$pdf->Cell(30,5,$fila['sello6'], 0, 0, 'L');
+$fila = mysqli_fetch_assoc($sql28);
 $pdf->SetxY(170,49.8);
 $pdf->SetFont('Arial','',6);
-$pdf->Cell(30,5,$fila['sello1'], 0, 0, 'L');
+$pdf->Cell(30,5,$fila['sello7'], 0, 0, 'L');
 $pdf->SetxY(170,52.8);
 $pdf->SetFont('Arial','',6);
-$pdf->Cell(30,5,$fila['sello2'], 0, 0, 'L');
+$pdf->Cell(30,5,$fila['sello8'], 0, 0, 'L');
 $pdf->SetxY(170,55.8);
 $pdf->SetFont('Arial','',6);
-$pdf->Cell(30,5,$fila['sello3'], 0, 0, 'L');
+$pdf->Cell(30,5,$fila['sello9'], 0, 0, 'L');
 // Fin de  DATOS Llegada
 $fila = mysqli_fetch_assoc($sql20);
 $pdf->SetFillColor(255, 255, 255); // Establecer el color de relleno del rectángulo a blanco
