@@ -83,7 +83,8 @@ if (!empty($_POST["guardar_eva"]) || !empty($_POST["actualizar_eva"])) {
     $total_cluster= ($_POST["total_cluster"] == 0) ? " " : $_POST["total_cluster"];
     $total_ph=($_POST["total_ph"] == 0) ? " " : $_POST["total_ph"];
     $total_defectos=($_POST["total_defectos"] == 0) ? " " : $_POST["total_defectos"];
-    $observacion=$_POST["name_observaciones_empaque"];
+    $promedio=round($_POST["porcentaje"],2);
+    $observacion=strtoupper($_POST["name_observaciones_empaque"]);
     $conexion = conexionBd();
 
     if (!empty($_POST["guardar_eva"])) {
@@ -97,7 +98,7 @@ if (!empty($_POST["guardar_eva"]) || !empty($_POST["actualizar_eva"])) {
         VALUES ('$name_peso3','$name_cluster3','$name_ph3','$name_brs3','$name_cc3','$name_ct3','$name_lf3','$name_ni3','$name_ns3','$name_ps3','$name_sk3','$name_sr3','$name_tc3','$name_tf3','$name_yb3','$name_sc3','$name_dp3','$name_bre3','$name_sre3','$name_srf3','$name_dpe3','$total_def3',$id_eva)");
     
         $sql4=$conexion->query("INSERT INTO datos_se(id, total_cluster, total_ph, total_defectos, promedio_tot, observacion, id_eva) 
-        VALUES ($id,$total_cluster,$total_ph,$total_defectos,15.2,'$observacion',$id_eva)");   
+        VALUES ($id,$total_cluster,$total_ph,$total_defectos,$promedio,'$observacion',$id_eva)");   
     }elseif (!empty($_POST["actualizar_eva"])) {
         $id_act1=($id_eva*3)-3+1;
         $id_act2=($id_eva*3)-3+2;
@@ -120,7 +121,7 @@ if (!empty($_POST["guardar_eva"]) || !empty($_POST["actualizar_eva"])) {
         sel_ns='$name_ns3',sel_ps='$name_ps3',sel_sk='$name_sk3',sel_sr='$name_sr3',sel_tc='$name_tc3',sel_tf='$name_tf3',
         sel_yb='$name_yb3',sel_sc='$name_sc3',sel_dp='$name_dp3',emp_br='$name_bre3',emp_sr='$name_sre3',emp_srf='$name_srf3',emp_dp='$name_dpe3',tot_fila='$total_def3' WHERE id=$id_act3;");
 
-        $sql8=$conexion->query("UPDATE datos_se SET total_cluster='$total_cluster',total_ph='$total_ph',total_defectos='$total_defectos',promedio_tot=25,observacion='$observacion' WHERE id_eva=$id_eva");
+        $sql8=$conexion->query("UPDATE datos_se SET total_cluster='$total_cluster',total_ph='$total_ph',total_defectos='$total_defectos',promedio_tot=$promedio,observacion='$observacion' WHERE id_eva=$id_eva");
     }
 
     if (!empty($_POST["guardar_eva"]) and $sql_eva==true and $sql_asepcias==true and $sql_gc_1==true and $sql_ld1==true and $sql1==true and $sql4==true) {

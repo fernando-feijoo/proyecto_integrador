@@ -91,7 +91,12 @@
       const totald3 = brs3 + cc3 + lf3 + ni3 + ns3 + ps3 + sk3 + sr3 + tc3 + tf3 + yb3 + sc3 + dp3 + bre3 + sre3 + srf3 + dpe3;
 
       const total_defectos = totald1 + totald2 + totald3;
-      //
+      
+      const porcentaje = (total_defectos*100)/60;
+      const porcentaje2 = (100-porcentaje);
+      const promedio= (porcentaje2/100);
+      
+
       document.querySelector('#id_total_cluster').value = total_cluster;
 
       document.querySelector('#id_totald1').value = totald1;
@@ -101,6 +106,9 @@
       document.querySelector('#id_total_defectos').value = total_defectos;
 
       document.querySelector('#id_total_ph').value = total_ph;
+
+      document.querySelector('#id_defectos_porcentaje').value = promedio;
+      
     });
   });
 </script>
@@ -574,8 +582,8 @@ if (($validacion = cargar_se_datos()) != false and ($valiacion = cargar_se()) !=
       </div>
 
       <div class="total_defectos_porcentaje">
-        <input id="id_defectos_porcentaje" class="class_defectos_porcentaje" type="number" value="<?=$fila1->promedio_tot?>"
-          style="width: 202px; margin-top: 5px; margin-left:930px;" name="name_defectos_porcentaje">
+        <input id="id_defectos_porcentaje" class="class_defectos_porcentaje" type="text" value="<?=$fila1->promedio_tot?>"
+          style="width: 202px; margin-top: 5px; margin-left:930px;" name="porcentaje">
       </div>
 
     </div>
@@ -953,8 +961,8 @@ if (($validacion = cargar_se_datos()) != false and ($valiacion = cargar_se()) !=
       </div>
 
       <div class="total_defectos_porcentaje">
-        <input id="id_defectos_porcentaje" class="class_defectos_porcentaje" type="number" value=" "
-          style="width: 202px; margin-top: 5px; margin-left:930px;" name="name_defectos_porcentaje">
+        <input id="id_defectos_porcentaje" class="class_defectos_porcentaje" type="text" value=" "
+          style="width: 202px; margin-top: 5px; margin-left:930px;" name="porcentaje">
       </div>
 
     </div>
