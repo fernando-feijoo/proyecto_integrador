@@ -50,7 +50,7 @@ function Header()
      $this->SetY(5);
     $this->SetX(183);
     $this->SetFont('Arial', 'B', 6);
-    $this->Cell(89, 8, utf8_decode('(16 MAR 2023)'), 0, 1);
+    $this->Cell(89, 8, utf8_decode('(16 NOV 2018)'), 0, 1);
 
 
 
@@ -66,7 +66,7 @@ function Header()
     $this->SetY(10);
     $this->SetX(183);
     $this->SetFont('Arial', 'B', 6);
-    $this->Cell(89, 8, utf8_decode('(16 MAR 2023) '), 0, 1);
+    $this->Cell(89, 8, utf8_decode('(16 NOV 2018) '), 0, 1);
 
 
 
@@ -138,8 +138,8 @@ WHERE re.num_contenedor = $id_reporte");
 
 $sql2= $conexion->query("SELECT li.opciones, 
 CASE hi.opcion 
-     WHEN 1 THEN 'si' 
-     WHEN 0 THEN 'no' 
+     WHEN 1 THEN 'SI' 
+     WHEN 0 THEN 'NO' 
      ELSE '' 
 END AS opcion 
 FROM registro_llegada re 
@@ -320,7 +320,7 @@ $pdf->SetFont('Arial','B',10);
 $pdf->Cell(85,5,'Control Despacho', 0, 0, 'L');
 $pdf->SetY(29);
 $pdf->SetFillColor(255, 255, 255); // Establecer el color de relleno del rectángulo a blanco
-$pdf->Rect(10, 29,190, 30.9, 'D'); // Crear un rectángulo con bordes en la posición (10,30) con una anchura de 70 y una altura de 10 unidades
+$pdf->Rect(10, 29, 190, 31.4, 'D'); // Crear un rectángulo con bordes en la posición (10,30) con una anchura de 70 y una altura de 10 unidades
 
 $pdf->SetFont('Arial','B',6);
 $pdf->SetXY(10, 29); // Establecer la posición del cursor en (12,32)
@@ -382,7 +382,7 @@ $pdf->SetFont('Arial','',6);
 $pdf->Cell(30,5,utf8_decode($fila['nombre_acopio']), 0, 0, 'L');
 $pdf->SetY(44);
 $pdf->SetFont('Arial','B',6);
-$pdf->Cell(85,5,'Candado:', 0, 0, 'L');
+$pdf->Cell(15,5,'Candado:', 0, 0, 'L');
 $pdf->SetFont('Arial','',6);
 $pdf->Cell(30,5,utf8_decode($fila['candados']), 0, 0, 'L');
 $fila = mysqli_fetch_assoc($sql23);
@@ -437,8 +437,8 @@ $pdf->Cell(30,5,utf8_decode($fila['sello9']), 0, 0, 'L');
 // Fin de  DATOS Llegada
 $fila = mysqli_fetch_assoc($sql20);
 $pdf->SetFillColor(255, 255, 255); // Establecer el color de relleno del rectángulo a blanco
-$pdf->Rect(10, 113,190, 6, 'D');
-$pdf->SetXY(10,113.5);
+$pdf->Rect(10, 114.5,190, 6, 'D');
+$pdf->SetXY(10,115);
 $pdf->SetFont('Arial','B',10);
 $pdf->Cell(30,5,utf8_decode('Observación:'), 0, 0, 'L');
 $pdf->SetFont('Arial','',8);
@@ -446,9 +446,44 @@ $pdf->Cell(50,5,utf8_decode($fila['Observacion']), 0, 0, 'L');
 
 $pdf->SetxY(85,60);
 $pdf->SetFillColor(255, 255, 255); // Establecer el color de relleno del rectángulo a blanco
-$pdf->Rect(10, 60,190, 5, 'D');
+$pdf->Rect(10, 60.5,190, 5, 'D');
 $pdf->SetFont('Arial','B',10);
 $pdf->Cell(85,5,'Inspeccion Contenedor', 0, 0, 'L');
+
+
+//Numeros de tabla:
+
+$separacionCeldas = 70.5;
+$aumentoSalto = 4;
+
+
+$pdf->SetFillColor(255, 255, 255); // Establecer el color de relleno del rectángulo a blanco
+$pdf->Rect(10, 70.5, 6, 44, 'D');
+$pdf->SetxY(10.2,$separacionCeldas);
+$pdf->SetFont('Arial','',8);
+$pdf->Cell(6, 4, '1', 0, 0, 'C');
+$pdf->SetxY(10.2,($separacionCeldas + $aumentoSalto));
+$pdf->Cell(6, 4, '2', 0, 0, 'C');
+$pdf->SetxY(10.2,($separacionCeldas + ($aumentoSalto * 2)));
+$pdf->Cell(6, 4, '3', 0, 0, 'C');
+$pdf->SetxY(10.2,($separacionCeldas + ($aumentoSalto * 3)));
+$pdf->Cell(6, 4, '4', 0, 0, 'C');
+$pdf->SetxY(10.2,($separacionCeldas + ($aumentoSalto * 4)));
+$pdf->Cell(6, 4, '5', 0, 0, 'C');
+$pdf->SetxY(10.2,($separacionCeldas + ($aumentoSalto * 5)));
+$pdf->Cell(6, 4, '6', 0, 0, 'C');
+$pdf->SetxY(10.2,($separacionCeldas + ($aumentoSalto * 6)));
+$pdf->Cell(6, 4, '7', 0, 0, 'C');
+$pdf->SetxY(10.2,($separacionCeldas + ($aumentoSalto * 7)));
+$pdf->Cell(6, 4, '8', 0, 0, 'C');
+$pdf->SetxY(10.2,($separacionCeldas + ($aumentoSalto * 8)));
+$pdf->Cell(6, 4, '9', 0, 0, 'C');
+$pdf->SetxY(10.2,($separacionCeldas + ($aumentoSalto * 9)));
+$pdf->Cell(6, 4, '10', 0, 0, 'C');
+$pdf->SetxY(10.2,($separacionCeldas + ($aumentoSalto * 10)));
+$pdf->Cell(6, 4, '11', 0, 0, 'C');
+$pdf->SetxY(10.2,($separacionCeldas + ($aumentoSalto * 11)));
+
 
 // Dibuja una línea sólida en la parte derecha de la imagen
 $lineLength = 10; // longitud de la línea en milímetros
@@ -457,10 +492,10 @@ $posY = 60; // posición Y en la parte superior de la imagen
 $pdf->Line($posX, $posY, $posX, $posY + 55.5); // dibuja la línea
 
 $pdf->Image('./../../../img/ContenedorNuevo.png',95.8,66,105,46.5);
-$pdf->SetY(65);
+$pdf->SetY(65.5);
 $pdf->SetFont('Arial', 'B', 10);
-$pdf->Cell(55, 4, utf8_decode('LUGAR'), 1, 0, 'C', 0);
-$pdf->Cell(30, 4, utf8_decode('VERIFCACIÓN'), 1, 0, 'C', 0);
+$pdf->Cell(55, 5, utf8_decode('LUGAR'), 1, 0, 'C', 0);
+$pdf->Cell(30, 5, utf8_decode('VERIFCACIÓN'), 1, 0, 'C', 0);
 $pdf->Ln();
 $pdf->SetFont('Arial', '', 7);
 while ($fila = mysqli_fetch_assoc($sql1)) {
@@ -474,22 +509,22 @@ while ($fila = mysqli_fetch_assoc($sql1)) {
 
 $fila = mysqli_fetch_assoc($sql21);
 $pdf->SetFillColor(255, 255, 255); // Establecer el color de relleno del rectángulo a blanco
-$pdf->Rect(10, 144,190, 6, 'D');
-$pdf->SetXY(10,144.5);
+$pdf->Rect(10, 146.5,190, 6, 'D');
+$pdf->SetXY(10,147);
 $pdf->SetFont('Arial','B',10);
 $pdf->Cell(30,5,utf8_decode('Observación:'), 0, 0, 'L');
 $pdf->SetFont('Arial','',8);
 $pdf->Cell(50,5,utf8_decode($fila['observacion']), 0, 0, 'L');
 
-$pdf->SetxY(85,119);
+$pdf->SetxY(85,120.5);
 $pdf->SetFillColor(255, 255, 255); // Establecer el color de relleno del rectángulo a blanco
-$pdf->Rect(10, 119,190, 5, 'D');
+$pdf->Rect(10, 120.5,190, 5, 'D');
 $pdf->SetFont('Arial','B',10);
 $pdf->Cell(85,5,'Higiene Contenedor', 0, 0, 'L');
-$pdf->SetY(124);
+$pdf->SetY(125.5);
 $pdf->SetFont('Arial', 'B', 10);
-$pdf->Cell(70, 4, utf8_decode('OPCIONES'), 1, 0, 'C', 0);
-$pdf->Cell(25, 4, utf8_decode('VERIFCACIÓN'), 1, 0, 'C', 0);
+$pdf->Cell(70, 5, utf8_decode('OPCIONES'), 1, 0, 'C', 0);
+$pdf->Cell(25, 5, utf8_decode('VERIFCACIÓN'), 1, 0, 'C', 0);
 $pdf->Ln();
 $pdf->SetFont('Arial', '', 7);
 while ($fila = mysqli_fetch_assoc($sql2)) {
@@ -498,10 +533,10 @@ while ($fila = mysqli_fetch_assoc($sql2)) {
     $pdf->Cell(25,4,utf8_decode($fila['opcion']), 1, 1, 'C');
 }
 
-$pdf->SetxY(105,124);
+$pdf->SetxY(105,125.5);
 $pdf->SetFont('Arial', 'B', 10);
-$pdf->Cell(70, 4, utf8_decode('OPCIONES'), 1, 0, 'C', 0);
-$pdf->Cell(25, 4, utf8_decode('VERIFCACIÓN'), 1, 0, 'C', 0);
+$pdf->Cell(70, 5, utf8_decode('OPCIONES'), 1, 0, 'C', 0);
+$pdf->Cell(25, 5, utf8_decode('VERIFCACIÓN'), 1, 0, 'C', 0);
 $pdf->Ln();
 $pdf->SetFont('Arial', '', 7);
 while ($fila = mysqli_fetch_assoc($sql4)) {
@@ -514,117 +549,141 @@ while ($fila = mysqli_fetch_assoc($sql4)) {
 // Fin Higiene contenedor
 
 $fila = mysqli_fetch_assoc($sql3);
-$pdf->SetxY(85,150);
+$pdf->SetxY(85,152.5);
 $pdf->SetFillColor(255, 255, 255); // Establecer el color de relleno del rectángulo a blanco
-$pdf->Rect(10, 150,190, 5, 'D');
+$pdf->Rect(10, 152.5,190, 5, 'D');
 $pdf->SetFont('Arial','B',10);
 $pdf->Cell(85,5,'Control Despacho', 0, 0, 'L');
-$pdf->SetFillColor(255, 255, 255); // Establecer el color de relleno del rectángulo a blanco
-$pdf->Rect(10, 155,190, 30, 'D');
-$pdf->SetY(156);
+$pdf->SetFillColor(255, 255, 255);
+ // Establecer el color de relleno del rectángulo a blanco
+$pdf->Rect(10, 157.5,190, 30, 'D');
+
+$alineacionADespacho = 158.5;
+
+$pdf->SetY($alineacionADespacho);
 $pdf->SetFont('Arial','B',6);
 $pdf->Cell(15,5,'Filtro:', 0, 0, 'L');
 $pdf->SetFont('Arial','',6);
 $pdf->Cell(40,5,$fila['filtro'], 0, 0, 'L');
-$pdf->SetXY(40,156);
+$pdf->SetXY(40,$alineacionADespacho);
 $pdf->SetFont('Arial','B',6);
 $pdf->Cell(25,5,'Termografo:', 0, 0, 'L');
 $pdf->SetFont('Arial','',6);
 $pdf->Cell(25,5,utf8_decode($fila['termografo']), 0, 0, 'L');
-$pdf->SetXY(85,156);
+$pdf->SetXY(85,$alineacionADespacho);
 $pdf->SetFont('Arial','B',6);
-$pdf->Cell(20,5,'Termografo#::', 0, 0, 'L');
+$pdf->Cell(20,5,'Termografo#:', 0, 0, 'L');
 $pdf->SetFont('Arial','',6);
 $pdf->Cell(25,5,utf8_decode($fila['termografo_numero']), 0, 0, 'L');
-$pdf->SetXY(125,156);
+$pdf->SetXY(125,$alineacionADespacho);
 $pdf->SetFont('Arial','B',6);
 $pdf->Cell(25,5,'Sello Adhesivo:', 0, 0, 'L');
 $pdf->SetFont('Arial','',6);
 $pdf->Cell(55,5,utf8_decode($fila['sello_adhesivo']), 0, 0, 'L');
-$pdf->SetY(161);
+
+$alineacionADespacho = 163.5;
+
+$pdf->SetY($alineacionADespacho);
 $pdf->SetFont('Arial','B',6);
-$pdf->Cell(30,5,'Sello Verificador:', 0, 0, 'L');
+$pdf->Cell(30,5,'Sello Verificadora:', 0, 0, 'L');
 $pdf->SetFont('Arial','',6);
 $pdf->Cell(50,5,utf8_decode($fila['sello_verificador']), 0, 0, 'L');
-$pdf->SetXY(85,161);
+$pdf->SetXY(85,$alineacionADespacho);
 $pdf->SetFont('Arial','B',6);
 $pdf->Cell(55,5,'Sello Exportador Candado:', 0, 0, 'L');
 $pdf->SetFont('Arial','',6);
 $pdf->Cell(35,5,utf8_decode($fila['sello_exp_candado']), 0, 0, 'L');
-$pdf->SetY(166);
+
+$alineacionADespacho = 168.5;
+
+$pdf->SetY($alineacionADespacho);
 $pdf->SetFont('Arial','B',6);
-$pdf->Cell(30,5,'Fecha Hora Salida:', 0, 0, 'L');
+$pdf->Cell(30,5,'Fecha y Hora Salida:', 0, 0, 'L');
 $pdf->SetFont('Arial','',6);
 $pdf->Cell(30,5,utf8_decode($fila['fecha_hora_salida']), 0, 0, 'L');
-$pdf->SetXY(65,166);
+$pdf->SetXY(65,$alineacionADespacho);
 $pdf->SetFont('Arial','B',6);
 $pdf->Cell(25,5,'Sello Exportador Cable:', 0, 0, 'L');
 $pdf->SetFont('Arial','',6);
 $pdf->Cell(45,5,utf8_decode($fila['sello_exp_cable']), 0, 0, 'L');
-$pdf->SetXY(115,166);
+$pdf->SetXY(115,$alineacionADespacho);
 $pdf->SetFont('Arial','B',6);
 $pdf->Cell(28,5,utf8_decode('Compañia Transportista:'), 0, 0, 'L');
 $pdf->SetFont('Arial','',6);
 $pdf->Cell(60,5,utf8_decode($fila['compania_transportista']), 0, 0, 'L');
-$pdf->SetY(171);
+
+$alineacionADespacho = 173.5;
+
+$pdf->SetY($alineacionADespacho);
 $pdf->SetFont('Arial','B',6);
-$pdf->Cell(15,5,'Sello Naviero:', 0, 0, 'L');
+$pdf->Cell(18,5,'Sello Naviero:', 0, 0, 'L');
 $pdf->SetFont('Arial','',6);
 $pdf->Cell(35,5,utf8_decode($fila['sello_naviero']), 0, 0, 'L');
-$pdf->SetXY(50,171);
+$pdf->SetXY(85,$alineacionADespacho);
 $pdf->SetFont('Arial','B',6);
-$pdf->Cell(10,5,'Vapor:', 0, 0, 'L');
+$pdf->Cell(7,5,'Vapor:', 0, 0, 'L');
 $pdf->SetFont('Arial','',6);
 $pdf->Cell(40,5,utf8_decode($fila['vapor']), 0, 0, 'L');
-$pdf->SetXY(80,171);
+$pdf->SetXY(125,$alineacionADespacho);
 $pdf->SetFont('Arial','B',6);
 $pdf->Cell(10,5,'Destino:', 0, 0, 'L');
 $pdf->SetFont('Arial','',6);
 $pdf->Cell(30,5,utf8_decode($fila['destino']), 0, 0, 'L');
-$pdf->SetXY(100,171);
+
+
+$pdf->SetXY(10,($alineacionADespacho+4.5));
 $pdf->SetFont('Arial','B',6);
-$pdf->Cell(25,5,'Nombre Paletizador:');
+$pdf->Cell(30,5,'Nombre de Paletizadores:');
 $pdf->SetFont('Arial','',6);
 $pdf->Cell(45,5,utf8_decode($fila['nombres_paletizadores']), 0, 0, 'L');
-$pdf->SetY(176);
+
+$alineacionADespacho = 180.5 + 2.5;
+
+$pdf->SetY($alineacionADespacho);
 $pdf->SetFont('Arial','B',6);
-$pdf->Cell(15,5,'Total a Viajar::', 0, 0, 'L');
+$pdf->Cell(15,5,'Total a Viajar:', 0, 0, 'L');
 $pdf->SetFont('Arial','',6);
 $pdf->Cell(30,5,utf8_decode($fila['total_viajar']), 0, 0, 'L');
-$pdf->SetXY(35,176);
+$pdf->SetXY(35,$alineacionADespacho);
 $pdf->SetFont('Arial','B',6);
-$pdf->Cell(10,5,'Cajas:', 0, 0, 'L');
+$pdf->Cell(8,5,'Cajas:', 0, 0, 'L');
 $pdf->SetFont('Arial','',6);
 $pdf->Cell(30,5,utf8_decode($fila['cajas']), 0, 0, 'L');
-$pdf->SetXY(55,176);
+$pdf->SetXY(55,$alineacionADespacho);
 $pdf->SetFont('Arial','B',6);
-$pdf->Cell(15,5,'Cantidad Palet:', 0, 0, 'L');
+$pdf->Cell(16,5,'Cantidad Palet:', 0, 0, 'L');
 $pdf->SetFont('Arial','',6);
 $pdf->Cell(30,5,utf8_decode($fila['cantidad_palet']), 0, 0, 'L');
-$pdf->SetXY(80,176);
+$pdf->SetXY(80,$alineacionADespacho);
 $pdf->SetFont('Arial','B',6);
-$pdf->Cell(20,5,utf8_decode('Observación:'), 0, 0, 'L');
+$pdf->Cell(14,5,utf8_decode('Observación:'), 0, 0, 'L');
 $pdf->SetFont('Arial','',6);
 $pdf->Cell(50,5,utf8_decode($fila['observacion_despacho']), 0, 0, 'L');
 // completo despacho
 
 
+// Para controlar el alto de las celdas:
+
+$altoCeldaPallet = 3.5;
+$alineacionAPallet = 192.5;
+
+
 $fila = mysqli_fetch_assoc($sql22);
 $pdf->SetFillColor(255, 255, 255); // Establecer el color de relleno del rectángulo a blanco
-$pdf->Rect(10, 204,190, 6, 'D');
-$pdf->SetXY(10,204.5);
+$pdf->Rect(10, 214, 190, 6, 'D');
+$pdf->SetXY(10,214);
 $pdf->SetFont('Arial','B',10);
 $pdf->Cell(30,5,utf8_decode('Observación:'), 0, 0, 'L');
 $pdf->SetFont('Arial','',8);
 $pdf->Cell(50,5,utf8_decode($fila['observacion']), 0, 0, 'L');
 
-$pdf->SetxY(90,180);
+$pdf->SetxY(90,187.5);
 $pdf->SetFillColor(255, 255, 255); // Establecer el color de relleno del rectángulo a blanco
-$pdf->Rect(10, 180,190, 5, 'D');
+$pdf->Rect(10, 187.5,190, 5, 'D');
 $pdf->SetFont('Arial','B',10);
 $pdf->Cell(85,5,'Control Pallet', 0, 0, 'L');
 
-$pdf->SetxY(10,185);
+$pdf->SetxY(10,$alineacionAPallet);
 $pdf->SetFont('Arial', 'B', 9);
 $pdf->Cell(15, 4, utf8_decode('Pallet'), 1, 0, 'C', 0);
 $pdf->Cell(15, 4, utf8_decode('Codigo'), 1, 0, 'C', 0);
@@ -634,12 +693,12 @@ $pdf->SetFont('Arial', '', 7);
 while ($fila = mysqli_fetch_assoc($sql5)) {
     $pdf->SetX(10);
     // Agregar los datos de la fila a la página
-    $pdf->Cell(15,3,$fila['Pallet'], 1, 0, 'C');
-    $pdf->Cell(15,3,$fila['Codigo'], 1, 0, 'C');
-    $pdf->Cell(15,3,$fila['Cajas'], 1, 1, 'C');
+    $pdf->Cell(15,$altoCeldaPallet,$fila['Pallet'], 1, 0, 'C');
+    $pdf->Cell(15,$altoCeldaPallet,$fila['Codigo'], 1, 0, 'C');
+    $pdf->Cell(15,$altoCeldaPallet,$fila['Cajas'], 1, 1, 'C');
 }
 
-$pdf->SetxY(57,185);
+$pdf->SetxY(57,$alineacionAPallet);
 $pdf->SetFont('Arial', 'B', 9);
 $pdf->Cell(15, 4, utf8_decode('Pallet'), 1, 0, 'C', 0);
 $pdf->Cell(15, 4, utf8_decode('Codigo'), 1, 0, 'C', 0);
@@ -649,11 +708,11 @@ $pdf->SetFont('Arial', '', 7);
 while ($fila = mysqli_fetch_assoc($sql6)) {
     $pdf->SetX(57);
     // Agregar los datos de la fila a la página
-    $pdf->Cell(15,3,$fila['Pallet'], 1, 0, 'C');
-    $pdf->Cell(15,3,$fila['Codigo'], 1, 0, 'C');
-    $pdf->Cell(15,3,$fila['Cajas'], 1, 1, 'C');
+    $pdf->Cell(15,$altoCeldaPallet,$fila['Pallet'], 1, 0, 'C');
+    $pdf->Cell(15,$altoCeldaPallet,$fila['Codigo'], 1, 0, 'C');
+    $pdf->Cell(15,$altoCeldaPallet,$fila['Cajas'], 1, 1, 'C');
 }
-$pdf->SetxY(105,185);
+$pdf->SetxY(105,$alineacionAPallet);
 $pdf->SetFont('Arial', 'B', 9);
 $pdf->Cell(15, 4, utf8_decode('Pallet'), 1, 0, 'C', 0);
 $pdf->Cell(15, 4, utf8_decode('Codigo'), 1, 0, 'C', 0);
@@ -663,12 +722,12 @@ $pdf->SetFont('Arial', '', 7);
 while ($fila = mysqli_fetch_assoc($sql7)) {
     $pdf->SetX(105);
     // Agregar los datos de la fila a la página
-    $pdf->Cell(15,3,$fila['Pallet'], 1, 0, 'C');
-    $pdf->Cell(15,3,$fila['Codigo'], 1, 0, 'C');
-    $pdf->Cell(15,3,$fila['Cajas'], 1, 1, 'C');
+    $pdf->Cell(15,$altoCeldaPallet,$fila['Pallet'], 1, 0, 'C');
+    $pdf->Cell(15,$altoCeldaPallet,$fila['Codigo'], 1, 0, 'C');
+    $pdf->Cell(15,$altoCeldaPallet,$fila['Cajas'], 1, 1, 'C');
 }
 
-$pdf->SetxY(155,185);
+$pdf->SetxY(155,$alineacionAPallet);
 $pdf->SetFont('Arial', 'B', 9);
 $pdf->Cell(15, 4, utf8_decode('Pallet'), 1, 0, 'C', 0);
 $pdf->Cell(15, 4, utf8_decode('Codigo'), 1, 0, 'C', 0);
@@ -678,9 +737,9 @@ $pdf->SetFont('Arial', '', 7);
 while ($fila = mysqli_fetch_assoc($sql8)) {
     $pdf->SetX(155);
     // Agregar los datos de la fila a la página
-    $pdf->Cell(15,3,$fila['Pallet'], 1, 0, 'C');
-    $pdf->Cell(15,3,$fila['Codigo'], 1, 0, 'C');
-    $pdf->Cell(15,3,$fila['Cajas'], 1, 1, 'C');
+    $pdf->Cell(15,$altoCeldaPallet,$fila['Pallet'], 1, 0, 'C');
+    $pdf->Cell(15,$altoCeldaPallet,$fila['Codigo'], 1, 0, 'C');
+    $pdf->Cell(15,$altoCeldaPallet,$fila['Cajas'], 1, 1, 'C');
 }
 
 //FINALIZADO CONTROL PALLET
