@@ -129,7 +129,7 @@ from registro_llegada re inner join  cont_export con on re.id=con.id_registro_ll
 inner join vehiculo ve on ve.id=re.id_vehiculo  inner join chofer cho on cho.id=re.id_chofer where re.num_contenedor=$id_reporte");
 
 $sql1 = $conexion->query("SELECT ve.lugar,
-IF(ins.verificacion = 1, 'V', 'X') AS verificacion
+IF(ins.verificacion = 1, 'X', '') AS verificacion
 FROM registro_llegada re 
 INNER JOIN cont_export con ON re.id = con.id_registro_llegada 
 INNER JOIN inspeccion_contenedor ins ON con.id = ins.id_cont_export 
@@ -522,12 +522,12 @@ $pdf->SetFont('Arial','',6);
 $pdf->Cell(25,5,$fila['termografo'], 0, 0, 'L');
 $pdf->SetXY(85,156);
 $pdf->SetFont('Arial','B',6);
-$pdf->Cell(30,5,'Termografo#::', 0, 0, 'L');
+$pdf->Cell(20,5,'Termografo#::', 0, 0, 'L');
 $pdf->SetFont('Arial','',6);
-$pdf->Cell(25,5,$fila['termografo_numero'], 0, 0, 'L');
-$pdf->SetXY(150,156);
+$pdf->Cell(25,5,utf8_decode($fila['termografo_numero']), 0, 0, 'L');
+$pdf->SetXY(125,156);
 $pdf->SetFont('Arial','B',6);
-$pdf->Cell(30,5,'Sello Adhesivo:', 0, 0, 'L');
+$pdf->Cell(25,5,'Sello Adhesivo:', 0, 0, 'L');
 $pdf->SetFont('Arial','',6);
 $pdf->Cell(55,5,$fila['sello_adhesivo'], 0, 0, 'L');
 $pdf->SetY(161);
@@ -545,22 +545,22 @@ $pdf->SetFont('Arial','B',6);
 $pdf->Cell(30,5,'Fecha Hora Salida:', 0, 0, 'L');
 $pdf->SetFont('Arial','',6);
 $pdf->Cell(30,5,$fila['fecha_hora_salida'], 0, 0, 'L');
-$pdf->SetXY(85,166);
+$pdf->SetXY(65,166);
 $pdf->SetFont('Arial','B',6);
-$pdf->Cell(30,5,'Sello Exportador Cable:', 0, 0, 'L');
+$pdf->Cell(25,5,'Sello Exportador Cable:', 0, 0, 'L');
 $pdf->SetFont('Arial','',6);
 $pdf->Cell(45,5,$fila['sello_exp_cable'], 0, 0, 'L');
-$pdf->SetXY(140,166);
+$pdf->SetXY(115,166);
 $pdf->SetFont('Arial','B',6);
-$pdf->Cell(30,5,utf8_decode('Compañia Transportista:'), 0, 0, 'L');
+$pdf->Cell(28,5,utf8_decode('Compañia Transportista:'), 0, 0, 'L');
 $pdf->SetFont('Arial','',6);
 $pdf->Cell(60,5,$fila['compania_transportista'], 0, 0, 'L');
 $pdf->SetY(171);
 $pdf->SetFont('Arial','B',6);
-$pdf->Cell(20,5,'Sello Naviero:', 0, 0, 'L');
+$pdf->Cell(15,5,'Sello Naviero:', 0, 0, 'L');
 $pdf->SetFont('Arial','',6);
 $pdf->Cell(35,5,$fila['sello_naviero'], 0, 0, 'L');
-$pdf->SetXY(55,171);
+$pdf->SetXY(50,171);
 $pdf->SetFont('Arial','B',6);
 $pdf->Cell(10,5,'Vapor:', 0, 0, 'L');
 $pdf->SetFont('Arial','',6);
@@ -577,22 +577,22 @@ $pdf->SetFont('Arial','',6);
 $pdf->Cell(45,5,$fila['nombres_paletizadores'], 0, 0, 'L');
 $pdf->SetY(176);
 $pdf->SetFont('Arial','B',6);
-$pdf->Cell(31,5,'Total a Viajar::', 0, 0, 'L');
+$pdf->Cell(15,5,'Total a Viajar::', 0, 0, 'L');
 $pdf->SetFont('Arial','',6);
 $pdf->Cell(30,5,$fila['total_viajar'], 0, 0, 'L');
-$pdf->SetXY(64,176);
+$pdf->SetXY(35,176);
 $pdf->SetFont('Arial','B',6);
-$pdf->Cell(15,5,'Cajas:', 0, 0, 'L');
+$pdf->Cell(10,5,'Cajas:', 0, 0, 'L');
 $pdf->SetFont('Arial','',6);
 $pdf->Cell(30,5,$fila['cajas'], 0, 0, 'L');
-$pdf->SetXY(90,176);
+$pdf->SetXY(55,176);
 $pdf->SetFont('Arial','B',6);
-$pdf->Cell(25,5,'Cantidad Palet:', 0, 0, 'L');
+$pdf->Cell(15,5,'Cantidad Palet:', 0, 0, 'L');
 $pdf->SetFont('Arial','',6);
 $pdf->Cell(30,5,$fila['cantidad_palet'], 0, 0, 'L');
-$pdf->SetXY(125,176);
+$pdf->SetXY(80,176);
 $pdf->SetFont('Arial','B',6);
-$pdf->Cell(30,5,utf8_decode('Observación:'), 0, 0, 'L');
+$pdf->Cell(20,5,utf8_decode('Observación:'), 0, 0, 'L');
 $pdf->SetFont('Arial','',6);
 $pdf->Cell(50,5,$fila['observacion_despacho'], 0, 0, 'L');
 // completo despacho
