@@ -81,7 +81,7 @@ if (($valiacion = cargar_dato_inpeccion()) != false) {
 					</tr>
 				</tbody>
 			</table>
-			<img class="foto2" src="../../img/Contenedor.png" />
+			<img class="img-fluid" src="../../img/ContenedorNuevo.png" style="width: 350px !important;"/>
 		</div>
 		<div class="text-start fs-5 fw-semibold mt-4">
 			Observaciones:
@@ -165,7 +165,7 @@ if (($valiacion = cargar_dato_inpeccion()) != false) {
 					</tr>
 				</tbody>
 			</table>
-			<img class="foto2" src="../../img/Contenedor.png" />
+			<img class="img-fluid" src="../../img/ContenedorNuevo.png" style="width: 550px; height: 415px;"/>
 		</div>
 		<div class="text-start fs-5 fw-semibold mt-4">
 			Observaciones:

@@ -449,7 +449,14 @@ $pdf->SetFillColor(255, 255, 255); // Establecer el color de relleno del rectán
 $pdf->Rect(10, 60,190, 5, 'D');
 $pdf->SetFont('Arial','B',10);
 $pdf->Cell(85,5,'Inspeccion Contenedor', 0, 0, 'L');
-$pdf->Image('./../../../img/Contenedor.png',95.8,66,105,46.5);
+
+// Dibuja una línea sólida en la parte derecha de la imagen
+$lineLength = 10; // longitud de la línea en milímetros
+$posX = 95.8 + 114.2 - $lineLength; // posición X en la parte derecha de la imagen
+$posY = 60; // posición Y en la parte superior de la imagen
+$pdf->Line($posX, $posY, $posX, $posY + 55.5); // dibuja la línea
+
+$pdf->Image('./../../../img/ContenedorNuevo.png',95.8,66,105,46.5);
 $pdf->SetY(65);
 $pdf->SetFont('Arial', 'B', 10);
 $pdf->Cell(55, 4, utf8_decode('LUGAR'), 1, 0, 'C', 0);
