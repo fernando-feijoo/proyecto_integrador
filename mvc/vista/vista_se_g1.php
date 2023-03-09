@@ -194,10 +194,400 @@
             </table>
           </td>
         </tr>
-      </tbody>
+      </tbody>      
     </table>
 
+    <?php
+if (($validacion = cargar_se_datos()) != false and ($valiacion = cargar_se()) != false) {
+  $sql = cargar_se();
+  $se = array();
 
+  $sql_se_d = cargar_se_datos();
+  while ($carga_datos = mysqli_fetch_assoc($sql)) {
+    $se[] = $carga_datos;
+  }
+  while ($fila1 = $sql_se_d->fetch_object()) {
+
+  ?>
+   <!--  peso,cluster,ph-->
+   <div class="menu1 d-flex">
+      <div class="peso1">
+        <input id="id_peso1" class="class_peso1" type="number" value="<?php echo $se[0]['peso_neto_caja']?>"
+          style="width: 58px; margin-top: 5px; margin-right:3px;" name="name_peso1">
+      </div>
+
+      <div class="cluster1">
+        <input id="id_cluster1" class="class_cluster1" type="number" value="<?php echo $se[0]['cluster_caja']?>"
+          style="width: 56px; margin-top: 5px;margin-right:3px;" name="name_cluster1">
+      </div>
+
+      <div class="ph1">
+        <input id="id_ph1" class="class_ph1" type="number" value="<?php echo $se[0]['ph']?>" style="width: 53px; margin-top: 5px;"
+          name="name_ph1">
+      </div>
+      <!--  seleccion-->
+      <div class="seleccion d-flex">
+        <div class="brs1">
+          <input id="id_brs1" class="class_brs1" type="number" value="<?php echo $se[0]['sel_br']?>"
+            style="width: 38px; margin-top: 5px; margin-right:3px; margin-left:4px;" name="name_brs1">
+        </div>
+
+        <div class="cc1">
+          <input id="id_cc1" class="class_cc1" type="number" value="<?php echo $se[0]['sel_cc']?>"
+            style="width: 38px; margin-top: 5px;margin-right:3px;" name="name_cc1">
+        </div>
+
+        <div class="ct1">
+          <input id="id_ct1" class="class_ct1" type="number" value="<?php echo $se[0]['sel_ct']?>"
+            style="width: 38px; margin-top: 5px;margin-right:3px;" name="name_ct1">
+        </div>
+
+        <div class="lf1">
+          <input id="id_lf1" class="class_lf1" type="number" value="<?php echo $se[0]['sel_lf']?>"
+            style="width: 38px; margin-top: 5px;margin-right:3px;" name="name_lf1">
+        </div>
+        <div class="ni1">
+          <input id="id_ni1" class="class_ni1" type="number" value="<?php echo $se[0]['sel_ni']?>"
+            style="width: 38px; margin-top: 5px; margin-right:3px;" name="name_ni1">
+        </div>
+        <div class="ns1">
+          <input id="id_ns1" class="class_ns1" type="number" value="<?php echo $se[0]['sel_ns']?>"
+            style="width: 37px; margin-top: 5px; margin-right:3px;" name="name_ns1">
+        </div>
+        <div class="ps1">
+          <input id="id_ps1" class="class_ps1" type="number" value="<?php echo $se[0]['sel_ps']?>"
+            style="width: 36px; margin-top: 5px; margin-right:3px;" name="name_ps1">
+        </div>
+        <div class="sk1">
+          <input id="id_sk1" class="class_sk1" type="number" value="<?php echo $se[0]['sel_sk']?>"
+            style="width: 36px; margin-top: 5px; margin-right:3px;" name="name_sk1">
+        </div>
+        <div class="sr1">
+          <input id="id_sr1" class="class_sr1" type="number" value="<?php echo $se[0]['sel_sr']?>"
+            style="width: 36px; margin-top: 5px; margin-right:3px;" name="name_sr1">
+        </div>
+        <div class="tc1">
+          <input id="id_tc1" class="class_tc1" type="number" value="<?php echo $se[0]['sel_tc']?>"
+            style="width: 37px; margin-top: 5px; margin-right:3px;" name="name_tc1">
+        </div>
+
+        <div class="tf1">
+          <input id="id_tf1" class="class_tf1" type="number" value="<?php echo $se[0]['sel_tf']?>"
+            style="width: 37px; margin-top: 5px; margin-right:3px;" name="name_tf1">
+        </div>
+
+        <div class="yb1">
+          <input id="id_yb1" class="class_yb1" type="number" value="<?php echo $se[0]['sel_yb']?>"
+            style="width: 38px; margin-top: 5px; margin-right:3px;" name="name_yb1">
+        </div>
+
+        <div class="sc1">
+          <input id="id_sc1" class="class_sc1" type="number" value="<?php echo $se[0]['sel_sc']?>"
+            style="width: 39px; margin-top: 5px; margin-right:3px;" name="name_sc1">
+        </div>
+        <div class="dp1">
+          <input id="id_dp1" class="class_dp1" type="number" value="<?php echo $se[0]['sel_dp']?>"
+            style="width: 41px; margin-top: 5px; margin-right:8px;" name="name_dp1">
+        </div>
+        <!--  empaque-->
+        <div class="empaque d-flex">
+          <div class="bre1">
+            <input id="id_bre1" class="class_bre1" type="number" value="<?php echo $se[0]['emp_br']?>"
+              style="width: 65px; margin-top: 5px; margin-right:4px;margin-left:1px;" name="name_bre1">
+          </div>
+          <div class="sre1">
+            <input id="id_sre1" class="class_sre1" type="number" value="<?php echo $se[0]['emp_sr']?>"
+              style="width: 65px; margin-top: 5px; margin-right:4px;" name="name_sre1">
+          </div>
+          <div class="srf1">
+            <input id="id_srf1" class="class_srf1" type="number" value="<?php echo $se[0]['emp_srf']?>"
+              style="width: 60px; margin-top: 5px; margin-right:4px;" name="name_srf1">
+          </div>
+          <div class="dpe1">
+            <input id="id_dpe1" class="class_dpe1" type="number" value="<?php echo $se[0]['emp_dp']?>"
+              style="width: 63px; margin-top: 5px; margin-right:8px;" name="name_dpe1">
+          </div>
+          <!--  total defectos-->
+          <div class="total_defectos d-flex">
+            <div class="totald1">
+              <input id="id_totald1" class="class_totald1" type="number" value="<?php echo $se[0]['tot_fila']?>"
+                style="width: 203px; margin-top: 5px; margin-right:4px; margin-left:1px;" name="name_totald1">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Fila 2 -->
+    <!--  peso,cluster,ph-->
+    <div class="menu2 d-flex">
+      <div class="peso2">
+        <input id="id_peso2" class="class_peso2" type="number" value="<?php echo $se[1]['peso_neto_caja']?>"
+          style="width: 58px; margin-top: 5px; margin-right:3px;" name="name_peso2">
+      </div>
+
+      <div class="cluster2">
+        <input id="id_cluster2" class="class_cluster2" type="number" value="<?php echo $se[1]['cluster_caja']?>"
+          style="width: 56px; margin-top: 5px;margin-right:3px;" name="name_cluster2">
+      </div>
+
+      <div class="ph2">
+        <input id="id_ph2" class="class_ph2" type="number" value="<?php echo $se[1]['ph']?>" style="width: 53px; margin-top: 5px;"
+          name="name_ph2">
+      </div>
+      <!--  seleccion-->
+      <div class="seleccion d-flex">
+        <div class="brs2">
+          <input id="id_brs2" class="class_brs2" type="number" value="<?php echo $se[1]['sel_br']?>"
+            style="width: 38px; margin-top: 5px; margin-right:3px; margin-left:4px;" name="name_brs2">
+        </div>
+
+        <div class="cc2">
+          <input id="id_cc2" class="class_cc2" type="number" value="<?php echo $se[1]['sel_cc']?>"
+            style="width: 38px; margin-top: 5px;margin-right:3px;" name="name_cc2">
+        </div>
+
+        <div class="ct2">
+          <input id="id_ct2" class="class_ct2" type="number" value="<?php echo $se[1]['sel_ct']?>"
+            style="width: 38px; margin-top: 5px;margin-right:3px;" name="name_ct2">
+        </div>
+
+        <div class="lf2">
+          <input id="id_lf2" class="class_lf2" type="number" value="<?php echo $se[1]['sel_lf']?>"
+            style="width: 38px; margin-top: 5px;margin-right:3px;" name="name_lf2">
+        </div>
+        <div class="ni2">
+          <input id="id_ni2" class="class_ni2" type="number" value="<?php echo $se[1]['sel_ni']?>"
+            style="width: 38px; margin-top: 5px; margin-right:3px;" name="name_ni2">
+        </div>
+        <div class="ns2">
+          <input id="id_ns2" class="class_ns2" type="number" value="<?php echo $se[1]['sel_ns']?>"
+            style="width: 37px; margin-top: 5px; margin-right:3px;" name="name_ns2">
+        </div>
+        <div class="ps2">
+          <input id="id_ps2" class="class_ps2" type="number" value="<?php echo $se[1]['sel_ps']?>"
+            style="width: 36px; margin-top: 5px; margin-right:3px;" name="name_ps2">
+        </div>
+        <div class="sk2">
+          <input id="id_sk2" class="class_sk2" type="number" value="<?php echo $se[1]['sel_sk']?>"
+            style="width: 36px; margin-top: 5px; margin-right:3px;" name="name_sk2">
+        </div>
+        <div class="sr2">
+          <input id="id_sr2" class="class_sr2" type="number" value="<?php echo $se[1]['sel_sr']?>"
+            style="width: 36px; margin-top: 5px; margin-right:3px;" name="name_sr2">
+        </div>
+        <div class="tc2">
+          <input id="id_tc2" class="class_tc2" type="number" value="<?php echo $se[1]['sel_tc']?>"
+            style="width: 37px; margin-top: 5px; margin-right:3px;" name="name_tc2">
+        </div>
+
+        <div class="tf2">
+          <input id="id_tf2" class="class_tf2" type="number" value="<?php echo $se[1]['sel_tf']?>"
+            style="width: 37px; margin-top: 5px; margin-right:3px;" name="name_tf2">
+        </div>
+
+        <div class="yb2">
+          <input id="id_yb2" class="class_yb2" type="number" value="<?php echo $se[1]['sel_yb']?>"
+            style="width: 38px; margin-top: 5px; margin-right:3px;" name="name_yb2">
+        </div>
+
+        <div class="sc2">
+          <input id="id_sc2" class="class_sc2" type="number" value="<?php echo $se[1]['sel_sc']?>"
+            style="width: 39px; margin-top: 5px; margin-right:3px;" name="name_sc2">
+        </div>
+        <div class="dp2">
+          <input id="id_dp2" class="class_dp2" type="number" value="<?php echo $se[1]['sel_dp']?>"
+            style="width: 42px; margin-top: 5px; margin-right:8px;" name="name_dp2">
+        </div>
+        <!--  empaque-->
+        <div class="empaque d-flex">
+
+          <div class="bre2">
+            <input id="id_bre2" class="class_bre2" type="number" value="<?php echo $se[1]['emp_br']?>"
+              style="width: 65px; margin-top: 5px; margin-right:4px;margin-left:1px;" name="name_bre2">
+          </div>
+          <div class="sre2">
+            <input id="id_sre2" class="class_sre2" type="number" value="<?php echo $se[1]['emp_sr']?>"
+              style="width: 65px; margin-top: 5px; margin-right:4px;" name="name_sre2">
+          </div>
+          <div class="srf2">
+            <input id="id_srf2" class="class_srf2" type="number" value="<?php echo $se[1]['emp_srf']?>"
+              style="width: 60px; margin-top: 5px; margin-right:4px;" name="name_srf2">
+          </div>
+          <div class="dpe2">
+            <input id="id_dpe2" class="class_dpe2" type="number" value="<?php echo $se[1]['emp_dp']?>"
+              style="width: 63px; margin-top: 5px; margin-right:8px;" name="name_dpe2">
+          </div>
+          <!--  total defectos-->
+          <div class="total_defectos d-flex">
+            <div class="totald2">
+              <input id="id_totald2" class="class_totald2" type="number" value="<?php echo $se[1]['tot_fila']?>"
+                style="width: 203px; margin-top: 5px; margin-right:4px; margin-left:1px;" name="name_totald2">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- fila 3 --->
+    <!--  peso,cluster,ph-->
+    <div class="menu3 d-flex">
+      <div class="peso3">
+        <input id="id_peso3" class="class_peso3" type="number" value="<?php echo $se[2]['peso_neto_caja']?>"
+          style="width: 58px; margin-top: 5px; margin-right:3px;" name="name_peso3">
+      </div>
+
+      <div class="cluster3">
+        <input id="id_cluster3" class="class_cluster3" type="number" value="<?php echo $se[2]['cluster_caja']?>"
+          style="width: 56px; margin-top: 5px;margin-right:3px;" name="name_cluster3">
+      </div>
+
+      <div class="ph3">
+        <input id="id_ph3" class="class_ph3" type="number" value="<?php echo $se[2]['ph']?>" style="width: 53px; margin-top: 5px;"
+          name="name_ph3">
+      </div>
+
+      <!--  seleccion-->
+      <div class="seleccion d-flex">
+        <div class="brs3">
+          <input id="id_brs3" class="class_brs3" type="number" value="<?php echo $se[2]['sel_br']?>"
+            style="width: 38px; margin-top: 5px; margin-right:3px; margin-left:4px;" name="name_brs3">
+        </div>
+
+        <div class="cc3">
+          <input id="id_cc3" class="class_cc3" type="number" value="<?php echo $se[2]['sel_cc']?>"
+            style="width: 38px; margin-top: 5px;margin-right:3px;" name="name_cc3">
+        </div>
+
+        <div class="ct3">
+          <input id="id_ct3" class="class_ct3" type="number" value="<?php echo $se[2]['sel_ct']?>"
+            style="width: 38px; margin-top: 5px;margin-right:3px;" name="name_ct3">
+        </div>
+
+        <div class="lf3">
+          <input id="id_lf3" class="class_lf3" type="number" value="<?php echo $se[2]['sel_lf']?>"
+            style="width: 38px; margin-top: 5px;margin-right:3px;" name="name_lf3">
+        </div>
+        <div class="ni3">
+          <input id="id_ni3" class="class_ni3" type="number" value="<?php echo $se[2]['sel_ni']?>"
+            style="width: 38px; margin-top: 5px; margin-right:3px;" name="name_ni3">
+        </div>
+        <div class="ns3">
+          <input id="id_ns3" class="class_ns3" type="number" value="<?php echo $se[2]['sel_ns']?>"
+            style="width: 37px; margin-top: 5px; margin-right:3px;" name="name_ns3">
+        </div>
+        <div class="ps3">
+          <input id="id_ps3" class="class_ps3" type="number" value="<?php echo $se[2]['sel_ps']?>"
+            style="width: 36px; margin-top: 5px; margin-right:3px;" name="name_ps3">
+        </div>
+        <div class="sk3">
+          <input id="id_sk3" class="class_sk3" type="number" value="<?php echo $se[2]['sel_sk']?>"
+            style="width: 36px; margin-top: 5px; margin-right:3px;" name="name_sk3">
+        </div>
+        <div class="sr3">
+          <input id="id_sr3" class="class_sr3" type="number" value="<?php echo $se[2]['sel_sr']?>"
+            style="width: 36px; margin-top: 5px; margin-right:3px;" name="name_sr3">
+        </div>
+        <div class="tc3">
+          <input id="id_tc3" class="class_tc3" type="number" value="<?php echo $se[2]['sel_tc']?>"
+            style="width: 37px; margin-top: 5px; margin-right:3px;" name="name_tc3">
+        </div>
+
+        <div class="tf3">
+          <input id="id_tf3" class="class_tf3" type="number" value="<?php echo $se[2]['sel_tf']?>"
+            style="width: 37px; margin-top: 5px; margin-right:3px;" name="name_tf3">
+        </div>
+
+        <div class="yb3">
+          <input id="id_yb3" class="class_yb3" type="number" value="<?php echo $se[2]['sel_yb']?>"
+            style="width: 38px; margin-top: 5px; margin-right:3px;" name="name_yb3">
+        </div>
+
+        <div class="sc3">
+          <input id="id_sc3" class="class_sc3" type="number" value="<?php echo $se[2]['sel_sc']?>"
+            style="width: 39px; margin-top: 5px; margin-right:3px;" name="name_sc3">
+        </div>
+        <div class="dp3">
+          <input id="id_dp3" class="class_dp3" type="number" value="<?php echo $se[2]['sel_dp']?>"
+            style="width: 43px; margin-top: 5px; margin-right:8px;" name="name_dp3">
+        </div>
+
+        <!--  empaque-->
+        <div class="empaque d-flex">
+
+          <div class="bre3">
+            <input id="id_bre3" class="class_bre3" type="number" value="<?php echo $se[2]['emp_br']?>"
+              style="width: 65px; margin-top: 5px; margin-right:4px;margin-left:1px;" name="name_bre3">
+          </div>
+          <div class="sre3">
+            <input id="id_sre3" class="class_sre3" type="number" value="<?php echo $se[2]['emp_sr']?>"
+              style="width: 65px; margin-top: 5px; margin-right:4px;" name="name_sre3">
+          </div>
+          <div class="srf3">
+            <input id="id_srf3" class="class_srf3" type="number" value="<?php echo $se[2]['emp_srf']?>"
+              style="width: 60px; margin-top: 5px; margin-right:4px;" name="name_srf3">
+          </div>
+          <div class="dpe3">
+            <input id="id_dpe3" class="class_dpe3" type="number" value="<?php echo $se[2]['emp_dp']?>"
+              style="width: 63px; margin-top: 5px; margin-right:8px;" name="name_dpe3">
+          </div>
+
+          <!--  total defectos-->
+          <div class="total_defectos d-flex">
+            <div class="totald3">
+              <input id="id_totald3" class="class_totald3" type="number" value="<?php echo $se[2]['tot_fila']?>"
+                style="width: 201px; margin-top: 5px; margin-right:4px; margin-left:1px;" name="name_totald3">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- total peso,cluster,ph-->
+    <div class="total_cphd d-flex">
+
+      <div style="display: flex; justify-content: center; align-items: center; height: 6vh;">
+        <h6 style="margin-left: 10px;"> Total:</h6>
+      </div>
+
+
+      <div class="total_cluster">
+        <input id="id_total_cluster" class="class_total_cluster" type="number" value="<?=$fila1->total_cluster?>"
+          style="width: 55px; margin-top: 5px; margin-left:13px;" name="total_cluster">
+      </div>
+
+      <div class="total_ph">
+        <input id="id_total_ph" class="class_total_ph" type="number" value="<?=$fila1->total_ph?>"
+          style="width: 51px; margin-top: 5px; margin-left:4px;" name="total_ph">
+      </div>
+
+      <div class="total_defectos">
+        <input id="id_total_defectos" class="class_total_defectos" type="number" value="<?=$fila1->total_defectos?>"
+          style="width: 202px; margin-top: 5px; margin-left:855px;" name="total_defectos">
+      </div>
+
+    </div>
+
+    <!-- % peso,cluster,ph-->
+    <div class="total_porcentaje d-flex">
+
+    <div class="p-2">
+        <button id="boton-calcular_se" class="btn btn-outline-info" type="button" value="actualizado">Calcular</button>
+      </div>
+
+      <div class="total_defectos_porcentaje">
+        <input id="id_defectos_porcentaje" class="class_defectos_porcentaje" type="number" value="<?=$fila1->promedio_tot?>"
+          style="width: 202px; margin-top: 5px; margin-left:930px;" name="name_defectos_porcentaje">
+      </div>
+
+    </div>
+
+    <div class="div_observaciones d-flex">
+      <div class="p-2 left" style="font-weight: bold;">OBSERVACIONES:</div>
+      <input class="observaciones_empaque text-uppercase" type="text" placeholder="Ingresar Observaciones"
+        style="height: 30px; width: 84.5%;" value="<?=$fila1->observacion?>" name="name_observaciones_empaque">
+    </div>
+  </div>
+
+  <?php }}else{?>
     <!--  peso,cluster,ph-->
     <div class="menu1 d-flex">
       <div class="peso1">
@@ -214,7 +604,6 @@
         <input id="id_ph1" class="class_ph1" type="number" value=" " style="width: 53px; margin-top: 5px;"
           name="name_ph1">
       </div>
-
       <!--  seleccion-->
       <div class="seleccion d-flex">
         <div class="brs1">
@@ -279,10 +668,8 @@
           <input id="id_dp1" class="class_dp1" type="number" value=" "
             style="width: 41px; margin-top: 5px; margin-right:8px;" name="name_dp1">
         </div>
-
         <!--  empaque-->
         <div class="empaque d-flex">
-
           <div class="bre1">
             <input id="id_bre1" class="class_bre1" type="number" value=" "
               style="width: 65px; margin-top: 5px; margin-right:4px;margin-left:1px;" name="name_bre1">
@@ -299,7 +686,6 @@
             <input id="id_dpe1" class="class_dpe1" type="number" value=" "
               style="width: 63px; margin-top: 5px; margin-right:8px;" name="name_dpe1">
           </div>
-
           <!--  total defectos-->
           <div class="total_defectos d-flex">
             <div class="totald1">
@@ -310,9 +696,7 @@
         </div>
       </div>
     </div>
-
     <!-- Fila 2 -->
-
     <!--  peso,cluster,ph-->
     <div class="menu2 d-flex">
       <div class="peso2">
@@ -329,7 +713,6 @@
         <input id="id_ph2" class="class_ph2" type="number" value=" " style="width: 53px; margin-top: 5px;"
           name="name_ph2">
       </div>
-
       <!--  seleccion-->
       <div class="seleccion d-flex">
         <div class="brs2">
@@ -394,7 +777,6 @@
           <input id="id_dp2" class="class_dp2" type="number" value=" "
             style="width: 42px; margin-top: 5px; margin-right:8px;" name="name_dp2">
         </div>
-
         <!--  empaque-->
         <div class="empaque d-flex">
 
@@ -414,29 +796,17 @@
             <input id="id_dpe2" class="class_dpe2" type="number" value=" "
               style="width: 63px; margin-top: 5px; margin-right:8px;" name="name_dpe2">
           </div>
-
           <!--  total defectos-->
           <div class="total_defectos d-flex">
             <div class="totald2">
               <input id="id_totald2" class="class_totald2" type="number" value=" "
                 style="width: 203px; margin-top: 5px; margin-right:4px; margin-left:1px;" name="name_totald2">
             </div>
-
-
-
           </div>
-
         </div>
-
       </div>
-
-
-
     </div>
-
-
     <!-- fila 3 --->
-
     <!--  peso,cluster,ph-->
     <div class="menu3 d-flex">
       <div class="peso3">
@@ -545,23 +915,9 @@
               <input id="id_totald3" class="class_totald3" type="number" value=" "
                 style="width: 201px; margin-top: 5px; margin-right:4px; margin-left:1px;" name="name_totald3">
             </div>
-
-
-
           </div>
-
-
-
-
-
-
         </div>
-
-
       </div>
-
-
-
     </div>
 
     <!-- total peso,cluster,ph-->
@@ -574,17 +930,17 @@
 
       <div class="total_cluster">
         <input id="id_total_cluster" class="class_total_cluster" type="number" value=" "
-          style="width: 55px; margin-top: 5px; margin-left:13px;" name="id_total_cluster">
+          style="width: 55px; margin-top: 5px; margin-left:13px;" name="total_cluster">
       </div>
 
       <div class="total_ph">
         <input id="id_total_ph" class="class_total_ph" type="number" value=" "
-          style="width: 51px; margin-top: 5px; margin-left:4px;" name="name_total_ph">
+          style="width: 51px; margin-top: 5px; margin-left:4px;" name="total_ph">
       </div>
 
       <div class="total_defectos">
         <input id="id_total_defectos" class="class_total_defectos" type="number" value=" "
-          style="width: 202px; margin-top: 5px; margin-left:855px;" name="name_total_defectos">
+          style="width: 202px; margin-top: 5px; margin-left:855px;" name="total_defectos">
       </div>
 
     </div>
@@ -592,49 +948,41 @@
     <!-- % peso,cluster,ph-->
     <div class="total_porcentaje d-flex">
 
-      <div style="display: flex; justify-content: center; align-items: center; height: 6vh;">
-        <h6 style="margin-left: 10px; font-weight: bold;"> %:</h6>
-      </div>
-
-
-      <div class="porcentaje_cluster">
-        <input id="id_porcentaje_cluster" class="class_porcentaje_cluster" type="number" value=" "
-          style="width: 55px; margin-top: 5px; margin-left:33px;" name="name_porcentaje_cluster">
-      </div>
-
-      <div class="porcentaje_ph">
-        <input id="id_porcentaje_ph" class="class_porcentaje_ph" type="number" value=" "
-          style="width: 51px; margin-top: 5px; margin-left:4px;" name="name_porcentaje_ph">
+    <div class="p-2">
+        <button id="boton-calcular_se" class="btn btn-outline-info" type="button" value="actualizado">Calcular</button>
       </div>
 
       <div class="total_defectos_porcentaje">
         <input id="id_defectos_porcentaje" class="class_defectos_porcentaje" type="number" value=" "
-          style="width: 202px; margin-top: 5px; margin-left:855px;" name="name_defectos_porcentaje">
+          style="width: 202px; margin-top: 5px; margin-left:930px;" name="name_defectos_porcentaje">
       </div>
 
     </div>
-
 
     <div class="div_observaciones d-flex">
       <div class="p-2 left" style="font-weight: bold;">OBSERVACIONES:</div>
-      <input class="observaciones_empaque" type="text" placeholder="Ingresar Observaciones"
-        style="height: 30px; width: 84.5%;" value="' . $carga_datos->nombre_p . '" name="name_observaciones_empaque">
-    </div>
-    <div class="d-flex flex-row justify-content-start">
-      <div class="p-2">
-
-        <button id="guardar_se" class="btn btn-outline-primary" type="submit" name="guardar_se"
-          value="guardado">Guardar</button>
-          
-      </div>
-      <div class="p-2">
-
-        <button id="boton-actualizar_se" class="btn btn-outline-info" type="submit" value="actualizado"
-          style="margin-right: 930px">Actualizar</button>
-      </div>
-      <div class="p-2">
-
-        <button id="boton-calcular_se" class="btn btn-outline-info" type="button" value="actualizado">Calcular</button>
-      </div>
+      <input class="observaciones_empaque text-uppercase" type="text" placeholder="Ingresar Observaciones"
+        style="height: 30px; width: 84.5%;" value="" name="name_observaciones_empaque">
     </div>
   </div>
+<?php }?>
+
+  <div class="d-flex flex-row justify-content-end ms-auto me-5 mb-1 mt-0">
+                <div class="p-2">
+                    <?php
+                    if (empty($_GET["id_eva"])) {
+                        ?>
+                        <!-- <input type="hidden" name="btn-guardar-general" id="btn-guardar-value1" value="guardado"> -->
+                        <button id="btn-guardar-general" class="btn btn-outline-primary" type="submit" name="guardar_eva"
+                            value="guardado">Guardar</button>
+                        <?php
+                    } else {
+                        ?>
+                        <!-- <input type="hidden" name="btn-actualizar-general" id="btn-actualizar-value1" value="actualizado"> -->
+                        <button id="btn-actualizar-general" class="btn btn-outline-info" type="submit" name="actualizar_eva"
+                            value="actualizado">Actualizar</button>
+                        <?php
+                    }
+                    ?>
+                </div>
+            </div>

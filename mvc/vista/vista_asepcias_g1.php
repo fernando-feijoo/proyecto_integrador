@@ -472,22 +472,3 @@ if (($valiacion = cargar_asepcias()) != false) {
   </div>
 <?php } ?>
 <h6 class="mt-2" style="margin-right: 40px;">SELECCIONAR TODOS LOS CAMPOS</h6>
-<div class="d-flex flex-row justify-content-end ms-auto me-5 mb-1 mt-0">
-                <div class="p-2">
-                    <?php
-                    if (empty($_GET["id_eva"])) {
-                        ?>
-                        <!-- <input type="hidden" name="btn-guardar-general" id="btn-guardar-value1" value="guardado"> -->
-                        <button id="btn-guardar-general" class="btn btn-outline-primary" type="submit" name="guardar_eva"
-                            value="guardado">Guardar</button>
-                        <?php
-                    } else {
-                        ?>
-                        <!-- <input type="hidden" name="btn-actualizar-general" id="btn-actualizar-value1" value="actualizado"> -->
-                        <button id="btn-actualizar-general" class="btn btn-outline-info" type="submit" name="actualizar_eva"
-                            value="actualizado">Actualizar</button>
-                        <?php
-                    }
-                    ?>
-                </div>
-            </div>
