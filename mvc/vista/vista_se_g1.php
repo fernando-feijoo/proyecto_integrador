@@ -221,7 +221,7 @@ if (($validacion = cargar_se_datos()) != false and ($valiacion = cargar_se()) !=
    <div class="menu1 d-flex">
       <div class="peso1">
         <input id="id_peso1" class="class_peso1" type="number" value="<?php echo $se[0]['peso_neto_caja']?>"
-          style="width: 58px; margin-top: 5px; margin-right:3px;" name="name_peso1">
+          style="width: 58px; margin-top: 5px; margin-right:3px;" name="name_peso1" readonly>
       </div>
 
       <div class="cluster1">
@@ -319,7 +319,7 @@ if (($validacion = cargar_se_datos()) != false and ($valiacion = cargar_se()) !=
           <div class="total_defectos d-flex">
             <div class="totald1">
               <input id="id_totald1" class="class_totald1" type="number" value="<?php echo $se[0]['tot_fila']?>"
-                style="width: 203px; margin-top: 5px; margin-right:4px; margin-left:1px;" name="name_totald1">
+                style="width: 203px; margin-top: 5px; margin-right:4px; margin-left:1px;" name="name_totald1" readonly>
             </div>
           </div>
         </div>
@@ -330,7 +330,7 @@ if (($validacion = cargar_se_datos()) != false and ($valiacion = cargar_se()) !=
     <div class="menu2 d-flex">
       <div class="peso2">
         <input id="id_peso2" class="class_peso2" type="number" value="<?php echo $se[1]['peso_neto_caja']?>"
-          style="width: 58px; margin-top: 5px; margin-right:3px;" name="name_peso2">
+          style="width: 58px; margin-top: 5px; margin-right:3px;" name="name_peso2" readonly>
       </div>
 
       <div class="cluster2">
@@ -429,7 +429,7 @@ if (($validacion = cargar_se_datos()) != false and ($valiacion = cargar_se()) !=
           <div class="total_defectos d-flex">
             <div class="totald2">
               <input id="id_totald2" class="class_totald2" type="number" value="<?php echo $se[1]['tot_fila']?>"
-                style="width: 203px; margin-top: 5px; margin-right:4px; margin-left:1px;" name="name_totald2">
+                style="width: 203px; margin-top: 5px; margin-right:4px; margin-left:1px;" name="name_totald2" readonly>
             </div>
           </div>
         </div>
@@ -440,7 +440,7 @@ if (($validacion = cargar_se_datos()) != false and ($valiacion = cargar_se()) !=
     <div class="menu3 d-flex">
       <div class="peso3">
         <input id="id_peso3" class="class_peso3" type="number" value="<?php echo $se[2]['peso_neto_caja']?>"
-          style="width: 58px; margin-top: 5px; margin-right:3px;" name="name_peso3">
+          style="width: 58px; margin-top: 5px; margin-right:3px;" name="name_peso3" readonly>
       </div>
 
       <div class="cluster3">
@@ -542,7 +542,7 @@ if (($validacion = cargar_se_datos()) != false and ($valiacion = cargar_se()) !=
           <div class="total_defectos d-flex">
             <div class="totald3">
               <input id="id_totald3" class="class_totald3" type="number" value="<?php echo $se[2]['tot_fila']?>"
-                style="width: 201px; margin-top: 5px; margin-right:4px; margin-left:1px;" name="name_totald3">
+                style="width: 201px; margin-top: 5px; margin-right:4px; margin-left:1px;" name="name_totald3" readonly>
             </div>
           </div>
         </div>
@@ -559,17 +559,17 @@ if (($validacion = cargar_se_datos()) != false and ($valiacion = cargar_se()) !=
 
       <div class="total_cluster">
         <input id="id_total_cluster" class="class_total_cluster" type="number" value="<?=$fila1->total_cluster?>"
-          style="width: 55px; margin-top: 5px; margin-left:13px;" name="total_cluster">
+          style="width: 55px; margin-top: 5px; margin-left:13px;" name="total_cluster" readonly>
       </div>
 
       <div class="total_ph">
         <input id="id_total_ph" class="class_total_ph" type="number" value="<?=$fila1->total_ph?>"
-          style="width: 51px; margin-top: 5px; margin-left:4px;" name="total_ph">
+          style="width: 51px; margin-top: 5px; margin-left:4px;" name="total_ph" readonly>
       </div>
 
       <div class="total_defectos">
         <input id="id_total_defectos" class="class_total_defectos" type="number" value="<?=$fila1->total_defectos?>"
-          style="width: 202px; margin-top: 5px; margin-left:855px;" name="total_defectos">
+          style="width: 202px; margin-top: 5px; margin-left:855px;" name="total_defectos" readonly>
       </div>
 
     </div>
@@ -583,7 +583,7 @@ if (($validacion = cargar_se_datos()) != false and ($valiacion = cargar_se()) !=
 
       <div class="total_defectos_porcentaje">
         <input id="id_defectos_porcentaje" class="class_defectos_porcentaje" type="text" value="<?=$fila1->promedio_tot?>"
-          style="width: 202px; margin-top: 5px; margin-left:930px;" name="porcentaje">
+          style="width: 202px; margin-top: 5px; margin-left:930px;" name="porcentaje" readonly>
       </div>
 
     </div>
@@ -600,7 +600,7 @@ if (($validacion = cargar_se_datos()) != false and ($valiacion = cargar_se()) !=
     <div class="menu1 d-flex">
       <div class="peso1">
         <input id="id_peso1" class="class_peso1" type="number" value=" "
-          style="width: 58px; margin-top: 5px; margin-right:3px;" name="name_peso1">
+          style="width: 58px; margin-top: 5px; margin-right:3px;" name="name_peso1" readonly>
       </div>
 
       <div class="cluster1">
@@ -698,7 +698,7 @@ if (($validacion = cargar_se_datos()) != false and ($valiacion = cargar_se()) !=
           <div class="total_defectos d-flex">
             <div class="totald1">
               <input id="id_totald1" class="class_totald1" type="number" value=" "
-                style="width: 203px; margin-top: 5px; margin-right:4px; margin-left:1px;" name="name_totald1">
+                style="width: 203px; margin-top: 5px; margin-right:4px; margin-left:1px;" name="name_totald1" readonly>
             </div>
           </div>
         </div>
@@ -709,7 +709,7 @@ if (($validacion = cargar_se_datos()) != false and ($valiacion = cargar_se()) !=
     <div class="menu2 d-flex">
       <div class="peso2">
         <input id="id_peso2" class="class_peso2" type="number" value=" "
-          style="width: 58px; margin-top: 5px; margin-right:3px;" name="name_peso2">
+          style="width: 58px; margin-top: 5px; margin-right:3px;" name="name_peso2" readonly>
       </div>
 
       <div class="cluster2">
@@ -808,7 +808,7 @@ if (($validacion = cargar_se_datos()) != false and ($valiacion = cargar_se()) !=
           <div class="total_defectos d-flex">
             <div class="totald2">
               <input id="id_totald2" class="class_totald2" type="number" value=" "
-                style="width: 203px; margin-top: 5px; margin-right:4px; margin-left:1px;" name="name_totald2">
+                style="width: 203px; margin-top: 5px; margin-right:4px; margin-left:1px;" name="name_totald2" readonly>
             </div>
           </div>
         </div>
@@ -819,7 +819,7 @@ if (($validacion = cargar_se_datos()) != false and ($valiacion = cargar_se()) !=
     <div class="menu3 d-flex">
       <div class="peso3">
         <input id="id_peso3" class="class_peso3" type="number" value=" "
-          style="width: 58px; margin-top: 5px; margin-right:3px;" name="name_peso3">
+          style="width: 58px; margin-top: 5px; margin-right:3px;" name="name_peso3" readonly>
       </div>
 
       <div class="cluster3">
@@ -921,7 +921,7 @@ if (($validacion = cargar_se_datos()) != false and ($valiacion = cargar_se()) !=
           <div class="total_defectos d-flex">
             <div class="totald3">
               <input id="id_totald3" class="class_totald3" type="number" value=" "
-                style="width: 201px; margin-top: 5px; margin-right:4px; margin-left:1px;" name="name_totald3">
+                style="width: 201px; margin-top: 5px; margin-right:4px; margin-left:1px;" name="name_totald3" readonly>
             </div>
           </div>
         </div>
@@ -938,17 +938,17 @@ if (($validacion = cargar_se_datos()) != false and ($valiacion = cargar_se()) !=
 
       <div class="total_cluster">
         <input id="id_total_cluster" class="class_total_cluster" type="number" value=" "
-          style="width: 55px; margin-top: 5px; margin-left:13px;" name="total_cluster">
+          style="width: 55px; margin-top: 5px; margin-left:13px;" name="total_cluster" readonly>
       </div>
 
       <div class="total_ph">
         <input id="id_total_ph" class="class_total_ph" type="number" value=" "
-          style="width: 51px; margin-top: 5px; margin-left:4px;" name="total_ph">
+          style="width: 51px; margin-top: 5px; margin-left:4px;" name="total_ph" readonly>
       </div>
 
       <div class="total_defectos">
         <input id="id_total_defectos" class="class_total_defectos" type="number" value=" "
-          style="width: 202px; margin-top: 5px; margin-left:855px;" name="total_defectos">
+          style="width: 202px; margin-top: 5px; margin-left:855px;" name="total_defectos" readonly>
       </div>
 
     </div>
@@ -962,7 +962,7 @@ if (($validacion = cargar_se_datos()) != false and ($valiacion = cargar_se()) !=
 
       <div class="total_defectos_porcentaje">
         <input id="id_defectos_porcentaje" class="class_defectos_porcentaje" type="text" value=" "
-          style="width: 202px; margin-top: 5px; margin-left:930px;" name="porcentaje">
+          style="width: 202px; margin-top: 5px; margin-left:930px;" name="porcentaje" readonly>
       </div>
 
     </div>
