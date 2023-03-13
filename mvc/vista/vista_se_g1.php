@@ -980,14 +980,14 @@ if (($validacion = cargar_se_datos()) != false and ($valiacion = cargar_se()) !=
                     <?php
                     if (empty($_GET["id_eva"])) {
                         ?>
-                        <!-- <input type="hidden" name="btn-guardar-general" id="btn-guardar-value1" value="guardado"> -->
-                        <button id="btn-guardar-general" class="btn btn-outline-primary" type="submit" name="guardar_eva"
+                        <input type="hidden" name="guardar_eva" id="btn-guardar-value1" value="guardado">
+                        <button id="boton-guardar-garita" class="btn btn-outline-primary" type="submit" name="guardar_eva"
                             value="guardado">Guardar</button>
                         <?php
                     } else {
                         ?>
-                        <!-- <input type="hidden" name="btn-actualizar-general" id="btn-actualizar-value1" value="actualizado"> -->
-                        <button id="btn-actualizar-general" class="btn btn-outline-info" type="submit" name="actualizar_eva"
+                        <input type="hidden" name="actualizar_eva" id="btn-actualizar-value1" value="actualizado">
+                        <button id="boton-actualizar-garita" class="btn btn-outline-info" type="submit" name="actualizar_eva"
                             value="actualizado">Actualizar</button>
                         <?php
                     }
